@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_search"
+        style="@style/fwh"
+        android:layout_marginBottom="12dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="12dip"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/search_box"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="8dip" >
+
+            <ImageView
+                style="@style/ww"
+                android:src="@drawable/icon_gray_search" />
+
+            <EditText
+                android:id="@+id/et_key"
+                android:layout_width="fill_parent"
+                android:layout_height="35dip"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:hint="请输入课程关键字"
+                android:paddingLeft="5dip"
+                android:textColor="@color/txt_teacher_name"
+                android:textColorHint="@color/txt_color_a"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_font_12" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="60dip"
+            android:layout_height="30dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dip"
+            android:background="@drawable/kc_pj"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_16" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip" >
+
+        <com.lib.widget.refush.SwipyRefreshLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/swipyrefreshlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:direction="both" >
+
+            <ListView
+                android:id="@+id/lv_course"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="@color/transparent"
+                android:divider="@color/transparent"
+                android:dividerHeight="12dip"
+                android:listSelector="@color/transparent"
+                android:scrollbars="none"
+                android:scrollingCache="false"
+                android:visibility="gone" />
+        </com.lib.widget.refush.SwipyRefreshLayout>
+
+        <ImageView
+            android:id="@+id/img_noData"
+            style="@style/ww"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dip"
+            android:src="@drawable/none" />
+    </RelativeLayout>
+
+</LinearLayout>

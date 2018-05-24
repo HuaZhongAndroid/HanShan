@@ -1,0 +1,221 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="BaseAppTheme" parent="@android:style/Theme.Holo.Light.NoActionBar"></style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="BaseAppTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- 首页左侧滑动 -->
+    <!--
+    <style name="st_touzi">
+        <item name="android:drawableLeft">@drawable/btn_main_title_touzi</item>
+        <item name="android:textColor">@drawable/btn_main_title_color</item>
+         <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    -->
+
+    <!-- NumberProgressBar进度条相关style -->
+    <style name="NumberProgressBar_Default">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="max">100</item>
+        <item name="progress">0</item>
+        <item name="progress_unreached_color">#CCCCCC</item>
+        <item name="progress_reached_color">#3498DB</item>
+        <item name="progress_text_size">15sp</item>
+        <item name="progress_text_color">#3498DB</item>
+        <item name="progress_reached_bar_height">15dp</item>
+        <item name="progress_unreached_bar_height">5.75dp</item>
+    </style>
+
+
+ <!-- Navigation Header -->
+    <style name="NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+    </style>
+
+    <!-- 基本属性 -->
+    <style name="ww">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="fw">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="wf">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="ff">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="fwh" parent="@style/fw">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="wwh" parent="@style/ww">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="fwv" parent="@style/fw">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="ffv" parent="@style/ff">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="wwv" parent="@style/ww">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="www" parent="@style/ww">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="fww" parent="@style/fw">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="ffwv" parent="@style/ffw">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="fwwv" parent="@style/fww">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="fwwh" parent="@style/fww">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ffwh" parent="@style/ffw">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ffw" parent="@style/ff">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="wfw" parent="wf">
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="wfv" parent="@style/wf">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="seachText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_font_17</item>
+    </style>
+
+    <style name="seachButtonText">
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:textSize">@dimen/text_font_20</item>
+    </style>
+
+    <style name="seachItemText">
+        <item name="android:textColor">@color/gray_deep</item>
+        <item name="android:textSize">@dimen/text_font_20</item>
+    </style>
+
+    <style name="zfxyText">
+        <item name="android:textColor">@color/gray_deep</item>
+        <item name="android:textSize">@dimen/text_font_15</item>
+        <item name="android:lineSpacingExtra">6dip</item>
+    </style>
+
+    <style name="qiangbaokuanText">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/text_font_24</item>
+    </style>
+
+    <style name="qiangbaokuanTextcenter">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_font_24</item>
+    </style>
+
+    <style name="paysuccessText">
+        <item name="android:textColor">@color/btndown_orange</item>
+        <item name="android:textSize">@dimen/text_font_20</item>
+    </style>
+
+    <style name="paysuccesstwoText">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_font_24</item>
+    </style>
+
+    <style name="paysuccesstwoTextcenter">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_font_30</item>
+    </style>
+
+    <style name="MyDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    
+    <style name="HongbaoDialog" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit</item>
+    </style>
+
+    <style name="DialogLoading" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="DropDownDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_down</item>
+        <item name="android:windowExitAnimation">@anim/slide_up</item>
+    </style>
+
+    <style name="FadeDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+<style name="myCommentRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/my_comment_rating_bar</item>
+        <item name="android:minHeight">21.5dip</item>
+        <item name="android:maxHeight">21.5dip</item>
+    </style>
+ 	<style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/room_rating_bar</item>
+        <item name="android:minHeight">7.5dip</item>
+        <item name="android:maxHeight">7.5dip</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

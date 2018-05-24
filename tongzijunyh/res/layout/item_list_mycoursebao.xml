@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginBottom="10dip" >
+
+        <FrameLayout style="@style/ww" >
+
+            <com.lib.widget.RoundImageViewFive
+                android:id="@+id/img_pic"
+                android:layout_width="100dip"
+                android:layout_height="100dip"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/tv_mycourse_Endstates"
+                style="@style/ww"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/collection_lab"
+                android:paddingBottom="3dip"
+                android:paddingLeft="8dip"
+                android:paddingRight="8dip"
+                android:paddingTop="3dip"
+                android:text="已结束"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_font_11" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dip"
+            android:orientation="vertical" >
+
+            <LinearLayout android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dip">
+                <TextView
+                    android:id="@+id/tv_mycourse_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="2dip"
+                    android:maxLines="1"
+                    android:text="滚筒+鸟巢+西藏之课程"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="@dimen/text_font_15" />
+                <TextView
+                    android:id="@+id/tv_mycourse_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:ellipsize="end"
+                    android:layout_marginLeft="2dip"
+                    android:maxLines="1"
+                    android:text="(内含30节课程)"
+                    android:textColor="#aaa"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tv_mycourse_club"
+                        style="@style/ww"
+                        android:layout_marginBottom="4dip"
+                        android:layout_marginLeft="4dip"
+                        android:background="@drawable/kc_lab"
+                        android:paddingBottom="2dip"
+                        android:paddingRight="5dip"
+                        android:paddingTop="2dip"
+                        android:paddingLeft="5dip"
+                        android:text="周末户外"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_font_11" />
+
+                    <TextView
+                        android:id="@+id/tv_mycourse_address"
+                        style="@style/ww"
+                        android:ellipsize="end"
+                        android:maxEms="7"
+                        android:singleLine="true"
+                        android:text="上海龙之梦"
+                        android:textColor="#aaa"
+                        android:textSize="@dimen/text_font_14" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_mycourse_money"
+                    style="@style/ww"
+                    android:layout_marginRight="10dip"
+                    android:text="￥99"
+                    android:textColor="@color/app_dominantHue"
+                    android:textSize="@dimen/text_font_18" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_mycourse_time"
+                android:gravity="center_vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:layout_marginLeft="2dip"
+                android:text="2015-12-21 10:30-11:30"
+                android:textColor="#aaa"
+                android:textSize="@dimen/text_font_14" />
+
+            <TextView android:visibility="gone"
+                android:id="@+id/tv_mycourse_data"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_marginLeft="2dip"
+                android:layout_weight="1"
+                android:text="2015-12-21 10:30-11:30"
+                android:textColor="@color/course_textAddress"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="fill_parent"
+        android:layout_height="0.2dip"
+        android:layout_marginBottom="10dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:visibility="gone"
+        style="@style/fwh"
+        android:layout_gravity="right"
+        android:gravity="right" >
+
+        <TextView
+            android:id="@+id/tv_mycourse_del"
+            style="@style/ww"
+            android:background="@drawable/kc_sc"
+            android:gravity="center"
+            android:paddingBottom="8dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="8dip"
+            android:text="删除"
+            android:textColor="@color/app_dominantHue"
+            android:textSize="@dimen/text_font_15" />
+
+        <TextView
+            android:id="@+id/tv_mycourse_states"
+            style="@style/ww"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/btn_login_yellow"
+            android:gravity="center"
+            android:paddingBottom="8dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="8dip"
+            android:text="评价"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_15" />
+
+        <TextView
+            android:id="@+id/tv_mycourse_pay"
+            style="@style/ww"
+            android:layout_marginLeft="20dip"
+            android:background="@drawable/btn_login_yellow"
+            android:gravity="center"
+            android:paddingBottom="8dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="8dip"
+            android:text="去付款"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_15" />
+    </LinearLayout>
+
+</LinearLayout>

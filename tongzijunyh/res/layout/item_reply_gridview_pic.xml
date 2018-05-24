@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/fwv"
+    android:layout_gravity="center"
+    android:gravity="center" >
+
+    <com.lib.widget.RoundImageViewFive
+        android:id="@+id/img_src"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_margin="5dip"
+        android:scaleType="centerCrop" />
+
+</LinearLayout>

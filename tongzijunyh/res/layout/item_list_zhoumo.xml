@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/img_tu"
+            android:layout_width="75dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/defult_shape" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="跟着任柏柏去探险"
+                        android:textColor="#333"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_weight="1"
+                        android:text="323人已报名"
+                        android:textColor="#ff999999"
+                        android:textSize="11sp"
+                        />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="亲近自然 让孩子回归本能状态"
+                    android:textColor="#ff818181"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="4月5日·开营"
+                    android:textColor="#ff9d9d9d"
+                    android:textSize="10sp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:background="@drawable/bg_tg_hui"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:text="危险动物的生存之道"
+                    android:textColor="#ff4c4c4c"
+                    android:textSize="12sp"
+                    />
+            </LinearLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

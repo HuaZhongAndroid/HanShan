@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal_bgcolor"
+    android:orientation="vertical">
+    <!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="fill_parent"-->
+    <!--android:background="@color/personal_bgcolor"-->
+    <!--android:scrollbars="vertical">-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_sixview_head"
+                android:layout_width="fill_parent"
+                android:layout_height="243dip"
+                android:background="@drawable/my_bg_gray">
+
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:id="@+id/lv_sixview_head"
+                        android:layout_width="fill_parent"
+                        android:layout_height="243dip"
+                        android:scaleType="centerCrop" />
+
+                    <ImageButton
+                        android:id="@+id/iv_sixview_head"
+                        android:layout_width="162dip"
+                        android:layout_height="198dip"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="25dip"
+                        android:background="@null" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="67dip"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/my_bg_bont">
+
+                    </View>
+
+                    <ImageButton
+                        android:id="@+id/ib_sixview_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|right"
+                        android:background="@null"
+                        android:paddingBottom="18dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="15dp"
+                        android:paddingTop="10dp"
+                        android:src="@drawable/my_bg_camera" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!-- 昵称 -->
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.001dip"
+                android:background="@color/psersonal_line" />
+
+            <!-- 手机号码 -->
+
+            <!-- 性别 -->
+
+            <!-- 所在城市 -->
+
+            <!-- 联系地址 -->
+
+            <!-- 宝宝姓名 -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="29dip"
+                android:layout_marginRight="29dip"
+                android:layout_marginTop="24dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="孩子的姓名"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="@dimen/text_font_14" />
+
+                <EditText
+                    android:id="@+id/et_babyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:hint="输入孩子的名字"
+                    android:paddingBottom="14dp"
+                    android:paddingTop="17dip"
+                    android:singleLine="true"
+                    android:textColor="@color/personal_textAddressColor"
+                    android:textColorHint="@color/light_gray"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.001dip"
+                android:layout_marginLeft="29dip"
+                android:layout_marginRight="29dip"
+                android:background="@color/psersonal_line" />
+
+
+            <!-- 宝宝性别 -->
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="29dip"
+                android:layout_marginRight="29dip"
+                android:layout_marginTop="24dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="孩子的性别"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="@dimen/text_font_14" />
+
+                <RadioGroup
+                    android:id="@+id/rg_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="17dip">
+                    <!--第一个RadioButton -->
+                    <RadioButton
+                        android:id="@+id/rb_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="男孩"
+                        android:textColor="#CACACA"
+                        android:textSize="@dimen/text_font_14" />
+                    <!--第二个RadioButton -->
+                    <RadioButton
+                        android:id="@+id/rb_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="女孩"
+                        android:textColor="#CACACA"
+                        android:textSize="@dimen/text_font_14" />
+                </RadioGroup>
+            </LinearLayout>
+
+
+            <!-- 出生日期 -->
+
+            <LinearLayout
+                android:id="@+id/ll_birthday"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="29dip"
+                android:layout_marginRight="29dip"
+                android:layout_marginTop="24dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="孩子的生日"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_birthday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="2dip"
+                    android:layout_weight="2"
+                    android:hint="选择孩子的出生年月"
+                    android:paddingBottom="14dp"
+                    android:paddingTop="17dip"
+                    android:singleLine="true"
+                    android:textColor="@color/personal_textAddressColor"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="@dimen/text_font_15" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="29dip"
+                android:layout_marginRight="29dip"
+                android:layout_marginBottom="10dp"
+                android:background="#fff0f0f0" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="61dp"
+        android:background="@color/sliding_menu_body_background"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_save"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:background="@drawable/btnbg"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="保存信息"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</LinearLayout>

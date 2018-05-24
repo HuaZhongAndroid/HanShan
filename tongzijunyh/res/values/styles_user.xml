@@ -1,0 +1,70 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<style name="tv_order_right" parent="@style/ww">
+	    <item name="android:padding">10dip</item>
+	    <item name="android:textColor">@color/main_color_orange</item>
+        <item name="android:textSize">13sp</item>
+	    
+	</style>
+	
+	<style name="icon_star_red" parent="@style/ww">
+        <item name="android:src">@drawable/icon_star_red</item>
+        <item name="android:layout_marginRight">2dip</item>
+        <item name="android:layout_marginLeft">2dip</item>
+        <item name="android:layout_width">18dip</item>
+        <item name="android:layout_height">18dip</item>
+    </style>
+    <style name="icon_star_yellow" parent="@style/ww">
+        <item name="android:src">@drawable/star_yellow</item>
+        <item name="android:layout_marginRight">2dip</item>
+        <item name="android:layout_marginLeft">2dip</item>
+        <item name="android:layout_width">18dip</item>
+        <item name="android:layout_height">18dip</item>
+    </style>
+    <style name="icon_star_gray" parent="@style/ww">
+        <item name="android:src">@drawable/icon_star_gray</item>
+        <item name="android:layout_width">18dip</item>
+        <item name="android:layout_height">18dip</item>
+        <item name="android:layout_marginRight">2dip</item>
+        <item name="android:layout_marginLeft">2dip</item>
+    </style>
+    
+    <style name="SlideUpDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+    
+    <!-- 黑白色tab按钮-->
+    <style name="btn_pink_tab" parent="@style/fww">
+        <item name="android:padding">8dip</item>
+        <item name="android:textColor">@drawable/btn_pink_tab_color_selector</item>
+    </style>
+    
+    
+    <!-- 黑白色tab按钮-->
+    <style name="btn_pink_tab_nopid" parent="@style/fww">
+        <item name="android:textColor">@drawable/btn_pink_tab_color_selector</item>
+    </style>
+    
+    <!-- 小圆点 -->
+    <style name="axis_dot" parent="@style/ww">
+        <item name="android:background">@color/bg_color</item>
+        <item name="android:padding">4dip</item>
+        <item name="android:layout_marginTop">40dip</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="axis_item" parent="@style/wwh">
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="axis_item_button" parent="@style/wwv">
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="axis_item_button_img" parent="@style/ww">
+        <item name="android:layout_width">70dip</item>
+        <item name="android:layout_height">70dip</item>
+    </style>
+    <style name="axis_item_button_text" parent="@style/ww">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>    

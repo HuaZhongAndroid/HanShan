@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="80dp"
+    android:layout_height="125dp">
+
+    <com.lib.widget.RoundImageViewsix
+        android:id="@+id/iv_tab"
+        android:src="@drawable/ic_launchers"
+        android:layout_width="55dp"
+        android:layout_height="88dp"
+        android:layout_above="@+id/sanjiao"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:scaleType="centerCrop" />
+    <ImageView android:id="@+id/sanjiao"
+        android:src="@drawable/sanjiao"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

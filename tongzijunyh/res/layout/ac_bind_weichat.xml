@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    android:layout_height="match_parent" >
+    
+    <ImageButton
+        android:id="@+id/ib_left"
+        android:layout_width="40dip"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:src="@drawable/back"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="54dp"
+        android:text="关联微信"
+        android:textColor="@color/fm_mine_nickname"
+        android:textSize="27sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp"
+        android:text="关联后，可使用微信快捷登录本账号"
+        android:textColor="#ff999999"
+        android:singleLine="true"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_confirm"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn_login_yellow"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:gravity="center"
+        android:text="确 认"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+</RelativeLayout>

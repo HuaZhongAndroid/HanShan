@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal_bgcolor"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:scrollbars="none" >
+
+        <LinearLayout style="@style/fwv" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="180dip"
+                android:background="@drawable/my_bg_gray" >
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:background="@color/white"
+                    android:layout_height="fill_parent" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="100dip"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical" />
+
+                    <com.bm.view.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/iv_sixview_head"
+                        android:layout_width="110dip"
+                        android:layout_height="110dip"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="25dip"
+                        app:border_color="@android:color/transparent"
+                        app:border_width="1dp" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/fw"
+                android:layout_margin="15dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    style="@style/ww"
+                    android:text="家长信息"
+                    android:textColor="@color/personal_textColor"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.02dip"
+                android:background="@color/psersonal_line" />
+
+            <!-- 昵称 -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/ww"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dip"
+                    android:layout_marginRight="4dip"
+                    android:layout_marginTop="1dip"
+                    android:text="*"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="家长姓名"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="@dimen/text_font_15" />
+
+                <EditText
+                    android:id="@+id/et_userName"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColor="@color/personal_textAddressColor"
+                    android:textColorHint="@color/light_gray"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.001dip"
+                android:visibility="gone"
+                android:background="@color/psersonal_line" />
+
+            <!-- 手机号码 -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/ww"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dip"
+                    android:layout_marginRight="4dip"
+                    android:layout_marginTop="1dip"
+                    android:text="*"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:text="手机"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="@dimen/text_font_15" />
+
+                <EditText
+                    android:id="@+id/et_telPhone"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:inputType="phone"
+                    android:singleLine="true"
+                    android:textColor="@color/personal_textAddressColor"
+                    android:textColorHint="@color/light_gray"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.001dip"
+                android:background="@color/psersonal_line" />
+
+            <!-- 性别 -->
+
+            <LinearLayout
+                android:id="@+id/ll_sex"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/ww"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dip"
+                    android:layout_marginRight="4dip"
+                    android:layout_marginTop="1dip"
+                    android:text="*"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="性别"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="@dimen/text_font_15" />
+
+                <TextView
+                    android:id="@+id/tv_sex"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:singleLine="true"
+                    android:textColor="@color/personal_textAddressColor"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="@dimen/text_font_15" />
+
+                <ImageView
+                    style="@style/ww"
+                    android:layout_gravity="center"
+                    android:paddingRight="5dip"
+                    android:src="@drawable/icon_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.001dip"
+                android:background="@color/psersonal_line" />
+
+            <!-- 所在城市 -->
+
+            <LinearLayout
+                android:id="@+id/ll_city"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/ww"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="6dip"
+                    android:layout_marginRight="4dip"
+                    android:layout_marginTop="1dip"
+                    android:text="*"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="所在城市"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="@dimen/text_font_15" />
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:textColor="@color/personal_textAddressColor"
+                    android:textColorHint="@color/light_gray"
+                    android:textSize="@dimen/text_font_15" />
+
+                <ImageView
+                    style="@style/ww"
+                    android:layout_gravity="center"
+                    android:paddingRight="5dip"
+                    android:src="@drawable/icon_right" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.001dip"
+                android:background="@color/psersonal_line" />
+
+            <!-- 联系地址 -->
+
+            <LinearLayout
+                style="@style/fw"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginTop="15dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:text="联系地址"
+                    android:textColor="@color/personal_textNameColor"
+                    android:textSize="@dimen/text_font_15" />
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColor="@color/personal_textAddressColor"
+                    android:textColorHint="@color/light_gray"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.001dip"
+                android:background="@color/psersonal_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    style="@style/fw"
+                    android:layout_margin="15dip"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:text="孩子信息"
+                        android:textColor="@color/personal_textColor"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.001dip"
+                    android:background="@color/psersonal_line" />
+
+                <!-- 宝宝姓名 -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="6dip"
+                        android:layout_marginRight="4dip"
+                        android:layout_marginTop="1dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="90dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="孩子姓名"
+                        android:textColor="@color/personal_textNameColor"
+                        android:textSize="@dimen/text_font_15" />
+
+                    <EditText
+                        android:id="@+id/et_babyName"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:background="@null"
+                        android:hint="请输入孩子姓名"
+                        android:singleLine="true"
+                        android:textColor="@color/personal_textAddressColor"
+                        android:textColorHint="@color/light_gray"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.001dip"
+                    android:background="@color/psersonal_line" />
+
+                <!-- 宝宝性别 -->
+
+                <LinearLayout
+                    android:id="@+id/ll_babySex"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="6dip"
+                        android:layout_marginRight="4dip"
+                        android:layout_marginTop="1dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="90dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="孩子性别"
+                        android:textColor="@color/personal_textNameColor"
+                        android:textSize="@dimen/text_font_15" />
+
+                    <TextView
+                        android:id="@+id/tv_babySex"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:singleLine="true"
+                        android:textColor="@color/personal_textAddressColor"
+                        android:textColorHint="@color/light_gray"
+                        android:textSize="@dimen/text_font_15" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center"
+                        android:paddingRight="5dip"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.001dip"
+                    android:background="@color/psersonal_line" />
+
+                <!-- 出生日期 -->
+
+                <LinearLayout
+                    android:id="@+id/ll_birthday"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="6dip"
+                        android:layout_marginRight="4dip"
+                        android:layout_marginTop="1dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="90dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="出生日期"
+                        android:textColor="@color/personal_textNameColor"
+                        android:textSize="@dimen/text_font_15" />
+
+                    <TextView
+                        android:id="@+id/tv_birthday"
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="2dip"
+                        android:layout_marginTop="2dip"
+                        android:layout_weight="2"
+                        android:hint="2015-10-12"
+                        android:singleLine="true"
+                        android:textColor="@color/personal_textAddressColor"
+                        android:textSize="@dimen/text_font_15" />
+
+                    <ImageView
+                        style="@style/ww"
+                        android:layout_gravity="center"
+                        android:paddingRight="5dip"
+                        android:src="@drawable/icon_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.1dip"
+                    android:background="@color/psersonal_line" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_save"
+        style="@style/fw"
+        android:layout_marginTop="40dip"
+        android:background="@color/app_dominantHue"
+        android:gravity="center"
+        android:padding="15dip"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_18" />
+
+</LinearLayout>

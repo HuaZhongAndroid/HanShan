@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_above="@+id/ll_bm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#F4F4F4"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/img_ad"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <ImageView android:id="@+id/btn_back"
+            android:padding="10dp"
+            android:src="@drawable/luying_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:background="#fff"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/tv_name"
+            android:text="课程*服务环境恩烦恼呢"
+            android:textColor="#333"
+            android:textSize="17sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_age"
+            android:text="3-5岁"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:background="@drawable/label_category"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_price"
+            android:text="￥190"
+            android:textColor="#A59945"
+            android:textSize="18sp"
+            android:layout_marginRight="15dp"
+            android:layout_alignTop="@+id/tv_age"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#fff"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/tv_renshu"
+            android:textColor="#333"
+            android:textSize="16sp"
+            android:text="已报名孩子 (7/30)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.lib.widget.HorizontalListView
+            android:id="@+id/hlistview"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#fff"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="注意事项"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="#ddd"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+        <TextView android:id="@+id/tv_zhuyi"
+            android:text="fsdnfnsdf发送难分难舍难分"
+            android:textColor="#333"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#fff"
+        android:padding="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="课程介绍"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_describe"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/ll_bm"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:layout_alignParentBottom="true"
+        android:background="#eeedf2"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <ImageView
+            android:id="@+id/img_collect"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/icon_collection" />
+
+        <View
+            android:layout_width="0.5dip"
+            android:layout_height="40dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/icon_line" />
+
+        <ImageView
+            android:id="@+id/img_share"
+            android:layout_width="0dip"
+            android:layout_height="40dip"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/icon_share" />
+
+        <TextView
+            android:id="@+id/tv_baoming"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.5"
+            android:background="#A59945"
+            android:gravity="center"
+            android:text="立即报名"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_18" />
+    </LinearLayout>
+</RelativeLayout>

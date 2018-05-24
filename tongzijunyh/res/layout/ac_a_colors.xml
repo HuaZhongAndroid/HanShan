@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/bg_blue" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/bg_color" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/bg_gray" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/bg_mine_item" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/black" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/black_translucence" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/btndown_orange" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/gray_deep" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/header_color" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/light_gray" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/bg_blue" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/bg_blue" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/bg_blue" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/textdown_blue" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/txtcode_color" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/txthit_color" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/white_milk" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/white_water" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="20dip"
+        android:background="@color/yellow_earth" />
+
+</LinearLayout>

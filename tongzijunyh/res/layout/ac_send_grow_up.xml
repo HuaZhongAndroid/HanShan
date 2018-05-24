@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    android:id="@+id/ll_send_parent" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" >
+
+        <LinearLayout 
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+		    <EditText
+		        android:id="@+id/et_content"
+		        android:layout_width="fill_parent"
+		        android:layout_height="130dip"
+		        android:background="@drawable/ft_box"
+		        android:gravity="top|left"
+		        android:hint="请输入要发布的内容"
+		        android:paddingLeft="8dip"
+		        android:paddingTop="7dip"
+		        android:paddingBottom="7dip"
+		        android:paddingRight="8dip"
+		        android:textColorHint="@color/text_light"
+		        android:textColor="@color/text_black"
+		        android:textCursorDrawable="@null"
+		        android:textSize="@dimen/text_font_14" />
+		
+		    <com.lib.widget.FuGridView
+		        android:id="@+id/fgv_addImage"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="20dip"
+		        android:paddingTop="12dp"
+		        android:paddingBottom="12dp"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+		        android:cacheColorHint="@color/transparent"
+		        android:horizontalSpacing="2dip"
+		        android:listSelector="@color/transparent"
+		        android:numColumns="3"
+		        android:background="@color/white"
+		        android:scrollingCache="false"
+		        android:verticalSpacing="12dip" />
+        </LinearLayout>
+    </ScrollView>
+    
+
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_marginTop="30dip"
+        android:background="@drawable/cz_btn"
+        android:gravity="center"
+        android:text="发布"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:textSize="@dimen/text_font_18" />
+
+</LinearLayout>

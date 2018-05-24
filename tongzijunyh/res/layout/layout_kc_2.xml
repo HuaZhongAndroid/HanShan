@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_kc_two"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/fwv" >
+
+        <LinearLayout
+            android:visibility="gone"
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_nl" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="适合年龄"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_age2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="26dip"
+                android:text="0岁"
+                android:textColor="@color/txt_name"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View android:visibility="gone"
+            android:id="@+id/view_md"
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/fm_mine_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_checkMd"
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_md" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择门店"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dip"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_mdAddress"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:singleLine="true"
+                android:text="未选择"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+
+            <ImageView
+                android:layout_width="20dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dip"
+                android:src="@drawable/my_more" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/fm_mine_line"
+            android:visibility="gone" />
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginTop="12dip"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_md" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="选择门店"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/fm_mine_line"
+            android:visibility="gone" />
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginTop="4dip"
+            android:visibility="gone" >
+
+            <com.bm.view.TagFlowLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/id_flowlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="6dip"
+                app:max_select="1" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/fm_mine_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_map_two"
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <LinearLayout
+                style="@style/wwh"
+                android:layout_gravity="center_vertical" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/kc_dz" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="店面地址"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dip"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_two_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text=""
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+
+            <ImageView
+                android:layout_width="20dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dip"
+                android:src="@drawable/my_more" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/fm_mine_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_time"
+            style="@style/fwh"
+            android:layout_marginBottom="12dip"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_sj" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="上课时间"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_time2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dip"
+                android:drawablePadding="5dip"
+                android:drawableRight="@drawable/my_more"
+                android:text="未选择"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

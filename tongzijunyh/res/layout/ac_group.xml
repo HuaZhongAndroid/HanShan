@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="85dip"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dip" >
+
+        <com.bm.view.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/img_head"
+            android:layout_width="70dip"
+            android:layout_height="70dip"
+            android:layout_gravity="center"
+            app:poly_border="true"
+            app:poly_border_width="2dp"
+            app:poly_corner_radius="15"
+            app:poly_rotation_angle="90"
+            app:poly_vertices="6" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/ff"
+            android:layout_marginLeft="13dip"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:text=""
+            android:textColor="@color/txt_teacher_name"
+            android:textColorHint="@color/text_light"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_font_16" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="14dip"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="35dip"
+            android:layout_weight="1"
+            android:background="@drawable/group_search"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dip" >
+
+            <ImageView
+                style="@style/ww"
+                android:src="@drawable/icon_gray_search" />
+
+            <EditText
+                android:id="@+id/et_seachName"
+                style="@style/ff"
+                android:background="@null"
+                android:hint="按手机号/姓名搜索"
+                android:paddingLeft="8dip"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/txt_color_a"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_search"
+            style="@style/ww"
+            android:layout_width="85dip"
+            android:layout_height="35dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dip"
+            android:background="@drawable/kc_pj"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/fwv"
+        android:layout_marginTop="14dip" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:background="@color/line_color" />
+
+        <TextView
+            android:id="@+id/tv_newfriend"
+            android:layout_width="fill_parent"
+            android:layout_height="55dip"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dip"
+            android:text=""
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_16" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/gv_person"
+        style="@style/ff"
+        android:layout_marginBottom="5dip"
+        android:background="@color/white"
+        android:cacheColorHint="@color/transparent"
+        android:horizontalSpacing="10dip"
+        android:listSelector="@color/transparent"
+        android:numColumns="4"
+        android:paddingTop="12dip"
+        android:scrollbars="none"
+        android:verticalSpacing="24dip" />
+
+</LinearLayout>

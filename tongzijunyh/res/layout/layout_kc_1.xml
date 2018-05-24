@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_kc_one"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    android:visibility="visible" >
+
+    <LinearLayout style="@style/fwv" >
+
+        <LinearLayout
+            android:visibility="gone"
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_nl" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="适合年龄"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="26dip"
+                android:text="0岁"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/fm_mine_line" />
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginTop="12dip" >
+
+            <ImageView
+                android:layout_width="30dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/kc_sj" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="时间"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="26dip"
+                android:text=""
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:layout_marginTop="12dip"
+            android:background="@color/fm_mine_line" />
+
+        <LinearLayout
+            android:id="@+id/ll_address"
+            style="@style/fwv"
+            android:visibility="gone" >
+
+            <LinearLayout
+                style="@style/fwh"
+                android:layout_marginTop="12dip" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/kc_dz" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="门店名称"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_15" />
+
+                <TextView
+                    android:id="@+id/tv_address2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="230dip"
+                    android:layout_marginRight="8dip"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_14" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dip"
+                android:layout_marginTop="12dip"
+                android:background="@color/fm_mine_line" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_map"
+            style="@style/fwh"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="12dip" >
+
+            <LinearLayout
+                style="@style/wwh"
+                android:layout_gravity="center_vertical" >
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/kc_dz" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="地点"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_15" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dip"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:paddingLeft="20dip"
+                android:text=""
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_14" />
+
+            <ImageView
+                android:layout_width="20dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dip"
+                android:src="@drawable/my_more" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

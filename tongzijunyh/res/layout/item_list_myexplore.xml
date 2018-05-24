@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginTop="15dip"
+        android:paddingBottom="10dip" >
+
+        <com.bm.view.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tv_exploreImg"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_marginLeft="10dip"
+            app:poly_border="true"
+            app:poly_border_width="2dp"
+            app:poly_corner_radius="10"
+            app:poly_rotation_angle="90"
+            app:poly_vertices="6" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout style="@style/fwh" >
+
+                <TextView
+                    android:id="@+id/tv_exploreName"
+                    style="@style/ww"
+                    android:text="嘻嘻妈咪"
+                    android:textColor="@color/app_dominantHue"
+                    android:textSize="@dimen/text_font_15" />
+
+                <TextView
+                    android:id="@+id/tv_exploreTime"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="2015.8.12 15:00"
+                    android:textColor="@color/fm_mine_titlenamecolor"
+                    android:textSize="@dimen/text_font_13" />
+
+                <TextView
+                    android:id="@+id/tv_exploreDel"
+                    style="@style/ww"
+                    android:layout_marginBottom="3dip"
+                    android:background="@drawable/explore_box"
+                    android:paddingBottom="3dip"
+                    android:paddingLeft="8dip"
+                    android:paddingRight="8dip"
+                    android:paddingTop="3dip"
+                    android:text="删除"
+                    android:textColor="@color/app_dominantHue"
+                    android:textSize="@dimen/text_font_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_explore_content"
+                style="@style/fw"
+                android:layout_marginTop="3dip"
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp"
+                android:maxLines="3"
+                android:text="今天上课非常开心，学到了很多的知识宝宝很勇敢。谢谢教练"
+                android:textColor="@color/explore_textColor"
+                android:textSize="@dimen/text_font_14" />
+
+            <com.lib.widget.FuGridView
+                android:id="@+id/gv_explore_pic"
+                style="@style/fw"
+                android:background="@color/white"
+                android:cacheColorHint="#00000000"
+                android:columnWidth="70dip"
+                android:fadingEdge="none"
+                android:gravity="center"
+                android:horizontalSpacing="6dip"
+                android:listSelector="#00000000"
+                android:numColumns="auto_fit"
+                android:paddingRight="2dip"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="-6dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:layout_marginTop="4dip"
+        android:background="@color/fm_mine_line" />
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginLeft="60dip"
+        android:layout_marginTop="10dip"
+        android:paddingBottom="10dip" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/img_zan"
+                style="@style/ww"
+                android:layout_marginLeft="2dip"
+                android:background="@drawable/explore_zan" />
+
+            <TextView
+                android:id="@+id/tv_explore_zan"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dip"
+                android:layout_weight="1"
+                android:text="赞  (100)"
+                android:textColor="@color/explore_chartColor"
+                android:textSize="@dimen/text_font_12" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_explore_count"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/explore_count"
+            android:drawablePadding="5dip"
+            android:text="评价   (23)"
+            android:textColor="@color/explore_chartColor"
+            android:textSize="@dimen/text_font_12" />
+
+        <LinearLayout
+            android:id="@+id/ll_jb"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="18dip"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ImageView
+                style="@style/ww"
+                android:src="@drawable/explore_chart" />
+
+            <TextView
+                android:id="@+id/tv_explore_chart"
+                style="@style/ww"
+                android:layout_marginLeft="3dip"
+                android:text=" 举报"
+                android:textColor="@color/explore_chartColor"
+                android:textSize="@dimen/text_font_12" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginLeft="73dip"
+        android:layout_marginTop="10dip"
+        android:paddingBottom="10dip"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ImageView
+                style="@style/ww"
+                android:layout_marginTop="5dip"
+                android:src="@drawable/explore_chart" />
+
+            <TextView
+                android:id="@+id/tv_explore_chart"
+                style="@style/ww"
+                android:layout_marginLeft="3dip"
+                android:text="(0)"
+                android:textColor="@color/explore_chartColor"
+                android:textSize="@dimen/text_font_12" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_explore_zan"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/explore_zan"
+            android:drawablePadding="3dip"
+            android:text="(100)"
+            android:textColor="@color/explore_chartColor"
+            android:textSize="@dimen/text_font_12" />
+
+        <TextView
+            android:id="@+id/tv_explore_count"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/explore_count"
+            android:drawablePadding="3dip"
+            android:text="(23)"
+            android:textColor="@color/explore_chartColor"
+            android:textSize="@dimen/text_font_12" />
+    </LinearLayout> -->
+
+</LinearLayout>

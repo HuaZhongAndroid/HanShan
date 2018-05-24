@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="20dip"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/et_content"
+            style="@style/fw"
+            android:layout_width="fill_parent"
+            android:layout_height="140dip"
+            android:background="@drawable/fk_bg"
+            android:gravity="left"
+            android:hint="请输入反馈内容（字数不超过100个字）"
+            android:maxLength="100"
+            android:padding="10dip"
+            android:textColor="@color/fm_mine_nickname"
+            android:textColorHint="#bfbfbf"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_font_15" />
+
+        <TextView
+            android:id="@+id/tv_prompt"
+            style="@style/ww"
+            android:layout_gravity="right"
+            android:padding="10dip"
+            android:text="0/100"
+            android:textColor="@color/txt_teacher_color"
+            android:textSize="@dimen/text_font_13" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="15dip"
+        android:background="@drawable/zhye_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dip" >
+
+        <ImageView
+            style="@style/ww"
+            android:src="@drawable/fk_dh" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/ff"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="请输入你的联系方式"
+            android:inputType="phone"
+            android:paddingLeft="10dip"
+            android:text=""
+            android:textColor="@color/text_black"
+            android:textColorHint="#bfbfbf"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_font_15" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_save"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="40dip"
+        android:background="@drawable/cz_btn"
+        android:gravity="center"
+        android:text="保存"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_16" />
+
+</LinearLayout>

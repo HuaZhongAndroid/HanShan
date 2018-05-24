@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#fff"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+        <ImageView android:id="@+id/img_a"
+            android:src="@drawable/ic_launchers"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView android:id="@+id/tv_name"
+            android:text="暑期大露营 第一期"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_time"
+            android:text="2017.05.02-06.23"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:textSize="15sp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_renshu"
+            android:text="累计20人报名"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            android:background="@drawable/luying_banyuan"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView android:id="@+id/tv_age"
+            android:text="3-5岁"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            android:gravity="center"
+            android:background="@drawable/label_category"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_price"
+            android:text="￥190"
+            android:textColor="#A59945"
+            android:textSize="18sp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

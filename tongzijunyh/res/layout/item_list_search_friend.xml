@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingBottom="10dip"
+    android:paddingLeft="6dip"
+    android:paddingRight="15dip"
+    android:paddingTop="10dip" >
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <com.bm.view.CircleImageView
+            android:id="@+id/img_head"
+            android:layout_width="65dip"
+            android:layout_height="65dip"
+            android:layout_gravity="center"
+            app:poly_border="true"
+            app:poly_border_width="2dp"
+            app:poly_corner_radius="15"
+            app:poly_rotation_angle="90"
+            app:poly_vertices="6" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/ww"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:text="王小明"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_16" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_add"
+        style="@style/ww"
+        android:layout_width="85dip"
+        android:layout_height="35dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dip"
+        android:background="@drawable/kc_pj"
+        android:gravity="center"
+        android:text="加好友"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_16" />
+
+</LinearLayout>

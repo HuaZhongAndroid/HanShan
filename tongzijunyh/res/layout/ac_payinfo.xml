@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.3dip"
+        android:background="@color/line_color" />
+
+    <ScrollView android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            style="@style/fwh"
+            android:background="@color/white"
+            android:padding="8dip" >
+
+            <com.lib.widget.RoundImageViewFive
+                android:id="@+id/img_pic"
+                android:layout_width="90dip"
+                android:layout_height="90dip"
+                android:scaleType="centerCrop" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dip"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="4dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_course_name"
+                    style="@style/ww"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="[晋级课程] 滚筒+鸟巢+西藏之课程"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_15" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        style="@style/ww"
+                        android:layout_marginTop="1dip"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text="上海龙之梦店"
+                        android:textColor="@color/course_textAddress"
+                        android:textSize="@dimen/text_font_13" />
+
+                    <TextView
+                        android:id="@+id/tv_course_money"
+                        style="@style/ww"
+                        android:text="￥99"
+                        android:textColor="@color/app_dominantHue"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        style="@style/ww"
+                        android:text="2015-12-21 10:30"
+                        android:textColor="@color/course_textAddress"
+                        android:textSize="@dimen/text_font_14" />
+
+                    <TextView
+                        android:id="@+id/tv_mycourse_data"
+                        style="@style/ww"
+                        android:text="-11:30"
+                        android:textColor="@color/course_textAddress"
+                        android:textSize="@dimen/text_font_14" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.3dip"
+            android:layout_marginTop="10dp"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="15dp" >
+
+            <TextView
+                android:id="@+id/tv_youhuiquanname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="优惠券"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_youhuijin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="6dp"
+                android:gravity="right"
+                android:text="-￥0"
+                android:textColor="#a59945"
+                android:textSize="@dimen/text_font_13" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.3dip"
+            android:background="@color/line_color" />
+
+		<LinearLayout
+		    android:id="@+id/ll_paytype"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginBottom="5dp"
+		    android:orientation="vertical" >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dip"
+            android:gravity="center_vertical"
+            android:paddingLeft="8dip"
+            android:text="支付方式"
+            android:textColor="@color/txt_color"
+            android:textSize="@dimen/text_font_15" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.3dip"
+            android:background="@color/line_color" />
+
+        <LinearLayout
+            style="@style/fwv"
+            android:background="@color/white"
+            android:paddingLeft="15dip" >
+
+            <LinearLayout
+                android:id="@+id/ll_alipay"
+                style="@style/fwh"
+                android:gravity="center_vertical"
+                android:paddingBottom="13dip"
+                android:paddingTop="13dip" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/zhifubao"
+                    android:drawablePadding="12dip"
+                    android:gravity="center_vertical"
+                    android:text="支付宝"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_15" />
+
+                <ImageView
+                    android:id="@+id/img_alipay"
+                    style="@style/ww"
+                    android:padding="10dip"
+                    android:src="@drawable/btn_pay_selector" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:id="@+id/ll_wexin"
+                style="@style/fwh"
+                android:gravity="center_vertical"
+                android:paddingBottom="13dip"
+                android:paddingTop="13dip" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/weixin"
+                    android:drawablePadding="12dip"
+                    android:gravity="center_vertical"
+                    android:text="微信"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_15" />
+
+                <ImageView
+                    android:id="@+id/img_wexin"
+                    style="@style/ww"
+                    android:padding="10dip"
+                    android:src="@drawable/btn_pay_selector" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_unio"
+                style="@style/fwh"
+                android:gravity="center_vertical"
+                android:paddingBottom="13dip"
+                android:paddingTop="13dip" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/yinlian"
+                    android:drawablePadding="12dip"
+                    android:gravity="center_vertical"
+                    android:text="网银"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_15" />
+
+                <ImageView
+                    android:id="@+id/img_unio"
+                    style="@style/ww"
+                    android:padding="10dip"
+                    android:src="@drawable/btn_pay_selector" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:visibility="gone"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:id="@+id/ll_balance"
+                style="@style/fwh"
+                android:gravity="center_vertical"
+                android:paddingBottom="13dip"
+                android:paddingTop="13dip" >
+
+                <TextView android:id="@+id/tv_yuename"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/zhanghuyue"
+                    android:drawablePadding="22dip"
+                    android:gravity="center_vertical"
+                    android:text="账户余额"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_15" />
+
+                <TextView
+                    android:id="@+id/tv_balance"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="余额  ￥500.00"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_15" />
+
+                <ImageView
+                    android:id="@+id/img_balance"
+                    style="@style/ww"
+                    android:padding="10dip"
+                    android:src="@drawable/btn_pay_selector" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/line_color" />
+        </LinearLayout>
+
+        
+        </LinearLayout>
+
+		<TextView
+		    android:id="@+id/tv_tip"
+		    android:layout_width="wrap_content"
+		    android:layout_height="35dp"
+		    android:gravity="center_vertical"
+		    android:paddingLeft="15dp"
+		    android:text="暑期露营、周末户外课程仅支持本金和代金券消费"
+		    android:textColor="@color/course_textAddress"
+		    android:textSize="13sp" />
+
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="5dp"
+		    android:background="@color/white"
+		    android:padding="15dp" >
+
+		    <TextView
+		        android:id="@+id/TextView02"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="实付款"
+		        android:textColor="@color/txt_teacher_name"
+		        android:textSize="@dimen/text_font_15" />
+
+		    <TextView
+		        android:id="@+id/tv_shifukuan"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginRight="10dp"
+		        android:gravity="right"
+		        android:text="￥50"
+		        android:textColor="@color/app_dominantHue"
+		        android:textSize="@dimen/text_font_15" />
+
+		</LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_next"
+        android:layout_width="fill_parent"
+        android:layout_height="47dip"
+        android:layout_gravity="center"
+        android:layout_marginBottom="3dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="@drawable/btn_login"
+        android:gravity="center"
+        android:text="立即支付"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_16" />
+
+</LinearLayout>

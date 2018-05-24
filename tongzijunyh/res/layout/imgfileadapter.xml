@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#EFEFEF"
+    android:padding="2dp" >
+	
+    <ImageView
+        android:id="@+id/filephoto_imgview"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:background="#999999"
+        android:scaleType="centerCrop"
+        android:src="@drawable/imgbg" 
+        android:layout_marginLeft="10dp"
+        />
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/filephoto_imgview"
+        android:layout_toLeftOf="@+id/v_back2"
+        android:gravity="left|center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+	        android:id="@+id/filename_textview"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="文件名称"
+	        android:textColor="@android:color/black"
+	        android:textAppearance="?android:attr/textAppearanceMedium" 
+        />
+        <TextView
+	        android:id="@+id/filecount_textview"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="几张"
+	        android:textSize="16dp"
+	        android:textColor="#8B7D7B"
+        />
+        
+    </LinearLayout>
+
+   <ImageView android:id="@+id/v_back2"
+       android:layout_alignParentRight="true"
+       android:src="@drawable/mean_convert_sj"
+       android:layout_centerVertical="true"
+       android:layout_margin="10dp"
+       android:layout_width="20dp"
+       android:layout_height="20dp" />
+   <View 
+       android:background="#999999"
+       android:layout_below="@+id/filephoto_imgview"
+       android:layout_width="match_parent"
+       android:layout_marginTop="1dp"
+       android:layout_height="1px"/>
+
+</RelativeLayout>

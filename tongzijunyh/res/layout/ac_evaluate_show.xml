@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/tv_goodsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
+        android:text="【体验课程】滚筒=鸟巢"
+        android:textColor="@color/txt_teacher_name"
+        android:textSize="15sp" />
+
+    <View
+        android:background="@color/line_color"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="教练点评"
+        android:textColor="@color/txt_teacher_name"
+        android:textSize="15sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/juxingbg" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/TextView02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="考核结果"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_dianping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textColor="@color/txt_teacher_names"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_tongguo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="-10dp"
+            android:src="@drawable/tongguo" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="我的评价"
+        android:textColor="@color/txt_teacher_name"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/juxingbg"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="评价教练"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="15sp" />
+            <!-- -->
+            <com.bm.view.RatingBar
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/teacher_ratingbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="22dip"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="16dip"
+                        app:clickable="false"
+                        app:starDst="@drawable/pj_staroff"
+                        app:starNumber="5"
+                        app:starSrc="@drawable/pj_staron"
+                        app:step="1" /> 
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_pingjia_t"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/txt_teacher_names"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-1dp"
+        android:padding="15dp"
+        android:background="@drawable/juxingbg"
+        android:orientation="vertical" >
+	<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="评价门店"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="15sp" />
+            <!-- -->
+            <com.bm.view.RatingBar
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/room_ratingbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="22dip"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="16dip"
+                        app:clickable="false"
+                        app:starDst="@drawable/pj_staroff"
+                        app:starNumber="5"
+                        app:starSrc="@drawable/pj_staron"
+                        app:step="1" /> 
+        </LinearLayout>
+
+        <TextView android:id="@+id/tv_pingjia_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textColor="@color/txt_teacher_names"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:background="#EFEFEF"
+     >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:background="#f6f6f8" 
+        >
+
+        <LinearLayout android:id="@+id/button1"
+            android:onClick="tobreak"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="2dp"
+                android:text="选择相册"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+        
+        <TextView
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+            android:text="取消"
+            android:onClick="cancelSelect"
+            android:clickable="true"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+        
+        <TextView android:id="@+id/tv_title"
+            android:text="相册名称"
+            android:textColor="@color/txt_teacher_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/gridView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/relativeLayout1"
+        android:listSelector="#660D92DD"
+        android:numColumns="3" >
+    </GridView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.8"
+        android:background="@android:color/white" >
+
+        <HorizontalScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/button3"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/selected_image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="sendfiles"
+            android:padding="2dp"
+            android:text="完成(0)"
+            android:textColor="#1C86EE"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

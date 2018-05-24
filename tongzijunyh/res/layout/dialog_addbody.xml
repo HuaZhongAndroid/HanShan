@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8000"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="268dp"
+        android:layout_height="374dp"
+        android:layout_gravity="center" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/addbody_back"
+                android:clipChildren="false"
+                android:gravity="bottom"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:gravity="bottom"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:lineSpacingExtra="2dp"
+                        android:text="添加孩子"
+                        android:textColor="#433302"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_money_des"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:lineSpacingExtra="2dp"
+                        android:text="完善孩子信息，快速记录成长\n和报名体验活动。"
+                        android:textColor="#857F71"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="17dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            android:id="@+id/bt_tianjia"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="25dp"
+                            android:layout_marginTop="29dp"
+                            android:textColor="#ffffffff"
+                            android:textSize="15dp"
+                            android:text="去添加"
+                            android:gravity="center"
+                            android:background="@drawable/addbody_bt" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitStart"
+            android:src="@drawable/addbody" />
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="29dp"
+            android:paddingRight="12dp"
+            android:paddingLeft="20dp"
+            android:paddingBottom="20dp"
+            android:layout_gravity="right"
+            android:scaleType="fitStart"
+            android:src="@drawable/addbody_close" />
+
+    </FrameLayout>
+
+</LinearLayout>

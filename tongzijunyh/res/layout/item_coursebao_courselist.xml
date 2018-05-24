@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#fff"
+    android:padding="8dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/tv_startTime"
+                    android:text="09:00"
+                    android:textColor="#333"
+                    android:textSize="21sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/tv_endTime"
+                    android:text="10:30结束"
+                    android:textColor="#999"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/tv_name"
+                    android:text="丛林大冒险"
+                    android:textColor="#333"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/tv_coachName"
+                    android:text="教练：某某某"
+                    android:textColor="#999"
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/tv_price"
+                    android:visibility="gone"
+                    android:text="￥288"
+                    android:textColor="#A59945"
+                    android:textSize="22sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="right"
+                android:layout_marginLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/btn_yuyue"
+                    android:text="预约"
+                    android:textColor="#A59945"
+                    android:textSize="16sp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="5dp"
+                    android:background="@drawable/bg_yuanjiao_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView android:id="@+id/tv_renshu"
+                    android:text="累计报名：9人"
+                    android:textColor="#999"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+        <View android:id="@+id/mengceng"
+            android:background="#99ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <View
+        android:background="#E6E6E6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+</LinearLayout>

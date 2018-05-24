@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="140dp"
+    android:paddingRight="10dp"
+    android:layout_height="wrap_content">
+
+    <com.lib.widget.RoundImageViewsix
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:background="#fff"
+        android:orientation="vertical"
+        android:layout_marginTop="-6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView android:id="@+id/tv_name"
+        android:text="户外活动冒险"
+        android:textColor="#333"
+        android:textSize="14sp"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView android:id="@+id/tv_des"
+        android:text="内含28节课程"
+        android:textColor="#999"
+        android:textSize="12sp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/tv_price"
+            android:text="￥1680"
+            android:textColor="#A59945"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/btn_buy"
+            android:text="购买"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            android:background="@drawable/bg_yuanjiao_btn2"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

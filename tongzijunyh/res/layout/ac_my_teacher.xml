@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/account_bg_Color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="70dip"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et_coachName"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_weight="1"
+            android:background="@drawable/search_box"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="5dip"
+            android:hint="请输入教练姓名关键字"
+            android:paddingLeft="10dip"
+            android:textColor="@color/txt_teacher_name"
+            android:textColorHint="@color/teacher_selectColor"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_font_16" />
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dip"
+            android:background="@drawable/kc_pj"
+            android:gravity="center"
+            android:paddingLeft="22dip"
+            android:paddingRight="22dip"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_18" />
+    </LinearLayout>
+    
+    
+    
+    
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.01dip"
+            android:background="@color/line_shallow_gray" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dip"
+            android:layout_marginLeft="12dip"
+            android:layout_marginTop="16dip"
+            android:text="教练信息"
+            android:textColor="@color/txt_name"
+            android:textSize="@dimen/text_font_20" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.01dip"
+            android:layout_marginLeft="12dip"
+            android:background="@color/line_shallow_gray" />
+    </LinearLayout>
+
+   <!--  <com.lib.widget.refush.SwipyRefreshLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/swipyrefreshlayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:direction="both" > -->
+
+        <ScrollView
+            style="@style/fw"
+            android:layout_marginTop="10dip"
+            android:scrollbars="none" >
+
+            <FrameLayout
+                android:id="@+id/fm_content"
+                style="@style/fw" >
+            </FrameLayout>
+        </ScrollView>
+   <!--  </com.lib.widget.refush.SwipyRefreshLayout> -->
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:divider="@null"
+            android:fastScrollEnabled="false"
+            android:layout_height="wrap_content" >
+        </ListView>
+
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:background="#fff"
+    android:padding="10dp"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#999"
+            android:textSize="16sp"
+            android:text="余额不足，请继续支付或"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/btn_chongzhi"
+            android:textColor="#A59945"
+            android:textSize="16sp"
+            android:text="前往充值"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/icon_right"
+            android:layout_marginLeft="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_wexin"
+        style="@style/fwh"
+        android:gravity="center_vertical"
+        android:paddingBottom="13dip"
+        android:paddingTop="13dip" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/weixin2"
+            android:drawablePadding="12dip"
+            android:gravity="center_vertical"
+            android:text="微信"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_15" />
+
+        <ImageView
+            android:id="@+id/img_wexin"
+            style="@style/ww"
+            android:padding="10dip"
+            android:src="@drawable/btn_pay_selector" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_alipay"
+        style="@style/fwh"
+        android:gravity="center_vertical"
+        android:paddingBottom="13dip"
+        android:paddingTop="13dip" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/zhifubao2"
+            android:drawablePadding="12dip"
+            android:gravity="center_vertical"
+            android:text="支付宝"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_15" />
+
+        <ImageView
+            android:id="@+id/img_alipay"
+            style="@style/ww"
+            android:padding="10dip"
+            android:src="@drawable/btn_pay_selector" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="需付款"
+            android:textColor="#333"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_shifukuan_b"
+            android:text="￥99.00"
+            android:textColor="#A59945"
+            android:textSize="16sp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/btn_jixuzhifu"
+        android:text="继续支付"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="#A59945"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

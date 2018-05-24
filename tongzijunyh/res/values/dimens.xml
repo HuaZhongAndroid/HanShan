@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_font_30">30sp</dimen>
+    <dimen name="text_font_24">24sp</dimen>
+    <dimen name="text_font_23">23sp</dimen>
+    <dimen name="text_font_22">22sp</dimen>
+    <dimen name="text_font_20">20sp</dimen>
+    <dimen name="text_font_18">18sp</dimen>
+    <dimen name="text_font_17">17sp</dimen>
+    <dimen name="text_font_16">16sp</dimen>
+    <dimen name="text_font_15">15sp</dimen>
+    <dimen name="text_font_14">14sp</dimen>
+    <dimen name="text_font_13">13sp</dimen>
+    <dimen name="text_font_12">12sp</dimen>
+    <dimen name="text_font_11">11sp</dimen>
+    <dimen name="text_font_10">10sp</dimen>
+    <dimen name="crcle_imageview_size_small">60dp</dimen>
+    <!-- slidingmenu配置 -->
+    <dimen name="slidingmenu_offset">100dp</dimen>
+    <dimen name="shadow_width">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    
+     <!-- 网银支付 -->
+     
+     
+      <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+<dimen name="button_height">45.0dip</dimen>
+    <dimen name="bottom_tab_font_size">9.0dip</dimen>
+    <dimen name="bottom_tab_padding_up">5.0dip</dimen>
+    <dimen name="bottom_tab_padding_drawable">2.0dip</dimen>
+    <dimen name="toolbar_height">45.0dip</dimen>
+    <dimen name="padding_zero">0.0dip</dimen>
+    <dimen name="padding_one">1.0dip</dimen>
+    <dimen name="padding_two">2.0dip</dimen>
+    <dimen name="padding_three">3.0dip</dimen>
+    <dimen name="padding_four">4.0dip</dimen>
+    <dimen name="padding_five">5.0dip</dimen>
+    <dimen name="padding_six">6.0dip</dimen>
+    <dimen name="padding_seven">7.0dip</dimen>
+    <dimen name="padding_eight">8.0dip</dimen>
+    <dimen name="padding_nine">9.0dip</dimen>
+    <dimen name="padding_ten">10.0dip</dimen>
+    <dimen name="padding_twelve">12.0dip</dimen>
+    <dimen name="padding_fourteen">14.0dip</dimen>
+    <dimen name="padding_sixteen">16.0dip</dimen>
+    <dimen name="padding_eighteen">18.0dip</dimen>
+    <dimen name="padding_twenty">20.0dip</dimen>
+    <dimen name="padding_twenty_six">26.0dip</dimen>
+    <dimen name="padding_thirty">30.0dip</dimen>
+    <dimen name="padding_thirty_six">36.0dip</dimen>
+    <dimen name="padding_forty">40.0dip</dimen>
+    <dimen name="padding_fifty">50.0dip</dimen>
+    
+	<dimen name="margin_ten">10.0dip</dimen>
+	<dimen name="margin_twenty">20.0dip</dimen>
+	<dimen name="margin_thirty">30.0dip</dimen>
+	<dimen name="margin_sixty">60.0dip</dimen>
+	<dimen name="margin_seventy">70.0dip</dimen>
+	<dimen name="margin_eighty">80.0dip</dimen>
+	<dimen name="margin_ninety">90.0dip</dimen>
+	<dimen name="margin_one_hundred_seven">107.0dip</dimen>
+	<dimen name="margin_one_twenty">120.0dip</dimen>
+
+    <dimen name="textsize_thirty">30.0sp</dimen>
+    <dimen name="textsize_twenty_five">25.0sp</dimen>
+    <dimen name="textsize_twenty">20.0sp</dimen>
+    <dimen name="textsize_twenty_two">22.0sp</dimen>
+    <dimen name="textsize_eighteen">18.0sp</dimen>
+    <dimen name="textsize_seventeen">17.0sp</dimen>
+    <dimen name="textsize_sixteen">16.0sp</dimen>
+    <dimen name="textsize_fifteen">15.0sp</dimen>
+    <dimen name="textsize_fourteen">14.0sp</dimen>
+    <dimen name="textsize_twelve">12.0sp</dimen>
+    <dimen name="textsize_ten">10.0sp</dimen>
+    <dimen name="textsize_eight">8.0sp</dimen>
+    <dimen name="list_height">59.0dip</dimen>
+    <dimen name="records_row_height">40.0dip</dimen>
+</resources>

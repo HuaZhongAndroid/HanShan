@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal_bgcolor"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_date"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <com.lib.widget.RefreshViewPD
+            android:id="@+id/refresh_view"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1" >
+
+            <ListView
+                android:id="@+id/lv_listCollection"
+                style="@style/ff"
+                android:divider="@color/bg_color"
+                android:dividerHeight="10dip"
+                android:listSelector="@color/transparent"
+                android:scrollbars="none"
+                android:scrollingCache="false" />
+        </com.lib.widget.RefreshViewPD>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dip"
+            android:layout_marginTop="5dip"
+            android:background="@color/line_color" />
+
+        <TextView
+            android:id="@+id/tv_clear"
+            style="@style/fw"
+            android:background="@color/app_dominantHue"
+            android:gravity="center"
+            android:padding="15dip"
+            android:text="清除失效课程"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_15" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_noData"
+        style="@style/ww"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dip"
+        android:src="@drawable/none"
+        android:visibility="gone" />
+
+</LinearLayout>

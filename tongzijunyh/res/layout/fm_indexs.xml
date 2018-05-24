@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <FrameLayout style="@style/fw" >
+
+        <LinearLayout style="@style/fwv" >
+
+
+            <LinearLayout
+                style="@style/fw"
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:drawablePadding="5dip"
+                    android:drawableRight="@drawable/icon_down"
+                    android:ellipsize="end"
+                    android:maxLength="4"
+                    android:paddingBottom="5dip"
+                    android:paddingLeft="8dip"
+                    android:paddingTop="5dip"
+                    android:singleLine="true"
+                    android:text="上海"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_14" />
+
+                <LinearLayout
+                    android:id="@+id/ll_search"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/search_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dip" >
+
+                    <ImageView
+                        style="@style/ww"
+                        android:src="@drawable/icon_gray_search" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dip"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:hint="请输入课程关键字"
+                        android:paddingLeft="5dip"
+                        android:textColorHint="@color/txt_color_a"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_12" />
+                </LinearLayout>
+
+                <FrameLayout
+                    style="@style/ww"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/iv_yj"
+                        style="@style/ww"
+                        android:layout_marginLeft="6dip"
+                        android:padding="10dip"
+                        android:src="@drawable/mail" />
+
+                    <FrameLayout
+                        style="@style/ww"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="7dip"
+                        android:layout_marginTop="7dip" >
+
+                        <ImageView
+                            android:id="@+id/img_read"
+                            android:layout_width="6dip"
+                            android:layout_height="6dip"
+                            android:src="@drawable/dot_red"
+                            android:visibility="gone" />
+                    </FrameLayout>
+                </FrameLayout>
+                
+                <com.bm.view.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/iv_sixview_head"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:poly_border="true"
+                    app:poly_border_width="2dp"
+                    app:poly_corner_radius="10"
+                    app:poly_rotation_angle="90"
+                    app:poly_vertices="6" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@color/line_color" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <com.lib.widget.refush.NsRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/swipyrefreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dip" >
+
+        <ScrollView
+            android:id="@+id/sv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                style="@style/fw"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <!--
+                <LinearLayout
+                    android:id="@+id/ll_default"
+                    style="@style/fwv"
+                    android:background="@color/bg_color" >
+
+                    <ImageView
+                        android:id="@+id/img_default"
+                        android:layout_width="fill_parent"
+                        android:layout_height="170dip"
+                        android:src="@drawable/adv_default" />
+                </LinearLayout>
+                -->
+
+                <ImageView
+                    android:id="@+id/img_default"
+                    android:layout_width="fill_parent"
+                    android:layout_height="170dip"
+                    android:background="@color/bg_color"
+                    android:src="@drawable/adv_default" />
+
+                <!-- 广告图 -->
+
+                <FrameLayout
+                    android:id="@+id/fm_image"
+                    android:layout_width="fill_parent"
+                    android:layout_height="170dip" >
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/vp_ads"
+                        style="@style/ff"
+                        android:background="#fff"
+                        android:flipInterval="6"
+                        android:focusable="true" />
+
+                    <LinearLayout
+                        style="@style/fwv"
+                        android:layout_gravity="bottom" >
+
+                        <!-- 点点 -->
+
+                        <LinearLayout
+                            android:id="@+id/ll_vp_indicator"
+                            style="@style/fwh"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal" >
+                        </LinearLayout>
+                    </LinearLayout>
+                </FrameLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.1dip"
+                    android:background="@color/white_milk" />
+                <!-- first  line -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dip"
+                    android:background="@color/white"
+                    android:orientation="horizontal" >
+
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/iv_six_a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/action1" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="城市营地"
+                            android:textColor="@color/account_textColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/iv_six_b"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/action2" />
+
+                        <TextView
+                            android:id="@+id/TextView01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="周末户外"
+                            android:textColor="@color/account_textColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/iv_six_c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/action3" />
+
+                        <TextView
+                            android:id="@+id/TextView02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="暑期露营"
+                            android:textColor="@color/account_textColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <ImageView
+                            android:id="@+id/iv_six_d"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/action4" />
+
+                        <TextView
+                            android:id="@+id/TextView03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="户外装备"
+                            android:textColor="@color/account_textColor" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.1dip"
+                    android:background="@color/white_milk" />
+
+                <FrameLayout
+                    android:id="@+id/fl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dip"
+                    android:orientation="horizontal" >
+
+                    <com.lib.widget.HorizontalListView
+                        android:id="@+id/h_list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="128dip"
+                        android:paddingLeft="8dip"
+                        android:paddingRight="8dip"
+                        android:spacing="10dp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginRight="8dip"
+                    android:layout_marginTop="10dip"
+                    android:orientation="horizontal" >
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.1dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@color/line_shallow_gray" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="9dip"
+                        android:layout_marginRight="9dip"
+                        android:text="推荐课程"
+                        android:textColor="@color/line_gray"
+                        android:textSize="@dimen/text_font_14" />
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="0.1dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@color/line_shallow_gray" />
+                </LinearLayout>
+
+                <com.lib.widget.FuListView
+                    android:id="@+id/lv_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="8dip"
+                    android:layout_marginRight="8dip"
+                    android:layout_marginTop="10dip"
+                    android:divider="@color/transparent"
+                    android:dividerHeight="10dip"
+                    android:listSelector="@color/transparent"
+                    android:scrollbars="none"
+                    android:scrollingCache="false" />
+            </LinearLayout>
+        </ScrollView>
+    </com.lib.widget.refush.NsRefreshLayout>
+
+    <TextView
+        android:id="@+id/tv_poptip"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/guide_bg2"
+        android:gravity="center"
+        android:text="点击头像切换其他孩子"
+        android:textColor="@color/white"
+        android:textSize="19sp" />
+
+</FrameLayout>

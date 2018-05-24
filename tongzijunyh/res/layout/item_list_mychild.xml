@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="10dp" >
+    
+    <com.bm.view.CircleImageView
+        android:id="@+id/iv_sixview_head"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/default_avatar"
+        app:border_color="#00000000"
+        app:border_width="1dp" />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="bottom" >
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="小青"
+                android:textColor="#555"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2008-01-02"
+                android:textColor="#c555" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="女"
+                android:textColor="#c555" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="10岁"
+                android:textColor="#c555" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/line_color" />
+        
+    </LinearLayout>
+
+</LinearLayout>

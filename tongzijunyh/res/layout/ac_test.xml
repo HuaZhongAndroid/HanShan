@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@color/bg_color" >
+
+    <Button
+        android:id="@+id/btnone"
+        style="@style/fw"
+        android:text="测试1" />
+
+    <Button
+        android:id="@+id/btntwo"
+        style="@style/fw"
+        android:text="测试2" />
+ <Button
+        android:id="@+id/btn_map"
+        style="@style/fw"
+        android:text="地图" />
+ <Button
+        android:id="@+id/btn_Personal"
+        style="@style/fw"
+        android:text="个人资料" />
+ 
+ <Button
+        android:id="@+id/btn_share"
+        style="@style/fw"
+        android:text="分享" />
+ 
+ <Button
+        android:id="@+id/btn_friend"
+        style="@style/fw"
+        android:text="好友" />
+ 
+ <Button
+        android:id="@+id/btn_group"
+        style="@style/fw"
+        android:text="群信息" />
+</LinearLayout>

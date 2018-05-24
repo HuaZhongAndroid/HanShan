@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.bm.tzj.activity.wxapi&apos; to &apos;com.richer.tzj.wxapi&apos;&#x0D;&#x0A;- Original project: &apos;tongzijunyh&apos;&#x0D;&#x0A;- Original element: &apos;tongzijunyh/src/com.bm.tzj.activity.wxapi&apos;&#x0D;&#x0A;- Renamed element: &apos;tongzijunyh/src/com.richer.tzj.wxapi&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.bm.tzj.activity.wxapi&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.bm.tzj.activity.wxapi" name="com.richer.tzj.wxapi" qualified="false" references="true" stamp="1482153898874" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;com.bm.tzj.activity.StartAc.loadDataContent()&apos; to &apos;goMain&apos;&#x0D;&#x0A;- Original project: &apos;tongzijunyh&apos;&#x0D;&#x0A;- Original element: &apos;com.bm.tzj.activity.StartAc.loadDataContent()&apos;&#x0D;&#x0A;- Renamed element: &apos;com.bm.tzj.activity.StartAc.goMain()&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;loadDataContent&apos;" flags="589826" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;com.bm.tzj.activity{StartAc.java[StartAc~loadDataContent" name="goMain" references="true" stamp="1497019274578" version="1.0"/>
+</session>

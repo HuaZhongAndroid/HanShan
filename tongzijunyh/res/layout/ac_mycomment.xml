@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal_bgcolor"
+    android:orientation="vertical"
+    android:padding="10dip" >
+
+    <TextView
+        android:id="@+id/tv_titleName"
+        style="@style/fw"
+        android:paddingBottom="10dip"
+        android:paddingLeft="5dip"
+        android:paddingTop="5dip"
+        android:text="[体验课程] 滚筒+鸟巢+西藏之桥"
+        android:textColor="@color/personal_textNameColor"
+        android:textSize="@dimen/text_font_15" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_shallow_gray" />
+
+    <LinearLayout style="@style/fwh" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dip"
+            android:layout_marginTop="18dip"
+            android:layout_weight="1"
+            android:text="对教练的评论"
+            android:textColor="@color/personal_textNameColor"
+            android:textSize="@dimen/text_font_14" />
+
+        <RatingBar
+            android:id="@+id/rb_scoreCoach"
+            style="@style/myCommentRatingBar"
+            android:layout_width="115dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dip"
+            android:numStars="5"
+            android:paddingLeft="8dip"
+            android:rating="5"
+            android:stepSize="1" >
+        </RatingBar>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dip"
+        android:background="@drawable/shurukuang1"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et_commentCoach"
+            style="@style/ff"
+            android:background="@null"
+            android:gravity="top|left"
+            android:maxLength="50"
+            android:paddingLeft="6dip"
+            android:paddingTop="6dip"
+            android:textColor="@color/txt_title_detail"
+            android:textColorHint="#cbcaca"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_font_14" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_gravity="center" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dip"
+            android:layout_marginTop="18dip"
+            android:layout_weight="1"
+            android:text="对场馆的评论"
+            android:textColor="@color/personal_textNameColor"
+            android:textSize="@dimen/text_font_14" />
+
+        <RatingBar
+            android:id="@+id/rb_scoreVenue"
+            style="@style/myCommentRatingBar"
+            android:layout_width="115dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:paddingLeft="8dip"
+            android:rating="5"
+            android:stepSize="1" >
+        </RatingBar>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dip"
+        android:background="@drawable/shurukuang1"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/et_commentVenue"
+            style="@style/ff"
+            android:background="@null"
+            android:gravity="top|left"
+            android:maxLength="50"
+            android:paddingLeft="6dip"
+            android:paddingTop="6dip"
+            android:textColor="@color/txt_title_detail"
+            android:textColorHint="#cbcaca"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_font_14" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_submit"
+        style="@style/fw"
+        android:layout_marginTop="30dip"
+        android:background="@color/app_dominantHue"
+        android:gravity="center"
+        android:padding="12dip"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_14" />
+
+</LinearLayout>

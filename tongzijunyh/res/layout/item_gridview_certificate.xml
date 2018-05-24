@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    
+    android:orientation="vertical" >
+
+    <com.lib.widget.RoundImageViewFive
+        android:id="@+id/img_head"
+        android:scaleType="centerCrop"
+        android:layout_width="160dip"
+        android:layout_height="80dip"/>
+
+    <TextView
+        android:singleLine="true"
+        android:id="@+id/tv_name"
+        style="@style/ww"
+        android:layout_marginTop="9dip"
+        android:text="攀岩证书"
+        android:textColor="@color/txt_name"
+        android:textSize="@dimen/text_font_14" />
+
+</LinearLayout>

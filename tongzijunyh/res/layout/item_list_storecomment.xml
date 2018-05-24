@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="5dp"
+    android:layout_height="wrap_content">
+
+    <com.bm.view.CircleImageView
+        android:id="@+id/img_head"
+        android:layout_width="55dip"
+        android:layout_height="55dip"
+        android:src="@drawable/default_avatar"
+        app:border_color="#00000000"
+        app:border_width="1dp" />
+
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/tv_nickname"
+            android:textColor="#333"
+            android:textSize="17sp"
+            android:text="小明爸比"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_content"
+            android:text="内容。。。。内容wenfewnfn分为非new放到你说我烦呢我看分为非"
+            android:textColor="#999"
+            android:textSize="16sp"
+            android:lineSpacingMultiplier="1.4"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_time"
+            android:text="2017.09.05 15:35"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+            android:background="#e6e6e6"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+    
+</LinearLayout>

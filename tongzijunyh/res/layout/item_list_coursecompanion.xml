@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:paddingBottom="13dip"
+    android:paddingTop="13dip" >
+
+    <com.bm.view.CircleImageView
+        android:id="@+id/iv_sixview_head"
+        android:layout_width="63dip"
+        android:layout_height="63dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dip"
+        app:poly_border="true"
+        app:poly_border_width="2dp"
+        app:poly_corner_radius="15"
+        app:poly_rotation_angle="90"
+        app:poly_vertices="6" />
+
+    <LinearLayout style="@style/fwh" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dip"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                style="@style/fwh"
+                android:layout_marginTop="9dip" >
+
+                <TextView
+                    android:id="@+id/tv_babyname"
+                    style="@style/ww"
+                    android:text="嘻嘻宝贝"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_16" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/fwh"
+                android:layout_marginTop="5dip" >
+
+                <TextView
+                    android:id="@+id/tv_age"
+                    style="@style/ww"
+                    android:text="女 | 4岁"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_15" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/ww"
+                    android:text="杨老师"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_16"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_sex"
+                    style="@style/ww"
+                    android:layout_marginLeft="15dip"
+                    android:text="女"
+                    android:textColor="@color/txt_color"
+                    android:textSize="@dimen/text_font_15"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/wwv"
+            android:layout_marginRight="8dip"
+            android:layout_marginTop="7dip"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/tv_number"
+                style="@style/ww"
+                android:text="勋章数(10)"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_14" />
+
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="70dip"
+                android:layout_height="25dip"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/kc_pj"
+                android:gravity="center"
+                android:text="查看"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_font_16" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

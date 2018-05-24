@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <declare-styleable name="BGAMoocStyleRefreshView">
+        <attr name="mv_ultimateColor" format="reference|color"/>
+        <attr name="mv_originalImg" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="TagFlowLayout">
+        <attr name="auto_select_effect" format="boolean"></attr>
+        <attr name="max_select" format="integer"></attr>
+        <attr name="gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+    <!-- 自定义的ratingBar -->
+    <declare-styleable name="RatingBar">
+
+        <!-- 选中的图片资源 -->
+        <attr name="starSrc" format="reference" />
+        <!-- 未选中的图片资源 -->
+        <attr name="starDst" format="reference" />
+        <!-- boolean值 -->
+        <attr name="clickable" format="boolean" />
+        <attr name="step" format="float" />
+        <attr name="space" format="float" />
+        <attr name="starNumber" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="PowerImageView">
+        <attr name="auto_play" format="boolean"></attr>
+    </declare-styleable>
+    
+     <declare-styleable name="SwipyRefreshLayout">
+        <attr name="direction">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="both" value="2" />
+        </attr>
+    </declare-styleable>
+    
+     
+     
+      <declare-styleable name="defineView">
+        <attr name="viewcolor" format="string"/>
+        <attr name="stringtext" format="string"/>
+    </declare-styleable>
+    
+      
+      <!-- Defines the custom XML attributes supported for a HorizontalListView -->
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
+     <declare-styleable name="DotView">
+        <attr name="dot_number" format="integer" />
+        <attr name="dot_radius" format="dimension" />
+        <attr name="dot_span" format="dimension" />
+        <attr name="dot_unselected_color" format="integer" />
+        <attr name="dot_selected_color" format="integer" />
+    </declare-styleable>
+    
+     
+     <declare-styleable name="CircleProgressBar">
+        <attr name="mlpb_inner_radius" format="dimension"/>
+        <attr name="mlpb_background_color" format="color"/>
+        <attr name="mlpb_progress_color" format="color"/>
+        <attr name="mlpb_progress_stoke_width" format="dimension"/>
+        <attr name="mlpb_show_arrow" format="boolean"/>
+        <attr name="mlpb_enable_circle_background" format="boolean"/>
+        <attr name="mlpb_arrow_width" format="dimension"/>
+        <attr name="mlpb_arrow_height" format="dimension"/>
+
+        <attr name="mlpb_progress" format="integer"/>
+        <attr name="mlpb_max" format="integer"/>
+
+
+        <attr name="mlpb_progress_text_size" format="dimension"/>
+        <attr name="mlpb_progress_text_color" format="color"/>
+
+        <!--<attr name="mlpb_progress_text_offset" format="dimension"/>-->
+
+        <attr name="mlpb_progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+        
+        
+    </declare-styleable>
+    
+     
+     <declare-styleable name="NsRefreshLayout">
+        <!--Loading视图背景颜色-->
+        <attr name="load_view_bg_color" format="color|reference"/>
+        <!--进度条颜色-->
+        <attr name="progress_bar_color" format="color|reference"/>
+        <!--进度条背景色-->
+        <attr name="progress_bg_color" format="color|reference"/>
+        <!--Loading视图中文字颜色-->
+        <attr name="load_text_color" format="color|reference"/>
+        <!--下拉刷新问题描述-->
+        <attr name="pull_refresh_text" format="string|reference"/>
+        <!--上拉加载文字描述-->
+        <attr name="pull_load_text" format="string|reference"/>
+        <!--是否自动触发加载更多-->
+        <attr name="auto_load_more" format="boolean"/>
+        <!--下拉刷新是否可用-->
+        <attr name="pull_refresh_enable" format="boolean"/>
+        <!--上拉加载是否可用-->
+        <attr name="pull_load_enable" format="boolean"/>
+    </declare-styleable>
+    
+     <declare-styleable name="CircleProgressBarRefush">
+        <attr name="inner_radius" format="dimension"/>
+        <attr name="background_color" format="color"/>
+        <attr name="progress_color" format="color"/>
+        <attr name="progress_stoke_width" format="dimension"/>
+        <attr name="show_arrow" format="boolean"/>
+        <attr name="enable_circle_background" format="boolean"/>
+        <attr name="arrow_width" format="dimension"/>
+        <attr name="arrow_height" format="dimension"/>
+
+        <attr name="progress" format="integer"/>
+        <attr name="max" format="integer"/>
+
+
+        <attr name="progress_text_size" format="dimension"/>
+        <attr name="progress_text_color" format="color"/>
+
+        <!--<attr name="progress_text_offset" format="dimension"/>-->
+
+        <attr name="progress_text_visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+
+
+    </declare-styleable>
+
+
+    <declare-styleable name="MyNumSeekbar">
+        <attr name="progress_unreached_color" format="color" />
+        <attr name="progress_reached_color" format="color" />
+        <attr name="progress_reached_bar_height" format="dimension" />
+        <attr name="progress_unreached_bar_height" format="dimension" />
+    </declare-styleable>
+</resources>

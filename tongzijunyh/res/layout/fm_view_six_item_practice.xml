@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <!-- yi -->
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip" >
+
+        <LinearLayout
+            android:id="@+id/ll_one"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dip" >
+
+            <FrameLayout
+                android:layout_width="128dip"
+                android:layout_height="128dip"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="0dip" >
+
+                <com.bm.view.CircleImageView
+                    android:id="@+id/iv_a"
+                    android:layout_width="128dip"
+                    android:layout_height="128dip"
+                    android:layout_gravity="center"
+                    app:poly_border="true"
+                    app:poly_border_width="5dp"
+                    app:poly_corner_radius="25"
+                    app:poly_rotation_angle="90"
+                    app:poly_vertices="6" />
+            </FrameLayout>
+        </LinearLayout>
+        
+         <LinearLayout
+            android:id="@+id/ll_one_default"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dip"
+            android:visibility="gone" >
+
+            <FrameLayout
+                android:id="@+id/fl_one"
+                android:layout_width="108dip"
+                android:layout_height="118dip"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="0dip" >
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_two"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dip" >
+
+            <FrameLayout
+                android:layout_width="128dip"
+                android:layout_height="128dip"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="0dip" >
+
+                <com.bm.view.CircleImageView
+                    android:id="@+id/iv_b"
+                    android:layout_width="128dip"
+                    android:layout_height="128dip"
+                    android:layout_gravity="center"
+                    app:poly_border="true"
+                    app:poly_border_width="5dp"
+                    app:poly_corner_radius="25"
+                    app:poly_rotation_angle="90"
+                    app:poly_vertices="6" />
+            </FrameLayout>
+        </LinearLayout>
+        
+         <LinearLayout
+            android:id="@+id/ll_two_default"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:padding="0dip"
+            android:visibility="gone" >
+
+            <FrameLayout
+                android:id="@+id/fl_two"
+                android:layout_width="104dip"
+                android:layout_height="118dip"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="0dip" >
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_three"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dip" >
+
+            <FrameLayout
+                android:layout_width="128dip"
+                android:layout_height="128dip"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="0dip" 
+                android:layout_marginRight="3dip"
+                >
+
+                <com.bm.view.CircleImageView
+                    android:id="@+id/iv_c"
+                    android:layout_width="128dip"
+                    android:layout_height="128dip"
+                    android:layout_gravity="center"
+                    app:poly_border="true"
+                    app:poly_border_width="5dp"
+                    app:poly_corner_radius="25"
+                    app:poly_rotation_angle="90"
+                    app:poly_vertices="6" />
+            </FrameLayout>
+        </LinearLayout>
+        
+        
+         <LinearLayout
+            android:id="@+id/ll_three_default"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.9"
+            android:padding="0dip"
+            android:visibility="gone" >
+
+            <FrameLayout
+                android:id="@+id/fl_three"
+                android:layout_width="104dip"
+                android:layout_height="118dip"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="0dip" >
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- er -->
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="100dip" >
+
+        <LinearLayout
+            android:id="@+id/ll_left"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" 
+            android:layout_gravity="right"
+            >
+
+            <ImageView
+                android:layout_marginTop="6dip"
+                android:layout_width="55dip"
+                android:layout_height="115dip"
+                android:background="@drawable/six_left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_four"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <FrameLayout
+                android:layout_width="128dip"
+                android:layout_height="128dip"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:padding="0dip" >
+
+                <com.bm.view.CircleImageView
+                    android:layout_marginRight="5dip"
+                    android:id="@+id/iv_d"
+                    android:layout_width="128dip"
+                    android:layout_height="128dip"
+                    android:layout_gravity="center"
+                    app:poly_border="true"
+                    app:poly_border_width="5dp"
+                    app:poly_corner_radius="25"
+                    app:poly_rotation_angle="90"
+                    app:poly_vertices="6" />
+            </FrameLayout>
+        </LinearLayout>
+        
+         <LinearLayout
+            android:id="@+id/ll_four_default"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dip"
+            android:visibility="gone" >
+
+            <FrameLayout
+                android:id="@+id/fl_four"
+                android:layout_width="108dip"
+                android:layout_height="118dip"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="0dip" >
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+           
+            android:id="@+id/ll_five"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <FrameLayout
+                android:layout_width="128dip"
+                android:layout_height="128dip"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                android:padding="0dip" >
+
+                <com.bm.view.CircleImageView
+                     android:layout_marginRight="5dip"
+                    android:id="@+id/iv_e"
+                    android:layout_width="128dip"
+                    android:layout_height="128dip"
+                    android:layout_gravity="center"
+                    app:poly_border="true"
+                    app:poly_border_width="5dp"
+                    app:poly_corner_radius="25"
+                    app:poly_rotation_angle="90"
+                    app:poly_vertices="6" />
+            </FrameLayout>
+        </LinearLayout>
+        
+        
+         <LinearLayout
+            android:id="@+id/ll_five_default"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="0dip"
+            android:layout_marginTop="5dip"
+            android:visibility="gone" >
+
+            <FrameLayout
+                android:id="@+id/fl_five"
+                android:layout_width="108dip"
+                android:layout_height="118dip"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:padding="0dip" >
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+             android:layout_gravity="right"
+             >
+
+            <ImageView
+                android:layout_marginTop="6dip"
+                android:layout_width="55dip"
+                android:layout_height="115dip"
+                android:layout_marginLeft="5dip"
+                android:background="@drawable/six_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

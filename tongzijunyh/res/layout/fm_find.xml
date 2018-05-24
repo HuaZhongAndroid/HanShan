@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ffv"
+    android:background="@color/explore_bg_Color" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dip" >
+
+        <LinearLayout style="@style/fwh" >
+
+            <FrameLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_b"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="15dip"
+                    android:paddingTop="15dip"
+                    android:text="探索"
+                    android:textColor="@color/app_dominantHue"
+                    android:textSize="@dimen/text_font_16" />
+
+                <View
+                    android:id="@+id/v_2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dip"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:background="@drawable/kc_shape"
+                    />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.01dip"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:background="@drawable/my_line" />
+            </FrameLayout>
+             <FrameLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_a"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:paddingBottom="15dip"
+                    android:paddingTop="15dip"
+                    android:text="玩伴儿"
+                    android:textColor="@color/course_bg_textColor"
+                    android:textSize="@dimen/text_font_16" />
+
+                <View
+                    android:id="@+id/v_1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dip"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginLeft="8dip"
+                    android:visibility="gone" 
+                    android:background="@drawable/kc_shape" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.01dip"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:background="@drawable/my_line" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_send"
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center" >
+
+                    <ImageView
+                        android:id="@+id/img_c"
+                        android:layout_width="20dip"
+                        android:layout_height="20dip"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/find_edit"
+                        android:paddingBottom="15dip"
+                        android:paddingTop="15dip" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.01dip"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginTop="-5dip"
+                    android:background="@drawable/my_line" />
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+         
+       <com.lib.widget.refush.SwipyRefreshLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/swipyrefreshlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:direction="both" >
+
+            <ListView
+                android:id="@+id/lv_content"
+                style="@style/ff"
+                android:divider="@color/bg_color"
+                android:dividerHeight="10dip"
+                android:listSelector="@color/transparent"
+                android:scrollbars="none"
+                android:scrollingCache="false" />
+        </com.lib.widget.refush.SwipyRefreshLayout> 
+       
+
+        <ImageView
+            android:id="@+id/img_noData"
+            style="@style/ww"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dip"
+            android:src="@drawable/none" />
+    </RelativeLayout>
+
+</LinearLayout>

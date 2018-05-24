@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:scrollbars="none" >
+
+        <LinearLayout style="@style/fwv" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip"
+                android:background="@color/line_color" />
+            <!-- 宝宝信息 -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="42dip"
+                android:background="#f2f2f2"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:text="孩子信息"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_16" />
+
+            <LinearLayout
+                style="@style/fwv"
+                android:background="@color/white" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginRight="3dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="孩子姓名"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <EditText
+                        android:id="@+id/et_bb_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入孩子姓名"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textColorHint="@color/txt_color"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginRight="3dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="孩子性别"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <TextView
+                        android:id="@+id/tv_babySex"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableRight="@drawable/arrowright"
+                        android:gravity="center_vertical"
+                        android:hint="男"
+                        android:paddingRight="10dip"
+                        android:singleLine="true"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginRight="3dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="出生日期"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <TextView
+                        android:id="@+id/tv_csrq"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableRight="@drawable/public_down"
+                        android:gravity="center_vertical"
+                        android:paddingRight="10dip"
+                        android:text="未选择"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+            </LinearLayout>
+            <!-- 家长信息 -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="42dip"
+                android:background="#f2f2f2"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:text="家长信息"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_16" />
+
+            <LinearLayout
+                style="@style/fwv"
+                android:background="@color/white" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginRight="3dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="家长姓名"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <EditText
+                        android:id="@+id/et_jz_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textColorHint="@color/txt_color"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginRight="3dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="手机"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入手机号"
+                        android:inputType="phone"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textColorHint="@color/txt_color"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginRight="3dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="性别"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <TextView
+                        android:id="@+id/tv_sex"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableRight="@drawable/arrowright"
+                        android:gravity="center_vertical"
+                        android:hint="男"
+                        android:paddingRight="10dip"
+                        android:singleLine="true"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginRight="3dip"
+                        android:text="*"
+                        android:textColor="@color/red" />
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="所在城市"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableRight="@drawable/arrowright"
+                        android:gravity="center_vertical"
+                        android:hint="未选择"
+                        android:paddingRight="10dip"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip" >
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:text="联系地址"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <EditText
+                        android:id="@+id/et_jz_lxdz"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入联系地址"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textColorHint="@color/txt_color"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+            </LinearLayout>
+
+            <!-- 顾问教练 -->
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="42dip"
+                android:background="#f2f2f2"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:text="推荐码"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_16" />
+
+            <LinearLayout
+                style="@style/fwv"
+                android:layout_height="match_parent"
+                android:background="@color/white" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/ww"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dip"
+                        android:layout_marginRight="3dip"
+                        android:text="*"
+                        android:textColor="@color/red"
+                        android:visibility="invisible" />
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="推荐码"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <EditText
+                        android:id="@+id/et_tuijianma"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入推荐码"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textColorHint="@color/txt_color"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_15" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="42dip"
+                android:background="#f2f2f2"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip"
+                android:text="顾问教练"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_16" />
+
+            <LinearLayout
+                style="@style/fwv"
+                android:background="@color/white" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip" >
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:text="教练ID"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <EditText
+                        android:id="@+id/et_jl"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@null"
+                        android:gravity="center_vertical"
+                        android:hint="请输入教练ID"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textColorHint="@color/txt_color"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip" >
+
+                    <TextView
+                        android:layout_width="110dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dip"
+                        android:text="选择教练"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <TextView
+                        android:id="@+id/tv_jl"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:drawableRight="@drawable/public_down"
+                        android:gravity="center_vertical"
+                        android:hint="请选择教练"
+                        android:paddingRight="10dip"
+                        android:textColor="@color/txt_teacher_name"
+                        android:textSize="@dimen/text_font_15" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/line_color" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_submit"
+        style="@style/fw"
+        android:layout_marginTop="10dip"
+        android:background="@color/app_dominantHue"
+        android:gravity="center"
+        android:padding="16dip"
+        android:text="完成"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_18" />
+
+</LinearLayout>

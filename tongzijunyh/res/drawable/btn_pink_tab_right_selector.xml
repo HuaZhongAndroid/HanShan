@@ -1,0 +1,28 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- 选中状态 -->
+    <item android:state_selected="true">
+        <shape>
+            <solid android:color="#fff" />
+            <corners android:topRightRadius="8dip" android:bottomRightRadius="8dip" />
+        </shape></item>
+        <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#eee" />
+            <corners android:topRightRadius="8dip" android:bottomRightRadius="8dip" />
+        </shape></item>
+        <!-- 默认状态 -->
+    <item>
+        <layer-list>
+            <item><shape>
+                    <solid android:color="#fff" />
+                    <corners android:topRightRadius="8dip" android:bottomRightRadius="8dip" />
+                </shape>
+             </item>
+            <item android:left="1dip" android:top="1dip" android:bottom="1dip" android:right="1dip">
+                <shape>
+                    <solid android:color="#e75280" />
+                    <corners android:topRightRadius="8dip" android:bottomRightRadius="8dip" />
+                </shape>
+             </item>
+        </layer-list></item>
+</selector>

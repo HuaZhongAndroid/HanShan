@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:scrollbars="none"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:background="#F4F4F4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="按课程包选择"
+        android:textSize="17sp"
+        android:textColor="#333"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.lib.widget.HorizontalListView
+        android:id="@+id/h_list"
+        android:layout_marginLeft="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="160dip"
+        android:spacing="10dp" />
+
+    <TextView
+        android:text="按场馆选择"
+        android:textSize="17sp"
+        android:textColor="#333"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout android:orientation="vertical"
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="145dp">
+        <com.lib.widget.RoundImageViewsix
+            android:id="@+id/iv_tab_bg"
+            android:background="#999"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+        <com.lib.widget.HorizontalListView
+            android:id="@+id/h_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="8dip"
+            android:paddingRight="8dip"
+            android:spacing="10dp"
+            android:visibility="visible" />
+    </RelativeLayout>
+    <TextView android:id="@+id/tv_cg_name"
+        android:text="野外生成训练区"
+        android:textSize="17sp"
+        android:textColor="#333"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        <View
+            android:background="#E6E6E6"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+    <com.bm.tzj.caledar.CalendarView_x
+        android:id="@+id/cld_a"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.bm.tzj.caledar.CalendarView_x>
+        <View
+            android:background="#E6E6E6"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp" />
+
+        <LinearLayout android:id="@+id/v_none"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+            <ImageView
+                android:src="@drawable/course_none"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="暂未安排课程，请查看其他日期吧"
+                android:textColor="#999"
+                android:textSize="15sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.lib.widget.FuListView
+            android:id="@+id/lv_course"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@color/transparent"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none"
+            android:scrollingCache="false" />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>

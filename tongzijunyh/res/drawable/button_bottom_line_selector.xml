@@ -1,0 +1,9 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 不可用状态 -->
+    <item android:state_selected="true" android:drawable="@drawable/bg_bottom_line_c8c8c8_gray" />
+    <item android:state_pressed="true" android:drawable="@drawable/bg_bottom_line_c8c8c8_gray" />
+    <!-- 默认状态 -->
+    <item android:drawable="@drawable/bg_bottom_line_c8c8c8" />
+
+</selector>

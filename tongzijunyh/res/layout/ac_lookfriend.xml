@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@color/line_color" />
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="14dip"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="35dip"
+            android:layout_weight="1"
+            android:background="@drawable/group_search"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="12dip" >
+
+            <ImageView
+                style="@style/ww"
+                android:src="@drawable/icon_gray_search" />
+
+            <EditText
+                android:id="@+id/et_seach"
+                style="@style/ff"
+                android:background="@null"
+                android:hint="姓名模糊搜索"
+                android:textColor="@color/text_black"
+                android:textColorHint="@color/txt_color_a"
+                android:textCursorDrawable="@null"
+                android:paddingLeft="8dip"
+                android:textSize="@dimen/text_font_15" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_seach"
+            style="@style/ww"
+            android:layout_width="85dip"
+            android:layout_height="35dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dip"
+            android:background="@drawable/kc_pj"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_font_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/fwv"
+        android:layout_marginTop="14dip" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:background="@color/line_color" />
+
+        <TextView
+            android:id="@+id/tv_newfriend"
+            android:layout_width="fill_parent"
+            android:layout_height="55dip"
+            android:layout_gravity="center_vertical"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dip"
+            android:text="我的新玩伴儿"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_17" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:background="@color/line_color" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_friend"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="5dip"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/line_color"
+        android:dividerHeight="1dip"
+        android:listSelector="@color/transparent"
+        android:scrollbars="none"
+        android:scrollingCache="false" />
+
+</LinearLayout>

@@ -1,0 +1,5 @@
+1.修改  聊天页面的adapter  
+EaseMessageAdapter
+
+2.聊天页面修改这里
+EaseChatFragment

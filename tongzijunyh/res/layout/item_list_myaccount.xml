@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/fwh"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:id="@+id/tv_accoundTitle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="22【购买赠送】 滚筒"
+            android:textColor="@color/account_textTitleColor"
+            android:textSize="@dimen/text_font_16" />
+
+        <TextView
+            android:id="@+id/tv_accoundMoney"
+            style="@style/ww"
+            android:paddingRight="10dip"
+            android:text="+100"
+            android:textColor="@color/app_dominantHue"
+            android:textSize="@dimen/text_font_16" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="17dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="5dip"
+        android:paddingBottom="10dip" >
+
+        <TextView
+            android:id="@+id/tv_accoundTime"
+            android:layout_weight="1"
+            android:singleLine="true"
+            style="@style/ww"
+            android:text="2015.11.11"
+            android:textColor="@color/account_textTimeColor"
+            android:textSize="@dimen/text_font_14" />
+        <TextView
+            android:id="@+id/tv_word"
+            style="@style/ww"
+            android:paddingRight="10dip"
+            android:text="优惠券:"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:textColor="@color/app_dominantHue"
+            android:textSize="@dimen/text_font_14" />
+
+        <TextView
+            android:id="@+id/tv_couponMoney"
+            style="@style/ww"
+            android:paddingRight="10dip"
+            android:text="+100"
+            android:gravity="right"
+            android:textColor="@color/app_dominantHue"
+            android:textSize="@dimen/text_font_14" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal_bgcolor"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/fwv"
+        android:background="@color/bg_color" >
+
+        <LinearLayout
+            style="@style/fwh"
+            android:background="@color/line_color" >
+
+            <FrameLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_10"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/kc_shape"
+                    android:gravity="center"
+                    android:paddingBottom="15dip"
+                    android:paddingTop="15dip"
+                    android:text="未领取"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_font_16" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_20"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F1EAED"
+                    android:gravity="center"
+                    android:paddingBottom="15dip"
+                    android:paddingTop="15dip"
+                    android:text="未使用"
+                    android:textColor="@color/course_bg_textColor"
+                    android:textSize="@dimen/text_font_16" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_30"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F1EAED"
+                    android:gravity="center"
+                    android:paddingBottom="15dip"
+                    android:paddingTop="15dip"
+                    android:text="已使用"
+                    android:textColor="@color/course_bg_textColor"
+                    android:textSize="@dimen/text_font_16" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="1dp"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_90"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#F1EAED"
+                    android:gravity="center"
+                    android:paddingBottom="15dip"
+                    android:paddingTop="15dip"
+                    android:text="已过期"
+                    android:textColor="@color/course_bg_textColor"
+                    android:textSize="@dimen/text_font_16" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:background="@color/line_color" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1px" />
+    </LinearLayout>
+
+</LinearLayout>

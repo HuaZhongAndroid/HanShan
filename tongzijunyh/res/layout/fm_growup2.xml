@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    tools:context="com.bm.tzj.fm.GrowUpFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/rl_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <ImageView
+                android:src="@drawable/bg_dark"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/tv_describe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击上传一张封面"
+                android:layout_gravity="center"
+                android:textColor="#666666" />
+            <ImageView android:id="@+id/img_bg"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.bm.view.CircleImageView
+                    android:id="@+id/img_addchild"
+                    android:layout_width="55dip"
+                    android:layout_height="55dip"
+                    android:src="@drawable/add_child_head"
+                    app:border_color="#fff"
+                    app:border_width="1dp" />
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="添加孩子"
+                    android:textColor="@color/white"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:fitsSystemWindows="true"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" >
+                <TextView android:id="@+id/tv_title"
+                    android:visibility="gone"
+                    android:textStyle="bold"
+                    android:text="成长中心"
+                    android:textSize="19sp"
+                    android:textColor="#333"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <com.lib.widget.refush.SwipyRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/swipyrefreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv"
+        android:background="#F4F4F4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <ImageView android:id="@+id/v_none"
+                android:src="@drawable/globebg"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.lib.widget.FuListView
+                android:id="@+id/lv_main"
+                android:divider="@null"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></com.lib.widget.FuListView>
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+    </com.lib.widget.refush.SwipyRefreshLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/img_pubulish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="25dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/publishgrouup" />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

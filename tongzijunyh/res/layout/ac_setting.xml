@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_f"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@color/white"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/sz_5"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dip"
+            android:layout_weight="1"
+            android:text="账号安全"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_16" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/my_more" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.01dip"
+        android:layout_marginLeft="12dip"
+        android:background="@color/line_shallow_gray" />
+
+    <LinearLayout
+        android:id="@+id/ll_c"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/sz_3"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dip"
+            android:layout_weight="1"
+            android:text="帮助中心"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_16" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/my_more" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.01dip"
+        android:layout_marginLeft="12dip"
+        android:background="@color/line_shallow_gray" />
+
+    <LinearLayout
+        android:id="@+id/ll_e"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/sz_5"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dip"
+            android:layout_weight="1"
+            android:text="清除缓存"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_16" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/my_more" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.01dip"
+        android:background="@color/line_shallow_gray" />
+
+    <LinearLayout
+        android:id="@+id/ll_d"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="30dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/sz_4"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dip"
+            android:layout_weight="1"
+            android:text="关于软件"
+            android:textColor="@color/txt_teacher_name"
+            android:textSize="@dimen/text_font_16" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/my_more" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.01dip"
+        android:layout_marginLeft="12dip"
+        android:background="@color/line_shallow_gray" />
+
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="50dip"
+        android:background="@drawable/cz_btn"
+        android:gravity="center"
+        android:text="退出登录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_18" />
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ff"
+    android:background="@color/wbe" >
+
+    <LinearLayout style="@style/ffv" >
+
+        <Button
+            android:id="@+id/btnone"
+            style="@style/fw"
+            android:text="测试1" />
+
+        <Button
+            android:id="@+id/btntwo"
+            style="@style/fw"
+            android:text="测试2" />
+        
+        
+      <!--   <AbsoluteLayout 
+            android:id="@+id/abs_view"
+            style="@style/fw"
+            ></AbsoluteLayout> -->
+        
+        
+
+        <FrameLayout
+            android:id="@+id/fm_content"
+            style="@style/fw" >
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

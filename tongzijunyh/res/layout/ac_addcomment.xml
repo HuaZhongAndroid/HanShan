@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/personal_bgcolor"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:scrollbars="none" >
+
+        <LinearLayout style="@style/fwv" >
+
+            <LinearLayout
+                style="@style/fwv"
+                android:layout_marginTop="20dip" >
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/ww"
+                    android:layout_marginBottom="20dip"
+                    android:layout_marginLeft="13dip"
+                    android:text="【体验课程】滚筒+鸟巢+西藏之桥"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_18" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:layout_marginLeft="12dip"
+                    android:layout_marginRight="12dip"
+                    android:background="@color/line_gray" />
+
+                <TextView
+                    style="@style/ww"
+                    android:layout_marginBottom="25dip"
+                    android:layout_marginLeft="13dip"
+                    android:layout_marginTop="25dip"
+                    android:text="参与评论可获得积分：2积分"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_18" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dip"
+                android:layout_marginRight="13dip"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingTop="20dip" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="0.5dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="30dip"
+                        android:layout_weight="1"
+                        android:background="@color/line_gray" />
+
+                    <TextView
+                        android:layout_width="0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="评价教练"
+                        android:textColor="@color/text_light"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="0.5dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="30dip"
+                        android:layout_weight="1"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+                <com.bm.view.RatingBar
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/room_ratingbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="15dp"
+                    app:clickable="true"
+                    app:starDst="@drawable/pj_staroff"
+                    app:starNumber="5"
+                    app:starSrc="@drawable/pj_staron"
+                    app:step="1" />
+
+                <LinearLayout
+                    android:id="@+id/ll_jl"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginRight="30dip"
+                    android:background="@drawable/shurukuang1"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/et_commentCoach"
+                        style="@style/ww"
+                        android:background="@drawable/shurukuang1"
+                        android:gravity="top|left"
+                        android:hint="请输入您的宝贵评价吧!"
+                        android:maxLength="50"
+                        android:paddingLeft="6dip"
+                        android:paddingTop="6dip"
+                        android:textColor="@color/txt_title_detail"
+                        android:textColorHint="#cbcaca"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_14" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dip"
+                android:layout_marginRight="13dip"
+                android:layout_marginTop="20dip"
+                android:background="@color/white"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginRight="30dip"
+                    android:orientation="horizontal"
+                    android:paddingTop="25dip" >
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="0.5dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="5dip"
+                        android:layout_weight="1"
+                        android:background="@color/line_gray" />
+
+                    <TextView
+                        android:id="@+id/tv_namepj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:gravity="center"
+                        android:text="评价课程"
+                        android:textColor="@color/text_light"
+                        android:textSize="@dimen/text_font_16" />
+
+                    <View
+                        android:layout_width="0dip"
+                        android:layout_height="0.5dip"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@color/line_gray" />
+                </LinearLayout>
+
+                <com.bm.view.RatingBar
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/room_ratingbars"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dip"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="25dip"
+                    android:layout_marginTop="15dip"
+                    app:clickable="true"
+                    app:starDst="@drawable/pj_staroff"
+                    app:starNumber="5"
+                    app:starSrc="@drawable/pj_staron"
+                    app:step="1" />
+
+                <LinearLayout
+                    android:id="@+id/ll_cs"
+                    android:layout_width="fill_parent"
+                    android:layout_height="100dip"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginRight="30dip"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/et_commentCamp"
+                        style="@style/ww"
+                        android:background="@drawable/shurukuang1"
+                        android:gravity="top|left"
+                        android:hint="请输入您的宝贵评价吧!"
+                        android:maxLength="50"
+                        android:paddingLeft="6dip"
+                        android:paddingTop="6dip"
+                        android:textColor="@color/txt_title_detail"
+                        android:textColorHint="#cbcaca"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/text_font_14" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_submit"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="10dip"
+        android:background="#a0943e"
+        android:gravity="center"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_16" />
+
+</LinearLayout>

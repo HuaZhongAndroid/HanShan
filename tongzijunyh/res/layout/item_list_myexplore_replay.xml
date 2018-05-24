@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <ImageView
+        android:id="@+id/img_pic"
+        style="@style/ww"
+        android:layout_marginLeft="8dip"
+        android:src="@drawable/explore_count" />
+
+    <TextView
+        android:id="@+id/tv_replay_name"
+        style="@style/ww"
+        android:layout_marginLeft="10dip"
+        android:text="安妮:"
+        android:textColor="@color/explore_chartColor"
+        android:textSize="@dimen/text_font_14" />
+
+    <TextView
+        android:id="@+id/tv_replay_content"
+        style="@style/ww"
+        android:layout_marginLeft="10dip"
+        android:text="宝贝太棒了"
+        android:textColor="@color/explore_replayColor"
+        android:textSize="@dimen/text_font_13" />
+
+</LinearLayout>

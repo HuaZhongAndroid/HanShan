@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    style="@style/fwv"
+    android:background="@color/white"
+    android:paddingBottom="10dip"
+    android:paddingLeft="20dip"
+    android:paddingRight="20dip"
+    android:paddingTop="10dip" >
+
+    <RelativeLayout style="@style/fw" >
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/ww"
+            android:layout_alignParentLeft="true"
+            android:background="@null"
+            android:text="取消"
+            android:textColor="@color/txt_zm_color" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="请选择省"
+            android:textColor="@color/light_black"
+            android:textSize="@dimen/text_font_15"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/ww"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:text="确定"
+            android:textColor="@color/txt_zm_color" />
+    </RelativeLayout>
+
+    <com.lib.widget.CustomNumberPicker
+        android:id="@+id/np_picker"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:divider="@color/alto" />
+
+</LinearLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="11dip" >
+
+    <LinearLayout style="@style/fwh" >
+
+        <com.lib.widget.RoundImageViewFive
+            android:id="@+id/img_pic"
+            android:layout_width="110dip"
+            android:layout_height="100dip"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_mycourse_name"
+                android:layout_width="wrap_content"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="[晋级课程] 滚筒+鸟巢+西藏之课程"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="@dimen/text_font_15" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:gravity="center"
+                        android:id="@+id/tv_category"
+                        android:layout_width="75dip"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/label_category"
+                        android:paddingBottom="1dip"
+                        android:paddingLeft="4dip"
+                        android:paddingTop="1dip"
+                        android:text="周末户外"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_font_12" />
+
+                    <TextView
+                        android:id="@+id/tv_mycourse_address"
+                        style="@style/ww"
+                        android:singleLine="true"
+                        android:maxEms="8"
+                        android:layout_marginTop="5dip"
+                        android:text="上海龙之梦"
+                        android:textColor="@color/txt_color_a"
+                        android:textSize="@dimen/text_font_14" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_mycourse_money"
+                    style="@style/ww"
+                    android:layout_marginRight="10dip"
+                    android:text="￥99"
+                    android:textColor="@color/app_dominantHue"
+                    android:textSize="@dimen/text_font_18" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_mycourse_time"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="0.7"
+                android:text="2015-12-21 10:30-11:30"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_14" />
+            <TextView
+                android:id="@+id/tv_mycourse_endtime"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="0.7"
+                android:text="2015-12-21 10:30-11:30"
+                android:textColor="@color/txt_color_a"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   
+
+    
+ 
+ 
+    <color name="province_line_border">#D0D0D0</color>
+    <color name="white">#fff</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="title_bar_background">#165893</color>
+    <color name="puerto_rico">#007bc7</color>
+
+    <!-- 标题栏背景 -->
+    <color name="title_bar_background_gray">#23cdb7</color>
+    <color name="title_bar_background_pink">#e75280</color>
+    <color name="title_bar_background_orange">#CC9933</color>
+    <color name="order_item_goods">#F0F0F0</color>
+
+    <!-- 首页字体颜色 -->
+    <color name="main_left_title_m">#637073</color>
+    <color name="main_left_title_h">#165893</color>
+    <color name="main_color_orange">#F08300</color>
+    <!-- 主题颜色，橘色 -->
+    <color name="btndown_orange">#FF5601</color>
+    <!-- 按钮按下颜色，橘红色 -->
+    <color name="text_blue">#599BC7</color>
+    <!-- 文字蓝色 -->
+    <color name="textdown_blue">#B4CDE6</color>
+    <!-- 文字按下蓝色 -->
+    <color name="bg_blue">#88ABDA</color>
+    <!-- 浅蓝色背景 -->
+    <color name="bg_gray">#EFEFEF</color>
+    <!-- 灰色背景 -->
+    <color name="bg_mine_item">#F8F8F8</color>
+    <!-- 浅灰色背景 -->
+    <color name="line_gray">#B7B7B7</color>
+    <!-- 灰色画线 -->
+    <color name="line_shallow_gray">#cccccc</color>
+    <!-- 浅灰色画线 -->
+    <color name="black">#000</color>
+    <!-- 纯黑色 -->
+    <color name="text_black">#343434</color>
+    <!-- 文字颜色黑色 -->
+
+    <color name="header_color">#f08300</color>
+    <color name="light_gray">#d1d1d1</color>
+    <color name="text_dark">#343434</color>
+    <color name="text_light">#999999</color>
+    <color name="theme_red">#f0870e</color>
+    <color name="text_gray">#696969</color>
+    <color name="gray">#A1A2A2</color>
+    <color name="gray_deep">#67696C</color>
+    <color name="green">#05D09B</color>
+    <color name="green_home">#6AC444</color>
+    <color name="red">#E25949</color>
+    <color name="yellow">#F9D873</color>
+    <color name="yellow_earth">#EEEEEE</color>
+    <color name="blue">#2A93D9</color>
+    <color name="pink">#FFF7F5</color>
+    <color name="white_milk">#E5E5E5</color>
+    <color name="white_alpha">#66ffffff</color>
+    <color name="white_water">#F5F9FA</color>
+    <color name="white_translucence">#7FFFFFFF</color>
+    <color name="white_translucence2">#bFFFFFFF</color>
+    <color name="black_translucence">#7F000000</color>
+    <color name="orange">#DD5747</color>
+
+    <!-- 授权 -->
+    <color name="sliding_menu_item_down">#ff39393b</color>
+    <color name="sliding_menu_item_release">#00000000</color>
+    <color name="sliding_menu_background">#ff2c2c2e</color>
+    <color name="sliding_menu_body_background">#fff5f5f5</color>
+
+    <!-- 背景色 -->
+    <color name="bg_color">#f2f2f2</color>
+
+    <!-- 首页字体颜色 -->
+    <color name="main_font_color">#5f6265</color>
+    <color name="login_textcolor">#A52A2A</color>
+    <color name="main_center_color_one">#e6ede8</color>
+    <color name="main_center_color_two">#edf1ee</color>
+    <color name="main_center_color_three">#f2f5f2</color>
+
+    <!-- 验证登录字体颜色 红色 -->
+
+    <color name="txthit_color">#c9c9c9</color>
+    <color name="txtcode_color">#9e9e9e</color>
+    <color name="fm_mine_textcolor">#808080</color>
+    <color name="fm_mine_titlenamecolor">#929292</color>
+    <color name="fm_mine_nickname">#333333</color>
+    <color name="fm_mine_line">#e5e5e5</color>
+    <!-- 消息详情 -->
+    <color name="txt_msg_color">#989998</color>
+    <color name="txt_find_color">#747474</color>
+    <color name="txt_money_color">#f57365</color>
+    <!-- 橘色 -->
+    <color name="txt_score_color">#f7941d</color>
+    <!-- 淡灰色 -->
+    <color name="txt_time_color">#cccccc</color>
+    <color name="txt_way_color">#363736</color>
+    <color name="txt_seekbar_color">#72d3f4</color>
+    <color name="txt_title_detail">#666666</color>
+    <color name="txt_teacher_color">#999999</color>
+    <color name="txt_teacherz_color">#333333</color>
+    <color name="redmoney">#ff0000</color>
+    <color name="txt_teacher_name">#555555</color>
+    <color name="txt_teacher_names">#898989</color>
+    <color name="txt_teacher_names1">#1F1F1F</color>
+    <color name="txt_teacher_red">#e3584f</color>
+    <color name="txt_curriculum_title">#3d3d3d</color>
+    <color name="txt_curriculum_name">#717171</color>
+    <color name="txt_error_title">#070808</color>
+    <color name="txt_name">#8c8c8c</color>
+    <color name="line_color">#e3e3e3</color>
+    <!-- 个人中心 -->
+    <color name="my_pseson_bbf">#bdbfcb</color>
+    <color name="my_pseson_bmf">#edeaf1</color>
+    <color name="my_pseson_six">#a49844</color>
+
+    <!-- 探索 -->
+    <color name="wbe">#EDEAF1</color>
+    <color name="wbe_txt">#6F6D72</color>
+    <color name="ts">#A49844</color>
+
+    <!-- 个人资料 -->
+    <color name="psersonal_line">#D9D9D9</color>
+    <color name="personal_bgcolor">#FAFAFA</color>
+    <color name="personal_textColor">#C0C0C0</color>
+    <color name="personal_textNameColor">#454545</color>
+    <color name="personal_textAddressColor">#575757</color>
+    <color name="app_dominantHue">#a59945</color>
+    <color name="txt_zm_color">#222222</color>
+    <color name="light_black">#555555</color>
+    <color name="alto">#D9D9D9</color>
+
+    <!-- 我的课程 -->
+    <color name="course_bg_title">#EDEAF1</color>
+    <color name="course_bg_textColor">#57555A</color>
+    <color name="course_line_center">#DAD9DE</color>
+    <color name="course_textAddress">#A4A4A4</color>
+    <color name="course_textStates">#A2A2A2</color>
+
+    <!-- 我的探索 -->
+    <color name="explore_textColor">#686868</color>
+    <color name="explore_chartColor">#4B4B4B</color>
+    <color name="explore_replayColor">#6F6F6F</color>
+    <color name="explore_bg_Color">#F9F9F9</color>
+
+    <!-- 账户余额 -->
+    <color name="account_bg_Color">#F2F2F2</color>
+    <color name="account_textColor">#5F5F5F</color>
+    <color name="account_textTitleColor">#303030</color>
+    <color name="account_textTimeColor">#878787</color>
+    <color name="txt_color">#888888</color>
+    <color name="txt_yellow_color">#a2953e</color>
+    <color name="txt_color_a">#aaaaaa</color>
+    <color name="color1">#ff0f9d58</color>
+    <color name="color2">#ffdb4437</color>
+    <color name="color3">#ff4285f4</color>
+    <color name="color4">#fff4b400</color>
+    <color name="list_dividerColor">#DDDDDD</color>
+    <color name="txt_Grey">#838D8C</color>
+    <color name="txt_Grey_zhou_line">#E6E6E6</color>
+    <color name="color_gray">#C8C9CB</color>
+    <color name="teacher_selectColor">#C1C1C1</color>
+    <color name="pullulate_color">#EEEBF2</color>
+    
+    <color name="detail_color">#B9B9B9</color>
+    <color name="dialogColor">#c4b563</color>
+    
+    
+    <!--周美工新一套UI风格  -->
+    <color name="zhou_color_gray">#999999</color>
+    
+    
+
+</resources>

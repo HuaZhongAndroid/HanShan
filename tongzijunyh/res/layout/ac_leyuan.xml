@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fff"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView android:id="@+id/img_ad"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <ImageView android:id="@+id/btn_back"
+            android:src="@drawable/mendian_back"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/tv_name"
+            android:text="南山***南山店"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.lib.widget.RatingBarView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/custom_ratingbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/tv_name"
+            app:starCount="5"
+            app:starEmpty="@drawable/star_hui"
+            app:starFill="@drawable/star_liang"
+            app:starImageSize="15dp" />
+        <TextView android:id="@+id/tv_juli"
+            android:text="距离3.5km"
+            android:textSize="13sp"
+            android:textColor="#999"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignBaseline="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <View
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e6e6e6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/mendian_loc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_address"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:text="广州市******************    ******街道楼***号"
+            android:lines="1"
+            android:ellipsize="end"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/mendian_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e6e6e6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/mendian_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView android:id="@+id/tv_phone"
+            android:textSize="16sp"
+            android:textColor="#333"
+            android:text="0351-5451245"
+            android:lines="1"
+            android:ellipsize="end"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/mendian_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#F4F4F4"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView android:id="@+id/tv_pinglunshu"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="家长评论：--"
+            android:textColor="#333"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View android:id="@+id/xian"
+            android:layout_below="@+id/tv_pinglunshu"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#e6e6e6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+        <com.lib.widget.FuListView android:id="@+id/lv_pinglun"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@color/transparent"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none"
+            android:scrollingCache="false"
+            android:layout_below="@+id/xian"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </com.lib.widget.FuListView>
+        <ImageView  android:id="@+id/btn_gengduo"
+            android:src="@drawable/chakangengduo"
+            android:scaleType="centerCrop"
+            android:layout_alignBottom="@+id/lv_pinglun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+    </RelativeLayout>
+    <View
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#F4F4F4"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#333"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <WebView
+        android:id="@+id/tv_mark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="WebViewLayout" />
+</LinearLayout>
+</ScrollView>

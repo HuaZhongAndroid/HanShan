@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#F4F4F4"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:text="按套餐选择"
+        android:textColor="#333"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.lib.widget.HorizontalListView
+        android:id="@+id/hlistview"
+        android:spacing="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="160dp" />
+
+    <TextView
+        android:text="按时间选择"
+        android:textColor="#333"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.lib.widget.FuListView
+        android:id="@+id/lv_course"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/transparent"
+        android:listSelector="@color/transparent"
+        android:scrollbars="none"
+        android:scrollingCache="false" />
+</LinearLayout>
+</ScrollView>

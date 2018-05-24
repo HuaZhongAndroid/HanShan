@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        style="@style/fwv"
+        android:background="@color/account_bg_Color"
+        android:paddingLeft="8dip"
+        android:paddingTop="15dip" >
+
+        <LinearLayout
+            style="@style/fwh"
+            android:layout_marginLeft="8dip"
+            android:gravity="center_vertical" >
+
+            <RelativeLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dip"
+                android:layout_weight="1" >
+
+                <FrameLayout
+                    android:layout_width="114dip"
+                    android:layout_height="128dip"
+                    android:layout_centerInParent="true"
+                    android:background="@color/transparent"
+                    android:orientation="vertical"
+                    android:padding="0dip" >
+
+                    <ImageView
+                        android:id="@+id/iv_c_bg"
+                        android:layout_width="114dip"
+                        android:layout_height="128dip"
+                        android:background="@drawable/sixmsg1"
+                        android:padding="0dip" />
+
+                    <ImageView
+                        android:id="@+id/iv_sixview_heads"
+                        android:layout_width="80dip"
+                        android:layout_height="80dip"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="15dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/ww"
+                    android:gravity="center"
+                    android:text="野外定位勋章"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_16" />
+
+                <TextView
+                    style="@style/ww"
+                    android:layout_marginTop="6dip"
+                    android:gravity="center"
+                    android:text="领取规则:"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_font_12" />
+
+                <TextView
+                    android:layout_width="190dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dip"
+                    android:gravity="left"
+                    android:paddingRight="3dip"
+                    android:text="报名参加以下课程(无顺序)，全部通过考核后，即可点亮此徽章。"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_font_12" />
+
+                <TextView
+                    style="@style/ww"
+                    android:layout_marginTop="2dip"
+                    android:gravity="center"
+                    android:text="全部通过考核后，即可获得此徽章。"
+                    android:textColor="@color/text_light"
+                    android:textSize="@dimen/text_font_12"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            style="@style/ww"
+            android:paddingTop="12dip"
+            android:text="报名参加以下课程即可获得此勋章哦"
+            android:textColor="@color/text_light"
+            android:textSize="@dimen/text_font_14"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="fill_parent"
+        android:layout_height="5dip"
+        android:layout_marginTop="20dip"
+        android:background="@color/white_milk" />
+
+    <ListView
+        android:id="@+id/lv_course"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="12dip"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/line_color"
+        android:dividerHeight="1dip"
+        android:listSelector="@color/transparent"
+        android:scrollbars="none"
+        android:scrollingCache="false"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/img_noData"
+        style="@style/ww"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dip"
+        android:src="@drawable/nodata" />
+
+</LinearLayout>

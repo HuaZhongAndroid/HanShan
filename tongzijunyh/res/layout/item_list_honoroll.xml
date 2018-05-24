@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="11dip" >
+
+    <LinearLayout style="@style/fwh" >
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <com.bm.view.CircleImageView
+                android:id="@+id/iv_sixview_head"
+                android:layout_width="60dip"
+                android:layout_height="60dip"
+                app:poly_border="true"
+                app:poly_border_width="5dp"
+                app:poly_corner_radius="10"
+                app:poly_rotation_angle="90"
+                app:poly_vertices="6" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/ww"
+                android:layout_marginLeft="16dip"
+                android:text="王小明"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="@dimen/text_font_16" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                style="@style/ww"
+                android:layout_marginLeft="16dip"
+                android:text="9岁"
+                android:textColor="@color/txt_title_detail"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingRight="10dip" >
+
+            <TextView
+                android:id="@+id/tv_category"
+                style="@style/ww"
+                android:text="技能勋章"
+                android:textColor="@color/txt_title_detail"
+                android:textSize="@dimen/text_font_14" />
+
+            <TextView
+                android:id="@+id/tv_num"
+                style="@style/ww"
+                android:layout_marginLeft="10dip"
+                android:text="10枚"
+                android:textColor="@color/txt_title_detail"
+                android:textSize="@dimen/text_font_14" />
+
+            <ImageView
+                style="@style/ww"
+                android:layout_marginLeft="10dip"
+                android:src="@drawable/arrowright" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

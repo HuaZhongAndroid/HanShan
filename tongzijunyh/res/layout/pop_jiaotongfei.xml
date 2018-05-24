@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#fff"
+        android:gravity="center_horizontal"
+        android:layout_margin="30dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+
+        <TextView
+            android:text="交通费选择（所在地）"
+            android:textSize="17sp"
+            android:textColor="#333"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ListView android:id="@+id/lv_a"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@color/transparent"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none"
+            android:scrollingCache="false"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+        <TextView
+            android:text="* 此费用包含所在地到西安的往返交通费用"
+            android:textSize="15sp"
+            android:textColor="#999"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

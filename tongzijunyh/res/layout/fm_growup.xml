@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+         >
+
+        <ImageView
+            android:id="@+id/img_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_dark"
+            android:scaleType="centerCrop"
+           />
+
+        <TextView
+            android:id="@+id/tv_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="点击上传一张封面"
+            android:textColor="#666666" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="73dp"
+            android:text="添加孩子"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_bg"
+        android:background="@drawable/globebg" >
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_addchild"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="165dp"
+        android:src="@drawable/add_child_head" />
+
+    <ImageView
+        android:id="@+id/img_pubulish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="55dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/publishgrouup" />
+
+</RelativeLayout>

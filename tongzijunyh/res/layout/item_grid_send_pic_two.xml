@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dip"
+    android:layout_height="120dip" >
+
+    <com.lib.widget.RoundImageViewsix
+        android:id="@+id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pic_add" />
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:src="@drawable/del_chengzhang" />
+
+</FrameLayout>

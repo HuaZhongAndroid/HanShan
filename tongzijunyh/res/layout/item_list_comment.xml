@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="10dip"
+    android:paddingTop="10dip" >
+
+    <com.bm.view.CircleImageView
+        android:id="@+id/iv_sixview_head"
+        android:layout_width="60dip"
+        android:layout_height="60dip"
+        android:layout_marginLeft="5dip"
+        app:poly_border="true"
+        app:poly_border_width="2dp"
+        app:poly_corner_radius="10"
+        app:poly_rotation_angle="90"
+        app:poly_vertices="6" />
+
+    <LinearLayout
+        style="@style/fwv"
+        android:paddingLeft="8dip"
+        android:paddingTop="3dip" >
+
+        <LinearLayout style="@style/fwh" >
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/ww"
+                android:text="嘻嘻妈咪"
+                android:textColor="@color/txt_yellow_color"
+                android:textSize="@dimen/text_font_15" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/ww"
+                android:layout_marginLeft="10dip"
+                android:text="2015.10.21 15:00"
+                android:textColor="@color/txt_color"
+                android:textSize="@dimen/text_font_13" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/ww"
+            android:layout_marginTop="6dip"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="今天很开心，谢谢教练用心教导。"
+            android:textColor="@color/txt_title_detail"
+            android:textSize="@dimen/text_font_14" />
+    </LinearLayout>
+
+</LinearLayout>

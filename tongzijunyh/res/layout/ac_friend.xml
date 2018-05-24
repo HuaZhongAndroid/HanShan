@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <EditText
+            android:background="@null"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:id="@+id/ll_lookfriend"
+            android:layout_width="fill_parent"
+            android:layout_height="70dip"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                style="@style/ww"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dip"
+                android:drawableLeft="@drawable/add_friend"
+                android:drawablePadding="10dip"
+                android:gravity="center_vertical"
+                android:text="添加新玩伴儿"
+                android:textColor="@color/txt_teacher_name"
+                android:textSize="@dimen/text_font_16" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.1dip"
+            android:background="@color/line_color" />
+
+        <!-- 我的群 -->
+
+        <LinearLayout
+            android:animateLayoutChanges="true"
+            android:id="@+id/ll_group"
+            style="@style/fwv"
+            android:layout_marginTop="10dip"
+            android:background="@color/white" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dip"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="15dip" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="我的群"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_16" />
+
+                <ImageView
+                    android:id="@+id/iv_wdq"
+                    style="@style/ww"
+                    android:padding="10dip"
+                    android:src="@drawable/public_down" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@color/line_color" />
+
+            <com.lib.widget.FuListView
+                android:id="@+id/lv_groups"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:cacheColorHint="@color/transparent"
+                android:divider="@color/line_color"
+                android:dividerHeight="1dip"
+                android:listSelector="@color/transparent"
+                android:scrollbars="none"
+                android:scrollingCache="false" />
+
+            <View
+                android:id="@+id/v_groups"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@color/line_color" />
+        </LinearLayout>
+
+        <!-- 我的好友 -->
+
+        <LinearLayout
+             android:animateLayoutChanges="true"
+            android:id="@+id/ll_friend"
+            style="@style/fwv"
+            android:layout_marginBottom="5dip"
+            android:layout_marginTop="10dip"
+            android:background="@color/white" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.1dip"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60dip"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dip" >
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="我的玩伴儿"
+                    android:textColor="@color/txt_teacher_name"
+                    android:textSize="@dimen/text_font_16" />
+
+                <ImageView
+                    android:id="@+id/iv_wdhy"
+                    style="@style/ww"
+                    android:padding="10dip"
+                    android:src="@drawable/public_down" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@color/line_color" />
+
+            <com.lib.widget.FuListView
+                android:id="@+id/lv_friend"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="8dip"
+                android:layout_marginRight="8dip"
+                android:cacheColorHint="@color/transparent"
+                android:divider="@color/line_color"
+                android:dividerHeight="1dip"
+                android:listSelector="@color/transparent"
+                android:scrollbars="none"
+                android:scrollingCache="false" />
+
+            <View
+                android:id="@+id/v_friend"
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:background="@color/line_color" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

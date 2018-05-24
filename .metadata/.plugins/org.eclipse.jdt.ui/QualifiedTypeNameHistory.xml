@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.umeng.socialize.utils.Log"/>
+<fullyQualifiedTypeName name="com.bm.api.BaseApi"/>
+<fullyQualifiedTypeName name="com.bm.util.CacheUtil"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Type"/>
+<fullyQualifiedTypeName name="android.text.Html"/>
+<fullyQualifiedTypeName name="com.bm.util.AssetsUtil"/>
+<fullyQualifiedTypeName name="com.bm.tzj.activity.R"/>
+<fullyQualifiedTypeName name="com.lib.tool.SharedPreferencesHelper"/>
+<fullyQualifiedTypeName name="com.example.blurtest.R.layout"/>
+<fullyQualifiedTypeName name="com.example.blurtest.R"/>
+<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
+<fullyQualifiedTypeName name="com.example.blurtest.R.id"/>
+<fullyQualifiedTypeName name="com.example.blurtest.R.drawable"/>
+<fullyQualifiedTypeName name="com.bm.util.BitmapUtil"/>
+<fullyQualifiedTypeName name="com.bm.tzj.activity.R.id"/>
+<fullyQualifiedTypeName name="com.bm.tzj.activity.MainAc"/>
+<fullyQualifiedTypeName name="android.widget.AbsoluteLayout.LayoutParams"/>
+<fullyQualifiedTypeName name="com.richer.tzj.R"/>
+<fullyQualifiedTypeName name="com.bm.util.ApkUpdateUtil"/>
+<fullyQualifiedTypeName name="com.bm.view.RatingBar"/>
+<fullyQualifiedTypeName name="com.richer.tzj.R.drawable"/>
+<fullyQualifiedTypeName name="android.view.ViewGroup.LayoutParams"/>
+<fullyQualifiedTypeName name="android.widget.RelativeLayout.LayoutParams"/>
+<fullyQualifiedTypeName name="com.richer.tzj.R.color"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.widget.ImageView.ScaleType"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.PopupWindow.OnDismissListener"/>
+<fullyQualifiedTypeName name="com.richer.tzj.R.id"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface.OnCancelListener"/>
+</qualifiedTypeNameHistroy>
