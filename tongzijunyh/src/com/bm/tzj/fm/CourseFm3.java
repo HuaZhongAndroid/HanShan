@@ -532,7 +532,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             }
 
             private void doResult(CommonListResult<Storelist> obj) {
-                if (null != obj.data) {
+                if (null != obj.data&&obj.data.size()>0) {
                     if (types == 1) {
                         adapter1.clear();
                         adapter1.addAll(cutList(obj.data, 2));
