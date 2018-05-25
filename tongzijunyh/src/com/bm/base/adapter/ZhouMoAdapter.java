@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Created by zh on 2018/5/24.
  *
- * 周末成长营
+ * 周末成长营 适配器
  */
 
 public class ZhouMoAdapter extends ArrayAdapter<CourseBean> {
