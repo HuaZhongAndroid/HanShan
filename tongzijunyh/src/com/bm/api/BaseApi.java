@@ -258,11 +258,14 @@ public class BaseApi {
 	 *广告
 	 */
 	public static final String API_TZJADVERT_ADVERTLIST="tzjadvert/advertlist.do";
+
 	/**
 	 *
 	 *门店
 	 */
 	public static final String API_TZJSTORE_STORELIST="tzjstore/storelist.do";
+
+
 	/**
 	 *
 	 *推荐课程（热门商品）
@@ -691,4 +694,9 @@ public class BaseApi {
 	 * 交通费查询
 	 */
 	public static final String API_tzjgoods_baseGoodsDetail = "tzjgoods/baseGoodsDetail";
+	/**
+	 *
+	 *获取周末成长营的城市地址
+	 */
+	public static final String API_getZhouMo_citys = "tzjgoods/getTrend";
 }

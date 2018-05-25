@@ -46,6 +46,7 @@ import com.bm.im.tool.IMTool;
 import com.bm.share.ShareUtil;
 import com.bm.tzj.fm.BalaFm;
 import com.bm.tzj.fm.CourseFm2;
+import com.bm.tzj.fm.CourseFm3;
 import com.bm.tzj.fm.FindFm;
 import com.bm.tzj.fm.GrowUpFragment;
 import com.bm.tzj.fm.MineFm;
@@ -84,7 +85,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
 	static final String TAG = MainAc.class.getSimpleName();
 
-	private CourseFm2 indexFm;
+	private CourseFm3 indexFm;
 	private XiaoxiFm messageFm;
 	private XiaoxiFm findFm;
 	private MineFm mineFm;
@@ -223,7 +224,8 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 			setTabSelection(2);
 			rl_top.setVisibility(View.GONE);
 		}else if(2==tag){
-			setTabSelection(0);
+			isDefult = 2;
+			setTabSelection(2);
 			rl_top.setVisibility(View.GONE);
 			//			setTitleName("成长中心");
 			hideLeft();
@@ -588,7 +590,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 			iv_a.setImageResource(R.drawable.m_3);
 			// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
 			if (indexFm == null) {
-				indexFm = new CourseFm2();
+				indexFm = new CourseFm3();
 				transaction.add(R.id.content, indexFm);
 			} else {
 				// 如果MessageFragment不为空，则直接将它显示出来

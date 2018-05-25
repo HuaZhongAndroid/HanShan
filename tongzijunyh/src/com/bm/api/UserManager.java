@@ -21,6 +21,7 @@ import com.bm.entity.Comment;
 import com.bm.entity.CommentList;
 import com.bm.entity.Course;
 import com.bm.entity.CourseBao;
+import com.bm.entity.CourseBean;
 import com.bm.entity.Disclaimer;
 import com.bm.entity.GoodsNumTime;
 import com.bm.entity.GrowUp;
@@ -39,7 +40,9 @@ import com.bm.entity.User;
 import com.bm.entity.Version;
 import com.bm.entity.WeixinOrder;
 import com.bm.entity.Youhuiquan;
+import com.bm.entity.ZhouMoCity;
 import com.bm.entity.post.UserPost;
+import com.bm.tzj.activity.ZhoumoAc;
 import com.bm.tzj.city.AllCity;
 import com.bm.tzj.city.City;
 import com.google.android.gms.games.Game;
@@ -296,6 +299,14 @@ public class UserManager extends BaseApi{
        AsyncHttpHelp.httpGet(context,API_TZJSTORE_STORELIST, map, callback);
    }
 
+    /**
+     *
+     *获取周末成长营的城市地址
+     */
+    public void getZhouMoCitys(Context context,HashMap<String, String> map,final ServiceCallback<CommonListResult<ZhouMoCity>> callback) {
+        AsyncHttpHelp.httpGet(context,API_getZhouMo_citys, map, callback);;
+    }
+
    public void getStoreComment(Context context,HashMap<String, String> map,final ServiceCallback<CommonResult<PageDataList<StoreComment>>> callback)
    {
        AsyncHttpHelp.httpGet(context,API_GET_STORECOMMENT, map, callback);
@@ -316,7 +327,15 @@ public class UserManager extends BaseApi{
         AsyncHttpHelp.httpGet(context,API_trafficFee_list, map, callback);
     }
 
-    public void get_tzjgoods_goodsListByType(Context context,HashMap<String, String> map,final ServiceCallback<CommonListResult<Course>> callback)
+    /**
+     * type
+     *     3  周末成长营
+     *     4  暑期大露营
+     * @param context
+     * @param map
+     * @param callback
+     */
+    public void get_tzjgoods_goodsListByType(Context context,HashMap<String, String> map,final ServiceCallback<CommonListResult<CourseBean>> callback)
     {
         AsyncHttpHelp.httpGet(context,API_tzjgoods_goodsListByType, map, callback);
     }
