@@ -138,7 +138,6 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
         refresh();
         return messageLayout;
     }
-
     private void initOnClickListener() {
         ll_search.setOnClickListener(this);
         tv_location.setOnClickListener(this);
@@ -287,6 +286,8 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             }
         });
     }
+
+
 
     /**
      * @param types    3  周末成长营 4  暑期大露营
@@ -495,15 +496,14 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
 
         final HashMap<String, String> map = new HashMap<String, String>();
         if (null != city && !TextUtils.isEmpty(city.regionName)) {
-            //map.put("regionName", city.regionName);//城市名称
-            map.put("regionName", "西安");//城市名称
+            map.put("regionName", city.regionName);//城市名称
         } else {
             map.put("regionName", "西安");//城市名称
         }
-//        map.put("lat",info.lat+"");
-//        map.put("lon",info.lng+"");
-        map.put("lat", 1 + "");
-        map.put("lon", 1 + "");
+        map.put("lat",info.lat+"");
+        map.put("lon",info.lng+"");
+//        map.put("lat", 1 + "");
+//        map.put("lon", 1 + "");
         map.put("type", "" + types);
         UserManager.getInstance().getTzjstoreStorelist(context, map, new ServiceCallback<CommonListResult<Storelist>>() {
             final String CACHEKEY = "CourseFm_getStorelist";

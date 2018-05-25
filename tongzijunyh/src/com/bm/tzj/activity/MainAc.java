@@ -1,5 +1,6 @@
 package com.bm.tzj.activity;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -37,6 +38,7 @@ import com.bm.dialog.OpenNotifyDialog;
 import com.bm.dialog.UtilDialog;
 import com.bm.dialog.YouhuiquanDialog;
 import com.bm.entity.Adverts;
+import com.bm.entity.Child;
 import com.bm.entity.UpgradeInfo;
 import com.bm.entity.User;
 import com.bm.entity.Youhuiquan;
@@ -138,7 +140,6 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 		public void run() {
 			if(popTimerPause > 0)
 				return;
-
 			step++;
 			switch (step)
 			{
@@ -165,33 +166,27 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 	private void popAddChildDialog()
 	{
 		popTimerPause++; //中断标识+1
-		User user = App.getInstance().getUser();
-		Log.d("fff","babyList   "+user.babyList);
-		int babysize = 0;
-		if(babysize == 0)
-		{
+		Calendar c = Calendar.getInstance();//
+		final int day = c.get(Calendar.DAY_OF_MONTH);// 获取当日期
+		int lodDay =  SharedPreferencesHelper.getInt("DAY");
+		Child child = App.getInstance().getChild();
+		if (child==null&&day!=lodDay){
 			mHandler.post(new Runnable() {
 				@Override
 				public void run() {
 					AddBodyDialog dialog = new AddBodyDialog((Activity)context);
 					dialog.show();
-//					dialog.setOnCancelListener(new OnCancelListener() {
-//						@Override
-//						public void onCancel(DialogInterface dialog) {
-//							popTimerPause--; //取消中断
-//						}
-//					});
 					dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
 						@Override
 						public void onDismiss(DialogInterface dialog) {
 							Log.d("ffff","AddBodyDialog onDismiss");
 							popTimerPause--; //取消中断
+							SharedPreferencesHelper.saveInt("DAY",day);
 						}
 					});
 				}
 			});
-		}
-		else {
+		}else {
 			popTimerPause--; //取消中断
 		}
 	}
@@ -646,42 +641,14 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 	protected void onResume() {
 		super.onResume();
 
-		//		if("SearchFriendAc".equals(getIntent().getStringExtra("tag"))){
-		//			setTabSelection(1);
-		//			rl_top.setVisibility(View.GONE);
-		//			position=1;
-		//		}
-
-
 		getUserInfo();
-
 
 		// register the event listener when enter the foreground
 		EMChatManager.getInstance().registerEventListener(this,new EMNotifierEvent.Event[] { EMNotifierEvent.Event.EventNewMessage ,EMNotifierEvent.Event.EventOfflineMessage, EMNotifierEvent.Event.EventConversationListChanged});
 
-
-		//		if(null!=findFm){
-		//			if("1".equals(findFm.tag)){//玩伴儿
-		//				findFm.pager.setFirstPage();
-		//				findFm.list.clear();
-		//				findFm.getWBList();
-		//			}else{
-		//				findFm.pager.setFirstPage();
-		//				findFm.list.clear();
-		//				findFm.getTSList();
-		//			}
-		//		}
-
 		if(isDefult != 2){
 			if(null !=indexFm){
 				indexFm.refresh();
-				//				indexFm.pager.setFirstPage();
-				//				indexFm.getIsMessage();//刷新未读消息
-				//				indexFm.list.clear();
-				//				indexFm.getHotGoods();//刷新推荐课程
-				//				indexFm.getStorelist();//刷新门店
-				//				indexFm.getAdvertlist();//刷新广告位
-				//				indexFm.init();
 			}
 		}
 

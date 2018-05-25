@@ -49,12 +49,14 @@ public class ShuQIAdapter extends ArrayAdapter<CourseBean> {
         TextView tv_price = (TextView)convertView.findViewById(R.id.tv_price);
         TextView tv_time = (TextView)convertView.findViewById(R.id.tv_time);
         TextView tv_age = (TextView)convertView.findViewById(R.id.tv_age);
+        TextView tv_age2 = (TextView)convertView.findViewById(R.id.tv_age2);
         TextView tv_adr = (TextView)convertView.findViewById(R.id.tv_adr);
         ImageView img_a = (ImageView)convertView.findViewById(R.id.img_a);
 
         tv_name.setText(data.goodsName);
         tv_time.setText(data.goodsTime);
-        tv_age.setText(data.suitableAge+"岁");
+        tv_age.setText(data.dayiff+"天");
+        tv_age2.setText(data.suitableAge+"岁");
         tv_price.setText("￥"+data.goodsPrice);
         tv_adr.setText(data.address);
         GlideUtils.loadRoundImg(context,data.titleMultiUrl,img_a,5);

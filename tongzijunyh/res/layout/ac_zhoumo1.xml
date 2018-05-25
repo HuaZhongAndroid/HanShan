@@ -48,6 +48,8 @@
         android:id="@+id/defultImg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:background="@color/white"
         android:src="@drawable/none"
-        android:scaleType="centerCrop"/>
+        />
 </RelativeLayout>

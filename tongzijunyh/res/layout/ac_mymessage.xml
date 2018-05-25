@@ -22,12 +22,12 @@
             android:scrollingCache="false"
             android:visibility="gone" />
     </com.lib.widget.refush.SwipyRefreshLayout>
-    
+
     <ImageView
         android:id="@+id/img_noData"
         style="@style/ww"
         android:layout_centerHorizontal="true"
-        android:scaleType="centerCrop"
+        android:layout_marginTop="120dip"
         android:src="@drawable/none" />
 
 </RelativeLayout>
