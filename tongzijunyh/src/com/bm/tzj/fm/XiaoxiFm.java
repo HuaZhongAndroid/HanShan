@@ -42,6 +42,8 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
     //没有数据的时候显示的空view
     private View emptyLayout;
     private ListView listView;
+    private View radCountCoachingView;
+    private View radCountNotifyView;
     private XiaoxiListAdapter xiaoxiListXiaoxiListAdapter = null;
     private ArrayList<XiaoxiList.MessageRecoBean> xiaoxiLists = new ArrayList<>();
 
@@ -58,6 +60,8 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
     private void init() {
 
         emptyLayout = messageLayout.findViewById(R.id.emptyLayout);
+        radCountCoachingView = messageLayout.findViewById(R.id.radCountCoachingView);
+        radCountNotifyView = messageLayout.findViewById(R.id.radCountNotifyView);
         listView = (ListView) messageLayout.findViewById(R.id.recyclerView);
 
         messageLayout.findViewById(R.id.coachingItem).setOnClickListener(this);
@@ -139,6 +143,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
             listView.setVisibility(View.VISIBLE);
             xiaoxiLists.addAll(obj.data.getMessageReco());
             xiaoxiListXiaoxiListAdapter.notifyDataSetChanged();
+            refreshRedPoint(obj);
         } else {
             emptyLayout.setVisibility(View.VISIBLE);
             listView.setVisibility(View.GONE);
@@ -169,6 +174,39 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
             super(iteView);
             img_tu = (ImageView) iteView.findViewById(R.id.img_tu);
         }
+    }
+
+    //刷新红点
+    private void refreshRedPoint(CommonResult<XiaoxiList> obj) {
+        if (obj == null || obj.data == null) {
+            radCountCoachingView.setVisibility(View.GONE);
+            radCountNotifyView.setVisibility(View.GONE);
+            return;
+        } else {
+            if (obj.data.getAppraise() == null || obj.data.getAppraise().size() < 1) {
+                radCountCoachingView.setVisibility(View.GONE);
+            } else {
+                boolean hasNotRead = false;
+                for (XiaoxiList.AppraiseBean appraiseBean : obj.data.getAppraise()) {
+                    if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
+                        hasNotRead = true;
+                    }
+                }
+                radCountCoachingView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
+            }
+            if (obj.data.getMessageAll() == null || obj.data.getMessageAll().size() < 1) {
+                boolean hasNotRead = false;
+                for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
+                    if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
+                        hasNotRead = true;
+                    }
+                }
+                radCountCoachingView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
+            } else {
+                radCountNotifyView.setVisibility(View.VISIBLE);
+            }
+        }
+
     }
 
 

@@ -1,6 +1,8 @@
 package com.bm.tzj.activity;
 
 import android.os.Bundle;
+import android.text.Html;
+import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.bm.api.MessageManager;
@@ -21,7 +23,6 @@ public class XiaoXiDetailAct extends BaseActivity {
 
 
     private String titleStr;
-    private String contentStr;
     private TextView detailTv;
     private String messageId;
 
@@ -32,7 +33,6 @@ public class XiaoXiDetailAct extends BaseActivity {
 
         titleStr = getIntent().getStringExtra("titleStr");
         messageId = getIntent().getStringExtra("messageId");
-        contentStr = getIntent().getStringExtra("contentStr");
         setTitleName(titleStr);
         detailTv = (TextView) findViewById(R.id.detailTv);
         getMessageDetail();
@@ -73,7 +73,11 @@ public class XiaoXiDetailAct extends BaseActivity {
     }
 
     private void handDataShow(CommonResult<XiaoXiDetail> obj) {
-        detailTv.setText(obj.data.getContent());
+        if (TextUtils.isEmpty(obj.data.getContent())){
+            detailTv.setText(Html.fromHtml(obj.data.getThinContent()));
+        }else {
+            detailTv.setText(Html.fromHtml(obj.data.getContent()));
+        }
     }
 
 

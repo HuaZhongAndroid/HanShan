@@ -34,80 +34,113 @@
         android:orientation="vertical"
         android:paddingLeft="10dp">
 
-        <LinearLayout
-            android:id="@+id/coachingItem"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_width="56dp"
-                android:layout_height="53dp"
-                android:src="@drawable/dianping" />
 
             <LinearLayout
+                android:id="@+id/coachingItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:orientation="vertical">
+                android:layout_height="65dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="教练点评"
-                    android:textColor="#ff333333"
-                    android:textSize="14dp" />
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="53dp"
+                    android:src="@drawable/dianping" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="暂无点评。报名课程，获得更多教练点评"
-                    android:textColor="#ff979696"
-                    android:textSize="11dp" />
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="教练点评"
+                        android:textColor="#ff333333"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="暂无点评。报名课程，获得更多教练点评"
+                        android:textColor="#ff979696"
+                        android:textSize="11dp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+
+            <View
+                android:visibility="gone"
+                android:id="@+id/radCountCoachingView"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bar_read_circle" />
+
+        </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#fff5f5f5" />
 
-        <LinearLayout
-            android:id="@+id/notifyItem"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="56dp"
-                android:layout_height="53dp"
-                android:src="@drawable/tongzhixiaoxi" />
+            android:layout_height="wrap_content">
 
             <LinearLayout
+                android:id="@+id/notifyItem"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:orientation="vertical">
+                android:layout_height="65dp"
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="通知消息"
-                    android:textColor="#ff333333"
-                    android:textSize="14dp" />
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="53dp"
+                    android:src="@drawable/tongzhixiaoxi" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="暂无新消息"
-                    android:textColor="#ff979696"
-                    android:textSize="11dp" />
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="通知消息"
+                        android:textColor="#ff333333"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="暂无新消息"
+                        android:textColor="#ff979696"
+                        android:textSize="11dp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+
+            <View
+                android:visibility="gone"
+                android:id="@+id/radCountNotifyView"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bar_read_circle" />
+
+        </RelativeLayout>
     </LinearLayout>
 
     <View

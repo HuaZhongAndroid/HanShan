@@ -43,7 +43,7 @@ public class NotifyAct extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.contentView(R.layout.ac_coaching_list);
+        this.contentView(R.layout.ac_notify_xiaoxi_list);
         setTitleName("通知消息");
         init();
         getMessList();
