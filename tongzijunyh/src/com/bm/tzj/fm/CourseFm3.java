@@ -535,6 +535,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                 if (null != obj.data&&obj.data.size()>0) {
                     if (types == 1) {
                         adapter1.clear();
+                        adapter1.setType(1);
                         adapter1.addAll(cutList(obj.data, 2));
                         adapter1.notifyDataSetChanged();
                         lay1.setVisibility(View.VISIBLE);
@@ -542,6 +543,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                             tv_more1.setVisibility(View.VISIBLE);
                     } else {
                         adapter11.clear();
+                        adapter1.setType(2);
                         adapter11.addAll(cutList(obj.data, 2));
                         adapter11.notifyDataSetChanged();
                         lay11.setVisibility(View.VISIBLE);

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bm.entity.CourseBean;
+import com.bm.tzj.activity.CourseWebActivity;
 import com.bm.tzj.activity.LuyingDetailAc;
 import com.bm.util.GlideUtils;
 import com.richer.tzj.R;
@@ -92,8 +93,12 @@ public class ZhouMoAdapter extends ArrayAdapter<CourseBean> {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, LuyingDetailAc.class);
-                i.putExtra("goodsId",data.goodsId);
+                Intent i = new Intent(context, CourseWebActivity.class);
+                //（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
+                String url = "http://59.110.62.10:8888/tongZiJun/app/specialColumn.html?" +
+                        "specialColumnid=%s&share=%s&urlType=%s";
+                i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.pkid,0,0));
+                i.putExtra(CourseWebActivity.Titele,data.title);
                 context.startActivity(i);
             }
         });

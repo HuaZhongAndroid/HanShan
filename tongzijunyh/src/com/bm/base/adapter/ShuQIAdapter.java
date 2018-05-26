@@ -14,6 +14,7 @@ import com.bm.app.App;
 import com.bm.entity.Course;
 import com.bm.entity.CourseBean;
 import com.bm.entity.Storelist;
+import com.bm.tzj.activity.CourseWebActivity;
 import com.bm.tzj.activity.LeyuanAc;
 import com.bm.tzj.activity.LuyingDetailAc;
 import com.bm.util.GlideUtils;
@@ -64,9 +65,17 @@ public class ShuQIAdapter extends ArrayAdapter<CourseBean> {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context, LuyingDetailAc.class);
-                i.putExtra("goodsId",data.goodsId);
+                Intent i = new Intent(context, CourseWebActivity.class);
+                //（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
+                String url = "http://59.110.62.10:8888/tongZiJun/app/outdoors_details.html?" +
+                        "goodsId=%s&share=%s&urlType=%s";
+                i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.goodsId,0,0));
+                i.putExtra(CourseWebActivity.Titele,data.goodsName);
                 context.startActivity(i);
+                //http://59.110.62.10:8888/tongZiJun/app/outdoors_details.html?goodsId=3319&urlType=0&shares=1
+//                Intent i = new Intent(context, LuyingDetailAc.class);
+//                i.putExtra("goodsId",data.goodsId);
+//                context.startActivity(i);
             }
         });
 

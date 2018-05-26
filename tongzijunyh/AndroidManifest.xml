@@ -508,6 +508,13 @@
             android:name="com.bm.tzj.activity.ZhoumoAc"
             android:screenOrientation="portrait" >
         </activity>
+
+
+        <!-- 周末  暑期 详情 -->
+        <activity
+            android:name="com.bm.tzj.activity.CourseWebActivity"
+            android:screenOrientation="portrait" >
+        </activity>
          
         
         
