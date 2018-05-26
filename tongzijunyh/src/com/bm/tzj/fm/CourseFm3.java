@@ -30,6 +30,7 @@ import com.bm.entity.Storelist;
 import com.bm.entity.ZhouMoCity;
 import com.bm.tzj.activity.LuyingAc;
 import com.bm.tzj.activity.MainAc;
+import com.bm.tzj.activity.NaoTengListAct;
 import com.bm.tzj.activity.ZhoumoAc;
 import com.bm.tzj.city.Activity01;
 import com.bm.tzj.city.City;
@@ -610,12 +611,24 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                 intent.putExtra("title", "搜索");
                 startActivity(intent);
                 break;
+            case R.id.tv_more1://闹腾 查看更多
+                intent = new Intent(context, NaoTengListAct.class);
+                intent.putExtra("title", "闹腾训练中心");
+                intent.putExtra("type", 1);
+                startActivity(intent);
+                break;
+            case R.id.tv_more11://室内 查看更多
+                intent = new Intent(context, NaoTengListAct.class);
+                intent.putExtra("title", "室内体验馆");
+                intent.putExtra("type", 2);
+                startActivity(intent);
+                break;
             case R.id.tv_more2://周末成长营 查看更多
                 intent = new Intent(context, ZhoumoAc.class);
                 intent.putExtra("title", "搜索");
                 startActivity(intent);
                 break;
-            case R.id.tv_hyh://周末成长营 查看更多
+            case R.id.tv_hyh://周末成长营 换一换
                 if (adapter2!=null)
                 adapter2.showData(3,true);
                 break;
