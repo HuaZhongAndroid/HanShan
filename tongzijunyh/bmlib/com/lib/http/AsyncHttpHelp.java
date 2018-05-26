@@ -1,22 +1,5 @@
 package com.lib.http;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import android.content.Context;
 import android.text.TextUtils;
 
@@ -33,6 +16,23 @@ import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.ResponseHandlerInterface;
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.richer.tzj.R;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -71,7 +71,7 @@ public class AsyncHttpHelp {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		Lg.i("url:", logStr);
+		Lg.e("get url:", logStr);
 		AsyncHttpClient client = new AsyncHttpClient();
 //		client.setTimeout(1000);
 //		client.setConnectTimeout(1000);
@@ -109,7 +109,8 @@ public class AsyncHttpHelp {
 				}
 				params.put(fileName, filess);
 			} 
-			Lg.i("url:", url);
+			Lg.e("url:", url);
+			Lg.e("post参数:", params.toString());
 //		} catch (UnsupportedEncodingException e) {
 //			e.printStackTrace();
 		} catch (Exception e) {
