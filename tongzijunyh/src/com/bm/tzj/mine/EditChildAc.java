@@ -1,11 +1,5 @@
 package com.bm.tzj.mine;
 
-import java.io.File;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
@@ -20,7 +14,6 @@ import android.view.View.OnClickListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -38,6 +31,12 @@ import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonResult;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.richer.tzj.R;
+
+import java.io.File;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
 
 public class EditChildAc extends BaseCaptureActivity implements OnClickListener {
 
@@ -191,7 +190,7 @@ public class EditChildAc extends BaseCaptureActivity implements OnClickListener 
 		HashMap<String, String> map = new HashMap<String, String>();
 		map.put("babyId", child.babyId);
 		map.put("realName", baByName);
-//		map.put("birthday", birthday);
+		map.put("birthday", birthday);
 		map.put("gender", babysex);
 //		List<File> files = new ArrayList<File>();
 //		if (!TextUtils.isEmpty(imagePath)) {
