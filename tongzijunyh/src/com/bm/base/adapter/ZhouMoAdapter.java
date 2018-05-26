@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bm.api.BaseApi;
 import com.bm.entity.CourseBean;
 import com.bm.tzj.activity.CourseWebActivity;
 import com.bm.tzj.activity.LuyingDetailAc;
@@ -30,7 +31,7 @@ public class ZhouMoAdapter extends ArrayAdapter<CourseBean> {
     List<CourseBean> list ;
 
     Context context;
-    public ZhouMoAdapter(@NonNull Context context) {
+    public ZhouMoAdapter(Context context) {
         super(context, 0);
         this.context   = context;
     }
@@ -95,7 +96,7 @@ public class ZhouMoAdapter extends ArrayAdapter<CourseBean> {
             public void onClick(View v) {
                 Intent i = new Intent(context, CourseWebActivity.class);
                 //（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
-                String url = "http://59.110.62.10:8888/tongZiJun/app/specialColumn.html?" +
+                String url = BaseApi.API_URL_PRE+"specialColumn.html?" +
                         "specialColumnid=%s&share=%s&urlType=%s";
                 i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.pkid,0,0));
                 i.putExtra(CourseWebActivity.Titele,data.title);

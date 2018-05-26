@@ -2,7 +2,6 @@ package com.bm.base.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bm.api.BaseApi;
 import com.bm.app.App;
 import com.bm.entity.Course;
 import com.bm.entity.CourseBean;
@@ -19,7 +19,6 @@ import com.bm.tzj.activity.LeyuanAc;
 import com.bm.tzj.activity.LuyingDetailAc;
 import com.bm.util.GlideUtils;
 import com.lib.widget.RatingBarView;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.richer.tzj.R;
 
 /**
@@ -31,7 +30,7 @@ import com.richer.tzj.R;
 public class ShuQIAdapter extends ArrayAdapter<CourseBean> {
 
     Context context;
-    public ShuQIAdapter(@NonNull Context context) {
+    public ShuQIAdapter( Context context) {
         super(context, 0);
         this.context   = context;
     }
@@ -67,7 +66,7 @@ public class ShuQIAdapter extends ArrayAdapter<CourseBean> {
             public void onClick(View v) {
                 Intent i = new Intent(context, CourseWebActivity.class);
                 //（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
-                String url = "http://59.110.62.10:8888/tongZiJun/app/outdoors_details.html?" +
+                String url = BaseApi.API_URL_PRE+"outdoors_details.html?" +
                         "goodsId=%s&share=%s&urlType=%s";
                 i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.goodsId,0,0));
                 i.putExtra(CourseWebActivity.Titele,data.goodsName);
