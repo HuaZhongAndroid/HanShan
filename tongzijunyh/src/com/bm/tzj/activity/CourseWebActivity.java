@@ -10,15 +10,21 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.bm.api.UserManager;
+import com.bm.app.App;
 import com.bm.base.BaseActivity;
+import com.bm.entity.Order;
 import com.bm.share.ShareModel;
+import com.bm.tzj.kc.PayInfoAc2;
 import com.bm.util.GlobalPrams;
+import com.lib.http.ServiceCallback;
+import com.lib.http.result.CommonResult;
 import com.richer.tzj.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class CourseWebActivity extends BaseActivity implements OnClickListener {
+public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickListener {
     public final static String Titele = "titele";
     public final static String WebUrl = "WebUrl";
 
@@ -42,6 +48,16 @@ public class CourseWebActivity extends BaseActivity implements OnClickListener {
         title = intent.getStringExtra(Titele);
         setTitleName(title);
         initView();
+    }
+
+    @Override
+    protected void onCreateOrderSuccess(Order order) {
+        Intent intent = new Intent(context, PayInfoAc2.class);
+        intent.putExtra("bao", order);
+        intent.putExtra("order", order);
+        intent.putExtra("pageTag","CoursebaoAc");
+        startActivity(intent);
+        finish();
     }
 
     private void initView() {
@@ -79,7 +95,6 @@ public class CourseWebActivity extends BaseActivity implements OnClickListener {
 
     class MyWebViewClient extends WebViewClient {
 
-
         @SuppressLint("NewApi")
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -100,13 +115,13 @@ public class CourseWebActivity extends BaseActivity implements OnClickListener {
             Log.e("Loading", url);
             Map<String, String> map = getMap(url);
             if (map != null) {
-                String goodsId = map.get("goodsId");
-                String storeId = map.get("storeId");
-                String goodsType = map.get("goodsType");
+                goodsId = map.get("goodsId");
+                storeId = map.get("storeId");
+                type = map.get("goodsType");
                 String storeName = map.get("storeName");
                 String goodsTime = map.get("goodsTime");
                 String goodsName = map.get("goodsName");
-
+                showPopupWindow(web_view);
                 return true;
             }
             return false;

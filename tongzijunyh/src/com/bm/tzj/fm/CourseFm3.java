@@ -503,8 +503,6 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
         }
         map.put("lat",info.lat+"");
         map.put("lon",info.lng+"");
-//        map.put("lat", 1 + "");
-//        map.put("lon", 1 + "");
         map.put("type", "" + types);
         UserManager.getInstance().getTzjstoreStorelist(context, map, new ServiceCallback<CommonListResult<Storelist>>() {
             final String CACHEKEY = "CourseFm_getStorelist";
@@ -544,20 +542,21 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                             tv_more1.setVisibility(View.VISIBLE);
                     } else {
                         adapter11.clear();
-                        adapter1.setType(2);
+                        adapter11.setType(2);
                         adapter11.addAll(cutList(obj.data, 2));
                         adapter11.notifyDataSetChanged();
                         lay11.setVisibility(View.VISIBLE);
                         if (obj.data.size() > 2)
                             tv_more1.setVisibility(View.VISIBLE);
-
                     }
 
                 } else {
                     if (types == 1) {
-                        lay11.setVisibility(View.GONE);
-                    } else {
                         lay1.setVisibility(View.GONE);
+                        adapter1.setType(1);
+                    } else {
+                        lay11.setVisibility(View.GONE);
+                        adapter11.setType(2);
                     }
 
                 }
