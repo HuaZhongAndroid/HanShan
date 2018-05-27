@@ -27,11 +27,17 @@ import com.bm.app.App;
 import com.bm.base.BaseActivity;
 import com.bm.dialog.OpenLocDialog;
 import com.bm.dialog.ToastDialog;
+import com.bm.entity.AliOrder;
 import com.bm.entity.RechargeConfig;
+import com.bm.entity.WeixinOrder;
+import com.bm.pay.alipay.AlipayUtil;
+import com.bm.pay.weixin.PayActivity;
 import com.bm.tzj.city.City;
 import com.bm.util.BDLocationHelper;
+import com.google.gson.Gson;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
+import com.lib.http.result.CommonResult;
 import com.richer.tzj.R;
 
 import java.util.HashMap;
@@ -136,10 +142,13 @@ public class RechargeAc2 extends BaseActivity {
             if (map!=null){
                 String reConId =  map.get("reConId");
                 String payType =  map.get("payType");
+                userId =  map.get("userId");
                 Log.e("reConId","reConId = "+reConId);
                 Log.e("payType","payType = "+payType);
+                getPayInfo(payType,reConId);
+                return true;
             }
-            return true;
+            return false;
         }
 //        @Override
 //        public WebResourceResponse shouldInterceptRequest(WebView view, String url){
@@ -161,18 +170,60 @@ public class RechargeAc2 extends BaseActivity {
         }
         return null;
     }
-    private String  getValue(String str,String key){
-        String value = "";
-        if (!str.contains(key))return value;
-        int index = str.indexOf(key);
-        //截取指定字符之后的字符串
-        value = str.substring(index,str.length());
-        Log.e("value1",value);
-        //int start = index+key.length();
-        //value = value.substring(start,value.length());
 
-        return value;
+    private void  getPayInfo(String payType,String reConId){
+        showProgressDialog();
+        HashMap<String, String> map =new HashMap<String, String>();
+        map.put("userId", userId);
+        map.put("payType", payType);//1  支付宝  2 微信  3银联
+        map.put("reConId", reConId);//1  支付宝  2 微信  3银联
+        if(payType .equals("1"))
+        {
+            UserManager.getInstance().payrechargeAli(context, map, new ServiceCallback<CommonResult<AliOrder>>() {
+                @Override
+                public void error(String msg) {
+                    hideProgressDialog();
+                    dialogToast(msg);
+                }
+                @Override
+                public void done(int what, CommonResult<AliOrder> obj) {
+                    hideProgressDialog();
+                    if(null!=obj.data){
+                        AlipayUtil.pay(obj.data.payinfo, context,"RechargeAc");
+                    }
+                }
+            });
+        }
+        else if(payType.equals("2"))
+        {
+            UserManager.getInstance().payrechargeWx(context, map, new ServiceCallback<CommonResult<WeixinOrder>>() {
+                @Override
+                public void error(String msg) {
+                    hideProgressDialog();
+                    dialogToast(msg);
+                }
+                @Override
+                public void done(int what, CommonResult<WeixinOrder> obj) {
+                    hideProgressDialog();
+                    if(null!=obj.data){
+                        weichatPay(obj.data);
+                    }
+                }
+            });
+        }
+
     }
-
-
+    /**
+     * 微信支付
+     */
+    private void weichatPay(WeixinOrder order) {
+        // 通过WXAPIFactory工厂，获取IWXAPI的实例
+        String json = new Gson().toJson(order);
+        System.out.println("json:"+json);
+        Intent intent = new Intent(this,PayActivity.class);
+        intent.putExtra("info", json);
+        intent.putExtra("pageType", "RechargeAc");
+        startActivity(intent);
+        //PayActivity.pay(this, json);
+    }
 }

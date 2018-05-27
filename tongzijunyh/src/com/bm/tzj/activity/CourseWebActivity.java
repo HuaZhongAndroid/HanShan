@@ -15,6 +15,9 @@ import com.bm.share.ShareModel;
 import com.bm.util.GlobalPrams;
 import com.richer.tzj.R;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CourseWebActivity extends BaseActivity implements OnClickListener {
     public final static String Titele = "titele";
     public final static String WebUrl = "WebUrl";
@@ -56,23 +59,6 @@ public class CourseWebActivity extends BaseActivity implements OnClickListener {
         web_view.loadUrl(url);
     }
 
-    class MyWebViewClient extends WebViewClient {
-
-
-        @SuppressLint("NewApi")
-        @Override
-        public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            super.onPageStarted(view, url, favicon);
-        }
-
-        @Override
-        public void onPageFinished(WebView view, String url) {
-//			title = view.getTitle();
-//			setTitleName(view.getTitle());
-            hideProgressDialog();
-        }
-    }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -89,5 +75,57 @@ public class CourseWebActivity extends BaseActivity implements OnClickListener {
             default:
                 break;
         }
+    }
+
+    class MyWebViewClient extends WebViewClient {
+
+
+        @SuppressLint("NewApi")
+        @Override
+        public void onPageStarted(WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+//			title = view.getTitle();
+//			setTitleName(view.getTitle());
+            hideProgressDialog();
+        }
+
+        @Override
+        // 在点击请求的是链接是才会调用，重写此方法返回true表明点击网页里面的链接还是在当前的webview里跳转，不跳到浏览器那边。这个函数我们可以做很多操作，比如我们读取到某些特殊的URL，于是就可以不打开地址，取消这个操作，进行预先定义的其他操作，这对一个程序是非常必要的。
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            // 判断url链接中是否含有某个字段，如果有就执行指定的跳转（不执行跳转url链接），如果没有就加载url链接
+            Log.e("Loading", url);
+            Map<String, String> map = getMap(url);
+            if (map != null) {
+                String goodsId = map.get("goodsId");
+                String storeId = map.get("storeId");
+                String goodsType = map.get("goodsType");
+                String storeName = map.get("storeName");
+                String goodsTime = map.get("goodsTime");
+                String goodsName = map.get("goodsName");
+
+                return true;
+            }
+            return false;
+        }
+    }
+
+    private Map<String, String> getMap(String str) {
+        if (str.contains("tzj://enroll?")) {
+            Map<String, String> map = new HashMap<>();
+            str = str.substring(str.indexOf("?") + 1, str.length());
+            String split[] = str.split("&");
+            for (int i = 0; i < split.length; i++) {
+                String sp[] = split[i].split("=");
+                if (sp.length != 2) continue;
+                Log.e(sp[0], sp[0] + " = " + sp[1]);
+                map.put(sp[0], sp[1]);
+            }
+            return map;
+        }
+        return null;
     }
 }

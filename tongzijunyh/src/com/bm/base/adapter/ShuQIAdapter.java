@@ -66,7 +66,7 @@ public class ShuQIAdapter extends ArrayAdapter<CourseBean> {
             public void onClick(View v) {
                 Intent i = new Intent(context, CourseWebActivity.class);
                 //（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
-                String url = BaseApi.API_URL_PRE+"outdoors_details.html?" +
+                String url = BaseApi.API_HOST+"/tongZiJun/app/outdoors_details.html?" +
                         "goodsId=%s&share=%s&urlType=%s";
                 i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.goodsId,0,0));
                 i.putExtra(CourseWebActivity.Titele,data.goodsName);
