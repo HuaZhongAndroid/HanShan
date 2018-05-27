@@ -2,26 +2,20 @@ package com.bm.tzj.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.bm.api.MessageManager;
 import com.bm.app.App;
 import com.bm.base.BaseActivity;
 import com.bm.base.adapter.XiaoxiListAdapter;
 import com.bm.entity.User;
 import com.bm.entity.XiaoxiList;
 import com.bm.tzj.city.City;
-import com.bm.util.CacheUtil;
-import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonResult;
 import com.richer.tzj.R;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * 教练点评界面
@@ -105,39 +99,41 @@ public class CoachingAct extends BaseActivity {
 
     //请求数据
     private void getMessList() {
-        final HashMap<String, String> map = new HashMap<String, String>();
-        if (null != city && !TextUtils.isEmpty(city.regionName)) {
-            map.put("regionName", city.regionName);//城市名称
-            map.put("userId", user.userid);//用户id
-        } else {
-            map.put("regionName", "西安市");//城市名称
-        }
-        MessageManager.getInstance().getMessageList(this, map, new ServiceCallback<CommonResult<XiaoxiList>>() {
-
-            final String CACHEKEY = "xiaoxiFm_message_list_cache";
-
-            @Override
-            public void done(int what, CommonResult<XiaoxiList> obj) {
-                handDataShow(obj);
-                CacheUtil.save(context, CACHEKEY, map, obj);
-            }
-
-            @Override
-            public void error(String msg) {
-                //从缓存中读取数据
-                CommonResult<XiaoxiList> obj = new CommonResult<XiaoxiList>() {
-                };
-                Type type = obj.getClass().getGenericSuperclass();
-                obj = (CommonResult<XiaoxiList>) CacheUtil.read(context, CACHEKEY, map, type);
-                if (obj != null) {
-                    handDataShow(obj);
-                    return;
-                }
-
-                //没有缓存时执行下面的逻辑
-                MainAc.intance.dialogToast(msg);
-            }
-        });
+//        final HashMap<String, String> map = new HashMap<String, String>();
+//        if (null != city && !TextUtils.isEmpty(city.regionName)) {
+//            map.put("regionName", city.regionName);//城市名称
+//            map.put("userId", user.userid);//用户id
+//        } else {
+//            map.put("regionName", "西安市");//城市名称
+//        }
+//        MessageManager.getInstance().getMessageList(this, map, new ServiceCallback<CommonResult<XiaoxiList>>() {
+//
+//            final String CACHEKEY = "xiaoxiFm_message_list_cache";
+//
+//            @Override
+//            public void done(int what, CommonResult<XiaoxiList> obj) {
+//                handDataShow(obj);
+//                CacheUtil.save(context, CACHEKEY, map, obj);
+//            }
+//
+//            @Override
+//            public void error(String msg) {
+//                //从缓存中读取数据
+//                CommonResult<XiaoxiList> obj = new CommonResult<XiaoxiList>() {
+//                };
+//                Type type = obj.getClass().getGenericSuperclass();
+//                obj = (CommonResult<XiaoxiList>) CacheUtil.read(context, CACHEKEY, map, type);
+//                if (obj != null) {
+//                    handDataShow(obj);
+//                    return;
+//                }
+//
+//                //没有缓存时执行下面的逻辑
+//                MainAc.intance.dialogToast(msg);
+//            }
+//        });
+        CommonResult<XiaoxiList> obj = (CommonResult<XiaoxiList>) getIntent().getSerializableExtra("data");
+        handDataShow(obj);
     }
 
     private void handDataShow(CommonResult<XiaoxiList> obj) {

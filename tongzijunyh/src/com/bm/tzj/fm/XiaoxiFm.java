@@ -2,6 +2,7 @@ package com.bm.tzj.fm;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -13,6 +14,7 @@ import android.widget.ListView;
 
 import com.bm.api.MessageManager;
 import com.bm.app.App;
+import com.bm.base.BaseFragmentActivity;
 import com.bm.base.adapter.XiaoxiListAdapter;
 import com.bm.entity.User;
 import com.bm.entity.XiaoxiList;
@@ -24,6 +26,8 @@ import com.bm.util.CacheUtil;
 import com.bumptech.glide.Glide;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonResult;
+import com.lib.widget.refush.SwipyRefreshLayout;
+import com.lib.widget.refush.SwipyRefreshLayoutDirection;
 import com.richer.tzj.R;
 
 import java.lang.reflect.Type;
@@ -33,12 +37,11 @@ import java.util.HashMap;
 /**
  * 消息中心
  */
-public class XiaoxiFm extends Fragment implements View.OnClickListener {
+public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRefreshLayout.OnRefreshListener {
 
     private View messageLayout = null;
     private City city = null;
     private User user = null;
-
     //没有数据的时候显示的空view
     private View emptyLayout;
     private ListView listView;
@@ -46,6 +49,9 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
     private View radCountNotifyView;
     private XiaoxiListAdapter xiaoxiListXiaoxiListAdapter = null;
     private ArrayList<XiaoxiList.MessageRecoBean> xiaoxiLists = new ArrayList<>();
+
+    private SwipyRefreshLayout refreshLayout;
+    private CommonResult<XiaoxiList> obj = null;
 
     @Nullable
     @Override
@@ -60,6 +66,11 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
     private void init() {
 
         emptyLayout = messageLayout.findViewById(R.id.emptyLayout);
+        refreshLayout = (SwipyRefreshLayout) messageLayout.findViewById(R.id.refreshLayout);
+        refreshLayout.setDirection(SwipyRefreshLayoutDirection.BOTH);
+        refreshLayout.setColorScheme(R.color.color1, R.color.color2,
+                R.color.color3, R.color.color4);
+        refreshLayout.setOnRefreshListener(this);
         radCountCoachingView = messageLayout.findViewById(R.id.radCountCoachingView);
         radCountNotifyView = messageLayout.findViewById(R.id.radCountNotifyView);
         listView = (ListView) messageLayout.findViewById(R.id.recyclerView);
@@ -97,6 +108,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
     }
 
     private void refreshData() {
+        ((BaseFragmentActivity) getActivity()).showProgressDialog();
         getMessList();
     }
 
@@ -114,12 +126,14 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
 
             @Override
             public void done(int what, CommonResult<XiaoxiList> obj) {
+                hideProgressDialog();
                 handDataShow(obj);
                 CacheUtil.save(getActivity(), CACHEKEY, map, obj);
             }
 
             @Override
             public void error(String msg) {
+                hideProgressDialog();
                 //从缓存中读取数据
                 CommonResult<XiaoxiList> obj = new CommonResult<XiaoxiList>() {
                 };
@@ -129,7 +143,6 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
                     handDataShow(obj);
                     return;
                 }
-
                 //没有缓存时执行下面的逻辑
                 MainAc.intance.dialogToast(msg);
             }
@@ -156,12 +169,51 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             //教练点评
             case R.id.coachingItem:
-                startActivity(new Intent(getActivity(), CoachingAct.class));
+                startActivity(new Intent(getActivity(), CoachingAct.class)
+                        .putExtra("data", obj));
                 break;
             //通知消息
             case R.id.notifyItem:
-                startActivity(new Intent(getActivity(), NotifyAct.class));
+                startActivity(new Intent(getActivity(), NotifyAct.class)
+                        .putExtra("data", obj));
                 break;
+        }
+    }
+
+
+    @Override
+    public void onRefresh(SwipyRefreshLayoutDirection direction) {
+        if (direction == SwipyRefreshLayoutDirection.TOP) {
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            xiaoxiLists.clear();
+                            getMessList();
+                            // 刷新设置
+                            refreshLayout.setRefreshing(false);
+                        }
+                    });
+                }
+            }, 2000);
+        } else if (direction == SwipyRefreshLayoutDirection.BOTTOM) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Hide the refresh after 2sec
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            getMessList();
+                            // 刷新设置
+                            refreshLayout.setRefreshing(false);
+                        }
+                    });
+                }
+            }, 2000);
         }
     }
 
@@ -178,6 +230,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
 
     //刷新红点
     private void refreshRedPoint(CommonResult<XiaoxiList> obj) {
+        this.obj = obj;
         if (obj == null || obj.data == null) {
             radCountCoachingView.setVisibility(View.GONE);
             radCountNotifyView.setVisibility(View.GONE);
@@ -195,19 +248,21 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener {
                 radCountCoachingView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
             }
             if (obj.data.getMessageAll() == null || obj.data.getMessageAll().size() < 1) {
+                radCountNotifyView.setVisibility(View.GONE);
+            } else {
                 boolean hasNotRead = false;
                 for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
                     if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                         hasNotRead = true;
                     }
                 }
-                radCountCoachingView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
-            } else {
-                radCountNotifyView.setVisibility(View.VISIBLE);
+                radCountNotifyView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
             }
         }
-
     }
 
+    public void hideProgressDialog() {
+        ((BaseFragmentActivity) getActivity()).hideProgressDialog();
+    }
 
 }

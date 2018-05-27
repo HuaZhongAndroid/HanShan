@@ -1,11 +1,12 @@
 package com.bm.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * 消息列表界面
  */
-public class XiaoxiList {
+public class XiaoxiList implements Serializable {
 
 
     /**
@@ -68,7 +69,7 @@ public class XiaoxiList {
         this.appraise = appraise;
     }
 
-    public static class MessageRecoBean {
+    public static class MessageRecoBean implements Serializable {
         private String title;
         private String titleMultiUrl;
         private String ctime;
@@ -134,7 +135,7 @@ public class XiaoxiList {
         }
     }
 
-    public static class MessageAllBean {
+    public static class MessageAllBean implements Serializable {
         private String title;
         private String titleMultiUrl;
         private String ctime;
@@ -200,7 +201,7 @@ public class XiaoxiList {
         }
     }
 
-    public static class AppraiseBean {
+    public static class AppraiseBean implements Serializable {
         private String title;
         private String titleMultiUrl;
         private String ctime;
