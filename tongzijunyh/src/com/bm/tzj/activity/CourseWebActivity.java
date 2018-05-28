@@ -10,15 +10,9 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.bm.api.UserManager;
-import com.bm.app.App;
-import com.bm.base.BaseActivity;
 import com.bm.entity.Order;
 import com.bm.share.ShareModel;
-import com.bm.tzj.kc.PayInfoAc2;
-import com.bm.util.GlobalPrams;
-import com.lib.http.ServiceCallback;
-import com.lib.http.result.CommonResult;
+import com.bm.tzj.kc.PayInfoAc3;
 import com.richer.tzj.R;
 
 import java.util.HashMap;
@@ -50,12 +44,17 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
         initView();
     }
 
+    String goodsTime;//上课时间
+    String goodsName;
+    String goodsType; //课程内型
     @Override
     protected void onCreateOrderSuccess(Order order) {
-        Intent intent = new Intent(context, PayInfoAc2.class);
-        intent.putExtra("bao", order);
+        Intent intent = new Intent(context, PayInfoAc3.class);
+        order.realName  = xz_child.realName;
+        order.goodsType = goodsType;
+        order.goodsTime = goodsTime;
+        order.goodsName = goodsName;
         intent.putExtra("order", order);
-        intent.putExtra("pageTag","CoursebaoAc");
         startActivity(intent);
         finish();
     }
@@ -117,17 +116,16 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
             if (map != null) {
                 goodsId = map.get("goodsId");
                 storeId = map.get("storeId");
-                type = map.get("goodsType");
-                String storeName = map.get("storeName");
-                String goodsTime = map.get("goodsTime");
-                String goodsName = map.get("goodsName");
+                goodsType = map.get("goodsType");
+                goodsTime = map.get("goodsTime");
+                goodsName = map.get("goodsName");
+                type = 10+"";
                 showPopupWindow(web_view);
                 return true;
             }
             return false;
         }
     }
-
     private Map<String, String> getMap(String str) {
         if (str.contains("tzj://enroll?")) {
             Map<String, String> map = new HashMap<>();

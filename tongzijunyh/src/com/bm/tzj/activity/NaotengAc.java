@@ -2,10 +2,7 @@ package com.bm.tzj.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,29 +10,20 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.bm.api.UserManager;
 import com.bm.app.App;
-import com.bm.base.BaseActivity;
-import com.bm.base.BaseAd;
 import com.bm.entity.Changguan;
-import com.bm.entity.Child;
 import com.bm.entity.Course;
 import com.bm.entity.CourseBao;
 import com.bm.entity.Order;
-import com.bm.entity.PageDataList;
-import com.bm.entity.StoreComment;
 import com.bm.entity.Storelist;
 import com.bm.tzj.caledar.CalendarView_x;
-import com.bm.tzj.kc.PayInfoAc2;
-import com.bm.tzj.mine.AddChildAc;
+import com.bm.tzj.kc.PayInfoAc3;
 import com.bm.util.BitmapUtil;
-import com.bm.view.CircleImageView;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
-import com.lib.http.result.CommonResult;
 import com.lib.widget.HorizontalListView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -43,7 +31,6 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.richer.tzj.R;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -449,7 +436,13 @@ public class NaotengAc extends AbsCoursePayBaseAc {
 
     @Override
     protected void onCreateOrderSuccess(Order order) {
-        Intent intent = new Intent(context, PayInfoAc2.class);
+        Intent intent = new Intent(context, PayInfoAc3.class);
+
+        order.realName  = xz_child.realName;
+        order.goodsType = xzCourse.goodsType;
+        order.goodsTime = xzCourse.goodsTime;
+        order.goodsName = xzCourse.goodsName;
+
         intent.putExtra("course", xzCourse);
         intent.putExtra("order",  order);
         intent.putExtra("child",xz_child);

@@ -91,13 +91,15 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 	private XiaoxiFm messageFm;
 	private XiaoxiFm findFm;
 	private MineFm mineFm;
+	private GrowUpFragment growUpFragment;//成长中心重做
 //	private PullulateFm pullulateFm;
-	//成长中心重做
-	private GrowUpFragment growUpFragment;
+
 	private View indexLayout;
 	private View messageLayout;
 	private View findLayout;
 	private View meLayout;
+
+
 	private View pullulateLayout;
 
 	private ImageView iv_a;
@@ -233,10 +235,6 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 		//AsyncHttpHelp.httpPost(this,map);
 
 		//		getHongbao();
-
-
-		BaseDataUtil.LoadBaseData(this);// 加载基础数据
-
 	}
 
 	@Override

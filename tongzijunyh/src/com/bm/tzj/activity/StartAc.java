@@ -34,6 +34,7 @@ import com.bm.util.ApkUpdateUtil;
 import com.bm.util.BDLocationHelper;
 import com.bm.util.BDLocationHelper.LocationInfo;
 import com.bm.util.BDLocationHelper.MyLocationListener;
+import com.bm.util.BaseDataUtil;
 import com.bm.util.GlobalPrams;
 import com.bm.util.Util;
 import com.lib.http.AsyncHttpHelp;
@@ -82,11 +83,13 @@ public class StartAc extends Activity {
         setContentView(R.layout.ac_start);
         isGoMain = false;
 
-
         Resources resource = this.getResources();
         String pkgName = this.getPackageName();
         context = this;
         loacationInfo();
+
+        BaseDataUtil.LoadBaseData(this);// 加载基础数据
+
         /**
          * context.getgetSharedPreferences(String name, int mode)
          * 获取sharedPreference对象 name是sharedPreference生成的xml文件的名字
@@ -122,7 +125,7 @@ public class StartAc extends Activity {
             }
         }).start();
 
-        getCitys();
+        //getCitys();
 
         new Thread(new Runnable() {
             @Override

@@ -4,7 +4,26 @@ import com.bm.base.BasePostEntity;
 
 public class Order extends BasePostEntity {
 	 private static final long serialVersionUID = -7819498102668783872L;
-	
+
+//	public String goodsMoney;
+//	public String 	goodsId;
+//	public String babyId;
+//	public String 	orderNumber;
+	public String type;
+
+	public String realName;
+	public String storeName;
+	public String goodsTime;
+
+	//外加自己赋值
+	public String goodsType;
+	public String babyName;
+
+
+//	public String goodsName;
+//	public String 		isTraffic;
+//	public String storeId;
+
 	
 	/**
 	 *
@@ -155,4 +174,9 @@ public class Order extends BasePostEntity {
 	public String return_msg;
 	public String return_code;
 	public String trade_type;
+
+
+
+
+
 }

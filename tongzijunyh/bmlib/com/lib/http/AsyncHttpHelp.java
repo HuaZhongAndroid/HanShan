@@ -122,8 +122,6 @@ public class AsyncHttpHelp {
 		client.post(context, url, params, getReponHandler(callback));
 
 	}
-
-	
 	
 	private static ResponseHandlerInterface getReponHandler(final ServiceCallback callback) {
 		final BaseResult r = null;
@@ -135,7 +133,7 @@ public class AsyncHttpHelp {
 			@Override
 			public void onFailure(int arg0, Header[] arg1, String arg2,
 					Throwable arg3) {
-				Lg.i("网络错误:", arg2);
+				Lg.e("网络请求失败:", arg2+" url = "+callback.url);
 				arg3.printStackTrace();
 				callback.error("网络请求失败");
 				App.toast("网络请求失败");

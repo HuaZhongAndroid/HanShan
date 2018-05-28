@@ -303,6 +303,11 @@
         <activity
             android:name="com.bm.tzj.kc.PayInfoAc2"
             android:screenOrientation="portrait"></activity>
+
+        <!-- 支付方式2.6 -->
+        <activity
+            android:name="com.bm.tzj.kc.PayInfoAc3"
+            android:screenOrientation="portrait"></activity>
         <!-- 课程列表 -->
         <activity
             android:name="com.bm.tzj.kc.CourseListAc"

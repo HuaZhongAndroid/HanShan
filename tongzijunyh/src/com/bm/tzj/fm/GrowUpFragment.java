@@ -47,7 +47,9 @@ import com.bm.entity.User;
 import com.bm.tzj.activity.ImageViewActivity;
 import com.bm.tzj.mine.AddChildAc;
 import com.bm.tzj.ts.SendGrowUpAc;
+import com.bm.util.GlideUtils;
 import com.bm.util.Util;
+import com.bumptech.glide.Glide;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
 import com.lib.http.result.CommonResult;
@@ -210,11 +212,12 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
             TextView tv_day = (TextView) convertView.findViewById(R.id.tv_day);
             TextView tv_date = (TextView) convertView.findViewById(R.id.tv_date);
             TextView tv_content = (TextView) convertView.findViewById(R.id.tv_content);
+            View v_jiaolian =  convertView.findViewById(R.id.v_jiaolian);
             TextView tv_jiaolianName = (TextView) convertView.findViewById(R.id.tv_jiaolianName);
             TextView tv_mendianName = (TextView) convertView.findViewById(R.id.tv_mendianName);
             ImageView img_tag = (ImageView) convertView.findViewById(R.id.img_tag);
             ImageView img_a = (ImageView) convertView.findViewById(R.id.img_a);
-
+            TextView tv_pingjia_tip = (TextView) convertView.findViewById(R.id.tv_pingjia_tip);
             FuGridView fgv_a = (FuGridView) convertView.findViewById(R.id.fgv_a);
             View btn_menu = convertView.findViewById(R.id.btn_menu);
 
@@ -237,6 +240,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
                         popMenu(v, data);
                     }
                 });
+                tv_pingjia_tip.setVisibility(View.INVISIBLE);
+                v_jiaolian.setVisibility(View.GONE);
             } else {
                 tv_day.setTextColor(0xffA59945);
                 tv_jiaolianName.setText(data.coachName + "教练点评");
@@ -244,6 +249,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
                 convertView.findViewById(R.id.v_jiaolian).setVisibility(View.VISIBLE);
                 img_tag.setImageResource(R.drawable.koushao);
                 btn_menu.setVisibility(View.GONE);
+                v_jiaolian.setVisibility(View.VISIBLE);
+                tv_pingjia_tip.setVisibility(View.VISIBLE);
             }
 
             if (position == 0) //第一行处理
@@ -345,8 +352,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
             }
 
             RoundImageViewsix iv_pic = (RoundImageViewsix) convertView.findViewById(R.id.iv_pic);
-            ImageLoader.getInstance().displayImage(list.get(position).url, iv_pic, App.getInstance().getListViewDisplayImageOptions());
-
+            //ImageLoader.getInstance().displayImage(list.get(position).url, iv_pic, App.getInstance().getListViewDisplayImageOptions());
+            GlideUtils.loadImg(context,list.get(position).url,iv_pic,R.drawable.defult_shape);
             Lg.e("debug==>pivUrl" + list.get(position).url);
 
             convertView.setOnClickListener(new OnClickListener() {
