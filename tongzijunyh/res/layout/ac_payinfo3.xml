@@ -214,15 +214,15 @@
 
                 <LinearLayout
                     style="@style/fwv"
-                    android:paddingTop="13dip"
+                    android:paddingTop="5dip"
                     android:paddingLeft="15dip" >
 
                     <LinearLayout
                         android:id="@+id/ll_wexin"
                         style="@style/fwh"
                         android:gravity="center_vertical"
-                        android:paddingBottom="13dip"
-                        android:paddingTop="13dip" >
+                        android:paddingBottom="5dip"
+                        android:paddingTop="5dip" >
 
                         <TextView
                             android:layout_width="0dip"
@@ -247,8 +247,8 @@
                         android:id="@+id/ll_alipay"
                         style="@style/fwh"
                         android:gravity="center_vertical"
-                        android:paddingBottom="13dip"
-                        android:paddingTop="13dip" >
+                        android:paddingBottom="5dip"
+                        android:paddingTop="5dip" >
 
                         <TextView
                             android:layout_width="0dip"
@@ -274,8 +274,8 @@
                         android:id="@+id/ll_unio"
                         style="@style/fwh"
                         android:gravity="center_vertical"
-                        android:paddingBottom="13dip"
-                        android:paddingTop="13dip" >
+                        android:paddingBottom="5dip"
+                        android:paddingTop="5dip" >
 
                         <TextView
                             android:layout_width="0dip"
@@ -300,8 +300,8 @@
                         android:id="@+id/ll_balance"
                         style="@style/fwh"
                         android:gravity="center_vertical"
-                        android:paddingBottom="13dip"
-                        android:paddingTop="13dip" >
+                        android:paddingBottom="5dip"
+                        android:paddingTop="5dip" >
 
                         <TextView android:id="@+id/tv_yuename"
                             android:layout_width="0dip"

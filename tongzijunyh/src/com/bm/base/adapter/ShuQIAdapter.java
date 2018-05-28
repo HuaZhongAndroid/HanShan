@@ -59,7 +59,7 @@ public class ShuQIAdapter extends ArrayAdapter<CourseBean> {
         tv_age2.setText(data.suitableAge+"岁");
         tv_price.setText("￥"+data.goodsPrice);
         tv_adr.setText(data.address);
-        GlideUtils.loadRoundImg(context,data.titleMultiUrl,img_a,5);
+        GlideUtils.loadRoundImg(context,data.titleMultiUrl,(ImageView) convertView.findViewById(R.id.img_a),6);
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

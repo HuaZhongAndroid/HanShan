@@ -89,7 +89,7 @@ public class ZhouMoAdapter extends ArrayAdapter<CourseBean> {
         tv_text2.setText(data.subtitle);
         tv_age.setText(data.latelyCourseDate+".开营");
         tv_adr.setText(data.latelyCourse);
-        GlideUtils.loadRoundImg(context,data.cover,img_a,20);
+        GlideUtils.loadRoundImg(context,data.cover,img_a,6);
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

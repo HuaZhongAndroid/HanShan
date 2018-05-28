@@ -61,15 +61,15 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
 
     private void initView() {
         showProgressDialog();
-        tv_right_share_left.setVisibility(View.VISIBLE);
-        tv_right_share_left.setOnClickListener(this);
+        ib_right.setVisibility(View.VISIBLE);
+        ib_right.setImageResource(R.drawable.ic_share);
+        ib_right.setOnClickListener(this);
 
         web_view = (WebView) findViewById(R.id.web_view);
         web_view.setWebViewClient(new MyWebViewClient());
         //设置
         web_view.getSettings().setJavaScriptEnabled(true);
         web_view.getSettings().setBlockNetworkImage(false);
-
 
         web_view.loadUrl(url);
     }

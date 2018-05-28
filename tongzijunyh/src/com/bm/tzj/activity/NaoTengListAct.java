@@ -9,11 +9,13 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.bm.api.UserManager;
+import com.bm.app.App;
 import com.bm.base.BaseActivity;
 import com.bm.base.adapter.ShuQIAdapter;
 import com.bm.base.adapter.StoreAdapter;
 import com.bm.entity.CourseBean;
 import com.bm.entity.Storelist;
+import com.bm.tzj.city.City;
 import com.bm.util.BDLocationHelper;
 import com.bm.util.CacheUtil;
 import com.lib.http.ServiceCallback;
@@ -57,8 +59,9 @@ public class NaoTengListAct extends BaseActivity implements View.OnClickListener
 //    http://59.110.62.10:8888/tongZiJun/api/tzjstore/storelist?regionName=西安市&lon=1&lat=1&type=1
     public void getStorelist(final int types) {
         BDLocationHelper.LocationInfo info = BDLocationHelper.getCacheLocation();
+        City city = App.getInstance().getCityCode();
         final HashMap<String, String> map = new HashMap<String, String>();
-        map.put("regionName", info.city);//城市名称
+        map.put("regionName", city.regionName);//城市名称
         map.put("lat",info.lat+"");
         map.put("lon",info.lng+"");
         map.put("type", "" + types);
