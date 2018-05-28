@@ -24,6 +24,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.richer.tzj.R;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 
@@ -79,10 +80,8 @@ public class App extends Application {
 
     @Override
     public void onCreate() {
-
         //腾讯的日志收集器  和SDKInitializer 冲突了 错误 build.gradle 中的 ndk 代码
-        //CrashReport.initCrashReport(getApplicationContext(), "bc02630693", true);
-
+        CrashReport.initCrashReport(getApplicationContext(), "bc02630693", true);
         SDKInitializer.initialize(this);
         instance = this;
         super.onCreate();
