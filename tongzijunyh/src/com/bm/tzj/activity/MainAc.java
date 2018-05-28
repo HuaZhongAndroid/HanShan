@@ -168,7 +168,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 		popTimerPause++; //中断标识+1
 		Calendar c = Calendar.getInstance();//
 		final int day = c.get(Calendar.DAY_OF_MONTH);// 获取当日期
-		int lodDay =  SharedPreferencesHelper.getInt("DAY");
+		int lodDay =  SharedPreferencesHelper.getInt("LastTimeToShow");
 		Child child = App.getInstance().getChild();
 		if (child==null&&day!=lodDay){
 			mHandler.post(new Runnable() {
@@ -181,7 +181,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 						public void onDismiss(DialogInterface dialog) {
 							Log.d("ffff","AddBodyDialog onDismiss");
 							popTimerPause--; //取消中断
-							SharedPreferencesHelper.saveInt("DAY",day);
+							SharedPreferencesHelper.saveInt("LastTimeToShow",day);
 						}
 					});
 				}
