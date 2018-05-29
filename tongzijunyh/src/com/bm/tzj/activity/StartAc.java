@@ -391,7 +391,7 @@ public class StartAc extends Activity {
         } else {
             if (App.getInstance().getUser() != null) {
                 Intent intent = new Intent(context, MainAc.class);
-                intent.putExtra("tag", 2);
+                intent.putExtra("tag", 0);
                 startActivity(intent);
             } else {
                 Intent intent = new Intent(context, GuideAc.class);

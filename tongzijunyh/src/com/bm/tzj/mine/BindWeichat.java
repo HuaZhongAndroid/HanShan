@@ -139,7 +139,7 @@ public class BindWeichat extends BaseActivity{
 								MainAc.intance.finish();
 							}
 							Intent intent = new Intent(context, MainAc.class);
-							intent.putExtra("tag", 2);
+							intent.putExtra("tag", 0);
 							startActivity(intent);
 							finish();
 						}
