@@ -24,6 +24,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AbsoluteLayout.LayoutParams;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView;
@@ -61,6 +62,7 @@ import com.bm.util.ApkUpdateUtil;
 import com.bm.util.BaseDataUtil;
 import com.bm.util.NotificationsUtils;
 import com.bm.util.Util;
+import com.bm.view.TabMyView;
 import com.easemob.EMEventListener;
 import com.easemob.EMNotifierEvent;
 import com.easemob.chat.EMChatManager;
@@ -94,19 +96,22 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 	private GrowUpFragment growUpFragment;//成长中心重做
 //	private PullulateFm pullulateFm;
 
-	private View indexLayout;
-	private View messageLayout;
-	private View findLayout;
-	private View meLayout;
+//	private View indexLayout;
+//	private View messageLayout;
+//	private View findLayout;
+//	private View meLayout;
 
 
-	private View pullulateLayout;
+//	private View pullulateLayout;
 
-	private ImageView iv_a;
-	private ImageView iv_b;
-	private ImageView iv_c;
-	private ImageView iv_d;
-	private ImageView iv_e;
+//	private ImageView iv_a;
+//	private ImageView iv_b;
+//	private ImageView iv_c;
+//	private ImageView iv_d;
+//	private ImageView iv_e;
+
+
+	private TabMyView[] tabs = new TabMyView[4];
 
 	private ImageView img_read;
 	private FragmentManager fragmentManager;
@@ -206,6 +211,13 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
 		// Util.isCreateRootPath(this);
 		contentView(R.layout.ac_mian);
+
+
+
+
+
+
+
 		share = new ShareUtil(this);
 		context = this;
 		tag=getIntent().getIntExtra("tag", 1);
@@ -397,23 +409,50 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
 	private void initView() {
 		//		tv_yqcdqr=(TextView)findViewById(R.id.tv_yqcdqr);
-		indexLayout = findViewById(R.id.indexLayout);
-		messageLayout = findViewById(R.id.messageLayout);
-		findLayout = findViewById(R.id.findLayout);
-		meLayout = findViewById(R.id.meLayout);
-		pullulateLayout=findViewById(R.id.pullulateLayout);
-		iv_a = (ImageView) findViewById(R.id.iv_a);
-		iv_b = (ImageView) findViewById(R.id.iv_b);
-		iv_c = (ImageView) findViewById(R.id.iv_c);
-		iv_d = (ImageView) findViewById(R.id.iv_d);
-		iv_e = (ImageView) findViewById(R.id.iv_e);
+//		indexLayout = findViewById(R.id.indexLayout);
+//		messageLayout = findViewById(R.id.messageLayout);
+//		findLayout = findViewById(R.id.findLayout);
+//		meLayout = findViewById(R.id.meLayout);
+
+
+
+//		pullulateLayout=findViewById(R.id.pullulateLayout);
+
+
+//		iv_a = (ImageView) findViewById(R.id.iv_a);
+//		iv_b = (ImageView) findViewById(R.id.iv_b);
+//		iv_c = (ImageView) findViewById(R.id.iv_c);
+//		iv_d = (ImageView) findViewById(R.id.iv_d);
+//		iv_e = (ImageView) findViewById(R.id.iv_e);
+
 		img_read = (ImageView) findViewById(R.id.img_read);
-		indexLayout.setOnClickListener(this);
-		messageLayout.setOnClickListener(this);
-		findLayout.setOnClickListener(this);
-		meLayout.setOnClickListener(this);
-		pullulateLayout.setOnClickListener(this);
-		badge = new BadgeView(context, messageLayout);
+
+		LinearLayout ll = (LinearLayout)findViewById(R.id.tabs_ll);
+
+		String[] txts = {"发现","成长","消息","我的"};
+		int[] redIdN = {R.drawable.ic_one_n,R.drawable.ic_two_n,R.drawable.ic_three_n,R.drawable.ic_four_n};
+		int[] redIdP = {R.drawable.ic_one_p,R.drawable.ic_two_p,R.drawable.ic_three_p,R.drawable.ic_four_p};
+
+		for (int i = 0 ; i < ll.getChildCount();i++) {
+			TabMyView tab = ((TabMyView) ll.getChildAt(i));
+			tabs[i] = tab;
+			tab.setValue(txts[i],redIdN[i],redIdP[i]);
+			tabs[i].setOnClickListener(this);
+			tabs[i].setId(770+i);
+		}
+//		pullulateLayout = tabs[1];
+
+//		indexLayout.setOnClickListener(this);
+//		messageLayout.setOnClickListener(this);
+//		findLayout.setOnClickListener(this);
+//		meLayout.setOnClickListener(this);
+
+
+
+
+//		pullulateLayout.setOnClickListener(this);
+		badge = new BadgeView(context, tabs[1]);
+//		badge = new BadgeView(context, messageLayout);
 		badge.setBackgroundResource(R.drawable.dot_red);
 		//		loacationInfo();
 
@@ -424,17 +463,22 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 	 */
 	private void clearSelection() {
 
-		iv_a.setImageResource(R.drawable.m_3_h);
-		iv_b.setImageResource(R.drawable.m_2_h);
-		iv_c.setImageResource(R.drawable.m_4_h);
-		iv_d.setImageResource(R.drawable.m_5_h);
-		iv_e.setImageResource(R.drawable.m_1_h);
+//		iv_a.setImageResource(R.drawable.m_3_h);
+//		iv_b.setImageResource(R.drawable.m_2_h);
+//		iv_c.setImageResource(R.drawable.m_4_h);
+//		iv_d.setImageResource(R.drawable.m_5_h);
+//		iv_e.setImageResource(R.drawable.m_1_h);
 
-		indexLayout.setBackgroundResource(R.color.transparent);
-		messageLayout.setBackgroundResource(R.color.transparent);
-		findLayout.setBackgroundResource(R.color.transparent);
-		meLayout.setBackgroundResource(R.color.transparent);
-		pullulateLayout.setBackgroundResource(R.color.transparent);
+		for (int i = 0 ;i<tabs.length;i++) {
+			tabs[i].setSelect(false);
+		}
+
+//		indexLayout.setBackgroundResource(R.color.transparent);
+//		messageLayout.setBackgroundResource(R.color.transparent);
+//		findLayout.setBackgroundResource(R.color.transparent);
+//		meLayout.setBackgroundResource(R.color.transparent);
+
+//		pullulateLayout.setBackgroundResource(R.color.transparent);
 	}
 
 	/**
@@ -464,50 +508,91 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
 	@Override
 	public void onClick(View v) {
+//		switch (v.getId()) {
+//		case R.id.pullulateLayout:
+//			setTabSelection(0);
+//			rl_top.setVisibility(View.GONE);
+//			setTitleName("成长中心");
+//			setRightName("");
+//			position=0;
+//			hideLeft();
+//			break;
+//		case R.id.messageLayout:
+//			setTabSelection(1);
+//			rl_top.setVisibility(View.GONE);
+//			//			setTitleName("吧啦");
+//			//			setRightName("");
+//			//			hideLeft();
+//			position=1;
+//			break;
+//		case R.id.indexLayout:
+//			setTabSelection(2);
+//			rl_top.setVisibility(View.GONE);
+//			hideLeft();
+//			position=2;
+//			break;
+//		case R.id.findLayout:
+//			rl_top.setVisibility(View.GONE);
+//			setTabSelection(3);
+//			setTitleName("探索");
+//			//			setRightName("发帖");
+//			hideLeft();
+//			//			if(null != findFm.intance){
+//			//				findFm.intance.RefreshDate("2");
+//			//			}
+//			//			position=3;
+//			break;
+//		case R.id.meLayout:
+//			rl_top.setVisibility(View.GONE);
+//			setTabSelection(4);
+//			setTitleName("我的");
+//			setRightName("设置");
+//			hideLeft();
+//			position=4;
+//			break;
+//		default:
+//			break;
+//		}
+
+
+
 		switch (v.getId()) {
-		case R.id.pullulateLayout:
-			setTabSelection(0);
-			rl_top.setVisibility(View.GONE);
-			setTitleName("成长中心");
-			setRightName("");
-			position=0;
-			hideLeft();
-			break;
-		case R.id.messageLayout:
-			setTabSelection(1);
-			rl_top.setVisibility(View.GONE);
-			//			setTitleName("吧啦");
-			//			setRightName("");
-			//			hideLeft();
-			position=1;
-			break;
-		case R.id.indexLayout:
-			setTabSelection(2);
-			rl_top.setVisibility(View.GONE);
-			hideLeft();
-			position=2;
-			break;
-		case R.id.findLayout:
-			rl_top.setVisibility(View.GONE);
-			setTabSelection(3);
-			setTitleName("探索");
-			//			setRightName("发帖");
-			hideLeft();
-			//			if(null != findFm.intance){
-			//				findFm.intance.RefreshDate("2");
-			//			}
-			//			position=3;
-			break;
-		case R.id.meLayout:
-			rl_top.setVisibility(View.GONE);
-			setTabSelection(4);
-			setTitleName("我的");
-			setRightName("设置");
-			hideLeft();
-			position=4;
-			break;
-		default:
-			break;
+
+			case 770:
+				rl_top.setVisibility(View.GONE);
+				setTabSelection(0);
+				setTitleName("发现");
+				hideLeft();
+				position=0;
+				break;
+
+
+			case 770+1:
+				setTabSelection(1);
+				rl_top.setVisibility(View.GONE);
+				setTitleName("成长中心");
+				setRightName("");
+				position=1;
+				hideLeft();
+				break;
+
+
+			case 770+2:
+				setTabSelection(2);
+				rl_top.setVisibility(View.GONE);
+				position=2;
+				break;
+
+			case 770+3:
+				rl_top.setVisibility(View.GONE);
+				setTabSelection(3);
+				setTitleName("我的");
+				setRightName("设置");
+				hideLeft();
+				position=3;
+				break;
+			default:
+				break;
 		}
 
 	}
@@ -542,6 +627,99 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 	 * @param index
 	 */
 	private void setTabSelection(int index) {
+//		// 每次选中之前先清楚掉上次的选中状态
+//		clearSelection();
+//		// 开启一个Fragment事务
+//		FragmentTransaction transaction = fragmentManager.beginTransaction();
+//		// 先隐藏掉所有的Fragment，以防止有多个Fragment显示在界面上的情况
+//		hideFragments(transaction);
+//		switch (index) {
+//		case 0:
+//			if(tag == 2){
+//				tabs[0].setSelect(true);
+////				iv_e.setImageResource(R.drawable.m_1);
+//				// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
+//				if (growUpFragment == null) {
+//					growUpFragment = new GrowUpFragment();
+//					transaction.add(R.id.content, growUpFragment);
+//				} else {
+//					// 如果MessageFragment不为空，则直接将它显示出来
+//					transaction.show(growUpFragment);
+////					GrowUpFragment.updateView();
+//				}
+//			}else{
+//				isLogin();
+//			}
+//			break;
+//		case 1:
+//			if(tag == 2){
+//				tabs[1].setSelect(true);
+////				iv_b.setImageResource(R.drawable.m_2);
+//				// messageLayout.setBackgroundResource(R.drawable.radio_black_btn);
+//				if (messageFm == null) {
+//					messageFm = new XiaoxiFm();
+//					transaction.add(R.id.content, messageFm);
+//				} else {
+//					transaction.show(messageFm);
+//				}
+//			}else{
+//				isLogin();
+//			}
+//			break;
+//		case 2:
+//			tabs[2].setSelect(true);
+////			iv_a.setImageResource(R.drawable.m_3);
+//			// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
+//			if (indexFm == null) {
+//				indexFm = new CourseFm3();
+//				transaction.add(R.id.content, indexFm);
+//			} else {
+//				// 如果MessageFragment不为空，则直接将它显示出来
+//				transaction.show(indexFm);
+//				indexFm.setFoucs();
+//				indexFm.updateView();
+//			}
+//			break;
+//		case 3:
+//			if(tag == 2){
+//				tabs[3].setSelect(true);
+////				iv_c.setImageResource(R.drawable.m_4);
+//				// findLayout.setBackgroundResource(R.drawable.radio_black_btn);
+//				if (findFm == null) {
+//					findFm = new XiaoxiFm();
+//					transaction.add(R.id.content, findFm);
+//				} else {
+//					transaction.show(findFm);
+//				}
+//
+//				boolean bl = NotificationsUtils.isNotificationEnabled();
+//				Log.d("fffffffff","isNotificationEnabled "+bl);
+//				if(bl ==false)
+//				{
+//					OpenNotifyDialog dialog = new OpenNotifyDialog((Activity)context);
+//					dialog.show();
+//				}
+//			}else{
+//				isLogin();
+//			}
+//			break;
+//		case 4:
+//		default:
+//			if (mineFm == null) {
+//				mineFm = new MineFm();
+//				transaction.add(R.id.content, mineFm);
+//			} else {
+//				transaction.show(mineFm);
+//				mineFm.setFoucs();
+//				mineFm.initData();
+//			}
+//			break;
+//		}
+//		transaction.commit();
+
+
+
+
 		// 每次选中之前先清楚掉上次的选中状态
 		clearSelection();
 		// 开启一个Fragment事务
@@ -549,86 +727,70 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 		// 先隐藏掉所有的Fragment，以防止有多个Fragment显示在界面上的情况
 		hideFragments(transaction);
 		switch (index) {
-		case 0:
-			if(tag == 2){
-				iv_e.setImageResource(R.drawable.m_1);
-				// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
-				if (growUpFragment == null) {
-					growUpFragment = new GrowUpFragment();
-					transaction.add(R.id.content, growUpFragment);
+			case 0:
+				if(tag == 2){
+					tabs[0].setSelect(true);
+//				iv_e.setImageResource(R.drawable.m_1);
+					// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
+					if (growUpFragment == null) {
+						growUpFragment = new GrowUpFragment();
+						transaction.add(R.id.content, growUpFragment);
+					} else {
+						// 如果MessageFragment不为空，则直接将它显示出来
+						transaction.show(growUpFragment);
+//					GrowUpFragment.updateView();
+					}
+				}else{
+					isLogin();
+				}
+				break;
+			case 1:
+
+
+				tabs[1].setSelect(true);
+				if (indexFm == null) {
+					indexFm = new CourseFm3();
+					transaction.add(R.id.content, indexFm);
 				} else {
 					// 如果MessageFragment不为空，则直接将它显示出来
-					transaction.show(growUpFragment);
-//					GrowUpFragment.updateView();
-				}
-			}else{
-				isLogin();
-			}
-			break;
-		case 1:
-			if(tag == 2){
-				iv_b.setImageResource(R.drawable.m_2);
-				// messageLayout.setBackgroundResource(R.drawable.radio_black_btn);
-				if (messageFm == null) {
-					messageFm = new XiaoxiFm();
-					transaction.add(R.id.content, messageFm);
-				} else {
-					transaction.show(messageFm);
-				}
-			}else{
-				isLogin();
-			}
-			break;
-		case 2:
-			iv_a.setImageResource(R.drawable.m_3);
-			// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
-			if (indexFm == null) {
-				indexFm = new CourseFm3();
-				transaction.add(R.id.content, indexFm);
-			} else {
-				// 如果MessageFragment不为空，则直接将它显示出来
-				transaction.show(indexFm);
-				indexFm.setFoucs();
-				indexFm.updateView();
-			}
-			break;
-		case 3:
-			if(tag == 2){
-				iv_c.setImageResource(R.drawable.m_4);
-				// findLayout.setBackgroundResource(R.drawable.radio_black_btn);
-				if (findFm == null) {
-					findFm = new XiaoxiFm();
-					transaction.add(R.id.content, findFm);
-				} else {
-					transaction.show(findFm);
+					transaction.show(indexFm);
+					indexFm.setFoucs();
+					indexFm.updateView();
 				}
 
-				boolean bl = NotificationsUtils.isNotificationEnabled();
-				Log.d("fffffffff","isNotificationEnabled "+bl);
-				if(bl ==false)
-				{
-					OpenNotifyDialog dialog = new OpenNotifyDialog((Activity)context);
-					dialog.show();
+
+
+
+				break;
+			case 2:
+				if(tag == 2){
+					tabs[2].setSelect(true);
+					if (messageFm == null) {
+						messageFm = new XiaoxiFm();
+						transaction.add(R.id.content, messageFm);
+					} else {
+						transaction.show(messageFm);
+					}
+				}else{
+					isLogin();
 				}
-			}else{
-				isLogin();
-			}
-			break;
-		case 4:
-		default:
-			iv_d.setImageResource(R.drawable.m_5);
-			// meLayout.setBackgroundResource(R.drawable.radio_black_btn);
-			if (mineFm == null) {
-				mineFm = new MineFm();
-				transaction.add(R.id.content, mineFm);
-			} else {
-				transaction.show(mineFm);
-				mineFm.setFoucs();
-				mineFm.initData();
-			}
-			break;
+				break;
+			case 3:
+				tabs[3].setSelect(true);
+				if (mineFm == null) {
+					mineFm = new MineFm();
+					transaction.add(R.id.content, mineFm);
+				} else {
+					transaction.show(mineFm);
+					mineFm.setFoucs();
+					mineFm.initData();
+				}
+				break;
+			default:
+				break;
 		}
 		transaction.commit();
+
 	}
 
 	public void isLogin(){
