@@ -162,7 +162,7 @@ public class MyYouhuiquanListFrameLayout extends FrameLayout implements
 			if("-1".equals(list.get(position).goodsType))
 			{
 				intent = new Intent(context, MainAc.class);
-				intent.putExtra("TabSelection", 2);
+				intent.putExtra("TabSelection", 0);
 				MyYouhuiquanAc.intance.startActivity(intent);
 			}
 			if("1".equals(list.get(position).goodsType))

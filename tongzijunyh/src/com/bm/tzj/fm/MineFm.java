@@ -58,7 +58,7 @@ public class MineFm extends Fragment implements OnClickListener {
     private ImageView iv_headbg;
     private TextView tv_money, tv_moneyX, tv_zengsong, tv_zengsongX, tv_login, tv_allCourse, tv_recharge;
     private TextView tv_integral, tv_name, tv_message, tv_right;
-    private ViewGroup ll_person, ll_accountBalance, ll_zengsong,ll_zhangdan, ll_integral, ll_wdl, ll_dl;
+    private ViewGroup ll_person, ll_accountBalance, ll_zengsong, ll_zhangdan, ll_integral, ll_wdl, ll_dl;
     private ThreeButtonDialog buttonDialog;
     public List<String> uploadListImg = new ArrayList<String>();
     public LinearLayout ll_e, ll_f, ll_g;
@@ -174,8 +174,7 @@ public class MineFm extends Fragment implements OnClickListener {
                         MainAc.intance.pickp();
                     }
                 }).autoHide();
-
-//		initData();
+        initData();
     }
 
     //判断用户是否登录现实  头像信息或者用户信息
@@ -186,72 +185,57 @@ public class MineFm extends Fragment implements OnClickListener {
         } else {
             ll_wdl.setVisibility(View.GONE);
             ll_dl.setVisibility(View.VISIBLE);
-
         }
 
         initData();
     }
 
     public void initData() {
-        if (MainAc.intance.tag == 2) {
-            User uInfo = App.getInstance().getUser();
-            if (null != uInfo) {
-                String money = uInfo.rechargeBalance == null ? "0.00" : uInfo.rechargeBalance;
+        User uInfo = App.getInstance().getUser();
+        //判断是否登陆 没登陆 就是游客模式
+        if (uInfo != null) {
+            String money = uInfo.rechargeBalance == null ? "0.00" : uInfo.rechargeBalance;
 //				String money = uInfo.rechargeBalance == null?"0.00":Util.toNumber("0.00",Float.parseFloat(uInfo.rechargeBalance));
-                tv_money.setText(money.substring(0, money.indexOf('.')));//余额小数点前面数字
-                tv_moneyX.setText(money.substring(money.indexOf('.'), money.length()));//余额小数
-                String zengsong = uInfo.giveBalance == null ? "0.00" : uInfo.giveBalance;
+            tv_money.setText(money.substring(0, money.indexOf('.')));//余额小数点前面数字
+            tv_moneyX.setText(money.substring(money.indexOf('.'), money.length()));//余额小数
+            String zengsong = uInfo.giveBalance == null ? "0.00" : uInfo.giveBalance;
 //				String zengsong = uInfo.giveBalance == null?"0.00":Util.toNumber("0.00",Float.parseFloat(uInfo.giveBalance));
-                tv_zengsong.setText(zengsong.substring(0, zengsong.indexOf('.')));//余额小数点前面数字
-                tv_zengsongX.setText(zengsong.substring(zengsong.indexOf('.'), zengsong.length()));//余额小数
+            tv_zengsong.setText(zengsong.substring(0, zengsong.indexOf('.')));//余额小数点前面数字
+            tv_zengsongX.setText(zengsong.substring(zengsong.indexOf('.'), zengsong.length()));//余额小数
 
-                if (null != uInfo.userCouponCount) {//优惠券
-                    tv_integral.setText(uInfo.userCouponCount);
-                }
+            if (null != uInfo.userCouponCount) {//优惠券
+                tv_integral.setText(uInfo.userCouponCount);
+            }
 
-//				if(uInfo.messageCount != null && !"".equals(uInfo.messageCount)) //新消息数量
-//				{
-//					if(Integer.parseInt(uInfo.messageCount) > 0)
-//					{
-//						img_read.setVisibility(View.VISIBLE);
-//					}
-//					else
-//					{
-//						img_read.setVisibility(View.GONE);
-//					}
-//				}
-
-//				Child child = App.getInstance().getChild();
-//				if(child == null) return;
-                if (uInfo.avatar != null && !uInfo.avatar.equals(touxiang)) {
-                    touxiang = uInfo.avatar;
-                    ImageLoader.getInstance().displayImage(uInfo.avatar, iv_sixview_head, App.getInstance().getheadImage());
+            if (uInfo.avatar != null && !uInfo.avatar.equals(touxiang)) {
+                touxiang = uInfo.avatar;
+                ImageLoader.getInstance().displayImage(uInfo.avatar, iv_sixview_head, App.getInstance().getheadImage());
 //					ImageLoader.getInstance().displayImage(child.avatar, iv_headbg, App.getInstance().getheadImage());
-                    iv_headbg.setImageBitmap(null);
-                    ImageSize mImageSize = new ImageSize(100, 100);
-                    ImageLoader.getInstance().loadImage(uInfo.avatar, mImageSize, App.getInstance().getheadImage(), new ImageLoadingListener() {
-                        @Override
-                        public void onLoadingCancelled(String arg0, View arg1) {
-                        }
+                iv_headbg.setImageBitmap(null);
+                ImageSize mImageSize = new ImageSize(100, 100);
+                ImageLoader.getInstance().loadImage(uInfo.avatar, mImageSize, App.getInstance().getheadImage(), new ImageLoadingListener() {
+                    @Override
+                    public void onLoadingCancelled(String arg0, View arg1) {
+                    }
 
-                        @Override
-                        public void onLoadingComplete(String arg0, View arg1, Bitmap bm) {
-                            if (bm != null)
-                                iv_headbg.setImageBitmap(BitmapUtil.fastblur(bm, 100));
-                        }
+                    @Override
+                    public void onLoadingComplete(String arg0, View arg1, Bitmap bm) {
+                        if (bm != null)
+                            iv_headbg.setImageBitmap(BitmapUtil.fastblur(bm, 100));
+                    }
 
-                        @Override
-                        public void onLoadingFailed(String arg0, View arg1, FailReason arg2) {
-                        }
+                    @Override
+                    public void onLoadingFailed(String arg0, View arg1, FailReason arg2) {
+                    }
 
-                        @Override
-                        public void onLoadingStarted(String arg0, View arg1) {
-                        }
-                    });
-                }
+                    @Override
+                    public void onLoadingStarted(String arg0, View arg1) {
+                    }
+                });
+            }
 
 
-                tv_name.setText(uInfo.nickname);
+            tv_name.setText(uInfo.nickname);
 //				String strSex = child.gender;
 //				if("1".equals(strSex)){
 //					strSex="男";
@@ -263,9 +247,8 @@ public class MineFm extends Fragment implements OnClickListener {
 //				String strAgeAddress = child.age==""?"0岁":child.age+"岁 ";
 //				tv_message.setText(strSex+" "+strAgeAddress);//宝贝性别 年龄
 
-                String address = PullulateFm.getNullData(uInfo.regionName);
-                tv_message.setText(address);
-            }
+            String address = PullulateFm.getNullData(uInfo.regionName);
+            tv_message.setText(address);
         } else {//游客状态
             ll_wdl.setVisibility(View.VISIBLE);
             ll_dl.setVisibility(View.GONE);

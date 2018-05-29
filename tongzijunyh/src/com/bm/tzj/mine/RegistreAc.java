@@ -209,7 +209,7 @@ public class RegistreAc extends BaseActivity implements OnClickListener{
 						
 						App.getInstance().setUser(obj.data);// 存储用户信息
 						Intent intent = new Intent(context, MainAc.class);
-						intent.putExtra("tag", 2);
+						intent.putExtra("tag", 0);
 						startActivity(intent);
 						finish();
 						LoginAc.intatce.finish();

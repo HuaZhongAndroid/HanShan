@@ -162,9 +162,8 @@ public class LoginAc extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.tv_other:
 			intent = new Intent(context, MainAc.class);
-			intent.putExtra("tag", 1);//游客登录
+			//intent.putExtra("tag", 0);//游客登录
 			startActivity(intent);
-
 			//清空数据
 			App.getInstance().setUser(null);
 			SharedPreferencesHelper.saveBoolean("isCheck", false);// 清空记住密码的信息
@@ -276,7 +275,7 @@ public class LoginAc extends BaseActivity implements OnClickListener {
 									Log.d("JPushInterface.setTags:"+arg0);
 								}});
 							Intent intent = new Intent(LoginAc.this,MainAc.class);
-							intent.putExtra("tag", 2);
+							intent.putExtra("tag", 0);
 							startActivity(intent);
 							finish();
 
@@ -456,7 +455,7 @@ public class LoginAc extends BaseActivity implements OnClickListener {
 						MainAc.intance.finish();
 					}
 					Intent intent = new Intent(context, MainAc.class);
-					intent.putExtra("tag", 2);
+					intent.putExtra("tag", 0);
 					startActivity(intent);
 					finish();
 
