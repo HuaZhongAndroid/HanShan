@@ -21,9 +21,6 @@
         android:layout_below="@+id/tab_my_view_icon"
         android:text="title" />
 
-
-
-
     <ImageView
         android:paddingTop="3dp"
         android:id="@+id/tab_my_view_red"

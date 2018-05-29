@@ -1,5 +1,6 @@
 package com.bm.tzj.activity;
 
+import java.lang.reflect.Type;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Timer;
@@ -11,10 +12,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -30,6 +33,7 @@ import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView;
 
 import com.bm.api.BaseApi;
+import com.bm.api.MessageManager;
 import com.bm.api.UserManager;
 import com.bm.app.App;
 import com.bm.base.BaseCaptureFragmentActivity;
@@ -42,11 +46,13 @@ import com.bm.entity.Adverts;
 import com.bm.entity.Child;
 import com.bm.entity.UpgradeInfo;
 import com.bm.entity.User;
+import com.bm.entity.XiaoxiList;
 import com.bm.entity.Youhuiquan;
 import com.bm.im.api.ImApi;
 import com.bm.im.tool.DemoHelper;
 import com.bm.im.tool.IMTool;
 import com.bm.share.ShareUtil;
+import com.bm.tzj.city.City;
 import com.bm.tzj.fm.BalaFm;
 import com.bm.tzj.fm.CourseFm2;
 import com.bm.tzj.fm.CourseFm3;
@@ -60,6 +66,7 @@ import com.bm.tzj.mine.LoginAc;
 import com.bm.tzj.mine.SettingAc;
 import com.bm.util.ApkUpdateUtil;
 import com.bm.util.BaseDataUtil;
+import com.bm.util.CacheUtil;
 import com.bm.util.NotificationsUtils;
 import com.bm.util.Util;
 import com.bm.view.TabMyView;
@@ -129,11 +136,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
     //判断右上角的位置
     private int position = -1;
     //判断是用户登录还是游客登陆
-    /**
-     * 1  -游客登录
-     * 2  -用户登录
-     */
-    public int tag = -1;
+    public int tag = -1;//以前是用来判断游客 现在改成 判断 user是否为null
     public ShareUtil share;
 
     //	private TextView tv_yqcdqr;
@@ -225,6 +228,8 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
         setTabSelection(tag);
         rl_top.setVisibility(View.GONE);
         hideLeft();
+        //拉去消息界面的消息 提前判断是否显示红点
+        getMessList();
 
     }
 
@@ -412,6 +417,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
             tab.setValue(txts[i], redIdN[i], redIdP[i]);
             tabs[i].setOnClickListener(this);
             tabs[i].setId(770 + i);
+           // tab.setColor(Color.parseColor("#a2a2a2"),Color.parseColor("#a2953e"));
         }
 //		pullulateLayout = tabs[1];
 
@@ -1039,5 +1045,83 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
         super.onActivityResult(requestCode, resultCode, mIntent);
         if (onTabActivityResultListener != null)
             onTabActivityResultListener.onTabActivityResult(requestCode, resultCode, mIntent);
+    }
+
+
+    private void getMessList() {
+        final HashMap<String, String> map = new HashMap<String, String>();
+        final City city = App.getInstance().getCityCode();
+        User user = App.getInstance().getUser();
+        if (null != city && !TextUtils.isEmpty(city.regionName)) {
+            map.put("regionName", city.regionName);//城市名称
+            map.put("userId", user.userid);//用户id
+        } else {
+            map.put("regionName", "西安市");//城市名称
+        }
+        MessageManager.getInstance().getMessageList(this, map, new ServiceCallback<CommonResult<XiaoxiList>>() {
+
+            final String CACHEKEY = "xiaoxiFm_message_list_cache";
+
+            @Override
+            public void done(int what, CommonResult<XiaoxiList> obj) {
+                hideProgressDialog();
+                isShowRed(obj);
+                CacheUtil.save(context, CACHEKEY, map, obj);
+            }
+
+            @Override
+            public void error(String msg) {
+                hideProgressDialog();
+                //从缓存中读取数据
+                CommonResult<XiaoxiList> obj = new CommonResult<XiaoxiList>() {
+                };
+                Type type = obj.getClass().getGenericSuperclass();
+                obj = (CommonResult<XiaoxiList>) CacheUtil.read(context, CACHEKEY, map, type);
+                if (obj != null) {
+                    isShowRed(obj);
+                    return;
+                }
+                //没有缓存时执行下面的逻辑
+                MainAc.intance.dialogToast(msg);
+            }
+
+            public void isShowRed(CommonResult<XiaoxiList> obj){
+                boolean isRead = false;
+                if (obj == null && obj.data== null) {
+                    showRed(3,isRead);
+                    return;
+                }
+                if (obj.data.getAppraise() == null || obj.data.getAppraise().size() < 1) {
+                    showRed(3,isRead);
+                    return;
+                } else {
+                    for (XiaoxiList.AppraiseBean appraiseBean : obj.data.getAppraise()) {
+                        if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
+                            isRead = true;
+                        }
+                    }
+                }
+                if (obj.data.getMessageAll() == null || obj.data.getMessageAll().size() < 1) {
+                    showRed(3,isRead);
+                    return;
+                } else {
+                    for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
+                        if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
+                            isRead = true;
+                        }
+                    }
+                }
+                showRed(3,isRead);
+            }
+        });
+    }
+
+    /**
+     * 显示红点
+     * @param index
+     * @param show
+     */
+    public void showRed(int index,boolean show){
+        tabs[index].showRed(show);
     }
 }

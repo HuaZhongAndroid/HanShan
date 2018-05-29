@@ -62,7 +62,6 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
         refreshData();
         return messageLayout;
     }
-
     private void init() {
 
         emptyLayout = messageLayout.findViewById(R.id.emptyLayout);
@@ -231,33 +230,40 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
     //刷新红点
     private void refreshRedPoint(CommonResult<XiaoxiList> obj) {
         this.obj = obj;
+        boolean isRead = false;
         if (obj == null || obj.data == null) {
             radCountCoachingView.setVisibility(View.GONE);
             radCountNotifyView.setVisibility(View.GONE);
             return;
+        }
+        if (obj.data.getAppraise() == null || obj.data.getAppraise().size() < 1) {
+            radCountCoachingView.setVisibility(View.GONE);
         } else {
-            if (obj.data.getAppraise() == null || obj.data.getAppraise().size() < 1) {
-                radCountCoachingView.setVisibility(View.GONE);
-            } else {
-                boolean hasNotRead = false;
-                for (XiaoxiList.AppraiseBean appraiseBean : obj.data.getAppraise()) {
-                    if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
-                        hasNotRead = true;
-                    }
+            boolean hasNotRead = false;
+            for (XiaoxiList.AppraiseBean appraiseBean : obj.data.getAppraise()) {
+                if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
+                    hasNotRead = true;
+                    isRead = true;
                 }
-                radCountCoachingView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
             }
-            if (obj.data.getMessageAll() == null || obj.data.getMessageAll().size() < 1) {
-                radCountNotifyView.setVisibility(View.GONE);
-            } else {
-                boolean hasNotRead = false;
-                for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
-                    if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
-                        hasNotRead = true;
-                    }
+            radCountCoachingView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
+        }
+        if (obj.data.getMessageAll() == null || obj.data.getMessageAll().size() < 1) {
+            radCountNotifyView.setVisibility(View.GONE);
+        } else {
+            boolean hasNotRead = false;
+            for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
+                if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
+                    hasNotRead = true;
+                    isRead = true;
                 }
-                radCountNotifyView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
             }
+            radCountNotifyView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
+        }
+        if (isRead) {
+            MainAc.intance.showRed(3, true);
+        } else {
+            MainAc.intance.showRed(3, false);
         }
     }
 
