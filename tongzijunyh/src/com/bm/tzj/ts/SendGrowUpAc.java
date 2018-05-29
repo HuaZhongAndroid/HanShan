@@ -437,13 +437,15 @@ public class SendGrowUpAc extends BaseCaptureActivity implements OnClickListener
 
             @Override
             public void done(int what, StringResult obj) {
-                hideProgressDialog();
-                if ("0".equals(saveType)) {
-                    toast("草稿保存成功");
-                } else {
-                    pkid = obj.data;
-                    uploadImages();
-                }
+//                hideProgressDialog();
+//                if ("0".equals(saveType)) {
+//                    toast("草稿保存成功");
+//                } else {
+////                    pkid = obj.data;
+////                    uploadImages();
+//                }
+                pkid = obj.data;
+                uploadImages();
             }
         });
 //        uploadImages();
@@ -500,7 +502,8 @@ public class SendGrowUpAc extends BaseCaptureActivity implements OnClickListener
             ossService.setCallbackAddress(imgPath);
             ossService.asyncPutImage(imageName, uploadListImg.get(uploadImageIndex));
         } else {
-            toast("发布成功");
+            hideProgressDialog();
+            toast("操作成功");
             finish();
             Log.e("debug_upload_pro", "上传完成");
 //            uploadAllDataToNet("1");
