@@ -3,6 +3,9 @@ package com.bm.tzj.activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +34,7 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.richer.tzj.R;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -38,14 +42,15 @@ import java.util.List;
 /**
  * 闹腾首页
  */
-public class NaotengAc extends AbsCoursePayBaseAc {
+public class NaotengAc extends AbsCoursePayBaseAc implements AppBarLayout.OnOffsetChangedListener {
 
     private ImageView iv_tab_bg;
     private HorizontalListView h_tab;
 
+    private AppBarLayout app_bar;
     private TextView tv_cg_name;
 
-    private HorizontalListView h_list;
+   // private HorizontalListView h_list;
     private Course xzCourse;
 
     private List<Changguan> changguanList;
@@ -63,30 +68,30 @@ public class NaotengAc extends AbsCoursePayBaseAc {
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     private ListView lv_course;
-
+    String title = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        contentView(R.layout.ac_naoteng);
+        contentView(R.layout.ac_naoteng1);
         context = this;
-
         storelist = (Storelist)this.getIntent().getSerializableExtra("storelist");
-
         this.setTitleName(storelist.storeName);
-
-        h_list = (HorizontalListView)this.findViewById(R.id.h_list);
-        h_list.setAdapter(baoAdapter);
-        h_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                CourseBao bao = courseBaoList.get(position);
-                Intent intent = new Intent(context, CoursebaoAc.class);
-                bao.storeId = storelist.storeId;
-                bao.storeName = storelist.storeName;
-                intent.putExtra("data",bao);
-                startActivity(intent);
-            }
-        });
+        app_bar = (AppBarLayout) this.findViewById(R.id.app_bar);
+        //app_bar.getLayoutParams().height = App.getInstance().getScreenWidth() / 2;
+        app_bar.addOnOffsetChangedListener(this);
+//        h_list = (HorizontalListView)this.findViewById(R.id.h_list);
+//        h_list.setAdapter(baoAdapter);
+//        h_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                CourseBao bao = courseBaoList.get(position);
+//                Intent intent = new Intent(context, CoursebaoAc.class);
+//                bao.storeId = storelist.storeId;
+//                bao.storeName = storelist.storeName;
+//                intent.putExtra("data",bao);
+//                startActivity(intent);
+//            }
+//        });
 
         cld_a = (CalendarView_x)this.findViewById(R.id.cld_a);
         date = sdf.format(cld_a.getSelected().getTime());
@@ -138,6 +143,11 @@ public class NaotengAc extends AbsCoursePayBaseAc {
             public void done(int what, CommonListResult<Course> obj) {
                 hideProgressDialog();
                 courseList = obj.data;
+                courseList.addAll(obj.data);
+                courseList.addAll(obj.data);
+                courseList.addAll(obj.data);
+                courseList.addAll(obj.data);
+                courseList.addAll(obj.data);
                 if(obj.data != null && obj.data.size() > 0) {
                     findViewById(R.id.v_none).setVisibility(View.GONE);
                 }
@@ -280,7 +290,9 @@ public class NaotengAc extends AbsCoursePayBaseAc {
                 hideProgressDialog();
                 if (obj.data != null)
                 {
-                    courseBaoList = obj.data;
+                    courseBaoList = new ArrayList<>();
+                    courseBaoList.clear();
+                    courseBaoList.addAll(obj.data);
                     baoAdapter.notifyDataSetChanged();
                 }
             }
@@ -450,4 +462,28 @@ public class NaotengAc extends AbsCoursePayBaseAc {
         intent.putExtra("pageTag","AbsCoursePayBaseAc");
         startActivity(intent);
     }
+
+    /**
+     * 监听滑倒顶部悬浮 然后改变标题
+     * @param appBarLayout
+     * @param verticalOffset
+     */
+    @Override
+    public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+        if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
+            Log.e("fff", "到顶了 " + verticalOffset);
+            if (date!=null&&date.length()==10){
+                String titleName   = date.substring(0,date.length()-3);
+                setTitleName(titleName);
+            }else {
+                setTitleName(date);
+            }
+        } else if (Math.abs(verticalOffset) > appBarLayout.getTotalScrollRange() / 3 * 2) {
+            Log.d("fff", "快到顶了 " + verticalOffset);
+            setTitleName(storelist.storeName);
+        } else {
+            Log.d("fff", "在中间 " + verticalOffset);
+        }
+    }
+
 }
