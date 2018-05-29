@@ -728,8 +728,27 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 		hideFragments(transaction);
 		switch (index) {
 			case 0:
+
+
+
+				tabs[0].setSelect(true);
+				if (indexFm == null) {
+					indexFm = new CourseFm3();
+					transaction.add(R.id.content, indexFm);
+				} else {
+					// 如果MessageFragment不为空，则直接将它显示出来
+					transaction.show(indexFm);
+					indexFm.setFoucs();
+					indexFm.updateView();
+				}
+
+				break;
+			case 1:
+
+
+
 				if(tag == 2){
-					tabs[0].setSelect(true);
+					tabs[1].setSelect(true);
 //				iv_e.setImageResource(R.drawable.m_1);
 					// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
 					if (growUpFragment == null) {
@@ -743,22 +762,6 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 				}else{
 					isLogin();
 				}
-				break;
-			case 1:
-
-
-				tabs[1].setSelect(true);
-				if (indexFm == null) {
-					indexFm = new CourseFm3();
-					transaction.add(R.id.content, indexFm);
-				} else {
-					// 如果MessageFragment不为空，则直接将它显示出来
-					transaction.show(indexFm);
-					indexFm.setFoucs();
-					indexFm.updateView();
-				}
-
-
 
 
 				break;
