@@ -286,7 +286,14 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
 //                }, 1);
 //                return;
 //            }
-            getPay();
+            String content = "您即将用充值余额支付%s元,\n确认支付吗？";
+            content =  String.format(content,String.valueOf(shifukuan));
+            UtilDialog.dialogPrompt(context,
+                    content,
+                    "取消",
+                    "确认支付",
+                    "余额支付",
+                    handler,1);
             //UtilDialog.dialogPay(mContext, handler);
         } else {
 //			if(payType==2){
@@ -296,6 +303,8 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
 //			}
         }
     }
+
+
 
     /**
      * 余额支付
@@ -332,22 +341,51 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
             @Override
             public void done(int what, StringResult obj) {
                 hideProgressDialog();
-                finish();
-                if ("CourseDetailAc".equals(getIntent().getStringExtra("pageTag"))) {//课程详情
-//                    CourseDetailAc.intances.finish();
-                    MainAc.intance.isDefult = 0;
-                    App.toast("支付成功!您可以前往我的-我的课程查看已购买的课程!");
-                } else if ("AbsCoursePayBaseAc".equals(getIntent().getStringExtra("pageTag"))) {//课程详情
-                    if (AbsCoursePayBaseAc.intances != null)
-                        AbsCoursePayBaseAc.intances.finish();
-                    MainAc.intance.isDefult = 0;
-                    App.toast("支付成功!您可以前往我的-我的课程查看已购买的课程!");
-                } else if ("CoursebaoAc".equals(getIntent().getStringExtra("pageTag"))) {//课程包购买
-                    MainAc.intance.isDefult = 0;
-                    App.toast("支付成功!");
-                } else {
-                    App.toast("支付成功!");
-                }
+                String content = "您可以前往我的-我的课程查看已购买的课程!";
+                UtilDialog.dialogPrompt(context,
+                        content,
+                        "确认支付",
+                        "支付成功",
+                        handler,404);
+
+//
+//                if ("CourseDetailAc".equals(getIntent().getStringExtra("pageTag"))) {//课程详情
+////                    CourseDetailAc.intances.finish();
+//                    MainAc.intance.isDefult = 0;
+//                   // App.toast("支付成功!您可以前往我的-我的课程查看已购买的课程!");
+//                    String content = "支付成功!您可以前往我的-我的课程查看已购买的课程!";
+//                    UtilDialog.dialogPrompt(context,
+//                            content,
+//                            "确认支付",
+//                            "支付成功",
+//                            handler,404);
+//                } else if ("AbsCoursePayBaseAc".equals(getIntent().getStringExtra("pageTag"))) {//课程详情
+//                    if (AbsCoursePayBaseAc.intances != null)
+//                        AbsCoursePayBaseAc.intances.finish();
+//                    MainAc.intance.isDefult = 0;
+//                   // App.toast("支付成功!您可以前往我的-我的课程查看已购买的课程!");
+//                    String content = "支付成功!您可以前往我的-我的课程查看已购买的课程!";
+//                    UtilDialog.dialogPrompt(context,
+//                            content,
+//                            "确认支付",
+//                            "支付成功",
+//                            handler,404);
+//                } else if ("CoursebaoAc".equals(getIntent().getStringExtra("pageTag"))) {//课程包购买
+//                    MainAc.intance.isDefult = 0;
+//                    String content = "支付成功!您可以前往我的-我的课程查看已购买的课程!";
+//                    UtilDialog.dialogPrompt(context,
+//                            content,
+//                            "确认支付",
+//                            "支付成功",
+//                            handler,404);
+//                } else {
+//                    String content = "支付成功!您可以前往我的-我的课程查看已购买的课程!";
+//                    UtilDialog.dialogPrompt(context,
+//                            content,
+//                            "确认支付",
+//                            "支付成功",
+//                            handler,404);
+//                }
             }
         });
     }
@@ -466,15 +504,11 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
         public void dispatchMessage(Message msg) {
             switch (msg.what) {
                 case 1:
-//                    payPwd = ((EditText) msg.obj).getText().toString().trim();
-//                    if (TextUtils.isEmpty(payPwd)) {
-//                        dialogToast("密码不能为空");
-//                        return;
-//                    }
                     getPay();
-
-
-                    break;
+                 break;
+                 case 404:
+                    finish();
+                 break;
 
                 default:
                     break;

@@ -373,7 +373,12 @@ public class UtilDialog {
 		dialog.setTitle(null);
 		dialog.show();
 	}
-	
+
+
+
+
+
+
 	/**
 	 * 
 	 * 版本更新dialog
@@ -441,4 +446,99 @@ public class UtilDialog {
 		dialog.setTitle(null);
 		dialog.show();
 	}
+
+	/**
+	 *
+	 * 一个标题 ，两个按钮，一个提示文字   解绑微信。喊山方UI新作品
+	 * @param context
+	 * @param content
+	 * @param btnName
+	 * @param handler
+	 */
+	public static void dialogPrompt(Context context,String content,String btnLeftName,
+									String btnRightName,String strTitle,
+									final Handler handler,final int strCode) {
+
+		final Dialog dialog = new Dialog(context, R.style.MyDialog);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		LayoutInflater layoutInflater = LayoutInflater.from(context);
+		View view = layoutInflater.inflate(R.layout.dialog_pay_yue, null);
+
+		TextView dialog_content = (TextView)view.findViewById(R.id.tv_content);
+		TextView tv_cancel = (TextView) view.findViewById(R.id.btn_Cancel);
+		TextView tv_Determine = (TextView) view.findViewById(R.id.btn_Determine);//确定
+		TextView tv_title = (TextView) view.findViewById(R.id.tv_title);//确定
+
+		dialog_content.setText(content);
+		tv_cancel.setText(btnLeftName);
+		tv_Determine.setText(btnRightName);
+		tv_title.setText(strTitle);
+
+		//取消事件
+		tv_cancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Message msg = new Message();
+				msg.what = 14;
+				handler.sendMessage(msg);
+				dialog.cancel();
+			}
+		});
+		//确定事件
+		tv_Determine.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Message msg = new Message();
+				msg.what = strCode;
+				handler.sendMessage(msg);
+				dialog.cancel();
+			}
+		});
+
+		dialog.setContentView(view);
+		dialog.setTitle(null);
+		dialog.show();
+	}
+
+	/**
+	 *
+	 * 一个标题 ，一个按钮，一个提示文字
+	 * @param context
+	 * @param content
+	 * @param handler
+	 */
+	public static void dialogPrompt(Context context,String content,
+									String btnRightName,String strTitle,
+									final Handler handler,final int strCode) {
+
+		final Dialog dialog = new Dialog(context, R.style.MyDialog);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		LayoutInflater layoutInflater = LayoutInflater.from(context);
+		View view = layoutInflater.inflate(R.layout.dialog_pay_success, null);
+		TextView dialog_content = (TextView)view.findViewById(R.id.tv_content);
+		TextView tv_Determine = (TextView) view.findViewById(R.id.btn_Determine);//确定
+		TextView tv_title = (TextView) view.findViewById(R.id.tv_title);//确定
+		dialog_content.setText(content);
+		tv_Determine.setText(btnRightName);
+		tv_title.setText(strTitle);
+		//确定事件
+		tv_Determine.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Message msg = new Message();
+				msg.what = strCode;
+				if (handler!=null)
+				handler.sendMessage(msg);
+				dialog.cancel();
+			}
+		});
+
+		dialog.setContentView(view);
+		dialog.setTitle(null);
+		dialog.show();
+	}
+
+
 }
