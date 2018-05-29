@@ -64,12 +64,12 @@ public class CalendarView_x extends LinearLayout  {
             today.add(Calendar.DAY_OF_MONTH, i);
             days.add(today);
             int day = today.get(Calendar.DAY_OF_MONTH);
-            TextView tv_month = (TextView)v.findViewById(R.id.tv_month);
+//            TextView tv_month = (TextView)v.findViewById(R.id.tv_month);
             if(day == 1)
             {
-                tv_month.setVisibility(VISIBLE);
-                int month = today.get(Calendar.MONTH)+1;
-                tv_month.setText(today.get(Calendar.YEAR)+"."+(month<10? "0"+month : ""+month));
+//                tv_month.setVisibility(VISIBLE);
+//                int month = today.get(Calendar.MONTH)+1;
+//                tv_month.setText(today.get(Calendar.YEAR)+"."+(month<10? "0"+month : ""+month));
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -90,7 +90,7 @@ public class CalendarView_x extends LinearLayout  {
             }
             else
             {
-                tv_month.setVisibility(GONE);
+//                tv_month.setVisibility(GONE);
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
