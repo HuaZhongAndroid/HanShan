@@ -143,11 +143,6 @@ public class NaotengAc extends AbsCoursePayBaseAc implements AppBarLayout.OnOffs
             public void done(int what, CommonListResult<Course> obj) {
                 hideProgressDialog();
                 courseList = obj.data;
-                courseList.addAll(obj.data);
-                courseList.addAll(obj.data);
-                courseList.addAll(obj.data);
-                courseList.addAll(obj.data);
-                courseList.addAll(obj.data);
                 if(obj.data != null && obj.data.size() > 0) {
                     findViewById(R.id.v_none).setVisibility(View.GONE);
                 }
@@ -290,9 +285,7 @@ public class NaotengAc extends AbsCoursePayBaseAc implements AppBarLayout.OnOffs
                 hideProgressDialog();
                 if (obj.data != null)
                 {
-                    courseBaoList = new ArrayList<>();
-                    courseBaoList.clear();
-                    courseBaoList.addAll(obj.data);
+                    courseBaoList = obj.data;
                     baoAdapter.notifyDataSetChanged();
                 }
             }

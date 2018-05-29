@@ -170,9 +170,6 @@ public class LeyuanStoreAc extends AbsCoursePayBaseAc implements View.OnClickLis
 
                 if (obj.data != null)
                     courseList = obj.data;
-                courseList.addAll(obj.data);
-                courseList.addAll(obj.data);
-                courseList.addAll(obj.data);
                 if (courseList.size() > 0)
                     findViewById(R.id.v_none).setVisibility(View.GONE);
                 else
