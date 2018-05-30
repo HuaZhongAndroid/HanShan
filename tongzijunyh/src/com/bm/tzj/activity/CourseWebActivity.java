@@ -5,12 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -146,8 +149,10 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
                 intent.putExtras(bundle);
                 context.startActivity(intent);
                 return true;
+            }else if(url.startsWith("http://") || url.startsWith("https://")){
+                return false;
             }
-            return false;
+            return true;
         }
     }
     //tzj://originImg?url=[图片]http://192.168.1.102:8888/img//goods/base/90923e29-91fa-4d88-9c9c-3c5074c6081d.jpg
