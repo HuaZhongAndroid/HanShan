@@ -11,6 +11,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -77,7 +78,9 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
         //设置
         web_view.getSettings().setJavaScriptEnabled(true);
         web_view.getSettings().setBlockNetworkImage(false);
-
+        //自适应屏幕
+        web_view.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        web_view.getSettings().setLoadWithOverviewMode(true);
         web_view.loadUrl(url);
     }
 
@@ -119,20 +122,35 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             // 判断url链接中是否含有某个字段，如果有就执行指定的跳转（不执行跳转url链接），如果没有就加载url链接
             Log.e("Loading", url);
-            Map<String, String> map = getMap(url);
-            if (map != null) {
-                goodsId = map.get("goodsId");
-                storeId = map.get("storeId");
-                goodsType = map.get("goodsType");
-                goodsTime = map.get("goodsTime");
-                goodsName = map.get("goodsName");
-                type = 10+"";
-                showPopupWindow(web_view);
+            if (url.contains("tzj://enroll?")){
+                Map<String, String> map = getMap(url);
+                if (map != null) {
+                    goodsId = map.get("goodsId");
+                    storeId = map.get("storeId");
+                    goodsType = map.get("goodsType");
+                    goodsTime = map.get("goodsTime");
+                    goodsName = map.get("goodsName");
+                    type = 10+"";
+                    showPopupWindow(web_view);
+                }
+                return true;
+            }else if (url.contains("tzj://originImg?url=")){
+                String imgUrl  = url.replace("tzj://originImg?url=","");
+                //查看调用Android图片
+                Log.e("imgUrl " ,imgUrl);
+                Intent intent = new Intent(context,
+                        ImageViewActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("images", new String[]{imgUrl});
+                bundle.putInt("position", 0);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
                 return true;
             }
             return false;
         }
     }
+    //tzj://originImg?url=[图片]http://192.168.1.102:8888/img//goods/base/90923e29-91fa-4d88-9c9c-3c5074c6081d.jpg
     private Map<String, String> getMap(String str) {
         if (str.contains("tzj://enroll?")) {
             Map<String, String> map = new HashMap<>();

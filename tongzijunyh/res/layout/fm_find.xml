@@ -123,14 +123,15 @@
                 android:listSelector="@color/transparent"
                 android:scrollbars="none"
                 android:scrollingCache="false" />
-        </com.lib.widget.refush.SwipyRefreshLayout> 
-       
+        </com.lib.widget.refush.SwipyRefreshLayout>
+
 
         <ImageView
             android:id="@+id/img_noData"
             style="@style/ww"
+            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="120dip"
+            android:layout_marginTop="118dp"
             android:src="@drawable/none" />
     </RelativeLayout>
 
