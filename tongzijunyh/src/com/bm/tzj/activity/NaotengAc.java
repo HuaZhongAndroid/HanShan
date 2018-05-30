@@ -465,8 +465,10 @@ public class NaotengAc extends AbsCoursePayBaseAc implements AppBarLayout.OnOffs
     public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
         if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
             Log.e("fff", "到顶了 " + verticalOffset);
-            if (date!=null&&date.length()==10){
-                String titleName   = date.substring(0,date.length()-3);
+            String titleName =  "%s年%s月";
+            if (date.contains("-")&&date.length()>=2){
+                String split[] = date.split("-");
+                titleName = String.format(titleName,split[0],split[1]);
                 setTitleName(titleName);
             }else {
                 setTitleName(date);
