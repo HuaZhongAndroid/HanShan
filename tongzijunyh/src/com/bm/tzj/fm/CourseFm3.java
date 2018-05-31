@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -154,6 +155,8 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
     /**
      * 搜索栏 和 选择城市
      */
+
+
     private void initCity(View v) {
         app_bar = (AppBarLayout) v.findViewById(R.id.app_bar);
         app_bar.getLayoutParams().height = App.getInstance().getScreenWidth() / 2;
@@ -215,11 +218,27 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
     /**
      * 初始化轮播图
      */
+    int screenWidth = 0;
+    int screenHeight = 0;
+    int bannerHeight = 0;
     private void initBannerView(View v) {
+        screenWidth =  App.getInstance().getScreenWidth();
+        screenHeight =  App.getInstance().getScreenHeight();
+        if (screenWidth!=0&&screenHeight!=0){
+            bannerHeight =   screenWidth/16*9;
+        }
+        Log.e("screenWidth" ,"screenWidth = "+screenWidth);
+        Log.e("screenHeight" ,"screenHeight = "+screenHeight);
+        Log.e("bannerHeight" ,"bannerHeight = "+bannerHeight);
         bannerView = (BGABanner) v.findViewById(R.id.bannerView);
+        if (bannerHeight!=0){
+            //bannerView.setMinimumHeight(bannerHeight);
+            bannerView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,bannerHeight));
+        }
         bannerView.setAdapter(new BGABanner.Adapter<ImageView, Advertisement>() {
             @Override
             public void fillBannerItem(BGABanner banner, ImageView itemView, Advertisement model, int position) {
+                itemView.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 Glide.with(getActivity())
                         .load(model.titleMultiUrl)
                         .placeholder(R.drawable.adv_default)
@@ -236,7 +255,6 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             }
         });
     }
-
 
     /**
      * 获取广告位

@@ -81,6 +81,8 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
         //设置
         web_view.getSettings().setJavaScriptEnabled(true);
         web_view.getSettings().setBlockNetworkImage(false);
+        //去除缓存设置
+        web_view.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         //自适应屏幕
         web_view.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         web_view.getSettings().setLoadWithOverviewMode(true);

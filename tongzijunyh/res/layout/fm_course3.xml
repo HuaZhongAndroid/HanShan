@@ -20,7 +20,7 @@
             app:contentScrim="#fff"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            <FrameLayout
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent">
 
@@ -30,7 +30,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:banner_transitionEffect="depth" />
-            </FrameLayout>
+            </LinearLayout>
             <!---->
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
