@@ -164,7 +164,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
                     break;
                 case 3:
                     Log.d("fff", "step3");
-                    loadGg();
+                   // loadGg();
                     break;
                 case 4:
                     Log.d("fff", "step4");
@@ -283,7 +283,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
                     } else {//如果两个广告不同，弹出来。并且保存新广告
                         hasGuangGao = true;
                         SharedPreferencesHelper.saveString("adverts", (ad.imageUrl + ad.linkUrl));
-                        GuanggaoDialog dialog = new GuanggaoDialog((Activity) context);
+                        GuanggaoDialog dialog = new GuanggaoDialog(MainAc.this);
                         dialog.setAd(ad);
                         dialog.setOnCancelListener(new OnCancelListener() {
                             @Override
@@ -1052,11 +1052,12 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
         final HashMap<String, String> map = new HashMap<String, String>();
         final City city = App.getInstance().getCityCode();
         User user = App.getInstance().getUser();
-        if (null != city && !TextUtils.isEmpty(city.regionName)) {
+        if (null != city && !TextUtils.isEmpty(city.regionName)&&user!=null) {
             map.put("regionName", city.regionName);//城市名称
             map.put("userId", user.userid);//用户id
         } else {
             map.put("regionName", "西安市");//城市名称
+            map.put("userId", "0");//用户id
         }
         MessageManager.getInstance().getMessageList(this, map, new ServiceCallback<CommonResult<XiaoxiList>>() {
 

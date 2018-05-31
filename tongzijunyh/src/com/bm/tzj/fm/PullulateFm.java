@@ -106,9 +106,9 @@ public class PullulateFm extends Fragment implements OnClickListener {
 	private String touxiang;
 
 	private int type = 0;
-	
-	
-
+	int screenWidth = 0;
+	int screenHeight = 0;
+	int topViewHeight = 0;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -117,6 +117,12 @@ public class PullulateFm extends Fragment implements OnClickListener {
 		// App.toast("CaseFm");
 		instance = this;
 		context = this.getActivity();
+		//获取屏幕高宽
+		screenWidth =  App.getInstance().getScreenWidth();
+		screenHeight =  App.getInstance().getScreenHeight();
+		if (screenWidth!=0&&screenHeight!=0){
+			topViewHeight =   screenWidth/16*9;
+		}
 		initView(messageLayout);
 		return messageLayout;
 	}
@@ -157,8 +163,11 @@ public class PullulateFm extends Fragment implements OnClickListener {
 		rl_c.setOnClickListener(this);
 		iv_sixview_head = (CircleImageView)v.findViewById(R.id.iv_sixview_head);
 		im_headbg = (ImageView)v.findViewById(R.id.im_headbg);
+		if(topViewHeight>0){
+			im_headbg.setLayoutParams(new FrameLayout.LayoutParams(
+					FrameLayout.LayoutParams.MATCH_PARENT,topViewHeight));
+		}
 		getDate();
-
 
 		//切换服务器地址用的
 		final SharedPreferences sp =this.context.getSharedPreferences("ssspathss", Context.MODE_PRIVATE);
