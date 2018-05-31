@@ -140,16 +140,16 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
                 }
                 return true;
             }else if (url.contains("tzj://originImg?url=")){
-                String imgUrl  = url.replace("tzj://originImg?url=","");
-                //查看调用Android图片
-                Log.e("imgUrl " ,imgUrl);
-                Intent intent = new Intent(context,
-                        ImageViewActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("images", new String[]{imgUrl});
-                bundle.putInt("position", 0);
-                intent.putExtras(bundle);
-                context.startActivity(intent);
+//                String imgUrl  = url.replace("tzj://originImg?url=","");
+//                //查看调用Android图片
+//                Log.e("imgUrl " ,imgUrl);
+//                Intent intent = new Intent(context,
+//                        ImageViewActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("images", new String[]{imgUrl});
+//                bundle.putInt("position", 0);
+//                intent.putExtras(bundle);
+//                context.startActivity(intent);
                 return true;
             }else if(url.startsWith("http://") || url.startsWith("https://")){
                 return false;
