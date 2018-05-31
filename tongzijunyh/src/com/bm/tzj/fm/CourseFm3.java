@@ -248,9 +248,9 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                         .into(itemView);
             }
         });
-        bannerView.setDelegate(new BGABanner.Delegate<ImageView, String>() {
+        bannerView.setDelegate(new BGABanner.Delegate<ImageView, Advertisement>() {
             @Override
-            public void onBannerItemClick(BGABanner banner, ImageView itemView, String model, int position) {
+            public void onBannerItemClick(BGABanner banner, ImageView itemView, Advertisement model, int position) {
                 Toast.makeText(banner.getContext(), "点击了" + position, Toast.LENGTH_SHORT).show();
             }
         });
