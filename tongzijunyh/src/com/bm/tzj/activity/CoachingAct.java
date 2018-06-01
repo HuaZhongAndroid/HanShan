@@ -36,11 +36,18 @@ public class CoachingAct extends BaseActivity {
         super.onCreate(savedInstanceState);
         this.contentView(R.layout.ac_coaching_list);
         setTitleName("教练点评");
+        if (App.getInstance().getUser()==null)return;
         init();
         getMessList();
     }
 
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (xiaoxiListXiaoxiListAdapter!=null){
+            xiaoxiListXiaoxiListAdapter.notifyDataSetChanged();
+        }
+    }
     private void init() {
 
         emptyLayout = findViewById(R.id.emptyLayout);
@@ -65,7 +72,9 @@ public class CoachingAct extends BaseActivity {
                 tag.iteView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        if (App.getInstance().getUser()==null)return;
                         jumpDetail(data.getMessageId(), data.getTitle());
+                        data.setIsRead("1");
                     }
                 });
 
@@ -155,4 +164,8 @@ public class CoachingAct extends BaseActivity {
         startActivity(intent);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

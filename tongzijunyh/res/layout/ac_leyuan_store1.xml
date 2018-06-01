@@ -16,6 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:contentInsetStart="0dp"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <!-- toolbar内部布局文件 -->
@@ -74,8 +75,10 @@
             android:id="@+id/cld_a"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"></com.bm.tzj.caledar.CalendarView_x>
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@color/white"
+            ></com.bm.tzj.caledar.CalendarView_x>
 
     </android.support.design.widget.AppBarLayout>
 

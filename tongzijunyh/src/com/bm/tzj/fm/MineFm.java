@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -36,6 +37,7 @@ import com.bm.tzj.mine.RechargeAc2;
 import com.bm.tzj.mine.SettingAc;
 import com.bm.util.BitmapUtil;
 import com.bm.view.CircleImageView;
+import com.lib.widget.ReboundScrollView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageSize;
@@ -53,7 +55,7 @@ import java.util.List;
 @SuppressLint("NewApi")
 public class MineFm extends Fragment implements OnClickListener {
     private Context context;
-    private ScrollView sv;
+    private ReboundScrollView sv;
     private CircleImageView iv_sixview_head;
     private ImageView iv_headbg;
     private TextView tv_money, tv_moneyX, tv_zengsong, tv_zengsongX, tv_login, tv_allCourse, tv_recharge;
@@ -108,7 +110,7 @@ public class MineFm extends Fragment implements OnClickListener {
         tv_zengsong = (TextView) view.findViewById(R.id.tv_zengsong);
         tv_zengsongX = (TextView) view.findViewById(R.id.tv_zengsongX);
         tv_integral = (TextView) view.findViewById(R.id.tv_integral);
-        sv = (ScrollView) view.findViewById(R.id.sv);
+        sv = (ReboundScrollView) view.findViewById(R.id.sv);
         ll_person = (LinearLayout) view.findViewById(R.id.ll_person);
         ll_person.setOnClickListener(this);
         ll_e = (LinearLayout) view.findViewById(R.id.ll_e);
@@ -265,40 +267,28 @@ public class MineFm extends Fragment implements OnClickListener {
 
     @Override
     public void onClick(View view) {
+        if (!MainAc.intance.isLogin()) return;
         Intent intent = null;
         switch (view.getId()) {
             case R.id.ll_mychildren://我的孩子
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, MyChildrenAc.class);
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
-
+                intent = new Intent(context, MyChildrenAc.class);
+                startActivity(intent);
                 break;
             case R.id.tv_allCourse://我的课程
             case R.id.ll_course1://我的课程
             case R.id.ll_course2://我的课程
             case R.id.ll_course3://我的课程
             case R.id.ll_course4://我的课程
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, MyCourseAc.class);
-                    intent.putExtra(MyCourseAc.INTENTKEY_INDEX, ((Integer) view.getTag()).intValue());
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, MyCourseAc.class);
+                intent.putExtra(MyCourseAc.INTENTKEY_INDEX, ((Integer) view.getTag()).intValue());
+                startActivity(intent);
                 break;
             case R.id.ll_course5:
                 startActivity(new Intent(context, MyCoursebaoAc.class));
                 break;
             case R.id.ll_c://我的收藏
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, MyCollectionAc.class);
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, MyCollectionAc.class);
+                startActivity(intent);
                 break;
 //		case R.id.ll_medal://我的勋章
 //			if (MainAc.intance.tag == 2) {
@@ -311,33 +301,19 @@ public class MineFm extends Fragment implements OnClickListener {
             case R.id.ll_zengsong:
             case R.id.ll_zhangdan:
             case R.id.ll_accountBalance://账户明细
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, AccountBalanceAc.class);
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, AccountBalanceAc.class);
+                startActivity(intent);
                 break;
             case R.id.tv_recharge://充值
             case R.id.ll_chongzhi:
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, RechargeAc2.class);
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, RechargeAc2.class);
+                startActivity(intent);
                 break;
             case R.id.ll_d://我的消息
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, MyMessageAc.class);
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, MyMessageAc.class);
+                startActivity(intent);
                 break;
             case R.id.ll_e:  //顾问教练
-                User uInfos = App.getInstance().getUser();
-                if (MainAc.intance.tag == 2) {
 //				if(uInfos.coachId == null ||uInfos.coachName == null ){
 //					intent = new Intent(context, NoTeacherAc.class);
 //					startActivity(intent);
@@ -352,94 +328,45 @@ public class MineFm extends Fragment implements OnClickListener {
                     intent.putExtra("pageType", "NoTeacherAc");
                     startActivity(intent);
 
-                } else {
-                    isLogin();
-                }
                 break;
             case R.id.ll_f:  //意见反馈
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, FeedBackAc.class);
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, FeedBackAc.class);
+                startActivity(intent);
                 break;
             case R.id.ll_g:  //设置
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, SettingAc.class);
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, SettingAc.class);
+                startActivity(intent);
                 break;
             case R.id.ll_integral:  //积分明细
-                if (MainAc.intance.tag == 2) {
-//				intent = new Intent(context, MyIntegralAc.class);
-//				startActivity(intent);
-                    Intent i = new Intent(context, MyYouhuiquanAc.class);
-                    context.startActivity(i);
-                } else {
-                    isLogin();
-                }
+                Intent i = new Intent(context, MyYouhuiquanAc.class);
+                context.startActivity(i);
                 break;
             case R.id.ll_person: //个人信息
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, PersonalInformation.class);
-                    intent.putExtra("pageType", "MineFm");
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, PersonalInformation.class);
+                intent.putExtra("pageType", "MineFm");
+                startActivity(intent);
                 break;
             case R.id.ll_wdl:
                 intent = new Intent(context, LoginAc.class);
                 startActivity(intent);
                 break;
             case R.id.iv_sixview_head:
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, PersonalInformation.class);
-                    intent.putExtra("pageType", "MineFm");
-                    startActivity(intent);
-                } else {
-                    intent = new Intent(context, LoginAc.class);
-                    startActivity(intent);
-                }
+                intent = new Intent(context, PersonalInformation.class);
+                intent.putExtra("pageType", "MineFm");
+                startActivity(intent);
                 break;
             case R.id.tv_name:
                 MainAc.intance.changeTab(0);
                 break;
             case R.id.tv_message:
-                if (MainAc.intance.tag == 2) {
-                    intent = new Intent(context, PersonalInformation.class);
-                    intent.putExtra("pageType", "MineFm");
-                    startActivity(intent);
-                } else {
-                    isLogin();
-                }
+                intent = new Intent(context, PersonalInformation.class);
+                intent.putExtra("pageType", "MineFm");
+                startActivity(intent);
                 break;
             default:
                 break;
         }
     }
-
-    public void isLogin() {
-        UtilDialog.dialogTwoBtnContentTtile(context, "您还未登录，请先登录再操作", "取消", "确定", "提示", handler, 1);
-    }
-
-    private Handler handler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
-            switch (msg.what) {
-                case 1:
-                    Intent intent = new Intent(context, LoginAc.class);
-                    startActivity(intent);
-                    MainAc.intance.finish();
-                    break;
-            }
-
-
-        }
-    };
-
     // 设置图片
     public void setImage() {
         ImageLoader.getInstance().displayImage("file://" + uploadListImg.get(0), iv_sixview_head, App.getInstance().getListViewDisplayImageOptions());

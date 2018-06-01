@@ -6,11 +6,13 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.bm.api.MessageManager;
 import com.bm.app.App;
@@ -26,6 +28,7 @@ import com.bm.util.CacheUtil;
 import com.bumptech.glide.Glide;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonResult;
+import com.lib.widget.ReboundScrollView;
 import com.lib.widget.refush.SwipyRefreshLayout;
 import com.lib.widget.refush.SwipyRefreshLayoutDirection;
 import com.richer.tzj.R;
@@ -37,7 +40,8 @@ import java.util.HashMap;
 /**
  * 消息中心
  */
-public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRefreshLayout.OnRefreshListener {
+public class XiaoxiFm extends Fragment implements View.OnClickListener
+        , SwipyRefreshLayout.OnRefreshListener ,ReboundScrollView.LoadChangeListener{
 
     private View messageLayout = null;
     private City city = null;
@@ -45,12 +49,14 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
     //没有数据的时候显示的空view
     private View emptyLayout;
     private ListView listView;
+    private TextView tv_jiaolian;
+    private TextView tv_tongzhi;
     private View radCountCoachingView;
     private View radCountNotifyView;
     private XiaoxiListAdapter xiaoxiListXiaoxiListAdapter = null;
     private ArrayList<XiaoxiList.MessageRecoBean> xiaoxiLists = new ArrayList<>();
 
-    private SwipyRefreshLayout refreshLayout;
+    private ReboundScrollView top_layout;
     private CommonResult<XiaoxiList> obj = null;
 
     @Nullable
@@ -65,13 +71,12 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
     private void init() {
 
         emptyLayout = messageLayout.findViewById(R.id.emptyLayout);
-        refreshLayout = (SwipyRefreshLayout) messageLayout.findViewById(R.id.refreshLayout);
-        refreshLayout.setDirection(SwipyRefreshLayoutDirection.BOTH);
-        refreshLayout.setColorScheme(R.color.color1, R.color.color2,
-                R.color.color3, R.color.color4);
-        refreshLayout.setOnRefreshListener(this);
+        top_layout = (ReboundScrollView) messageLayout.findViewById(R.id.top_layout);
+        top_layout.setLoadChangeListener(this);
         radCountCoachingView = messageLayout.findViewById(R.id.radCountCoachingView);
         radCountNotifyView = messageLayout.findViewById(R.id.radCountNotifyView);
+        tv_jiaolian = (TextView) messageLayout.findViewById(R.id.tv_jiaolian);
+        tv_tongzhi = (TextView) messageLayout.findViewById(R.id.tv_tongzhi);
         listView = (ListView) messageLayout.findViewById(R.id.recyclerView);
 
         messageLayout.findViewById(R.id.coachingItem).setOnClickListener(this);
@@ -106,13 +111,24 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
         listView.setAdapter(xiaoxiListXiaoxiListAdapter);
     }
 
-    private void refreshData() {
-        ((BaseFragmentActivity) getActivity()).showProgressDialog();
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (MainAc.intance!=null)
         getMessList();
+        Log.e("xiaoxiFm","刷新消息");
+    }
+
+    private void refreshData() {
+        if (App.getInstance().getUser()!=null){
+            ((BaseFragmentActivity) getActivity()).showProgressDialog();
+            getMessList();
+        }
     }
 
     private void getMessList() {
         final HashMap<String, String> map = new HashMap<String, String>();
+        if (null == App.getInstance().getUser()) return;
         if (null != city && !TextUtils.isEmpty(city.regionName)) {
             map.put("regionName", city.regionName);//城市名称
             map.put("userId", user.userid);//用户id
@@ -125,6 +141,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
 
             @Override
             public void done(int what, CommonResult<XiaoxiList> obj) {
+                isLoad = true;
                 hideProgressDialog();
                 handDataShow(obj);
                 CacheUtil.save(getActivity(), CACHEKEY, map, obj);
@@ -132,6 +149,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
 
             @Override
             public void error(String msg) {
+                isLoad = true;
                 hideProgressDialog();
                 //从缓存中读取数据
                 CommonResult<XiaoxiList> obj = new CommonResult<XiaoxiList>() {
@@ -168,11 +186,13 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
         switch (v.getId()) {
             //教练点评
             case R.id.coachingItem:
+                if (MainAc.intance.isLogin())
                 startActivity(new Intent(getActivity(), CoachingAct.class)
                         .putExtra("data", obj));
                 break;
             //通知消息
             case R.id.notifyItem:
+                if (MainAc.intance.isLogin())
                 startActivity(new Intent(getActivity(), NotifyAct.class)
                         .putExtra("data", obj));
                 break;
@@ -182,37 +202,48 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
 
     @Override
     public void onRefresh(SwipyRefreshLayoutDirection direction) {
-        if (direction == SwipyRefreshLayoutDirection.TOP) {
+//        if (direction == SwipyRefreshLayoutDirection.TOP) {
+//
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    getActivity().runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            xiaoxiLists.clear();
+//                            getMessList();
+//                            // 刷新设置
+//                            refreshLayout.setRefreshing(false);
+//                        }
+//                    });
+//                }
+//            }, 2000);
+//        } else if (direction == SwipyRefreshLayoutDirection.BOTTOM) {
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    // Hide the refresh after 2sec
+//                    getActivity().runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            getMessList();
+//                            // 刷新设置
+//                            refreshLayout.setRefreshing(false);
+//                        }
+//                    });
+//                }
+//            }, 2000);
+//        }
+    }
+    boolean isLoad = true;
+    @Override
+    public synchronized void  onLoadChangeListener(int deltaY) {
+            if (deltaY>200&&isLoad){
+                isLoad=false;
+                xiaoxiLists.clear();
+                refreshData();
+            }else if (deltaY<-200&&isLoad){
 
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            xiaoxiLists.clear();
-                            getMessList();
-                            // 刷新设置
-                            refreshLayout.setRefreshing(false);
-                        }
-                    });
-                }
-            }, 2000);
-        } else if (direction == SwipyRefreshLayoutDirection.BOTTOM) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    // Hide the refresh after 2sec
-                    getActivity().runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            getMessList();
-                            // 刷新设置
-                            refreshLayout.setRefreshing(false);
-                        }
-                    });
-                }
-            }, 2000);
         }
     }
 
@@ -238,32 +269,38 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener, SwipyRef
         }
         if (obj.data.getAppraise() == null || obj.data.getAppraise().size() < 1) {
             radCountCoachingView.setVisibility(View.GONE);
+            tv_jiaolian.setText("暂无点评。报名课程，获得更多教练点评");
         } else {
             boolean hasNotRead = false;
             for (XiaoxiList.AppraiseBean appraiseBean : obj.data.getAppraise()) {
                 if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                     hasNotRead = true;
                     isRead = true;
+                    tv_jiaolian.setText(""+appraiseBean.getTitle());
+                    break;
                 }
             }
             radCountCoachingView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
         }
         if (obj.data.getMessageAll() == null || obj.data.getMessageAll().size() < 1) {
             radCountNotifyView.setVisibility(View.GONE);
+            tv_tongzhi.setText("暂无新消息");
         } else {
             boolean hasNotRead = false;
             for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
                 if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                     hasNotRead = true;
                     isRead = true;
+                    tv_tongzhi.setText(appraiseBean.getTitle()+"");
+                    break;
                 }
             }
             radCountNotifyView.setVisibility(hasNotRead ? View.VISIBLE : View.GONE);
         }
         if (isRead) {
-            MainAc.intance.showRed(3, true);
+            MainAc.intance.showRed(true);
         } else {
-            MainAc.intance.showRed(3, false);
+            MainAc.intance.showRed(false);
         }
     }
 

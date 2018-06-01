@@ -4,13 +4,12 @@
     android:layout_height="wrap_content"
     android:background="#fff"
     android:orientation="horizontal"
-    android:paddingBottom="5dp"
-    android:paddingTop="5dp">
+    android:paddingBottom="12dp"
+    android:paddingTop="12dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
         android:orientation="vertical">
 
         <ImageView
@@ -34,18 +33,16 @@
 
             <TextView
                 android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:maxLines="1"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="暑期大露营 第一期"
+                android:layout_marginRight="10dp"
                 android:textColor="@color/fm_mine_nickname"
                 android:textSize="14sp"
                 android:textStyle="bold" />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/tv_price"

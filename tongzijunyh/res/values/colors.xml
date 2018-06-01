@@ -177,6 +177,9 @@
     <color name="golden_1">#A3904B</color>
     <color name="gray_1">#7B7B7B</color>
     <color name="gray_2">#6E6E6E</color>
+    <color name="gray_3">#818181</color>
+
+    <color name="black_4c">#4c4c4c</color>
 
 
 </resources>

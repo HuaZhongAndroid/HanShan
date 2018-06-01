@@ -297,10 +297,11 @@ public class UtilDialog {
 		tv_cancel.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Message msg = new Message();
-				msg.what = 14;
-				handler.sendMessage(msg);
 				dialog.cancel();
+//				Message msg = new Message();
+//				msg.what = 14;
+//				handler.sendMessage(msg);
+//				dialog.cancel();
 			}
 		});
 		//确定事件
@@ -319,7 +320,66 @@ public class UtilDialog {
 		dialog.setTitle(null);
 		dialog.show();
 	}
-	
+
+
+	/**
+	 *
+	 * 两个按钮，一个提示文字   注销提示
+	 * @param context
+	 * @param content
+	 * @param btnName
+	 * @param handler
+	 */
+	public static void dialogToLogin(Context context, String content, String btnLeftName, String btnRightName, String strTitle, final OnClickListener onClickListener) {
+
+		final Dialog dialog = new Dialog(context, R.style.MyDialog);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		LayoutInflater layoutInflater = LayoutInflater.from(context);
+		View view = layoutInflater.inflate(R.layout.dialog_twobtncontent_title, null);
+
+		TextView dialog_content = (TextView)view.findViewById(R.id.tv_content);
+		TextView tv_cancel = (TextView) view.findViewById(R.id.btn_Cancel);
+		TextView tv_Determine = (TextView) view.findViewById(R.id.btn_Determine);//确定
+		TextView tv_title = (TextView) view.findViewById(R.id.tv_title);//确定
+		if(content == null)
+			dialog_content.setVisibility(View.GONE);
+		else
+			dialog_content.setText(content);
+		tv_cancel.setText(btnLeftName);
+		tv_Determine.setText(btnRightName);
+		if(strTitle == null)
+			tv_title.setVisibility(View.GONE);
+		else
+			tv_title.setText(strTitle);
+
+
+		//取消事件
+		tv_cancel.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				v.setTag(0);
+				if (onClickListener!=null)
+				onClickListener.onClick(v);
+				dialog.cancel();
+			}
+		});
+		//确定事件
+		tv_Determine.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				arg0.setTag(1);
+				if (onClickListener!=null)
+					onClickListener.onClick(arg0);
+				dialog.cancel();
+			}
+		});
+
+		dialog.setContentView(view);
+		dialog.setTitle(null);
+		dialog.show();
+	}
+
 	
 	/**
 	 * 

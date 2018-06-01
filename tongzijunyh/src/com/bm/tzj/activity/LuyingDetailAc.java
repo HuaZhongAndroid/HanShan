@@ -209,20 +209,20 @@ public class LuyingDetailAc extends AbsCoursePayBaseAc implements View.OnClickLi
         }
     };
 
-    public void isLogin(){
-        UtilDialog.dialogTwoBtnContentTtile(context, "您还未登录，请先登录在操作", "取消","确定","提示",new Handler(){
-            public void handleMessage(android.os.Message msg) {
-                switch(msg.what){
-                    case 1:
-                        finish();
-                        MainAc.intance.finish();
-                        Intent intent = new Intent(context,LoginAc.class);
-                        startActivity(intent);
-                        break;
-                }
-            }
-        },1);
-    }
+//    public void isLogin(){
+//        UtilDialog.dialogTwoBtnContentTtile(context, "您还未登录，请先登录在操作", "取消","确定","提示",new Handler(){
+//            public void handleMessage(android.os.Message msg) {
+//                switch(msg.what){
+//                    case 1:
+//                        finish();
+//                        MainAc.intance.finish();
+//                        Intent intent = new Intent(context,LoginAc.class);
+//                        startActivity(intent);
+//                        break;
+//                }
+//            }
+//        },1);
+//    }
 
     @Override
     public void onClick(View v) {

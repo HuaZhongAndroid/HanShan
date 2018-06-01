@@ -119,7 +119,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
     private TabMyView[] tabs = new TabMyView[4];
 
-    private ImageView img_read;
+    //private ImageView img_read;
     private FragmentManager fragmentManager;
 
     private Context context;
@@ -136,7 +136,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
     //判断右上角的位置
     private int position = -1;
     //判断是用户登录还是游客登陆
-    public int tag = -1;//以前是用来判断游客 现在改成 判断 user是否为null
+    // public int tag = -1;//以前是用来判断游客 现在改成 判断 user是否为null
     public ShareUtil share;
 
     //	private TextView tv_yqcdqr;
@@ -156,15 +156,17 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
             switch (step) {
                 case 1:
                     Log.d("fff", "step1");
-                    popAddChildDialog();
+
+                    handler.sendEmptyMessage(11);
                     break;
                 case 2:
                     Log.d("fff", "step2");
-                    getYouhuiquan();
+                    handler.sendEmptyMessage(22);
+
                     break;
                 case 3:
                     Log.d("fff", "step3");
-                   // loadGg();
+                    handler.sendEmptyMessage(33);
                     break;
                 case 4:
                     Log.d("fff", "step4");
@@ -217,15 +219,14 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
         share = new ShareUtil(this);
         context = this;
-        tag = getIntent().getIntExtra("tag", 0);
+        // tag = getIntent().getIntExtra("tag", 0);
         intance = this;
         rl_top.setVisibility(View.GONE);
         line.setVisibility(View.GONE);
         initView();
 
         fragmentManager = getSupportFragmentManager();
-        isDefult = tag;
-        setTabSelection(tag);
+        setTabSelection(0);
         rl_top.setVisibility(View.GONE);
         hideLeft();
         //拉去消息界面的消息 提前判断是否显示红点
@@ -403,7 +404,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 //		iv_d = (ImageView) findViewById(R.id.iv_d);
 //		iv_e = (ImageView) findViewById(R.id.iv_e);
 
-        img_read = (ImageView) findViewById(R.id.img_read);
+        //img_read = (ImageView) findViewById(R.id.img_read);
 
         LinearLayout ll = (LinearLayout) findViewById(R.id.tabs_ll);
 
@@ -417,7 +418,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
             tab.setValue(txts[i], redIdN[i], redIdP[i]);
             tabs[i].setOnClickListener(this);
             tabs[i].setId(770 + i);
-           // tab.setColor(Color.parseColor("#a2a2a2"),Color.parseColor("#a2953e"));
+            // tab.setColor(Color.parseColor("#a2a2a2"),Color.parseColor("#a2953e"));
         }
 //		pullulateLayout = tabs[1];
 
@@ -716,43 +717,37 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
                 break;
             case 1:
-                if (isLogin()){
-                    tabs[1].setSelect(true);
+                tabs[1].setSelect(true);
 //				iv_e.setImageResource(R.drawable.m_1);
-                    // indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
-                    if (growUpFragment == null) {
-                        growUpFragment = new GrowUpFragment();
-                        transaction.add(R.id.content, growUpFragment);
-                    } else {
-                        // 如果MessageFragment不为空，则直接将它显示出来
-                        transaction.show(growUpFragment);
+                // indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
+                if (growUpFragment == null) {
+                    growUpFragment = new GrowUpFragment();
+                    transaction.add(R.id.content, growUpFragment);
+                } else {
+                    // 如果MessageFragment不为空，则直接将它显示出来
+                    transaction.show(growUpFragment);
 //					GrowUpFragment.updateView();
-                    }
                 }
-
-
                 break;
             case 2:
-                if (isLogin()) {
-                    tabs[2].setSelect(true);
-                    if (messageFm == null) {
-                        messageFm = new XiaoxiFm();
-                        transaction.add(R.id.content, messageFm);
-                    } else {
-                        transaction.show(messageFm);
-                    }
+                tabs[2].setSelect(true);
+                if (messageFm == null) {
+                    messageFm = new XiaoxiFm();
+                    transaction.add(R.id.content, messageFm);
+                } else {
+                    transaction.show(messageFm);
                 }
                 break;
             case 3:
-                    tabs[3].setSelect(true);
-                    if (mineFm == null) {
-                        mineFm = new MineFm();
-                        transaction.add(R.id.content, mineFm);
-                    } else {
-                        transaction.show(mineFm);
-                        mineFm.setFoucs();
-                        mineFm.initData();
-                    }
+                tabs[3].setSelect(true);
+                if (mineFm == null) {
+                    mineFm = new MineFm();
+                    transaction.add(R.id.content, mineFm);
+                } else {
+                    transaction.show(mineFm);
+                    mineFm.setFoucs();
+                    mineFm.initData();
+                }
                 break;
             default:
                 break;
@@ -761,9 +756,17 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
     }
 
+    public boolean isLogins() {
+        User user = App.getInstance().getUser();
+        if (user == null) {
+            return false;
+        }
+        return true;
+    }
+
     public boolean isLogin() {
-        User user =   App.getInstance().getUser();
-        if (user==null){
+        User user = App.getInstance().getUser();
+        if (user == null) {
             UtilDialog.dialogTwoBtnContentTtile(context,
                     "您还未登录，请先登录在操作",
                     "取消",
@@ -844,7 +847,16 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 //                    break;
 //                case 2:
 //                    refreshUIWithMessage();
-//                    break;
+//                    break; popAddChildDialog();
+                case 11:
+                    popAddChildDialog();
+                    break;
+                case 22:
+                    getYouhuiquan();
+                    break;
+                case 33:
+                    loadGg();
+                    break;
                 case 1:
                     finish();
                     Intent intent = new Intent(context, LoginAc.class);
@@ -933,7 +945,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
         User user = App.getInstance().getUser();
         HashMap<String, String> map = new HashMap<String, String>();
         if (user != null) {
-         map.put("userId", user.userid);
+            map.put("userId", user.userid);
             UserManager.getInstance().getTzjcasGetUserInfo(context, map, new ServiceCallback<CommonResult<User>>() {
 
                 @Override
@@ -967,12 +979,12 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
                         if (obj.data.messageCount != null && !"".equals(obj.data.messageCount)) {
                             if (Integer.parseInt(obj.data.messageCount) > 0) {
-                                img_read.setVisibility(View.VISIBLE);
+                                //   img_read.setVisibility(View.VISIBLE);
 //								if(MineFm.instance!=null){
 //									MineFm.instance.img_read.setVisibility(View.VISIBLE);
 //								}
                             } else {
-                                img_read.setVisibility(View.GONE);
+                                // img_read.setVisibility(View.GONE);
 //								if(MineFm.instance!=null){
 //									MineFm.instance.img_read.setVisibility(View.GONE);
 //								}
@@ -1048,17 +1060,15 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
     }
 
 
-    private void getMessList() {
-        final HashMap<String, String> map = new HashMap<String, String>();
-        final City city = App.getInstance().getCityCode();
+    public void getMessList() {
         User user = App.getInstance().getUser();
-        if (null != city && !TextUtils.isEmpty(city.regionName)&&user!=null) {
-            map.put("regionName", city.regionName);//城市名称
-            map.put("userId", user.userid);//用户id
-        } else {
-            map.put("regionName", "西安市");//城市名称
-            map.put("userId", "0");//用户id
-        }
+        if (user == null) return;
+        final City city = App.getInstance().getCityCode();
+        if (city == null) return;
+        final HashMap<String, String> map = new HashMap<String, String>();
+        map.put("regionName", city.regionName);//城市名称
+        map.put("userId", user.userid);//用户id
+
         MessageManager.getInstance().getMessageList(this, map, new ServiceCallback<CommonResult<XiaoxiList>>() {
 
             final String CACHEKEY = "xiaoxiFm_message_list_cache";
@@ -1086,43 +1096,39 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
                 MainAc.intance.dialogToast(msg);
             }
 
-            public void isShowRed(CommonResult<XiaoxiList> obj){
+            public void isShowRed(CommonResult<XiaoxiList> obj) {
                 boolean isRead = false;
-                if (obj == null && obj.data== null) {
-                    showRed(3,isRead);
+                if (obj == null && obj.data == null) {
+                    showRed(isRead);
                     return;
                 }
-                if (obj.data.getAppraise() == null || obj.data.getAppraise().size() < 1) {
-                    showRed(3,isRead);
-                    return;
-                } else {
+                if (obj.data.getAppraise() != null && obj.data.getAppraise().size() >0) {
                     for (XiaoxiList.AppraiseBean appraiseBean : obj.data.getAppraise()) {
                         if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                             isRead = true;
+                            break;
                         }
                     }
+
                 }
-                if (obj.data.getMessageAll() == null || obj.data.getMessageAll().size() < 1) {
-                    showRed(3,isRead);
-                    return;
-                } else {
+                if (obj.data.getMessageAll()!= null && obj.data.getMessageAll().size() >0) {
                     for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
                         if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                             isRead = true;
+                            break;
                         }
                     }
                 }
-                showRed(3,isRead);
+                showRed(isRead);
             }
         });
     }
 
     /**
-     * 显示红点
-     * @param index
+     * 消息显示红点
      * @param show
      */
-    public void showRed(int index,boolean show){
-        tabs[index].showRed(show);
+    public void showRed(boolean show) {
+        tabs[2].showRed(show);
     }
 }

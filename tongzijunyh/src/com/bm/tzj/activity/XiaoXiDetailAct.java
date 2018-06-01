@@ -6,7 +6,9 @@ import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.bm.api.MessageManager;
+import com.bm.app.App;
 import com.bm.base.BaseActivity;
+import com.bm.entity.User;
 import com.bm.entity.XiaoXiDetail;
 import com.bm.util.CacheUtil;
 import com.lib.http.ServiceCallback;
@@ -42,7 +44,9 @@ public class XiaoXiDetailAct extends BaseActivity {
     //请求数据
     private void getMessageDetail() {
         final HashMap<String, String> map = new HashMap<String, String>();
-
+        User user = App.getInstance().getUser();
+        if (user==null) return;
+        map.put("userId", user.userid);
         map.put("messageId", messageId);
         MessageManager.getInstance().getMessageDetailById(this, map, new ServiceCallback<CommonResult<XiaoXiDetail>>() {
 

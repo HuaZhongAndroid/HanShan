@@ -208,6 +208,7 @@ public class NaotengAc extends AbsCoursePayBaseAc implements AppBarLayout.OnOffs
                         NaotengAc.super.goodsId = xzCourse.goodsId;
                         NaotengAc.super.storeId = xzCourse.storeId;
                         NaotengAc.super.type = "10";
+                        if (!isLogin())return;
                         showPopupWindow(v);
                     }
                 });

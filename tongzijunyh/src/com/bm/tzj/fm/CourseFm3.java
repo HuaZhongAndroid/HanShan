@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -73,6 +74,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
      * 搜索框
      */
     private AppBarLayout app_bar;  //
+    private CollapsingToolbarLayout toolbar_layout;  //
     private TextView tv_location;   //城市地址
     private LinearLayout ll_search; //搜索框
     private ImageView img_find;
@@ -158,6 +160,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
 
 
     private void initCity(View v) {
+        toolbar_layout = (CollapsingToolbarLayout) v.findViewById(R.id.toolbar_layout);
         app_bar = (AppBarLayout) v.findViewById(R.id.app_bar);
         app_bar.getLayoutParams().height = App.getInstance().getScreenWidth() / 2;
         app_bar.addOnOffsetChangedListener(this);
@@ -588,6 +591,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
 
         if (Math.abs(verticalOffset) >= appBarLayout.getTotalScrollRange()) {
             Log.d("fff", "到顶了 " + verticalOffset);
+            toolbar_layout.setContentScrimColor(0xffffffff);
             tv_location.setTextColor(0xff333333);
             Drawable d = context.getDrawable(R.drawable.xiala_hei);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());
@@ -596,6 +600,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             img_find.setImageDrawable(context.getResources().getDrawable(R.drawable.find_hui));
         } else if (Math.abs(verticalOffset) > appBarLayout.getTotalScrollRange() / 3 * 2) {
             Log.d("fff", "快到顶了 " + verticalOffset);
+            toolbar_layout.setContentScrimColor(0x00ffffff);
             tv_location.setTextColor(0xff333333);
             Drawable d = context.getDrawable(R.drawable.xiala_hei);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());

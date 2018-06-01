@@ -32,8 +32,9 @@
             android:gravity="center"
             android:singleLine="true"
             android:text="center"
+            android:textStyle="bold"
             android:textColor="@color/txt_teacher_names1"
-            android:textSize="@dimen/text_font_18" />
+            android:textSize="@dimen/text_font_17" />
 
         <TextView
             android:id="@+id/tv_right"

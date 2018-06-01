@@ -16,6 +16,7 @@ import com.bm.api.UserManager;
 import com.bm.app.App;
 import com.bm.base.BaseActivity;
 import com.bm.base.adapter.ZhouMoAdapter;
+import com.bm.base.adapter.ZhouMoAdapter1;
 import com.bm.entity.Course;
 import com.bm.entity.CourseBao;
 import com.bm.entity.CourseBean;
@@ -39,7 +40,7 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
     private ImageView defultImg;
 
     private ListView lv_content2;
-    private ZhouMoAdapter adapter2;
+    private ZhouMoAdapter1 adapter2;
     private LinearLayout lay_city; //  当城市个数大于1  则显示
 
 
@@ -50,7 +51,7 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
         this.contentView(R.layout.ac_zhoumo1);
         setTitleName("周末成长营");
         lay_city = (LinearLayout) findViewById(R.id.lay_city);
-        adapter2 = new ZhouMoAdapter(context);
+        adapter2 = new ZhouMoAdapter1(context);
         lv_content2 = (ListView) findViewById(R.id.lv_content2);
         lv_content2.setAdapter(adapter2);
         lv_content2.setOnItemClickListener(this);

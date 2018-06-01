@@ -33,7 +33,10 @@ import android.widget.TextView;
 
 import com.bm.app.App;
 import com.bm.dialog.ToastDialog;
+import com.bm.dialog.UtilDialog;
+import com.bm.entity.User;
 import com.bm.share.ShareUtil;
+import com.bm.tzj.mine.LoginAc;
 import com.bm.util.ProDialoging;
 import com.richer.tzj.R;
 
@@ -196,7 +199,31 @@ public class BaseActivity extends Activity {
 			}
 		});
 	}
-	
+
+	public boolean isLogin() {
+		User user =   App.getInstance().getUser();
+		if (user==null){
+			UtilDialog.dialogToLogin(context,
+					"您还未登录，请先登录在操作",
+					"取消",
+					"确定",
+					"提示",
+					new OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							int tag = (int) v.getTag();
+							if (tag==1){
+								finish();
+								Intent intent = new Intent(BaseActivity.this, LoginAc.class);
+								startActivity(intent);
+							}
+						}
+					});
+			return false;
+		}
+		return true;
+	}
+
 	/**
 	 * 加入页面内容布局
 	 * 

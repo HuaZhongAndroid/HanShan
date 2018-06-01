@@ -26,6 +26,8 @@ import com.richer.tzj.R;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -113,6 +115,7 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
+
         }
 
         @Override
@@ -128,13 +131,19 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
             // 判断url链接中是否含有某个字段，如果有就执行指定的跳转（不执行跳转url链接），如果没有就加载url链接
             Log.e("Loading", url);
             if (url.contains("tzj://enroll?")){
+                if (!isLogin())return true;
                 Map<String, String> map = getMap(url);
                 if (map != null) {
                     goodsId = map.get("goodsId");
                     storeId = map.get("storeId");
                     goodsType = map.get("goodsType");
                     goodsTime = map.get("goodsTime");
-                    goodsName = map.get("goodsName");
+                    goodsName = map.get("goodsName");//
+                    try {
+                        goodsName = URLDecoder.decode(goodsName, "utf-8");
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
                     type = 10+"";
                     showPopupWindow(web_view);
                 }

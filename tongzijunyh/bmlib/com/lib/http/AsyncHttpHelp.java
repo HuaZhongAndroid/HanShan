@@ -53,7 +53,8 @@ public class AsyncHttpHelp {
 		logStr+="?";
 		try {
 			if(params != null){
-				if (!params.containsKey("userId")) {
+				userId = App.getInstance().getUser().userid;
+				if (!params.containsKey("userId")&&!TextUtils.isEmpty(userId)) {
 					params.put("userId", userId);
 				}
 				

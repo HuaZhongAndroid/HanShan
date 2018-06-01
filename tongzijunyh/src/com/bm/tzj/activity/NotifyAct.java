@@ -74,6 +74,7 @@ public class NotifyAct extends BaseActivity {
                 tag.iteView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        data.setIsRead("1");
                         jumpDetail(data.getMessageId(), data.getTitle());
                     }
                 });
@@ -89,6 +90,13 @@ public class NotifyAct extends BaseActivity {
         listView.setAdapter(xiaoxiListXiaoxiListAdapter);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (xiaoxiListXiaoxiListAdapter!=null){
+            xiaoxiListXiaoxiListAdapter.notifyDataSetChanged();
+        }
+    }
 
     static class ItemTag extends XiaoxiListAdapter.XiaoXitemViewTag {
 
@@ -147,7 +155,7 @@ public class NotifyAct extends BaseActivity {
     }
 
     private void handDataShow(CommonResult<XiaoxiList> obj) {
-        if (obj.data.getMessageReco() != null) {
+        if (obj!=null&&obj.data.getMessageReco() != null) {
             emptyLayout.setVisibility(View.GONE);
             listView.setVisibility(View.VISIBLE);
             xiaoxiLists.addAll(obj.data.getMessageAll());
