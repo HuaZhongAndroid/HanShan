@@ -359,7 +359,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
             RoundImageViewsix iv_pic = (RoundImageViewsix) convertView.findViewById(R.id.iv_pic);
             //ImageLoader.getInstance().displayImage(list.get(position).url, iv_pic, App.getInstance().getListViewDisplayImageOptions());
             GlideUtils.loadImg(context, list.get(position).url, iv_pic, R.drawable.defult_shape);
-            Lg.e("debug==>pivUrl" + list.get(position).url);
+            //Lg.e("debug==>pivUrl" + list.get(position).url);
 
             convertView.setOnClickListener(new OnClickListener() {
                 @Override

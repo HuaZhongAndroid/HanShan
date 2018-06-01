@@ -9,21 +9,17 @@
 
     <ImageView
         android:id="@+id/img_gg"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:layout_width="260dp"
         android:layout_height="350dp" >
 
     </ImageView>
 
-    <View
-        android:layout_width="0.1dp"
-        android:layout_height="60dp"
-        android:background="@drawable/shuxian" />
-
     <ImageView
         android:id="@+id/iv_close"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/cancel" />
 
 </LinearLayout>

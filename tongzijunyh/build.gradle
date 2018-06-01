@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion '26.0.2'
 
     defaultConfig {
@@ -80,7 +80,7 @@ dependencies {
     //阿里云图片服务器
     compile project(':oss-android-sdk')
     //compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:design:26.1.0'
     compile 'com.android.support:multidex:1.0.1'
     //banner广告轮播框架
     compile 'cn.bingoogolapple:bga-banner:2.2.4@aar'

@@ -1,36 +1,19 @@
 package com.bm.tzj.activity;
 
-import java.lang.reflect.Type;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.AbsoluteLayout.LayoutParams;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.PopupWindow.OnDismissListener;
-import android.widget.TextView;
 
 import com.bm.api.BaseApi;
 import com.bm.api.MessageManager;
@@ -39,24 +22,18 @@ import com.bm.app.App;
 import com.bm.base.BaseCaptureFragmentActivity;
 import com.bm.dialog.AddBodyDialog;
 import com.bm.dialog.GuanggaoDialog;
-import com.bm.dialog.OpenNotifyDialog;
 import com.bm.dialog.UtilDialog;
 import com.bm.dialog.YouhuiquanDialog;
 import com.bm.entity.Adverts;
 import com.bm.entity.Child;
-import com.bm.entity.UpgradeInfo;
 import com.bm.entity.User;
 import com.bm.entity.XiaoxiList;
 import com.bm.entity.Youhuiquan;
 import com.bm.im.api.ImApi;
-import com.bm.im.tool.DemoHelper;
 import com.bm.im.tool.IMTool;
 import com.bm.share.ShareUtil;
 import com.bm.tzj.city.City;
-import com.bm.tzj.fm.BalaFm;
-import com.bm.tzj.fm.CourseFm2;
 import com.bm.tzj.fm.CourseFm3;
-import com.bm.tzj.fm.FindFm;
 import com.bm.tzj.fm.GrowUpFragment;
 import com.bm.tzj.fm.MineFm;
 import com.bm.tzj.fm.PullulateFm;
@@ -64,18 +41,8 @@ import com.bm.tzj.fm.XiaoxiFm;
 import com.bm.tzj.mine.AccountBalanceAc;
 import com.bm.tzj.mine.LoginAc;
 import com.bm.tzj.mine.SettingAc;
-import com.bm.util.ApkUpdateUtil;
-import com.bm.util.BaseDataUtil;
 import com.bm.util.CacheUtil;
-import com.bm.util.NotificationsUtils;
-import com.bm.util.Util;
 import com.bm.view.TabMyView;
-import com.easemob.EMEventListener;
-import com.easemob.EMNotifierEvent;
-import com.easemob.chat.EMChatManager;
-import com.easemob.chat.EMConversation;
-import com.easemob.chat.EMConversation.EMConversationType;
-import com.easemob.chat.EMMessage;
 import com.lib.http.AsyncHttpHelp;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
@@ -83,6 +50,12 @@ import com.lib.http.result.CommonResult;
 import com.lib.tool.SharedPreferencesHelper;
 import com.lib.widget.BadgeView;
 import com.richer.tzj.R;
+
+import java.lang.reflect.Type;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * 主页
@@ -97,7 +70,6 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
     private CourseFm3 indexFm;
     private XiaoxiFm messageFm;
-    private XiaoxiFm findFm;
     private MineFm mineFm;
     private GrowUpFragment growUpFragment;//成长中心重做
 //	private PullulateFm pullulateFm;
@@ -182,7 +154,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
         final int day = c.get(Calendar.DAY_OF_MONTH);// 获取当日期
         int lodDay = SharedPreferencesHelper.getInt("LastTimeToShow");
         Child child = App.getInstance().getChild();
-        if (child == null && day != lodDay) {
+        if (App.getInstance().getUser()!=null&&child == null && day != lodDay) {
             mHandler.post(new Runnable() {
                 @Override
                 public void run() {
@@ -471,9 +443,6 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
         }
         if (messageFm != null) {
             transaction.hide(messageFm);
-        }
-        if (findFm != null) {
-            transaction.hide(findFm);
         }
         if (mineFm != null) {
             transaction.hide(mineFm);

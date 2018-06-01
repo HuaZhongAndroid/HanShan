@@ -9,8 +9,8 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
+        >
+        <!--android:theme="@style/AppTheme.AppBarOverlay"-->
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -103,17 +103,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"></com.bm.tzj.caledar.CalendarView_x>
-
+            ></com.bm.tzj.caledar.CalendarView_x>
     </android.support.design.widget.AppBarLayout>
 
     <!-- 主界面布局文件 -->
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
+        android:layout_height="match_parent"
+        android:background="@color/white"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -121,14 +119,14 @@
             android:id="@+id/v_none"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
                 android:src="@drawable/course_none" />
 
             <TextView

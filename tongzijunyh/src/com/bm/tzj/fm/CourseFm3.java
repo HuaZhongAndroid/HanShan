@@ -241,12 +241,11 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
         bannerView.setAdapter(new BGABanner.Adapter<ImageView, Advertisement>() {
             @Override
             public void fillBannerItem(BGABanner banner, ImageView itemView, Advertisement model, int position) {
-                itemView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                itemView.setScaleType(ImageView.ScaleType.FIT_XY);
                 Glide.with(getActivity())
                         .load(model.titleMultiUrl)
-                        .placeholder(R.drawable.adv_default)
-                        .error(R.drawable.adv_default)
-                        .centerCrop()
+//                        .placeholder(R.drawable.adv_default)
+//                        .error(R.drawable.adv_default)
                         .dontAnimate()
                         .into(itemView);
             }

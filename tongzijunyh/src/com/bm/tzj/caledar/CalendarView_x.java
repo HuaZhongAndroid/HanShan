@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bm.app.App;
 import com.richer.tzj.R;
 
 import java.util.ArrayList;
@@ -57,6 +58,7 @@ public class CalendarView_x extends LinearLayout  {
         for(int i=0; i<size; i++)
         {
             final LinearLayout v = (LinearLayout)LayoutInflater.from(this.getContext()).inflate(R.layout.v_calendar_item, root, false);
+            v.getLayoutParams().width = App.getInstance().getScreenWidth()/7;
             root.addView(v);
             final TextView tv_week = (TextView)v.findViewById(R.id.tv_week);
             final TextView tv_day = (TextView)v.findViewById(R.id.tv_day);
@@ -64,7 +66,7 @@ public class CalendarView_x extends LinearLayout  {
             today.add(Calendar.DAY_OF_MONTH, i);
             days.add(today);
             int day = today.get(Calendar.DAY_OF_MONTH);
-//            TextView tv_month = (TextView)v.findViewById(R.id.tv_month);
+    //        TextView tv_month = (TextView)v.findViewById(R.id.tv_month);
             if(day == 1)
             {
 //                tv_month.setVisibility(VISIBLE);
@@ -81,7 +83,7 @@ public class CalendarView_x extends LinearLayout  {
                         handler.post(new Runnable() {
                             @Override
                             public void run() {
-                                v.getLayoutParams().width = CalendarView_x.this.getWidth()/7*2;
+                                v.getLayoutParams().width = CalendarView_x.this.getWidth()/7;
                                 CalendarView_x.this.invalidate();
                             }
                         });
