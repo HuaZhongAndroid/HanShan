@@ -1,20 +1,18 @@
 package com.bm.tzj.fm;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,7 +24,6 @@ import com.bm.base.adapter.ShuQIAdapter;
 import com.bm.base.adapter.StoreAdapter;
 import com.bm.base.adapter.ZhouMoAdapter;
 import com.bm.entity.Advertisement;
-import com.bm.entity.Course;
 import com.bm.entity.CourseBean;
 import com.bm.entity.Storelist;
 import com.bm.entity.ZhouMoCity;
@@ -42,12 +39,10 @@ import com.bm.util.CacheUtil;
 import com.bumptech.glide.Glide;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
-import com.lib.http.result.CommonResult;
 import com.richer.tzj.R;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -592,7 +587,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             Log.d("fff", "到顶了 " + verticalOffset);
             toolbar_layout.setContentScrimColor(0xffffffff);
             tv_location.setTextColor(0xff333333);
-            Drawable d = context.getDrawable(R.drawable.xiala_hei);
+            Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_hei);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());
             tv_location.setCompoundDrawables(null, null, d, null);
             tv_find.setHintTextColor(0xff999999);
@@ -601,7 +596,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             Log.d("fff", "快到顶了 " + verticalOffset);
             toolbar_layout.setContentScrimColor(0x00ffffff);
             tv_location.setTextColor(0xff333333);
-            Drawable d = context.getDrawable(R.drawable.xiala_hei);
+            Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_hei);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());
             tv_location.setCompoundDrawables(null, null, d, null);
             tv_find.setHintTextColor(0xff999999);
@@ -609,7 +604,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
         } else {
             Log.d("fff", "在中间 " + verticalOffset);
             tv_location.setTextColor(0xffffffff);
-            Drawable d = context.getResources().getDrawable(R.drawable.xiala_bai);
+            Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_bai);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());
             tv_location.setCompoundDrawables(null, null, d, null);
             tv_find.setHintTextColor(0xffffffff);
