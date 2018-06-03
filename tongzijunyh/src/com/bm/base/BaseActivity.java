@@ -418,6 +418,7 @@ public class BaseActivity extends Activity {
 	 */
 	public void dialogToast(String msg) {
 		// App.dialogToast(this, msg, 2000);
+		if (!isFinishing())
 		toastDialog.show(msg, 2000);
 	}
 
@@ -461,6 +462,7 @@ public class BaseActivity extends Activity {
 
 	@Override
 	protected void onDestroy() {
+	  	if (progressDialog!=null)
 		progressDialog.dismiss();
 		if (toastDialog.isShowing()) {
 			toastDialog.dismiss();
@@ -468,7 +470,6 @@ public class BaseActivity extends Activity {
 		unregisterReceiver(logout);
 		super.onDestroy();
 	}
-
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
