@@ -22,6 +22,7 @@ import com.bm.entity.User;
 import com.bm.entity.XiaoxiList;
 import com.bm.tzj.activity.CoachingAct;
 import com.bm.tzj.activity.MainAc;
+import com.bm.tzj.activity.MyWebActivity;
 import com.bm.tzj.activity.NotifyAct;
 import com.bm.tzj.city.City;
 import com.bm.util.CacheUtil;
@@ -167,6 +168,16 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
     }
 
 
+    private void gotos(){
+//        String url =  model.url;
+//        if (TextUtils.isEmpty(url))   return;
+//        if (url.contains("http://")||url.contains("https://")){
+//            Intent intent = new Intent(getContext(), MyWebActivity.class);
+//            intent.putExtra("Url",url);
+//        }
+    }
+
+
     private void handDataShow(CommonResult<XiaoxiList> obj) {
         if (obj.data.getMessageReco() != null) {
             emptyLayout.setVisibility(View.GONE);
@@ -273,6 +284,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         } else {
             boolean hasNotRead = false;
             for (XiaoxiList.AppraiseBean appraiseBean : obj.data.getAppraise()) {
+                tv_jiaolian.setText(""+appraiseBean.getTitle());
                 if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                     hasNotRead = true;
                     isRead = true;
@@ -288,6 +300,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         } else {
             boolean hasNotRead = false;
             for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
+                tv_tongzhi.setText(appraiseBean.getTitle()+"");
                 if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                     hasNotRead = true;
                     isRead = true;
