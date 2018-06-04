@@ -25,4 +25,6 @@ public class Advertisement {
 	public String boardName;
 	
 	public String titleMultiUrl;
+	//广告的url 网页的链接
+	public String url;
 }

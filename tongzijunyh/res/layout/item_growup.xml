@@ -113,7 +113,7 @@
                     android:lineSpacingMultiplier="1.2"
                     android:text="宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错"
                     android:textColor="#333"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
                 <LinearLayout
                     android:id="@+id/v_jiaolian"

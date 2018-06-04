@@ -235,6 +235,10 @@
             android:name="com.bm.tzj.activity.AccouterDetailAc"
             android:screenOrientation="portrait"></activity>
 
+        <!-- 广告图详情 -->
+        <activity
+            android:name="com.bm.tzj.activity.MyWebActivity"
+            android:screenOrientation="portrait"></activity>
 
         <!-- 放大的图片 -->
         <activity

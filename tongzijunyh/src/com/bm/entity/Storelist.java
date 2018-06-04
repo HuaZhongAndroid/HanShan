@@ -41,4 +41,5 @@ public class Storelist implements Serializable{
 	public String remark; //详情
 
 	public String acrossImage; //课程内用的图
+	public String imgUrl; //详情传用图
 }

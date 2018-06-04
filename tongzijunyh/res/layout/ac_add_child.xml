@@ -96,8 +96,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="孩子的姓名"
+                    android:textStyle="bold"
                     android:textColor="@color/personal_textNameColor"
-                    android:textSize="@dimen/text_font_14" />
+                    android:textSize="@dimen/text_font_15" />
 
                 <EditText
                     android:id="@+id/et_babyName"
@@ -138,8 +139,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="孩子的性别"
+                    android:textStyle="bold"
                     android:textColor="@color/personal_textNameColor"
-                    android:textSize="@dimen/text_font_14" />
+                    android:textSize="@dimen/text_font_15" />
 
                 <RadioGroup
                     android:id="@+id/rg_group"
@@ -154,6 +156,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:text="男孩"
+                        android:drawablePadding="10dp"
                         android:textColor="#CACACA"
                         android:textSize="@dimen/text_font_14" />
                     <!--第二个RadioButton -->
@@ -163,6 +166,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
                         android:text="女孩"
+                        android:drawablePadding="10dp"
                         android:textColor="#CACACA"
                         android:textSize="@dimen/text_font_14" />
                 </RadioGroup>
@@ -185,8 +189,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="孩子的生日"
+                    android:textStyle="bold"
                     android:textColor="@color/personal_textNameColor"
-                    android:textSize="14sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/tv_birthday"

@@ -71,9 +71,9 @@
                     android:visibility="gone"
                     android:textStyle="bold"
                     android:text="成长中心"
-                    android:textSize="19sp"
                     android:textColor="#333"
                     android:gravity="center"
+                    android:textSize="@dimen/text_font_17"
                     android:layout_marginRight="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

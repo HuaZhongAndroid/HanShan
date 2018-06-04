@@ -27,8 +27,10 @@ import com.bm.entity.Advertisement;
 import com.bm.entity.CourseBean;
 import com.bm.entity.Storelist;
 import com.bm.entity.ZhouMoCity;
+import com.bm.tzj.activity.LeyuanAc;
 import com.bm.tzj.activity.LuyingAc;
 import com.bm.tzj.activity.MainAc;
+import com.bm.tzj.activity.MyWebActivity;
 import com.bm.tzj.activity.NaoTengListAct;
 import com.bm.tzj.activity.ZhoumoAc;
 import com.bm.tzj.city.Activity01;
@@ -248,7 +250,24 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
         bannerView.setDelegate(new BGABanner.Delegate<ImageView, Advertisement>() {
             @Override
             public void onBannerItemClick(BGABanner banner, ImageView itemView, Advertisement model, int position) {
-                Toast.makeText(banner.getContext(), "点击了" + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(banner.getContext(), "点击了" + position, Toast.LENGTH_SHORT).show();
+                String url =  model.url;
+                if (TextUtils.isEmpty(url))   return;
+                if (url.contains("http://")||url.contains("https://")){
+                    Intent intent = new Intent(getContext(), MyWebActivity.class);
+                    intent.putExtra("Url",url);
+                }else if (url.contains("tzj://advert?")){
+                    //跳转门店
+//                    String str = url.replace("tzj://advert?","");
+//                    if (!str.contains("="))return;
+//                    String[] split  =   str.split("=");
+//                    if (split!=null&&split.length==2){
+////                        Intent i = new Intent(context, LeyuanAc.class);
+////                        i.putExtra("sid", split[1]);
+////                        startActivity(i);
+//                    }
+                }
+
             }
         });
     }
