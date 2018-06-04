@@ -24,13 +24,18 @@ import java.util.ArrayList;
  */
 public class NotifyAct extends BaseActivity {
 
+    //城市
     private City city = null;
+    //用户
     private User user = null;
 
     //没有数据的时候显示的空view
     private View emptyLayout;
+    //通知消息列表view
     private ListView listView;
+    //通知消息列表适配器
     private XiaoxiListAdapter xiaoxiListXiaoxiListAdapter = null;
+    //通知消息列表
     private ArrayList<XiaoxiList.MessageAllBean> xiaoxiLists = new ArrayList<>();
 
 
@@ -93,11 +98,12 @@ public class NotifyAct extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (xiaoxiListXiaoxiListAdapter!=null){
+        if (xiaoxiListXiaoxiListAdapter != null) {
             xiaoxiListXiaoxiListAdapter.notifyDataSetChanged();
         }
     }
 
+    //    通知消息的listview 中的itemTag
     static class ItemTag extends XiaoxiListAdapter.XiaoXitemViewTag {
 
         private TextView titleTv;
@@ -154,8 +160,9 @@ public class NotifyAct extends BaseActivity {
         handDataShow(obj);
     }
 
+    //处理有无数据的逻辑
     private void handDataShow(CommonResult<XiaoxiList> obj) {
-        if (obj!=null&&obj.data.getMessageReco() != null) {
+        if (obj != null && obj.data.getMessageReco() != null) {
             emptyLayout.setVisibility(View.GONE);
             listView.setVisibility(View.VISIBLE);
             xiaoxiLists.addAll(obj.data.getMessageAll());

@@ -2,7 +2,6 @@ package com.bm.tzj.fm;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -22,8 +21,8 @@ import com.bm.entity.User;
 import com.bm.entity.XiaoxiList;
 import com.bm.tzj.activity.CoachingAct;
 import com.bm.tzj.activity.MainAc;
-import com.bm.tzj.activity.MyWebActivity;
 import com.bm.tzj.activity.NotifyAct;
+import com.bm.tzj.activity.XiaoXiDetailAct;
 import com.bm.tzj.city.City;
 import com.bm.util.CacheUtil;
 import com.bumptech.glide.Glide;
@@ -42,19 +41,24 @@ import java.util.HashMap;
  * 消息中心
  */
 public class XiaoxiFm extends Fragment implements View.OnClickListener
-        , SwipyRefreshLayout.OnRefreshListener ,ReboundScrollView.LoadChangeListener{
+        , SwipyRefreshLayout.OnRefreshListener, ReboundScrollView.LoadChangeListener {
 
     private View messageLayout = null;
+    //城市
     private City city = null;
+    //用户
     private User user = null;
     //没有数据的时候显示的空view
     private View emptyLayout;
+    //消息列表
     private ListView listView;
     private TextView tv_jiaolian;
     private TextView tv_tongzhi;
     private View radCountCoachingView;
     private View radCountNotifyView;
+    //推荐消息列表适配器
     private XiaoxiListAdapter xiaoxiListXiaoxiListAdapter = null;
+    //推荐消息列表
     private ArrayList<XiaoxiList.MessageRecoBean> xiaoxiLists = new ArrayList<>();
 
     private ReboundScrollView top_layout;
@@ -69,6 +73,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         refreshData();
         return messageLayout;
     }
+
     private void init() {
 
         emptyLayout = messageLayout.findViewById(R.id.emptyLayout);
@@ -92,8 +97,9 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
                 return new ItemTag(view);
             }
 
+            //处理item和bean的数据绑定
             @Override
-            protected void handViewAndData(ItemTag tag, XiaoxiList.MessageRecoBean data) {
+            protected void handViewAndData(ItemTag tag, final XiaoxiList.MessageRecoBean data) {
                 Glide.with(getActivity())
                         .load(data.getTitleMultiUrl())
                         .placeholder(R.drawable.adv_default)
@@ -101,8 +107,17 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
                         .centerCrop()
                         .dontAnimate()
                         .into(tag.img_tu);
+                tag.iteView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (App.getInstance().getUser() == null) return;
+                        jumpDetail(data.getMessageId(), data.getTitle());
+                        data.setIsRead("1");
+                    }
+                });
             }
 
+            //加载布局
             @Override
             protected int loadLayout() {
                 return R.layout.item_list_message_list;
@@ -115,18 +130,20 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
     @Override
     public void onResume() {
         super.onResume();
-        if (MainAc.intance!=null)
-        getMessList();
-        Log.e("xiaoxiFm","刷新消息");
+        if (MainAc.intance != null)
+            getMessList();
+        Log.e("xiaoxiFm", "刷新消息");
     }
 
+    //刷新数据
     private void refreshData() {
-        if (App.getInstance().getUser()!=null){
+        if (App.getInstance().getUser() != null) {
             ((BaseFragmentActivity) getActivity()).showProgressDialog();
             getMessList();
         }
     }
 
+    //请求消息列表
     private void getMessList() {
         final HashMap<String, String> map = new HashMap<String, String>();
         if (null == App.getInstance().getUser()) return;
@@ -168,7 +185,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
     }
 
 
-    private void gotos(){
+    private void gotos() {
 //        String url =  model.url;
 //        if (TextUtils.isEmpty(url))   return;
 //        if (url.contains("http://")||url.contains("https://")){
@@ -177,7 +194,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
 //        }
     }
 
-
+    //处理界面上的显示
     private void handDataShow(CommonResult<XiaoxiList> obj) {
         if (obj.data.getMessageReco() != null) {
             emptyLayout.setVisibility(View.GONE);
@@ -198,14 +215,14 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
             //教练点评
             case R.id.coachingItem:
                 if (MainAc.intance.isLogin())
-                startActivity(new Intent(getActivity(), CoachingAct.class)
-                        .putExtra("data", obj));
+                    startActivity(new Intent(getActivity(), CoachingAct.class)
+                            .putExtra("data", obj));
                 break;
             //通知消息
             case R.id.notifyItem:
                 if (MainAc.intance.isLogin())
-                startActivity(new Intent(getActivity(), NotifyAct.class)
-                        .putExtra("data", obj));
+                    startActivity(new Intent(getActivity(), NotifyAct.class)
+                            .putExtra("data", obj));
                 break;
         }
     }
@@ -246,19 +263,21 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
 //            }, 2000);
 //        }
     }
+
     boolean isLoad = true;
+
     @Override
-    public synchronized void  onLoadChangeListener(int deltaY) {
-            if (deltaY>200&&isLoad){
-                isLoad=false;
-                xiaoxiLists.clear();
-                refreshData();
-            }else if (deltaY<-200&&isLoad){
+    public synchronized void onLoadChangeListener(int deltaY) {
+        if (deltaY > 200 && isLoad) {
+            isLoad = false;
+            xiaoxiLists.clear();
+            refreshData();
+        } else if (deltaY < -200 && isLoad) {
 
         }
     }
 
-
+    //消息列表item的tag
     static class ItemTag extends XiaoxiListAdapter.XiaoXitemViewTag {
 
         private ImageView img_tu;
@@ -284,11 +303,11 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         } else {
             boolean hasNotRead = false;
             for (XiaoxiList.AppraiseBean appraiseBean : obj.data.getAppraise()) {
-                tv_jiaolian.setText(""+appraiseBean.getTitle());
+                tv_jiaolian.setText("" + appraiseBean.getTitle());
                 if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                     hasNotRead = true;
                     isRead = true;
-                    tv_jiaolian.setText(""+appraiseBean.getTitle());
+                    tv_jiaolian.setText("" + appraiseBean.getTitle());
                     break;
                 }
             }
@@ -300,11 +319,11 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         } else {
             boolean hasNotRead = false;
             for (XiaoxiList.MessageAllBean appraiseBean : obj.data.getMessageAll()) {
-                tv_tongzhi.setText(appraiseBean.getTitle()+"");
+                tv_tongzhi.setText(appraiseBean.getTitle() + "");
                 if (appraiseBean.getIsRead().equalsIgnoreCase("0")) {
                     hasNotRead = true;
                     isRead = true;
-                    tv_tongzhi.setText(appraiseBean.getTitle()+"");
+                    tv_tongzhi.setText(appraiseBean.getTitle() + "");
                     break;
                 }
             }
@@ -317,8 +336,17 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         }
     }
 
+    //隐藏对话框
     public void hideProgressDialog() {
         ((BaseFragmentActivity) getActivity()).hideProgressDialog();
+    }
+
+    //跳转到详情页面
+    private void jumpDetail(String messageId, String titleStr) {
+        Intent intent = new Intent(getActivity(), XiaoXiDetailAct.class);
+        intent.putExtra("messageId", messageId);
+        intent.putExtra("titleStr", titleStr);
+        startActivity(intent);
     }
 
 }

@@ -23,9 +23,11 @@ import java.util.HashMap;
  */
 public class XiaoXiDetailAct extends BaseActivity {
 
-
+    //标题tv
     private String titleStr;
+    //详情tv
     private TextView detailTv;
+    //消息id
     private String messageId;
 
     @Override
@@ -45,7 +47,7 @@ public class XiaoXiDetailAct extends BaseActivity {
     private void getMessageDetail() {
         final HashMap<String, String> map = new HashMap<String, String>();
         User user = App.getInstance().getUser();
-        if (user==null) return;
+        if (user == null) return;
         map.put("userId", user.userid);
         map.put("messageId", messageId);
         MessageManager.getInstance().getMessageDetailById(this, map, new ServiceCallback<CommonResult<XiaoXiDetail>>() {
@@ -76,10 +78,9 @@ public class XiaoXiDetailAct extends BaseActivity {
         });
     }
 
+    //跳转到详情界面
     private void handDataShow(CommonResult<XiaoXiDetail> obj) {
-        if (TextUtils.isEmpty(obj.data.getContent())){
-            detailTv.setText(Html.fromHtml(obj.data.getThinContent()));
-        }else {
+        if (!TextUtils.isEmpty(obj.data.getContent())) {
             detailTv.setText(Html.fromHtml(obj.data.getContent()));
         }
     }

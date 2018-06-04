@@ -21,13 +21,17 @@ import java.util.ArrayList;
  * 教练点评界面
  */
 public class CoachingAct extends BaseActivity {
+    //城市
     private City city = null;
+    //用户
     private User user = null;
 
     //没有数据的时候显示的空view
     private View emptyLayout;
     private ListView listView;
+    //教练点评适配器
     private XiaoxiListAdapter xiaoxiListXiaoxiListAdapter = null;
+    //教练点评列表
     private ArrayList<XiaoxiList.AppraiseBean> xiaoxiLists = new ArrayList<>();
 
 
@@ -36,7 +40,7 @@ public class CoachingAct extends BaseActivity {
         super.onCreate(savedInstanceState);
         this.contentView(R.layout.ac_coaching_list);
         setTitleName("教练点评");
-        if (App.getInstance().getUser()==null)return;
+        if (App.getInstance().getUser() == null) return;
         init();
         getMessList();
     }
@@ -44,10 +48,11 @@ public class CoachingAct extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (xiaoxiListXiaoxiListAdapter!=null){
+        if (xiaoxiListXiaoxiListAdapter != null) {
             xiaoxiListXiaoxiListAdapter.notifyDataSetChanged();
         }
     }
+
     private void init() {
 
         emptyLayout = findViewById(R.id.emptyLayout);
@@ -72,7 +77,7 @@ public class CoachingAct extends BaseActivity {
                 tag.iteView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (App.getInstance().getUser()==null)return;
+                        if (App.getInstance().getUser() == null) return;
                         jumpDetail(data.getMessageId(), data.getTitle());
                         data.setIsRead("1");
                     }
@@ -90,6 +95,7 @@ public class CoachingAct extends BaseActivity {
     }
 
 
+    //    教练点评的listview 中的itemTag
     static class ItemTag extends XiaoxiListAdapter.XiaoXitemViewTag {
 
         private TextView titleTv;
@@ -145,6 +151,7 @@ public class CoachingAct extends BaseActivity {
         handDataShow(obj);
     }
 
+    //处理有无数据的逻辑
     private void handDataShow(CommonResult<XiaoxiList> obj) {
         if (obj.data.getMessageReco() != null) {
             emptyLayout.setVisibility(View.GONE);
@@ -157,6 +164,7 @@ public class CoachingAct extends BaseActivity {
         }
     }
 
+    //跳转到详情界面
     private void jumpDetail(String messageId, String titleStr) {
         Intent intent = new Intent(this, XiaoXiDetailAct.class);
         intent.putExtra("messageId", messageId);
