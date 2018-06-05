@@ -9,15 +9,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageView
+        <me.panpf.sketch.SketchImageView
             android:id="@+id/img_tu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
+            android:minHeight="196dp"
+            android:scaleType="fitXY"
             android:src="@drawable/defult_shape" />
 
     </LinearLayout>
