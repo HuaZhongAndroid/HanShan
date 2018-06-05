@@ -396,7 +396,10 @@ public class CoachInformationAc extends BaseActivity implements OnClickListener 
 				checkBind();
 			}else{
 				if(strPageType.equals("PerfectInfoAc")){//完善个人信息进来
-					MyTeachersAc.intanece.finish();
+					//MyTeachersAc.intanece.finish();
+					if (MyTeachersAc.intanece!=null){
+						MyTeachersAc.intanece.finish();
+					}
 					Constant.COACH_ID=strCoachId;
 					Constant.COACH_NAME=cInfo.coachName;
 //					Intent intents=new Intent();
@@ -406,8 +409,10 @@ public class CoachInformationAc extends BaseActivity implements OnClickListener 
 //					setResult(4, intents);
 					finish();
 				}else if(strPageType.equals("NoTeacherAc")){
-					NoTeacherAc.intance.finish();
-					MyTeachersAc.intanece.finish();
+					if (NoTeacherAc.intance!=null&&MyTeachersAc.intanece!=null){
+						NoTeacherAc.intance.finish();
+						MyTeachersAc.intanece.finish();
+					}
 					strType=1;
 					checkBind();
 //					getBindCoachInfo();//绑定教练

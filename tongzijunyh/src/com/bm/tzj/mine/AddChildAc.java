@@ -78,8 +78,8 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 		rb_male = (RadioButton) findViewById(R.id.rb_male);
 		rg_group = (RadioGroup) findViewById(R.id.rg_group);
 		rb_female = (RadioButton) findViewById(R.id.rb_female);
-		rb_male.setButtonDrawable(R.drawable.radio);
-		rb_female.setButtonDrawable(R.drawable.radio);
+		//rb_male.setButtonDrawable(R.drawable.radio);
+		//rb_female.setButtonDrawable(R.drawable.radio);
 		et_babyName = findEditTextById(R.id.et_babyName);
 
 		tv_birthday = findTextViewById(R.id.tv_birthday);

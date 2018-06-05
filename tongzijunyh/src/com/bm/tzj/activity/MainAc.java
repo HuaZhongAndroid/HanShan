@@ -132,13 +132,13 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
                     handler.sendEmptyMessage(11);
                     break;
                 case 2:
-                    Log.d("fff", "step2");
+                    Log.d("fff", "step3");
                     handler.sendEmptyMessage(22);
-
                     break;
                 case 3:
-                    Log.d("fff", "step3");
+                    Log.d("fff", "step2");
                     handler.sendEmptyMessage(33);
+
                     break;
                 case 4:
                     Log.d("fff", "step4");
@@ -226,6 +226,15 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
         super.onStop();
     }
 
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        int i = intent.getIntExtra("TabSelection", 0);
+        setTabSelection(i);
+    }
+
     /**
      * 加载广告图片
      */
@@ -278,42 +287,6 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
 
     }
-
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-
-        int i = intent.getIntExtra("TabSelection", 0);
-        setTabSelection(i);
-    }
-
-
-    //	private void getHongbao()
-    //	{
-    //		User uInfo = App.getInstance().getUser();
-    //		if(null == uInfo){
-    //			return;
-    //		}
-    //		HashMap<String,String> map = new HashMap<String,String>();
-    //		map.put("userId", uInfo.userid);
-    //		map.put("tzj_eqcode", Util.getIMEI(context));
-    //		map.put("tzj_version", Util.getAppVersion(context));
-    //		AsyncHttpHelp.httpGet(context,BaseApi.API_getRedBag, map, new ServiceCallback<CommonResult<Hongbao>>(){
-    //			@Override
-    //			public void done(int what, CommonResult<Hongbao> obj) {
-    //				if(Integer.valueOf(obj.data.money) > 0)
-    //				{
-    //					HongbaoDialog dialog = new HongbaoDialog((Activity)context);
-    //					dialog.show();
-    //					dialog.setMoney(obj.data.money);
-    //					MainAc.intance.getUserInfo();
-    //				}
-    //			}
-    //			@Override
-    //			public void error(String msg) {
-    //			}});;
-    //	}
 
     /**
      * 获取优惠券
@@ -454,55 +427,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
     @Override
     public void onClick(View v) {
-//		switch (v.getId()) {
-//		case R.id.pullulateLayout:
-//			setTabSelection(0);
-//			rl_top.setVisibility(View.GONE);
-//			setTitleName("成长中心");
-//			setRightName("");
-//			position=0;
-//			hideLeft();
-//			break;
-//		case R.id.messageLayout:
-//			setTabSelection(1);
-//			rl_top.setVisibility(View.GONE);
-//			//			setTitleName("吧啦");
-//			//			setRightName("");
-//			//			hideLeft();
-//			position=1;
-//			break;
-//		case R.id.indexLayout:
-//			setTabSelection(2);
-//			rl_top.setVisibility(View.GONE);
-//			hideLeft();
-//			position=2;
-//			break;
-//		case R.id.findLayout:
-//			rl_top.setVisibility(View.GONE);
-//			setTabSelection(3);
-//			setTitleName("探索");
-//			//			setRightName("发帖");
-//			hideLeft();
-//			//			if(null != findFm.intance){
-//			//				findFm.intance.RefreshDate("2");
-//			//			}
-//			//			position=3;
-//			break;
-//		case R.id.meLayout:
-//			rl_top.setVisibility(View.GONE);
-//			setTabSelection(4);
-//			setTitleName("我的");
-//			setRightName("设置");
-//			hideLeft();
-//			position=4;
-//			break;
-//		default:
-//			break;
-//		}
-
-
         switch (v.getId()) {
-
             case 770:
                 rl_top.setVisibility(View.GONE);
                 setTabSelection(0);
@@ -520,14 +445,11 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
                 position = 1;
                 hideLeft();
                 break;
-
-
             case 770 + 2:
                 setTabSelection(2);
                 rl_top.setVisibility(View.GONE);
                 position = 2;
                 break;
-
             case 770 + 3:
                 rl_top.setVisibility(View.GONE);
                 setTabSelection(3);
@@ -574,97 +496,6 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
      * @param index
      */
     private void setTabSelection(int index) {
-//		// 每次选中之前先清楚掉上次的选中状态
-//		clearSelection();
-//		// 开启一个Fragment事务
-//		FragmentTransaction transaction = fragmentManager.beginTransaction();
-//		// 先隐藏掉所有的Fragment，以防止有多个Fragment显示在界面上的情况
-//		hideFragments(transaction);
-//		switch (index) {
-//		case 0:
-//			if(tag == 2){
-//				tabs[0].setSelect(true);
-////				iv_e.setImageResource(R.drawable.m_1);
-//				// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
-//				if (growUpFragment == null) {
-//					growUpFragment = new GrowUpFragment();
-//					transaction.add(R.id.content, growUpFragment);
-//				} else {
-//					// 如果MessageFragment不为空，则直接将它显示出来
-//					transaction.show(growUpFragment);
-////					GrowUpFragment.updateView();
-//				}
-//			}else{
-//				isLogin();
-//			}
-//			break;
-//		case 1:
-//			if(tag == 2){
-//				tabs[1].setSelect(true);
-////				iv_b.setImageResource(R.drawable.m_2);
-//				// messageLayout.setBackgroundResource(R.drawable.radio_black_btn);
-//				if (messageFm == null) {
-//					messageFm = new XiaoxiFm();
-//					transaction.add(R.id.content, messageFm);
-//				} else {
-//					transaction.show(messageFm);
-//				}
-//			}else{
-//				isLogin();
-//			}
-//			break;
-//		case 2:
-//			tabs[2].setSelect(true);
-////			iv_a.setImageResource(R.drawable.m_3);
-//			// indexLayout.setBackgroundResource(R.drawable.radio_black_btn);
-//			if (indexFm == null) {
-//				indexFm = new CourseFm3();
-//				transaction.add(R.id.content, indexFm);
-//			} else {
-//				// 如果MessageFragment不为空，则直接将它显示出来
-//				transaction.show(indexFm);
-//				indexFm.setFoucs();
-//				indexFm.updateView();
-//			}
-//			break;
-//		case 3:
-//			if(tag == 2){
-//				tabs[3].setSelect(true);
-////				iv_c.setImageResource(R.drawable.m_4);
-//				// findLayout.setBackgroundResource(R.drawable.radio_black_btn);
-//				if (findFm == null) {
-//					findFm = new XiaoxiFm();
-//					transaction.add(R.id.content, findFm);
-//				} else {
-//					transaction.show(findFm);
-//				}
-//
-//				boolean bl = NotificationsUtils.isNotificationEnabled();
-//				Log.d("fffffffff","isNotificationEnabled "+bl);
-//				if(bl ==false)
-//				{
-//					OpenNotifyDialog dialog = new OpenNotifyDialog((Activity)context);
-//					dialog.show();
-//				}
-//			}else{
-//				isLogin();
-//			}
-//			break;
-//		case 4:
-//		default:
-//			if (mineFm == null) {
-//				mineFm = new MineFm();
-//				transaction.add(R.id.content, mineFm);
-//			} else {
-//				transaction.show(mineFm);
-//				mineFm.setFoucs();
-//				mineFm.initData();
-//			}
-//			break;
-//		}
-//		transaction.commit();
-
-
         // 每次选中之前先清楚掉上次的选中状态
         clearSelection();
         // 开启一个Fragment事务
@@ -750,16 +581,7 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
     @Override
     protected void onResume() {
         super.onResume();
-
         getUserInfo();
-
-        // register the event listener when enter the foreground
-//        EMChatManager.getInstance().registerEventListener(this, new EMNotifierEvent.Event[]{EMNotifierEvent.Event.EventNewMessage, EMNotifierEvent.Event.EventOfflineMessage, EMNotifierEvent.Event.EventConversationListChanged});
-
-        //		if(null !=pullulateFm){
-        //			System.out.println("wanghy");
-        //			pullulateFm.getDate();
-        //		}
     }
 
 
@@ -784,14 +606,6 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
         }
     }
 
-    private void initIMComment() {
-
-        if (messageFm != null) {
-//			messageFm.refresh();
-        }
-
-    }
-
     /**
      * msg = wat = 0  login
      * <p>
@@ -800,31 +614,14 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
     private Handler handler = new Handler() {
         public void handleMessage(android.os.Message msg) {
             switch (msg.what) {
-//                case 0:
-//                    DemoHelper sdkHelper = DemoHelper.getInstance();
-//                    sdkHelper.pushActivity(MainAc.this);
-//
-//                    // 注册群组和联系人监听
-//                    DemoHelper.getInstance().registerGroupAndContactListener();
-//                    // register the event listener when enter the foreground
-//                    EMChatManager.getInstance().registerEventListener(MainAc.this,
-//                            new EMNotifierEvent.Event[]{EMNotifierEvent.Event.EventNewMessage, EMNotifierEvent.Event.EventOfflineMessage, EMNotifierEvent.Event.EventConversationListChanged});
-//                    initIMComment();
-//
-//
-//                    //				EaseUserUtils.setUserAvatar(context, username, App.getInstance().);
-//                    break;
-//                case 2:
-//                    refreshUIWithMessage();
-//                    break; popAddChildDialog();
                 case 11:
                     popAddChildDialog();
                     break;
                 case 22:
-                    getYouhuiquan();
+                    loadGg();
                     break;
                 case 33:
-                    loadGg();
+                    getYouhuiquan();
                     break;
                 case 1:
                     finish();

@@ -80,8 +80,8 @@ public class EditChildAc extends BaseCaptureActivity implements OnClickListener 
 		rb_male = (RadioButton) findViewById(R.id.rb_male);
 		rg_group = (RadioGroup) findViewById(R.id.rg_group);
 		rb_female = (RadioButton) findViewById(R.id.rb_female);
-		rb_male.setButtonDrawable(R.drawable.radio);
-		rb_female.setButtonDrawable(R.drawable.radio);
+//		rb_male.setButtonDrawable(R.drawable.radio);
+//		rb_female.setButtonDrawable(R.drawable.radio);
 
 		findViewById(R.id.iv_sixview_head).setVisibility(View.GONE);
 		iv_sixview_head = (ImageView)findViewById(R.id.lv_sixview_head);
