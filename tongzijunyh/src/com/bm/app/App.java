@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Handler;
 import android.support.multidex.MultiDex;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -406,7 +407,10 @@ public class App extends Application {
             @Override
             public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
                 layout.setPrimaryColorsId(R.color.white, android.R.color.black);//全局设置主题颜色
-                return new ClassicsHeader(context);//.setTimeFormat(new DynamicTimeFormat("更新于 %s"));//指定为经典Header，默认是 贝塞尔雷达Header
+                ClassicsHeader classicsHeader = new ClassicsHeader(context);
+                classicsHeader.setEnableLastTime(false);//隐藏更新时间
+                classicsHeader.setTextSizeTitle(14);//设置刷新字体的大小
+                return classicsHeader;//.setTimeFormat(new DynamicTimeFormat("更新于 %s"));//指定为经典Header，默认是 贝塞尔雷达Header
             }
         });
 //        //设置全局的Footer构建器

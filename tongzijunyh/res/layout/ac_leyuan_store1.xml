@@ -112,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="暂未安排课程，请查看其他日期吧"
+                android:layout_marginTop="16dp"
                 android:textColor="#999"
                 android:textSize="15sp" />
         </LinearLayout>
