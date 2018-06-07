@@ -51,7 +51,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
     //没有数据的时候显示的空view
     private View emptyLayout;
     //消息列表
-    private ListView listView;
+    private com.lib.widget.FuListView listView;
     private TextView tv_jiaolian;
     private TextView tv_tongzhi;
     private View radCountCoachingView;
@@ -83,7 +83,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         radCountNotifyView = messageLayout.findViewById(R.id.radCountNotifyView);
         tv_jiaolian = (TextView) messageLayout.findViewById(R.id.tv_jiaolian);
         tv_tongzhi = (TextView) messageLayout.findViewById(R.id.tv_tongzhi);
-        listView = (ListView) messageLayout.findViewById(R.id.recyclerView);
+        listView = (com.lib.widget.FuListView) messageLayout.findViewById(R.id.recyclerView);
 
         messageLayout.findViewById(R.id.coachingItem).setOnClickListener(this);
         messageLayout.findViewById(R.id.notifyItem).setOnClickListener(this);
@@ -199,6 +199,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         if (obj.data.getMessageReco() != null) {
             emptyLayout.setVisibility(View.GONE);
             listView.setVisibility(View.VISIBLE);
+            xiaoxiLists.clear();
             xiaoxiLists.addAll(obj.data.getMessageReco());
             xiaoxiListXiaoxiListAdapter.notifyDataSetChanged();
             refreshRedPoint(obj);

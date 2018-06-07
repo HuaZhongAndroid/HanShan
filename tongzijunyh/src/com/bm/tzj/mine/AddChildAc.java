@@ -66,7 +66,7 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 		babySex = "";
 		initView();
 	}
-	
+	boolean isCheckSex = false;
 	private void initView() {
 		//ll_babySex = findLinearLayoutById(R.id.ll_babySex);
 		ll_sixview_head = findLinearLayoutById(R.id.ll_sixview_head);
@@ -121,6 +121,7 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 					babySex="女";
 				}
 				tv_save.setEnabled(true);
+				isCheckSex = true;
 			}
 		});
 
@@ -136,8 +137,12 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 			
 			@Override
 			public void afterTextChanged(Editable s) {
-				tv_save.setEnabled(true);
-			}
+				if (s.length()==0){
+					tv_save.setEnabled(false);
+				}else if (s.toString().trim().length()>0&&isCheckSex&&
+						tv_birthday.getText().toString().trim().length()>0)
+					tv_save.setEnabled(true);
+			    }
 		});
 	}
 	

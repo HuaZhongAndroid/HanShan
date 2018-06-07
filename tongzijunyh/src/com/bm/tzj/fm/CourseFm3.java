@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -42,6 +43,8 @@ import com.bumptech.glide.Glide;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
 import com.richer.tzj.R;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -134,11 +137,26 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
         city = App.getInstance().getCityCode();
         initCity(messageLayout);
         initView(messageLayout);
+        initRefreshView(messageLayout);
         initBannerView(messageLayout);
         initOnClickListener();
         refresh();
         return messageLayout;
     }
+
+    private void initRefreshView(View v) {
+        final  RefreshLayout refreshLayout = (RefreshLayout)v.findViewById(R.id.refreshLayout);
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                refresh();
+                // 因为接口有四个 所以无法做到在请求结束关闭  只能模拟等待3秒后关闭
+                refreshLayout.finishRefresh(3000/*,false*/);//传入false表示刷新失败
+                //refreshLayout.finishRefresh();
+            }
+        });
+    }
+
     private void initOnClickListener() {
         ll_search.setOnClickListener(this);
         tv_location.setOnClickListener(this);
@@ -429,6 +447,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             }
 
             private void doResult(CommonListResult<ZhouMoCity> obj) {
+
                 if (null != obj.data && obj.data.size() > 0) {
                     if (obj.data.size() == 1) {
                         lay_city.setVisibility(View.GONE);
@@ -621,7 +640,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             tv_find.setHintTextColor(0xff999999);
             img_find.setImageDrawable(context.getResources().getDrawable(R.drawable.find_hui));
         } else {
-            Log.d("fff", "在中间 " + verticalOffset);
+           // Log.e("eeee", "在中间 " + verticalOffset);
             tv_location.setTextColor(0xffffffff);
             Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_bai);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());

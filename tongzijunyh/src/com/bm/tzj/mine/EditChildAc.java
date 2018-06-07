@@ -73,7 +73,7 @@ public class EditChildAc extends BaseCaptureActivity implements OnClickListener 
 		
 		tv_save = findTextViewById(R.id.tv_save);
 		tv_save.setOnClickListener(this);
-		
+		tv_save.setEnabled(true);
 		et_babyName = findEditTextById(R.id.et_babyName);
 
 		tv_birthday = findTextViewById(R.id.tv_birthday);
@@ -91,6 +91,7 @@ public class EditChildAc extends BaseCaptureActivity implements OnClickListener 
 		babySex = ("1".equals(child.gender)?"男":"女");
 		rb_male.setChecked("1".equals(child.gender));
 		rb_female.setChecked(!"1".equals(child.gender));
+
 		tv_birthday.setText(child.birthday);
 		ImageLoader.getInstance().displayImage(child.avatar, iv_sixview_head, App.getInstance().getheadImage());
 		
@@ -141,7 +142,12 @@ public class EditChildAc extends BaseCaptureActivity implements OnClickListener 
 			
 			@Override
 			public void afterTextChanged(Editable s) {
-				tv_save.setEnabled(true);
+				if (s.length()==0){
+					tv_save.setEnabled(false);
+				}else {
+					tv_save.setEnabled(true);
+				}
+
 			}
 		});
 	}

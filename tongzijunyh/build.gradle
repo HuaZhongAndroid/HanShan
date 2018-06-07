@@ -90,6 +90,10 @@ dependencies {
     implementation 'com.github.chrisbanes:PhotoView:2.1.3'
     //强大的webView
     compile 'com.just.agentweb:agentweb:4.0.2'
+    //下拉刷新
+    compile 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-6'
+   // compile 'com.android.support:appcompat-v7:25.3.1'//版本 23以上（必须） 依赖项目已经有了这个，所以不用加了
+
     //腾讯bugly bug收集器
     compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
     compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
