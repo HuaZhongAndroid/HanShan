@@ -1,15 +1,16 @@
 package com.bm.tzj.fm;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -26,6 +27,10 @@ import com.bm.tzj.activity.XiaoXiDetailAct;
 import com.bm.tzj.city.City;
 import com.bm.util.CacheUtil;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonResult;
 import com.lib.widget.ReboundScrollView;
@@ -36,6 +41,9 @@ import com.richer.tzj.R;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import me.panpf.sketch.SketchImageView;
+import me.panpf.sketch.request.Resize;
 
 /**
  * 消息中心
@@ -99,14 +107,53 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
 
             //处理item和bean的数据绑定
             @Override
-            protected void handViewAndData(ItemTag tag, final XiaoxiList.MessageRecoBean data) {
+            protected void handViewAndData(final ItemTag tag, final XiaoxiList.MessageRecoBean data) {
+               tag. img_tu.getOptions().setResize(new Resize(getScreenWidth(), (int) (getScreenWidth()*0.625f), Resize.Mode.EXACTLY_SAME));
+                //获取图片真正的宽高
+                Glide.with(getContext())
+                        .load(data.getTitleMultiUrl())
+                        .asBitmap()//强制Glide返回一个Bitmap对象
+                        .into(new SimpleTarget<Bitmap>() {
+                            @Override
+                            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+                                int width = bitmap.getWidth();
+                                int height = bitmap.getHeight();
+                                tag.img_tu.getOptions().setResize(new Resize(getScreenWidth(), getImgDisplanHeight(width, height), Resize.Mode.EXACTLY_SAME));
+//                                tag.img_tu.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
+                                Log.e("img", "width " + width); //200px
+                                Log.e("img", "height " + height); //200px
+                            }
+                        });
+
+                //获取图片显示在ImageView后的宽高
                 Glide.with(getActivity())
                         .load(data.getTitleMultiUrl())
-                        .placeholder(R.drawable.adv_default)
-                        .error(R.drawable.adv_default)
-                        .centerCrop()
-                        .dontAnimate()
-                        .into(tag.img_tu);
+                        .asBitmap()//强制Glide返回一个Bitmap对象
+                        .listener(new RequestListener<String, Bitmap>() {
+                            @Override
+                            public boolean onException(Exception e, String model, Target<Bitmap> target, boolean isFirstResource) {
+                                Log.d("img", "onException " + e.toString());
+                                return false;
+                            }
+
+                            @Override
+                            public boolean onResourceReady(Bitmap bitmap, String model, Target<Bitmap> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                                int width = bitmap.getWidth();
+                                int height = bitmap.getHeight();
+//                                tag.img_tu.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
+                                Log.d("img", "width2 " + width); //400px
+                                Log.d("img", "height2 " + height); //400px
+                                return false;
+                            }
+                        }).into(tag.img_tu);
+//                Glide.with(getActivity())
+//                        .load(data.getTitleMultiUrl())
+//                        .placeholder(R.drawable.adv_default)
+//                        .error(R.drawable.adv_default)
+//                        .centerCrop()
+//                        .dontAnimate()
+//                        .into(tag.img_tu);
+
                 tag.iteView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -281,11 +328,12 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
     //消息列表item的tag
     static class ItemTag extends XiaoxiListAdapter.XiaoXitemViewTag {
 
-        private ImageView img_tu;
+        private SketchImageView img_tu;
 
         public ItemTag(View iteView) {
             super(iteView);
-            img_tu = (ImageView) iteView.findViewById(R.id.img_tu);
+            img_tu = (SketchImageView) iteView.findViewById(R.id.img_tu);
+            img_tu.getOptions().setResize(new Resize(getScreenWidth(), (int) (getScreenWidth()*0.625f), Resize.Mode.EXACTLY_SAME));
         }
     }
 
@@ -349,5 +397,20 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         intent.putExtra("titleStr", titleStr);
         startActivity(intent);
     }
+
+    //获取图片应该显示的高度
+    private static int getImgDisplanHeight(int imgWidth, int imgHeight) {
+        int screenWidth = getScreenWidth();
+        float scale = (imgWidth * 1.0f) / screenWidth;
+        return (int) (scale * imgHeight);
+    }
+
+    //获取屏幕的宽
+    private static int getScreenWidth() {
+        DisplayMetrics dm = App.getInstance().getResources().getDisplayMetrics();
+        Log.e("debug_screen_wsirg", dm.widthPixels + "");
+        return dm.widthPixels;
+    }
+
 
 }

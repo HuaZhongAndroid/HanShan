@@ -1,9 +1,11 @@
 package com.bm.tzj.activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,10 +16,17 @@ import com.bm.entity.User;
 import com.bm.entity.XiaoxiList;
 import com.bm.tzj.city.City;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.Target;
 import com.lib.http.result.CommonResult;
 import com.richer.tzj.R;
 
 import java.util.ArrayList;
+
+import me.panpf.sketch.SketchImageView;
+import me.panpf.sketch.request.Resize;
 
 /**
  * 通知消息界面
@@ -64,15 +73,51 @@ public class NotifyAct extends BaseActivity {
             }
 
             @Override
-            protected void handViewAndData(ItemTag tag, final XiaoxiList.MessageAllBean data) {
+            protected void handViewAndData(final ItemTag tag, final XiaoxiList.MessageAllBean data) {
                 tag.titleTv.setText(data.getTitle());
+
+                tag. imageView.getOptions().setResize(new Resize(getScreenWidth(), (int) (getScreenWidth()*0.625f), Resize.Mode.EXACTLY_SAME));
+                //获取图片真正的宽高
                 Glide.with(context)
                         .load(data.getTitleMultiUrl())
-                        .placeholder(R.drawable.adv_default)
-                        .error(R.drawable.adv_default)
-                        .centerCrop()
-                        .dontAnimate()
-                        .into(tag.imageView);
+                        .asBitmap()//强制Glide返回一个Bitmap对象
+                        .into(new SimpleTarget<Bitmap>() {
+                            @Override
+                            public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
+                                int width = bitmap.getWidth();
+                                int height = bitmap.getHeight();
+                                tag.imageView.getOptions().setResize(new Resize(getScreenWidth(), getImgDisplanHeight(width, height), Resize.Mode.EXACTLY_SAME));
+//                                tag.img_tu.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
+                            }
+                        });
+
+                //获取图片显示在ImageView后的宽高
+                Glide.with(context)
+                        .load(data.getTitleMultiUrl())
+                        .asBitmap()//强制Glide返回一个Bitmap对象
+                        .listener(new RequestListener<String, Bitmap>() {
+                            @Override
+                            public boolean onException(Exception e, String model, Target<Bitmap> target, boolean isFirstResource) {
+                                return false;
+                            }
+
+                            @Override
+                            public boolean onResourceReady(Bitmap bitmap, String model, Target<Bitmap> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                                int width = bitmap.getWidth();
+                                int height = bitmap.getHeight();
+//                                tag.img_tu.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
+                                return false;
+                            }
+                        }).into(tag.imageView);
+
+
+//                Glide.with(context)
+//                        .load(data.getTitleMultiUrl())
+//                        .placeholder(R.drawable.adv_default)
+//                        .error(R.drawable.adv_default)
+//                        .centerCrop()
+//                        .dontAnimate()
+//                        .into(tag.imageView);
                 tag.dateTv.setText(data.getCtime());
                 tag.isReadView.setVisibility(data.getIsRead().equals("1") ? View.INVISIBLE : View.VISIBLE);
 
@@ -107,14 +152,14 @@ public class NotifyAct extends BaseActivity {
     static class ItemTag extends XiaoxiListAdapter.XiaoXitemViewTag {
 
         private TextView titleTv;
-        private ImageView imageView;
+        private SketchImageView imageView;
         private TextView dateTv;
         private View isReadView;
 
         public ItemTag(View iteView) {
             super(iteView);
             titleTv = (TextView) iteView.findViewById(R.id.titleTv);
-            imageView = (ImageView) iteView.findViewById(R.id.imageView);
+            imageView = (SketchImageView) iteView.findViewById(R.id.imageView);
             dateTv = (TextView) iteView.findViewById(R.id.dateTv);
             isReadView = iteView.findViewById(R.id.isReadView);
         }
@@ -178,5 +223,19 @@ public class NotifyAct extends BaseActivity {
         intent.putExtra("messageId", messageId);
         intent.putExtra("titleStr", titleStr);
         startActivity(intent);
+    }
+
+    //获取图片应该显示的高度
+    private static int getImgDisplanHeight(int imgWidth, int imgHeight) {
+        int screenWidth = getScreenWidth();
+        float scale = (imgWidth * 1.0f) / screenWidth;
+        return (int) (scale * imgHeight);
+    }
+
+    //获取屏幕的宽
+    private static int getScreenWidth() {
+        DisplayMetrics dm = App.getInstance().getResources().getDisplayMetrics();
+        Log.e("debug_screen_wsirg", dm.widthPixels + "");
+        return dm.widthPixels;
     }
 }
