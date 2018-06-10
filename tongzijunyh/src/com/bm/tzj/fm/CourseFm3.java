@@ -145,7 +145,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
     }
 
     private void initRefreshView(View v) {
-        final  RefreshLayout refreshLayout = (RefreshLayout)v.findViewById(R.id.refreshLayout);
+        final RefreshLayout refreshLayout = (RefreshLayout) v.findViewById(R.id.refreshLayout);
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
@@ -239,19 +239,20 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
     int screenWidth = 0;
     int screenHeight = 0;
     int bannerHeight = 0;
+
     private void initBannerView(View v) {
-        screenWidth =  App.getInstance().getScreenWidth();
-        screenHeight =  App.getInstance().getScreenHeight();
-        if (screenWidth!=0&&screenHeight!=0){
-            bannerHeight =   screenWidth/16*9;
+        screenWidth = App.getInstance().getScreenWidth();
+        screenHeight = App.getInstance().getScreenHeight();
+        if (screenWidth != 0 && screenHeight != 0) {
+            bannerHeight = screenWidth / 16 * 9;
         }
-        Log.e("screenWidth" ,"screenWidth = "+screenWidth);
-        Log.e("screenHeight" ,"screenHeight = "+screenHeight);
-        Log.e("bannerHeight" ,"bannerHeight = "+bannerHeight);
+        Log.e("screenWidth", "screenWidth = " + screenWidth);
+        Log.e("screenHeight", "screenHeight = " + screenHeight);
+        Log.e("bannerHeight", "bannerHeight = " + bannerHeight);
         bannerView = (BGABanner) v.findViewById(R.id.bannerView);
-        if (bannerHeight!=0){
+        if (bannerHeight != 0) {
             //bannerView.setMinimumHeight(bannerHeight);
-            bannerView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,bannerHeight));
+            bannerView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, bannerHeight));
         }
         bannerView.setAdapter(new BGABanner.Adapter<ImageView, Advertisement>() {
             @Override
@@ -269,12 +270,12 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             @Override
             public void onBannerItemClick(BGABanner banner, ImageView itemView, Advertisement model, int position) {
                 //Toast.makeText(banner.getContext(), "点击了" + position, Toast.LENGTH_SHORT).show();
-                String url =  model.url;
-                if (TextUtils.isEmpty(url))   return;
-                if (url.contains("http://")||url.contains("https://")){
+                String url = model.url;
+                if (TextUtils.isEmpty(url)) return;
+                if (url.contains("http://") || url.contains("https://")) {
                     Intent intent = new Intent(getContext(), MyWebActivity.class);
-                    intent.putExtra("Url",url);
-                }else if (url.contains("tzj://advert?")){
+                    intent.putExtra("Url", url);
+                } else if (url.contains("tzj://advert?")) {
                     //跳转门店
 //                    String str = url.replace("tzj://advert?","");
 //                    if (!str.contains("="))return;
@@ -333,13 +334,12 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                     listAdvment.addAll(obj.data);
                     if (obj.data.size() > 0) {
                         bannerView.setAutoPlayAble(listAdvment.size() > 1);
-                        bannerView.setData(listAdvment,new ArrayList<String>(listAdvment.size()) );
+                        bannerView.setData(listAdvment, new ArrayList<String>(listAdvment.size()));
                     }
                 }
             }
         });
     }
-
 
 
     /**
@@ -384,10 +384,10 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                     if (types == 3) {
                         adapter2.clear();
                         adapter2.setList(obj.data);
-                        adapter2.showData(3,false);
+                        adapter2.showData(3, false);
                         adapter2.notifyDataSetChanged();
                         lay2.setVisibility(View.VISIBLE);
-                        if (obj.data.size() > 3){
+                        if (obj.data.size() > 3) {
                             tv_more2.setVisibility(View.VISIBLE);
                             tv_hyh.setVisibility(View.VISIBLE);
                         }
@@ -411,14 +411,13 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
     }
 
 
-
-
     /**
      * 获取周末成长营  城市地址
-     *
+     * <p>
      * http://59.110.62.10:8888/tongZiJun/api/tzjgoods/getTrend
      */
     public void getZhouMoCitys() {
+        Log.e("debug===>", "请求城市列表");
         final HashMap<String, String> map = new HashMap<String, String>();
         UserManager.getInstance().getZhouMoCitys(context, map, new ServiceCallback<CommonListResult<ZhouMoCity>>() {
             final String CACHEKEY = "CourseFm_getZhouMoCitys";
@@ -447,15 +446,15 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             }
 
             private void doResult(CommonListResult<ZhouMoCity> obj) {
-
+                Log.e("debug===>", "请求城市列表==>" + obj.toString());
                 if (null != obj.data && obj.data.size() > 0) {
                     if (obj.data.size() == 1) {
                         lay_city.setVisibility(View.GONE);
                         tv_text2.setVisibility(View.VISIBLE);
                     } else {
                         addZhouMoCity(obj.data);
-                        lay_city.setVisibility(View.GONE);
-                        tv_text2.setVisibility(View.VISIBLE);
+                        lay_city.setVisibility(View.VISIBLE);
+                        tv_text2.setVisibility(View.GONE);
                     }
                     String regionId = obj.data.get(0).regionId;
                     loadCourseList(3, regionId);
@@ -471,7 +470,8 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
      *
      * @param list
      */
-    LinearLayout lastView ;
+    LinearLayout lastView;
+
     private void addZhouMoCity(List<ZhouMoCity> list) {
         lay_city.removeAllViews();
 
@@ -482,20 +482,21 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             View line = view.findViewById(R.id.line);
             textView.setText(city.regionName);
             textView.setTag(city.regionId);
-            if (i==0){
+            if (i == 0) {
                 textView.setTextColor(getResources().getColor(R.color.golden_1));
-                line.setVisibility(View.VISIBLE);
+                line.setBackgroundColor(getResources().getColor(R.color.golden_1));
                 lastView = view;
-            }else {
+            } else {
                 textView.setTextColor(getResources().getColor(R.color.gray_1));
-                line.setVisibility(View.INVISIBLE);
+                line.setBackgroundColor(getResources().getColor(R.color.gray_1));
             }
+            lay_city.addView(view);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     TextView city;
                     View line;
-                    if (lastView!=null){
+                    if (lastView != null) {
                         city = (TextView) lastView.getChildAt(0);
                         line = lastView.getChildAt(1);
                         city.setTextColor(getResources().getColor(R.color.gray_1));
@@ -554,8 +555,8 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
         } else {
             map.put("regionName", "西安");//城市名称
         }
-        map.put("lat",info.lat+"");
-        map.put("lon",info.lng+"");
+        map.put("lat", info.lat + "");
+        map.put("lon", info.lng + "");
         map.put("type", "" + types);
         UserManager.getInstance().getTzjstoreStorelist(context, map, new ServiceCallback<CommonListResult<Storelist>>() {
             final String CACHEKEY = "CourseFm_getStorelist";
@@ -584,7 +585,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             }
 
             private void doResult(CommonListResult<Storelist> obj) {
-                if (null != obj.data&&obj.data.size()>0) {
+                if (null != obj.data && obj.data.size() > 0) {
                     if (types == 1) {
                         adapter1.clear();
                         adapter1.setType(1);
@@ -625,7 +626,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             Log.d("fff", "到顶了 " + verticalOffset);
             toolbar_layout.setContentScrimColor(0xffffffff);
             tv_location.setTextColor(0xff333333);
-            Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_hei);
+            Drawable d = ContextCompat.getDrawable(context, R.drawable.xiala_hei);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());
             tv_location.setCompoundDrawables(null, null, d, null);
             tv_find.setHintTextColor(0xff999999);
@@ -634,15 +635,15 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             Log.d("fff", "快到顶了 " + verticalOffset);
             toolbar_layout.setContentScrimColor(0x00ffffff);
             tv_location.setTextColor(0xff333333);
-            Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_hei);
+            Drawable d = ContextCompat.getDrawable(context, R.drawable.xiala_hei);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());
             tv_location.setCompoundDrawables(null, null, d, null);
             tv_find.setHintTextColor(0xff999999);
             img_find.setImageDrawable(context.getResources().getDrawable(R.drawable.find_hui));
         } else {
-           // Log.e("eeee", "在中间 " + verticalOffset);
+            // Log.e("eeee", "在中间 " + verticalOffset);
             tv_location.setTextColor(0xffffffff);
-            Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_bai);
+            Drawable d = ContextCompat.getDrawable(context, R.drawable.xiala_bai);
             d.setBounds(0, 0, d.getMinimumWidth(), d.getMinimumHeight());
             tv_location.setCompoundDrawables(null, null, d, null);
             tv_find.setHintTextColor(0xffffffff);
@@ -683,8 +684,8 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                 startActivity(intent);
                 break;
             case R.id.tv_hyh://周末成长营 换一换
-                if (adapter2!=null)
-                adapter2.showData(3,true);
+                if (adapter2 != null)
+                    adapter2.showData(3, true);
                 break;
             case R.id.tv_more3://暑期大露营 查看更多
                 intent = new Intent(context, LuyingAc.class);
@@ -698,8 +699,8 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
     public void onTabActivityResult(int requestCode, int resultCode, Intent data) {
         if (5 == resultCode) {
             String cityName = data.getStringExtra("cityName"); // 城市名称
-            city = (City)data.getSerializableExtra("city");
-            if(city != null) {
+            city = (City) data.getSerializableExtra("city");
+            if (city != null) {
                 tv_location.setText(cityName);
                 String strCity = cityName.substring(cityName.length() - 1, cityName.length());
                 if (strCity.equals("市")) {
