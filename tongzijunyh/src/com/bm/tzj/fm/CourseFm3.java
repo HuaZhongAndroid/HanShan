@@ -417,7 +417,6 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
      * http://59.110.62.10:8888/tongZiJun/api/tzjgoods/getTrend
      */
     public void getZhouMoCitys() {
-        Log.e("debug===>", "请求城市列表");
         final HashMap<String, String> map = new HashMap<String, String>();
         UserManager.getInstance().getZhouMoCitys(context, map, new ServiceCallback<CommonListResult<ZhouMoCity>>() {
             final String CACHEKEY = "CourseFm_getZhouMoCitys";
@@ -446,7 +445,6 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             }
 
             private void doResult(CommonListResult<ZhouMoCity> obj) {
-                Log.e("debug===>", "请求城市列表==>" + obj.toString());
                 if (null != obj.data && obj.data.size() > 0) {
                     if (obj.data.size() == 1) {
                         lay_city.setVisibility(View.GONE);
@@ -485,10 +483,12 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             if (i == 0) {
                 textView.setTextColor(getResources().getColor(R.color.golden_1));
                 line.setBackgroundColor(getResources().getColor(R.color.golden_1));
+                line.setVisibility(View.GONE);
                 lastView = view;
             } else {
                 textView.setTextColor(getResources().getColor(R.color.gray_1));
                 line.setBackgroundColor(getResources().getColor(R.color.gray_1));
+                line.setVisibility(View.INVISIBLE);
             }
             lay_city.addView(view);
             view.setOnClickListener(new View.OnClickListener() {

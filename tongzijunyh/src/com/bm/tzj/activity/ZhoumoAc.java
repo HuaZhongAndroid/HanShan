@@ -1,31 +1,21 @@
 package com.bm.tzj.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bm.api.UserManager;
-import com.bm.app.App;
 import com.bm.base.BaseActivity;
-import com.bm.base.adapter.ZhouMoAdapter;
 import com.bm.base.adapter.ZhouMoAdapter1;
-import com.bm.entity.Course;
-import com.bm.entity.CourseBao;
 import com.bm.entity.CourseBean;
 import com.bm.entity.ZhouMoCity;
 import com.bm.util.CacheUtil;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
-import com.lib.widget.HorizontalListView;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.richer.tzj.R;
 
 import java.lang.reflect.Type;
@@ -35,14 +25,13 @@ import java.util.List;
 /**
  * 周末列表页面
  */
-public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickListener{
+public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickListener {
 
     private ImageView defultImg;
 
     private ListView lv_content2;
     private ZhouMoAdapter1 adapter2;
     private LinearLayout lay_city; //  当城市个数大于1  则显示
-
 
 
     @Override
@@ -57,6 +46,7 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
         lv_content2.setOnItemClickListener(this);
         getZhouMoCitys();
     }
+
     /**
      * @param types    3  周末成长营 4  暑期大露营
      * @param regionId 城市id【getZhouMoCitys接口中的regionId参数】
@@ -93,21 +83,23 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
                 //缓存结果
                 CacheUtil.save(context, CACHEKEY, map, obj);
             }
+
             private void doResult(CommonListResult<CourseBean> obj) {
                 if (null != obj.data && obj.data.size() > 0) {
                     adapter2.clear();
                     adapter2.addAll(obj.data);
                     adapter2.notifyDataSetChanged();
                     findViewById(R.id.defultImg).setVisibility(View.GONE);
-                }else {
+                } else {
                     findViewById(R.id.defultImg).setVisibility(View.VISIBLE);
                 }
             }
         });
     }
+
     /**
      * 获取周末成长营  城市地址
-     *
+     * <p>
      * http://59.110.62.10:8888/tongZiJun/api/tzjgoods/getTrend
      */
     public void getZhouMoCitys() {
@@ -144,7 +136,7 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
                         lay_city.setVisibility(View.GONE);
                     } else {
                         addZhouMoCity(obj.data);
-                        lay_city.setVisibility(View.GONE);
+                        lay_city.setVisibility(View.VISIBLE);
                     }
                     String regionId = obj.data.get(0).regionId;
                     loadCourseList(3, regionId);
@@ -160,7 +152,8 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
      *
      * @param list
      */
-    LinearLayout lastView ;
+    LinearLayout lastView;
+
     private void addZhouMoCity(List<ZhouMoCity> list) {
         lay_city.removeAllViews();
 
@@ -171,20 +164,23 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
             View line = view.findViewById(R.id.line);
             textView.setText(city.regionName);
             textView.setTag(city.regionId);
-            if (i==0){
+            if (i == 0) {
                 textView.setTextColor(getResources().getColor(R.color.golden_1));
+                line.setBackgroundColor(getResources().getColor(R.color.golden_1));
                 line.setVisibility(View.VISIBLE);
                 lastView = view;
-            }else {
+            } else {
                 textView.setTextColor(getResources().getColor(R.color.gray_1));
+                line.setBackgroundColor(getResources().getColor(R.color.gray_1));
                 line.setVisibility(View.INVISIBLE);
             }
+            lay_city.addView(view);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     TextView city;
                     View line;
-                    if (lastView!=null){
+                    if (lastView != null) {
                         city = (TextView) lastView.getChildAt(0);
                         line = lastView.getChildAt(1);
                         city.setTextColor(getResources().getColor(R.color.gray_1));
@@ -206,7 +202,7 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        CourseBean  courseBean = (CourseBean) parent.getAdapter().getItem(position);
+        CourseBean courseBean = (CourseBean) parent.getAdapter().getItem(position);
 //        Intent  intent = new Intent(context, LuyingDetailAc.class);
 //        intent.putExtra("goodsId", courseBean.goodsId);
 //        startActivity(intent);
