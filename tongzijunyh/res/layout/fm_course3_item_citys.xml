@@ -10,18 +10,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="20dp"
         android:text="西安"
         android:textColor="@color/gray_1"
-        android:textSize="14sp" />
+        android:textSize="13sp" />
 
     <View
         android:id="@+id/line"
-        android:layout_width="24dp"
+        android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="6dp"
         android:background="@color/gray_1" />
 </LinearLayout>
