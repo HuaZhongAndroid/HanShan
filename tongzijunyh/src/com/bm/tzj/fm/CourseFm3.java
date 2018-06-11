@@ -382,6 +382,9 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             private void doResult(CommonListResult<CourseBean> obj) {
                 if (null != obj.data && obj.data.size() > 0) {
                     if (types == 3) {
+                        tv_more2.setVisibility(View.GONE);
+                        tv_hyh.setVisibility(View.GONE);
+
                         adapter2.clear();
                         adapter2.setList(obj.data);
                         adapter2.showData(3, false);
@@ -483,11 +486,11 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
             if (i == 0) {
                 textView.setTextColor(getResources().getColor(R.color.golden_1));
                 line.setBackgroundColor(getResources().getColor(R.color.golden_1));
-                line.setVisibility(View.GONE);
+                line.setVisibility(View.VISIBLE);
                 lastView = view;
             } else {
                 textView.setTextColor(getResources().getColor(R.color.gray_1));
-                line.setBackgroundColor(getResources().getColor(R.color.gray_1));
+                line.setBackgroundColor(getResources().getColor(R.color.golden_1));
                 line.setVisibility(View.INVISIBLE);
             }
             lay_city.addView(view);

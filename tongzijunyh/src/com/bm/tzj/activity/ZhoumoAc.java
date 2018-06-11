@@ -171,7 +171,7 @@ public class ZhoumoAc extends BaseActivity implements AdapterView.OnItemClickLis
                 lastView = view;
             } else {
                 textView.setTextColor(getResources().getColor(R.color.gray_1));
-                line.setBackgroundColor(getResources().getColor(R.color.gray_1));
+                line.setBackgroundColor(getResources().getColor(R.color.golden_1));
                 line.setVisibility(View.INVISIBLE);
             }
             lay_city.addView(view);
