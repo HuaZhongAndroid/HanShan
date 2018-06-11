@@ -1,5 +1,6 @@
 package com.bm.tzj.fm;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,7 @@ import com.bm.tzj.activity.NotifyAct;
 import com.bm.tzj.activity.XiaoXiDetailAct;
 import com.bm.tzj.city.City;
 import com.bm.util.CacheUtil;
+import com.bm.util.DensityUtil;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.animation.GlideAnimation;
@@ -333,7 +336,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
         public ItemTag(View iteView) {
             super(iteView);
             img_tu = (SketchImageView) iteView.findViewById(R.id.img_tu);
-            img_tu.getOptions().setResize(new Resize(getScreenWidth(), (int) (getScreenWidth()*0.625f), Resize.Mode.EXACTLY_SAME));
+            //img_tu.getOptions().setResize(new Resize(getScreenWidth(), (int) (getScreenWidth()*0.625f), Resize.Mode.EXACTLY_SAME));
         }
     }
 
@@ -399,18 +402,19 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
     }
 
     //获取图片应该显示的高度
-    private static int getImgDisplanHeight(int imgWidth, int imgHeight) {
-        int screenWidth = getScreenWidth();
-        float scale = (imgWidth * 1.0f) / screenWidth;
-        return (int) (scale * imgHeight);
+    private  int getImgDisplanHeight(int imgWidth, int imgHeight) {
+        float screenHeight = getScreenWidth()/imgWidth*imgHeight;
+        return (int) screenHeight;
     }
 
     //获取屏幕的宽
-    private static int getScreenWidth() {
+    private  int getScreenWidth() {
         DisplayMetrics dm = App.getInstance().getResources().getDisplayMetrics();
-        Log.e("debug_screen_wsirg", dm.widthPixels + "");
-        return dm.widthPixels;
+        Log.e("getScreenWidth", dm.widthPixels + "");
+        return dm.widthPixels -dp2px(getContext(),28);
     }
-
+    private int dp2px(Context context, int dpValue){
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dpValue,context.getResources().getDisplayMetrics());
+    }
 
 }

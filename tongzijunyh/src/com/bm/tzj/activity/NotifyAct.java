@@ -1,10 +1,12 @@
 package com.bm.tzj.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,6 +29,8 @@ import java.util.ArrayList;
 
 import me.panpf.sketch.SketchImageView;
 import me.panpf.sketch.request.Resize;
+
+import static com.tencent.open.utils.Global.getContext;
 
 /**
  * 通知消息界面
@@ -226,16 +230,17 @@ public class NotifyAct extends BaseActivity {
     }
 
     //获取图片应该显示的高度
-    private static int getImgDisplanHeight(int imgWidth, int imgHeight) {
-        int screenWidth = getScreenWidth();
-        float scale = (imgWidth * 1.0f) / screenWidth;
-        return (int) (scale * imgHeight);
+    private  int getImgDisplanHeight(int imgWidth, int imgHeight) {
+        float screenHeight = getScreenWidth()/imgWidth*imgHeight;
+        return (int) screenHeight;
     }
-
+    private int dp2px(Context context, int dpValue){
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dpValue,context.getResources().getDisplayMetrics());
+    }
     //获取屏幕的宽
-    private static int getScreenWidth() {
+    private  int getScreenWidth() {
         DisplayMetrics dm = App.getInstance().getResources().getDisplayMetrics();
         Log.e("debug_screen_wsirg", dm.widthPixels + "");
-        return dm.widthPixels;
+        return dm.widthPixels-dp2px(this,28);
     }
 }
