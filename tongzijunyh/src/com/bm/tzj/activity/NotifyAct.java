@@ -90,29 +90,34 @@ public class NotifyAct extends BaseActivity {
                             public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
                                 int width = bitmap.getWidth();
                                 int height = bitmap.getHeight();
-                                tag.imageView.getOptions().setResize(new Resize(getScreenWidth(), getImgDisplanHeight(width, height), Resize.Mode.EXACTLY_SAME));
+                                tag.imageView.setMinimumWidth(getScreenWidth());
+                                tag.imageView.setMinimumHeight(getImgDisplanHeight(width, height));
+//                                tag.imageView.getOptions().setResize(new Resize(getScreenWidth(), getImgDisplanHeight(width, height), Resize.Mode.EXACTLY_SAME));
 //                                tag.img_tu.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
+                                tag.imageView.setImageBitmap(bitmap);
                             }
                         });
 
-                //获取图片显示在ImageView后的宽高
-                Glide.with(context)
-                        .load(data.getTitleMultiUrl())
-                        .asBitmap()//强制Glide返回一个Bitmap对象
-                        .listener(new RequestListener<String, Bitmap>() {
-                            @Override
-                            public boolean onException(Exception e, String model, Target<Bitmap> target, boolean isFirstResource) {
-                                return false;
-                            }
-
-                            @Override
-                            public boolean onResourceReady(Bitmap bitmap, String model, Target<Bitmap> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                                int width = bitmap.getWidth();
-                                int height = bitmap.getHeight();
-//                                tag.img_tu.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
-                                return false;
-                            }
-                        }).into(tag.imageView);
+//                //获取图片显示在ImageView后的宽高
+//                Glide.with(context)
+//                        .load(data.getTitleMultiUrl())
+//                        .asBitmap()//强制Glide返回一个Bitmap对象
+//                        .listener(new RequestListener<String, Bitmap>() {
+//                            @Override
+//                            public boolean onException(Exception e, String model, Target<Bitmap> target, boolean isFirstResource) {
+//                                return false;
+//                            }
+//
+//                            @Override
+//                            public boolean onResourceReady(Bitmap bitmap, String model, Target<Bitmap> target, boolean isFromMemoryCache, boolean isFirstResource) {
+//                                int width = bitmap.getWidth();
+//                                int height = bitmap.getHeight();
+//                                tag.imageView.setMinimumWidth(getScreenWidth());
+//                                tag.imageView.setMinimumHeight(getImgDisplanHeight(width, height));
+//                                //tag.imageView.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
+//                                return false;
+//                            }
+//                        }).into(tag.imageView);
 
 
 //                Glide.with(context)
@@ -231,7 +236,7 @@ public class NotifyAct extends BaseActivity {
 
     //获取图片应该显示的高度
     private  int getImgDisplanHeight(int imgWidth, int imgHeight) {
-        float screenHeight = getScreenWidth()/imgWidth*imgHeight;
+        float screenHeight = (float)getScreenWidth()/imgWidth*imgHeight;
         return (int) screenHeight;
     }
     private int dp2px(Context context, int dpValue){

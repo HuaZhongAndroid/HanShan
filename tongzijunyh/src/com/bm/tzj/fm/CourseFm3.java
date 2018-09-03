@@ -250,17 +250,17 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
         Log.e("screenHeight", "screenHeight = " + screenHeight);
         Log.e("bannerHeight", "bannerHeight = " + bannerHeight);
         bannerView = (BGABanner) v.findViewById(R.id.bannerView);
-        if (bannerHeight != 0) {
-            //bannerView.setMinimumHeight(bannerHeight);
-            bannerView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, bannerHeight));
-        }
+//        if (bannerHeight != 0) {
+//            //bannerView.setMinimumHeight(bannerHeight);
+//            bannerView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, bannerHeight));
+//        }
         bannerView.setAdapter(new BGABanner.Adapter<ImageView, Advertisement>() {
             @Override
             public void fillBannerItem(BGABanner banner, ImageView itemView, Advertisement model, int position) {
                 itemView.setScaleType(ImageView.ScaleType.FIT_XY);
                 Glide.with(getActivity())
                         .load(model.titleMultiUrl)
-//                        .placeholder(R.drawable.adv_default)
+                        .placeholder(R.drawable.adv_default)
 //                        .error(R.drawable.adv_default)
                         .dontAnimate()
                         .into(itemView);

@@ -121,34 +121,42 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
                             public void onResourceReady(Bitmap bitmap, GlideAnimation<? super Bitmap> glideAnimation) {
                                 int width = bitmap.getWidth();
                                 int height = bitmap.getHeight();
-                                tag.img_tu.getOptions().setResize(new Resize(getScreenWidth(), getImgDisplanHeight(width, height), Resize.Mode.EXACTLY_SAME));
+                                Log.d("Bitmap", "width " + width); //200px
+                                Log.d("Bitmap", "height " + height); //200px
+                                tag.img_tu.setMinimumWidth(getScreenWidth());
+                                tag.img_tu.setMinimumHeight(getImgDisplanHeight(width, height));
+                               // tag.img_tu.getOptions().setResize(new Resize(getScreenWidth(), getImgDisplanHeight(width, height), Resize.Mode.ASPECT_RATIO_SAME));
 //                                tag.img_tu.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
-                                Log.e("img", "width " + width); //200px
-                                Log.e("img", "height " + height); //200px
+                                Log.d("img_tu", "width " + tag.img_tu.getWidth()); //200px
+                                Log.d("img_tu", "height " + tag.img_tu.getHeight()); //200px
+                                tag.img_tu.setImageBitmap(bitmap);
+
+
+
                             }
                         });
 
-                //获取图片显示在ImageView后的宽高
-                Glide.with(getActivity())
-                        .load(data.getTitleMultiUrl())
-                        .asBitmap()//强制Glide返回一个Bitmap对象
-                        .listener(new RequestListener<String, Bitmap>() {
-                            @Override
-                            public boolean onException(Exception e, String model, Target<Bitmap> target, boolean isFirstResource) {
-                                Log.d("img", "onException " + e.toString());
-                                return false;
-                            }
-
-                            @Override
-                            public boolean onResourceReady(Bitmap bitmap, String model, Target<Bitmap> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                                int width = bitmap.getWidth();
-                                int height = bitmap.getHeight();
+//                //获取图片显示在ImageView后的宽高
+//                Glide.with(getActivity())
+//                        .load(data.getTitleMultiUrl())
+//                        .asBitmap()//强制Glide返回一个Bitmap对象
+//                        .listener(new RequestListener<String, Bitmap>() {
+//                            @Override
+//                            public boolean onException(Exception e, String model, Target<Bitmap> target, boolean isFirstResource) {
+//                                Log.d("img", "onException " + e.toString());
+//                                return false;
+//                            }
+//
+//                            @Override
+//                            public boolean onResourceReady(Bitmap bitmap, String model, Target<Bitmap> target, boolean isFromMemoryCache, boolean isFirstResource) {
+//                                int width = bitmap.getWidth();
+//                                int height = bitmap.getHeight();
 //                                tag.img_tu.getOptions().setResize(new Resize(width, height, Resize.Mode.EXACTLY_SAME));
-                                Log.d("img", "width2 " + width); //400px
-                                Log.d("img", "height2 " + height); //400px
-                                return false;
-                            }
-                        }).into(tag.img_tu);
+//                                Log.d("img", "width2 " + width); //400px
+//                                Log.d("img", "height2 " + height); //400px
+//                                return false;
+//                            }
+//                        }).into(tag.img_tu);
 //                Glide.with(getActivity())
 //                        .load(data.getTitleMultiUrl())
 //                        .placeholder(R.drawable.adv_default)
@@ -403,7 +411,7 @@ public class XiaoxiFm extends Fragment implements View.OnClickListener
 
     //获取图片应该显示的高度
     private  int getImgDisplanHeight(int imgWidth, int imgHeight) {
-        float screenHeight = getScreenWidth()/imgWidth*imgHeight;
+        float screenHeight = (float)getScreenWidth()/imgWidth*imgHeight;
         return (int) screenHeight;
     }
 

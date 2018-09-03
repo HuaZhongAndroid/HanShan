@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import com.bm.entity.Order;
 import com.bm.share.ShareModel;
@@ -25,9 +26,18 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
     public final static String Titele = "titele";
     public final static String WebUrl = "WebUrl";
 
+    public final static String ShareTitele = "ShareTitele";
+    public final static String ShareContent = "ShareContent";
+    public final static String ShareIcon = "ShareIcon";
+
     private String url;
     private WebView web_view;
     private String title;
+
+
+    private String shareTitele;
+    private String shareContent;
+    private String shareIcon;
 
 //    1、周末：http://59.110.62.10:8888/tongZiJun/app/specialColumn.html?specialColumnid=专栏id&share=1&urlType=0
 //            （share  1，分享 0
@@ -43,6 +53,9 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
         url = intent.getStringExtra(WebUrl);
         Log.e("WebUrl", url);
         title = intent.getStringExtra(Titele);
+        shareTitele = intent.getStringExtra(ShareTitele);
+        shareContent = intent.getStringExtra(ShareContent);
+        shareIcon = intent.getStringExtra(ShareIcon);
         setTitleName(title);
         initView();
     }
@@ -50,10 +63,11 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
     String goodsTime;//上课时间
     String goodsName;
     String goodsType; //课程内型
+
     @Override
     protected void onCreateOrderSuccess(Order order) {
         Intent intent = new Intent(context, PayInfoAc3.class);
-        order.realName  = xz_child.realName;
+        order.realName = xz_child.realName;
         order.goodsType = goodsType;
         order.goodsTime = goodsTime;
         order.goodsName = goodsName;
@@ -83,19 +97,19 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_right_share_left:
-                String shardUrl = url.replace("share=1", "share=0");
-                //shardUrl = shardUrl.replace("urlType=0","share=1");
-                ShareModel model = new ShareModel();
-                model.conent = url;
-                model.title = title;
-                model.targetUrl = shardUrl;
-                share.shareInfo(model, 0);
-                break;
-
-            default:
-                break;
+        //分享
+        if (ib_right == v) {
+            String shardUrl = url.replace("urlType=0", "urlType=1");
+            ShareModel model = new ShareModel();
+            model.conent = shareContent;
+            model.title = shareTitele;
+            model.urlImg = shareIcon;
+            model.targetUrl = shardUrl;
+            if (model.title == null || model.conent == null || model.urlImg == null) {
+                Toast.makeText(this, "分享内容缺失,暂时无法分享", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            share.shareInfo(model);
         }
     }
 
@@ -120,8 +134,8 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             // 判断url链接中是否含有某个字段，如果有就执行指定的跳转（不执行跳转url链接），如果没有就加载url链接
             Log.e("Loading", url);
-            if (url.contains("tzj://enroll?")){
-                if (!isLogin())return true;
+            if (url.contains("tzj://enroll?")) {
+                if (!isLogin()) return true;
                 Map<String, String> map = getMap(url);
                 if (map != null) {
                     goodsId = map.get("goodsId");
@@ -134,14 +148,14 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
-                    type = 10+"";
+                    type = 10 + "";
                     showPopupWindow(web_view);
                 }
                 return true;
-            }else if (url.contains("tzj://originImg?url=")){
-                String imgUrl  = url.replace("tzj://originImg?url=","");
+            } else if (url.contains("tzj://originImg?url=")) {
+                String imgUrl = url.replace("tzj://originImg?url=", "");
                 //查看调用Android图片
-                Log.e("imgUrl " ,imgUrl);
+                Log.e("imgUrl ", imgUrl);
                 Intent intent = new Intent(context,
                         ImageViewActivity.class);
                 Bundle bundle = new Bundle();
@@ -150,29 +164,37 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
                 intent.putExtras(bundle);
                 context.startActivity(intent);
                 return true;
-            }else if(url.startsWith("http://") || url.startsWith("https://")){
+            } else if (url.startsWith("http://") || url.startsWith("https://")) {
+                //如果是跳转到课程的url  抓取包含&shareTitle=测试&shareConent=测试内容&shareImg=测试图 的连接 截取分享所要的信息
+                if (url.contains("shareTitle") && url.contains("shareConent") && url.contains("shareImg")) {
+                    try {
+                        Map<String, String> map = getMap(url);
+                        shareTitele = URLDecoder.decode(map.get("shareTitle"), "utf-8");
+                        shareContent = URLDecoder.decode(map.get("shareConent"), "utf-8");
+                        shareIcon = URLDecoder.decode(map.get("shareImg"), "utf-8");
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                }
                 return false;
             }
             return true;
         }
     }
+
     //tzj://originImg?url=[图片]http://192.168.1.102:8888/img//goods/base/90923e29-91fa-4d88-9c9c-3c5074c6081d.jpg
     private Map<String, String> getMap(String str) {
-        if (str.contains("tzj://enroll?")) {
-            Map<String, String> map = new HashMap<>();
-            str = str.substring(str.indexOf("?") + 1, str.length());
-            String split[] = str.split("&");
-            for (int i = 0; i < split.length; i++) {
-                String sp[] = split[i].split("=");
-                if (sp.length != 2) continue;
-                Log.e(sp[0], sp[0] + " = " + sp[1]);
-                map.put(sp[0], sp[1]);
-            }
-            return map;
+        Map<String, String> map = new HashMap<>();
+        str = str.substring(str.indexOf("?") + 1, str.length());
+        String split[] = str.split("&");
+        for (int i = 0; i < split.length; i++) {
+            String sp[] = split[i].split("=");
+            if (sp.length != 2) continue;
+            Log.e(sp[0], sp[0] + " = " + sp[1]);
+            map.put(sp[0].trim(), sp[1].trim());
         }
-        return null;
+        return map;
     }
-
 
 
 }

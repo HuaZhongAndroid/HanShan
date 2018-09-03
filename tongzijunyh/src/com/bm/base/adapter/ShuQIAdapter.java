@@ -70,6 +70,11 @@ public class ShuQIAdapter extends ArrayAdapter<CourseBean> {
                         "goodsId=%s&share=%s&urlType=%s";
                 i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.goodsId,0,0));
                 i.putExtra(CourseWebActivity.Titele,data.goodsName);
+
+                i.putExtra(CourseWebActivity.ShareTitele,"「喊山亲子」"+data.goodsName);
+                i.putExtra(CourseWebActivity.ShareContent,data.goodsTime+" "+data.address);
+                i.putExtra(CourseWebActivity.ShareIcon,data.titleMultiUrl);
+
                 context.startActivity(i);
                 //http://59.110.62.10:8888/tongZiJun/app/outdoors_details.html?goodsId=3319&urlType=0&shares=1
 //                Intent i = new Intent(context, LuyingDetailAc.class);

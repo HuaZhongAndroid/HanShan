@@ -10,7 +10,8 @@ package com.bm.api;
 public class BaseApi {
 
     //	public static final String API_HOST = "http://v250.tzj.softlst.com:8888";//正式服务器
-    public static final String API_HOST = "http://59.110.62.10:8888";//测试服务器
+   // public static final String API_HOST = "http://59.110.62.10:8888";//测试服务器
+    public static final String API_HOST = "http://www.softlst.com:8888";//测试服务器
 //	public static final String API_HOST = "http://192.168.0.105:8888";//文强服务器
 //	public static final String API_HOST = "http://192.168.0.107:8888";//阳阳
 

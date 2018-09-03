@@ -62,9 +62,10 @@ abstract public class AbsCoursePayBaseAc extends BaseActivity {
      */
     protected void showPopupWindow(View view) {
         if (!isLogin())return;
-        if(childList.size()==0) {
+        if(childList.size()==1) {
             //跳转到添加孩子
             context.startActivity(new Intent(context, AddChildAc.class));
+            return;
         }
 
         int[] location = new int[2];

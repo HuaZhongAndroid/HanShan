@@ -100,10 +100,12 @@ public class ZhouMoAdapter extends ArrayAdapter<CourseBean> {
                         "specialColumnid=%s&share=%s&urlType=%s";
                 i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.pkid,0,0));
                 i.putExtra(CourseWebActivity.Titele,data.title);
+                i.putExtra(CourseWebActivity.ShareTitele,"「喊山亲子」精选专栏："+data.title);
+                i.putExtra(CourseWebActivity.ShareContent,data.subtitle);
+                i.putExtra(CourseWebActivity.ShareIcon,data.cover);
                 context.startActivity(i);
             }
         });
-
         return convertView;
     }
 
