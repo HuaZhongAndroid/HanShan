@@ -213,7 +213,16 @@ public class NaotengAc extends AbsCoursePayBaseAc implements AppBarLayout.OnOffs
                     }
                 });
             }
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                    Intent intent = new Intent(context, BaseGoodsDetailAc.class);
+                    intent.putExtra("goodsId", data.goodsId);
+                    intent.putExtra("goodsName", data.goodsName);
+                    startActivity(intent);
+                }
+            });
             return convertView;
         }
     };
@@ -253,16 +262,24 @@ public class NaotengAc extends AbsCoursePayBaseAc implements AppBarLayout.OnOffs
             tv_des.setText("内含"+bao.courseNum+"节课程");
             tv_price.setText("￥"+bao.money);
 
-//            convertView.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
+            convertView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+
+                    Intent intent = new Intent(context, BaseGoodsDetailAc.class);
+                    intent.putExtra("goodsId", bao.pkid);
+                    intent.putExtra("goodsName", bao.name);
+                    startActivity(intent);
 //                    Intent intent = new Intent(context, CoursebaoAc.class);
 //                    bao.storeId = storelist.storeId;
 //                    bao.storeName = storelist.storeName;
 //                    intent.putExtra("data",bao);
 //                    startActivity(intent);
-//                }
-//            });
+
+
+                }
+            });
 
             return convertView;
         }

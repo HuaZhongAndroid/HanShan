@@ -13,6 +13,7 @@ import com.bm.app.App;
 import com.bm.base.BaseAd;
 import com.bm.entity.Course;
 import com.bm.entity.HotGoods;
+import com.bm.tzj.activity.BaseGoodsDetailAc;
 import com.bm.tzj.activity.CourseWebActivity;
 import com.bm.tzj.activity.LeyuanStoreAc;
 import com.bm.tzj.activity.NaotengAc;
@@ -201,46 +202,48 @@ public class MyCourseAdapter  extends BaseAd<Course>{
 				Course course = mList.get(position);
 				if ("1".equals(course.goodsType)){
 					App.toast("1闹腾");
-//					Intent i = new Intent(context, NaotengAc.class);
-//					i.putExtra("storelist",data);
-//					context.startActivity(i);
+					Intent i = new Intent(context, BaseGoodsDetailAc.class);
+					i.putExtra("goodsId", course.goodsId);
+					i.putExtra("goodsName", course.goodsName);
+					context.startActivity(i);
 				}else if ("2".equals(course.goodsType)){
 					App.toast("2乐园");
-//					Intent  i = new Intent(context, LeyuanStoreAc.class);
-//					i.putExtra("data",data);
-//					context.startActivity(i);
+					Intent intent = new Intent(context, BaseGoodsDetailAc.class);
+					intent.putExtra("goodsId", course.goodsId);
+					intent.putExtra("goodsName", course.goodsName);
+					context.startActivity(intent);
+
 				}else if ("3".equals(course.goodsType)){
 					App.toast("3周末");
-//					Intent i = new Intent(context, CourseWebActivity.class);
-//					//（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
-//					String url = BaseApi.API_HOST+"/tongZiJun/app/specialColumn.html?" +
-//							"specialColumnid=%s&share=%s&urlType=%s";
-//					i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.pkid,0,0));
-//					i.putExtra(CourseWebActivity.Titele,data.title);
-//					i.putExtra(CourseWebActivity.ShareTitele,"「喊山亲子」精选专栏："+data.title);
-//					i.putExtra(CourseWebActivity.ShareContent,data.subtitle);
-//					i.putExtra(CourseWebActivity.ShareIcon,data.cover);
-//					context.startActivity(i);
+					Intent i = new Intent(context, CourseWebActivity.class);
+					//（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
+					String url = BaseApi.API_HOST+"/tongZiJun/app/specialColumn.html?" +
+							"specialColumnid=%s&share=%s&urlType=%s";
+					i.putExtra(CourseWebActivity.WebUrl,String.format(url,course.goodsId,0,0));
+					i.putExtra(CourseWebActivity.Titele,course.goodsName);
+					i.putExtra(CourseWebActivity.ShareTitele,"「喊山亲子」精选专栏："+course.goodsName);
+					i.putExtra(CourseWebActivity.ShareContent,course.name);
+					i.putExtra(CourseWebActivity.ShareIcon,course.titleMultiUrl);
+					context.startActivity(i);
 				}else if ("4".equals(course.goodsType)){
 					App.toast("4大露营");
-//					Intent i = new Intent(context, CourseWebActivity.class);
-//					//（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
-//					String url = BaseApi.API_HOST+"/tongZiJun/app/outdoors_details.html?" +
-//							"goodsId=%s&share=%s&urlType=%s";
-//					i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.goodsId,0,0));
-//					i.putExtra(CourseWebActivity.Titele,data.goodsName);
-//
-//					i.putExtra(CourseWebActivity.ShareTitele,"「喊山亲子」"+data.goodsName);
-//					i.putExtra(CourseWebActivity.ShareContent,data.goodsTime+" "+data.address);
-//					i.putExtra(CourseWebActivity.ShareIcon,data.titleMultiUrl);
-//
-//					context.startActivity(i);
+					Intent i = new Intent(context, CourseWebActivity.class);
+					//（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
+					String url = BaseApi.API_HOST+"/tongZiJun/app/outdoors_details.html?" +
+							"goodsId=%s&share=%s&urlType=%s";
+					i.putExtra(CourseWebActivity.WebUrl,String.format(url,course.goodsId,0,0));
+					i.putExtra(CourseWebActivity.Titele,course.goodsName);
+
+					i.putExtra(CourseWebActivity.ShareTitele,"「喊山亲子」"+course.goodsName);
+					i.putExtra(CourseWebActivity.ShareContent,course.goodsTime+" "+course.address);
+					i.putExtra(CourseWebActivity.ShareIcon,course.titleMultiUrl);
+					context.startActivity(i);
 				}
-				Intent intent = new Intent(context,MyCourseDetailAc.class);
-				intent.putExtra("degree", course.goodsType);
-				intent.putExtra("goodsId", course.goodsId);
-				intent.putExtra("pageTag", "2");
-				context.startActivity(intent);
+//				Intent intent = new Intent(context,MyCourseDetailAc.class);
+//				intent.putExtra("degree", course.goodsType);
+//				intent.putExtra("goodsId", course.goodsId);
+//				intent.putExtra("pageTag", "2");
+//				context.startActivity(intent);
 			}
 		});
 		
