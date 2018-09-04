@@ -8,10 +8,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import com.bm.api.BaseApi;
 import com.bm.app.App;
 import com.bm.base.BaseAd;
 import com.bm.entity.Course;
 import com.bm.entity.HotGoods;
+import com.bm.tzj.activity.CourseWebActivity;
+import com.bm.tzj.activity.LeyuanStoreAc;
+import com.bm.tzj.activity.NaotengAc;
 import com.bm.tzj.mine.MyCourseDetailAc;
 import com.bm.util.Util;
 import com.lib.widget.RoundImageViewFive;
@@ -190,17 +194,55 @@ public class MyCourseAdapter  extends BaseAd<Course>{
 //		/**
 //		 * 跳转详情
 //		 */
-//		convertView.setOnClickListener(new OnClickListener() {
+		convertView.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Course course = mList.get(position);
+				if ("1".equals(course.goodsType)){
+					App.toast("1闹腾");
+//					Intent i = new Intent(context, NaotengAc.class);
+//					i.putExtra("storelist",data);
+//					context.startActivity(i);
+				}else if ("2".equals(course.goodsType)){
+					App.toast("2乐园");
+//					Intent  i = new Intent(context, LeyuanStoreAc.class);
+//					i.putExtra("data",data);
+//					context.startActivity(i);
+				}else if ("3".equals(course.goodsType)){
+					App.toast("3周末");
+//					Intent i = new Intent(context, CourseWebActivity.class);
+//					//（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
+//					String url = BaseApi.API_HOST+"/tongZiJun/app/specialColumn.html?" +
+//							"specialColumnid=%s&share=%s&urlType=%s";
+//					i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.pkid,0,0));
+//					i.putExtra(CourseWebActivity.Titele,data.title);
+//					i.putExtra(CourseWebActivity.ShareTitele,"「喊山亲子」精选专栏："+data.title);
+//					i.putExtra(CourseWebActivity.ShareContent,data.subtitle);
+//					i.putExtra(CourseWebActivity.ShareIcon,data.cover);
+//					context.startActivity(i);
+				}else if ("4".equals(course.goodsType)){
+					App.toast("4大露营");
+//					Intent i = new Intent(context, CourseWebActivity.class);
+//					//（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
+//					String url = BaseApi.API_HOST+"/tongZiJun/app/outdoors_details.html?" +
+//							"goodsId=%s&share=%s&urlType=%s";
+//					i.putExtra(CourseWebActivity.WebUrl,String.format(url,data.goodsId,0,0));
+//					i.putExtra(CourseWebActivity.Titele,data.goodsName);
 //
-//			@Override
-//			public void onClick(View arg0) {
-//				Intent intent = new Intent(context,MyCourseDetailAc.class);
-//				intent.putExtra("degree", mList.get(position).goodsType);
-//				intent.putExtra("goodsId", mList.get(position).goodsId);
-//				intent.putExtra("pageTag", "2");
-//				context.startActivity(intent);
-//			}
-//		});
+//					i.putExtra(CourseWebActivity.ShareTitele,"「喊山亲子」"+data.goodsName);
+//					i.putExtra(CourseWebActivity.ShareContent,data.goodsTime+" "+data.address);
+//					i.putExtra(CourseWebActivity.ShareIcon,data.titleMultiUrl);
+//
+//					context.startActivity(i);
+				}
+				Intent intent = new Intent(context,MyCourseDetailAc.class);
+				intent.putExtra("degree", course.goodsType);
+				intent.putExtra("goodsId", course.goodsId);
+				intent.putExtra("pageTag", "2");
+				context.startActivity(intent);
+			}
+		});
 		
 		itemView.tv_mycourse_del.setOnClickListener(new OnClickListener() {
 			

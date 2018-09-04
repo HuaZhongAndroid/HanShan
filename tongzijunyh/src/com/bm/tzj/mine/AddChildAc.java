@@ -4,12 +4,14 @@ import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.DatePicker;
@@ -19,7 +21,11 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bigkoo.pickerview.builder.TimePickerBuilder;
+import com.bigkoo.pickerview.listener.OnTimeSelectListener;
+import com.bigkoo.pickerview.view.TimePickerView;
 import com.bm.api.BaseApi;
 import com.bm.app.App;
 import com.bm.base.BaseCaptureActivity;
@@ -35,6 +41,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.richer.tzj.R;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -105,10 +112,10 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 					}
 				}).autoHide();
 
-		c = Calendar.getInstance();
-		_year = c.get(Calendar.YEAR)-1;
-		_month = c.get(Calendar.MONTH);
-		_day = c.get(Calendar.DAY_OF_MONTH);
+//		c = Calendar.getInstance();
+//		_year = c.get(Calendar.YEAR)-1;
+//		_month = c.get(Calendar.MONTH);
+//		_day = c.get(Calendar.DAY_OF_MONTH);
 		//setDate();
 		rg_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
 		{
@@ -245,8 +252,9 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 									@Override
 									public void run() {
 										hideProgressDialog();
-										finish();
 										App.toast("孩子添加成功");
+										setResult(RESULT_OK);
+										finish();
 									}});
 							}
 							@Override
@@ -264,6 +272,7 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 					else
 					{
 						hideProgressDialog();
+						setResult(RESULT_OK);
 						finish();
 						App.toast("孩子添加成功");
 					}
@@ -281,7 +290,7 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.ll_birthday:
-			Dialog dialog = onCreateDialog();
+			TimePickerView dialog = initTimePicker();
 			dialog.show();
 			break;
 //		case R.id.ll_babySex:
@@ -298,28 +307,62 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 		}
 	}
 
-	/**
-	 * 时间控件
-	 * 
-	 * @return
-	 */
-	// 时间控件
+//	/**
+//	 * 时间控件
+//	 *
+//	 * @return
+//	 */
+//	// 时间控件
+//
+//	private DatePickerDialog datePicker;
+//
+//	private Calendar c;
+//	private int _year, _month, _day;
+//	private String times;
+//
+//	private Dialog onCreateDialog() {
+//		DatePickerDialog d =  new DatePickerDialog(this, new OnDateSetListener() {
+//			@Override
+//			public void onDateSet(DatePicker view, int year, int monthOfYear,
+//					int dayOfMonth) {
+//				_year = year;
+//				_month = monthOfYear;
+//				_day = dayOfMonth;
+//				times = _year + "-" + (_month + 1) + "-" + _day;
+//
+//				// if(year>)
+//				int day = Util.comparisonTime(times,
+//						Util.getCurrentDateString());
+//				if (day < 0) {
+//					dialogToast("出生日期不能是未来时间");
+//					tv_birthday.setText(Util.getCurrentDateString());
+//					return;
+//				}
+//				tv_birthday.setText(Util.setDate(times));
+//				tv_save.setEnabled(true);
+//			}
+//		}, _year, _month, _day);
+//
+//		d.getDatePicker().setMaxDate(new Date().getTime());
+////		d.getDatePicker().setMinDate(minDate);
+//
+//		return d;
+//	}
 
-	private DatePickerDialog datePicker;
+	@Override
+	protected void onPhotoListTaked(List<String> photoPath) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	private Calendar c;
-	private int _year, _month, _day;
-	private String times;
+	private TimePickerView initTimePicker()  {//Dialog 模式下，在底部弹出
 
-	private Dialog onCreateDialog() {
-		DatePickerDialog d =  new DatePickerDialog(this, new OnDateSetListener() {
+		TimePickerView pvTime = new TimePickerBuilder(this, new OnTimeSelectListener() {
 			@Override
-			public void onDateSet(DatePicker view, int year, int monthOfYear,
-					int dayOfMonth) {
-				_year = year;
-				_month = monthOfYear;
-				_day = dayOfMonth;
-				times = _year + "-" + (_month + 1) + "-" + _day;
+			public void onTimeSelect(Date date, View v) {
+				//Toast.makeText(AddChildAc.this, getTime(date), Toast.LENGTH_SHORT).show();
+
+				String times = getTime(date);
 
 				// if(year>)
 				int day = Util.comparisonTime(times,
@@ -329,20 +372,26 @@ public class AddChildAc extends BaseCaptureActivity implements OnClickListener {
 					tv_birthday.setText(Util.getCurrentDateString());
 					return;
 				}
-				tv_birthday.setText(Util.setDate(times));
+				tv_birthday.setText(times);
 				tv_save.setEnabled(true);
 			}
-		}, _year, _month, _day);
+		}).build();
+		try{
+			String dates = tv_birthday.getText().toString();
+			Date date = new SimpleDateFormat("yyyy-MM-dd").parse(dates);
+			Calendar cal=Calendar.getInstance();
+			cal.setTime(date);
+			pvTime.setDate(cal);
+		}catch (Exception e){
 
-		d.getDatePicker().setMaxDate(new Date().getTime());
-//		d.getDatePicker().setMinDate(minDate);
-		
-		return d;
+		}
+
+		return   pvTime;
 	}
 
-	@Override
-	protected void onPhotoListTaked(List<String> photoPath) {
-		// TODO Auto-generated method stub
-		
+	private String getTime(Date date) {//可根据需要自行截取数据显示
+		Log.d("getTime()", "choice date millis: " + date.getTime());
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		return format.format(date);
 	}
 }

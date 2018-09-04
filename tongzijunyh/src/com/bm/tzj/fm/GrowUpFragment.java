@@ -2,11 +2,13 @@ package com.bm.tzj.fm;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -65,7 +67,13 @@ import com.lib.widget.refush.SwipyRefreshLayoutDirection;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.richer.tzj.R;
 
-public class GrowUpFragment extends Fragment implements OnClickListener, AppBarLayout.OnOffsetChangedListener, SwipyRefreshLayout.OnRefreshListener {
+/**
+ * 成长中心
+ */
+public class GrowUpFragment extends Fragment implements OnClickListener,
+        AppBarLayout.OnOffsetChangedListener,
+        SwipyRefreshLayout.OnRefreshListener,
+        MainAc.OnTabActivityResultListener{
 
     private CollapsingToolbarLayout rl_bg;
     private ImageView img_addchild;
@@ -108,6 +116,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
         View messageLayout = inflater
                 .inflate(R.layout.fm_growup2, container, false);
         context = getActivity();
+        MainAc.intance.setOnTabActivityResultListener(this);
         initView(messageLayout);
         return messageLayout;
     }
@@ -329,6 +338,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
     }
 
 
+
+
     class ImgAdapter extends BaseAdapter {
         private List<GrowUpImg> list = new ArrayList<GrowUpImg>();
 
@@ -436,7 +447,9 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
                 if (dataList != null && dataList.size() > 0) {
                     showPopupWindow(img_addchild);
                 } else {
-                    context.startActivity(new Intent(context, AddChildAc.class));
+                    //跳转到添加孩子
+                    Intent intent = new Intent(context, AddChildAc.class);
+                    getActivity().startActivityFromFragment(GrowUpFragment.this,intent,100);
                 }
                 break;
             case R.id.img_pubulish:
@@ -543,7 +556,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
                 if (!MainAc.intance.isLogin())return;
                 if (position == dataList.size() - 1) {
                     //跳转到添加孩子
-                    context.startActivity(new Intent(context, AddChildAc.class));
+                    Intent intent = new Intent(context, AddChildAc.class);
+                    getActivity().startActivityFromFragment(GrowUpFragment.this,intent,100);
                 } else {
                     //更换孩子
                     changeChild(position);
@@ -627,6 +641,35 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
     }
 
 
+    public void  setChildReflush(){
+        HashMap<String, String> map = new HashMap<String, String>();
+        if (null == App.getInstance().getUser()) return;
+        if (null == App.getInstance().getUser()) {
+            map.put("userId", "0");
+        } else {
+            map.put("userId", App.getInstance().getUser().userid);
+
+        }
+        ((BaseFragmentActivity) getActivity()).showProgressDialog();
+        UserManager.getInstance().getChildrenlist(getActivity(), map, new ServiceCallback<CommonListResult<Child>>() {
+            @Override
+            public void done(int what, CommonListResult<Child> obj) {
+                ((BaseFragmentActivity) getActivity()).hideProgressDialog();
+                dataList.clear();
+                dataList.addAll(obj.data);
+                if (dataList.size()>=2)
+                changeChild(dataList.size()-2);
+            }
+
+            @Override
+            public void error(String msg) {
+                ((BaseFragmentActivity) getActivity()).hideProgressDialog();
+                ((BaseFragmentActivity) getActivity()).dialogToast(msg);
+            }
+        });
+
+    }
+
     public void changeChild(int positon) {
         if (dataList != null && dataList.size() > 0) {
             Child child = dataList.get(positon);
@@ -637,4 +680,16 @@ public class GrowUpFragment extends Fragment implements OnClickListener, AppBarL
         }
     }
 
+
+    @Override
+    public void onTabActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode== Activity.RESULT_OK){
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    setChildReflush();
+                }
+            },1000);
+        }
+    }
 }

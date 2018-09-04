@@ -344,7 +344,7 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
                 String content = "您可以前往我的-我的课程查看已购买的课程!";
                 UtilDialog.dialogPrompt(context,
                         content,
-                        "确认支付",
+                        "知道了",
                         "支付成功",
                         handler,404);
 

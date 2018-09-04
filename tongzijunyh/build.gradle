@@ -97,7 +97,8 @@ dependencies {
     //腾讯bugly bug收集器
     compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
     compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
-
+    //仿ios 底部弹出  日期选择
+    compile 'com.contrarywind:Android-PickerView:4.1.6'
     //图片处理
     compile 'me.panpf:sketch:2.6.1'
 }
