@@ -25,6 +25,7 @@ import com.bm.entity.Order;
 import com.bm.tzj.kc.EvaluateShowAc;
 import com.bm.tzj.kc.PayInfoAc;
 import com.bm.tzj.kc.PayInfoAc2;
+import com.bm.tzj.kc.PayInfoAc3;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
 import com.lib.http.result.StringResult;
@@ -170,10 +171,28 @@ public class MyCourseListFrameLayout extends FrameLayout implements
 //			intent.putExtra("degree", list.get(position).goodsType);
 			MyCourseAc.intance.startActivity(intent);
 		} else if (type == 3) {// 去付款
-			intent = new Intent(context, PayInfoAc2.class);
+
+//			Intent intent = new Intent(context, PayInfoAc3.class);
+//			Order orderInfo = new Order();
+//			orderInfo.realName = list.get(position).babyName;
+//			orderInfo.goodsType = list.get(position).goodsType;
+//			orderInfo.goodsTime = list.get(position).goodsTime;
+//			orderInfo.goodsName = list.get(position).goodsName;
+//			intent.putExtra("order", orderInfo);
+//			MyCourseAc.intance.startActivity(intent);
+
+
+			intent = new Intent(context, PayInfoAc3.class);
 			intent.putExtra("pageTag", "MyCourse");
 			intent.putExtra("course", list.get(position));
 			Order orderInfo = new Order();
+			orderInfo.storeId =  list.get(position).storeId+"";
+			orderInfo.storeName =  list.get(position).storeName+"";
+			orderInfo.realName = list.get(position).babyName;
+			orderInfo.goodsType = list.get(position).goodsType;
+			orderInfo.goodsTime = list.get(position).goodsTime;
+			orderInfo.goodsName = list.get(position).goodsName;
+
 			orderInfo.orderId =  list.get(position).orderId+"";
 			orderInfo.goodsMoney = list.get(position).goodsPrice+"";
 			orderInfo.orderNumber = list.get(position).orderNumber;

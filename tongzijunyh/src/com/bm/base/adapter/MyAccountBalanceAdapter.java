@@ -62,8 +62,8 @@ public class MyAccountBalanceAdapter  extends BaseAd<Order>{
 				itemView.tv_accoundTitle.setText("【评价赠送】"+getNullData(entity.integralName));//名称
 			}
 		}
-		
-		if (Integer.parseInt(entity.couponMoney)>0) {
+
+		if (Float.parseFloat(entity.couponMoney)>0) {
 			itemView.tv_word.setVisibility(View.VISIBLE);
 			itemView.tv_couponMoney.setVisibility(View.VISIBLE);
 			itemView.tv_couponMoney.setText("-"+entity.couponMoney);

@@ -201,20 +201,20 @@ public class MyCourseAdapter  extends BaseAd<Course>{
 			public void onClick(View arg0) {
 				Course course = mList.get(position);
 				if ("1".equals(course.goodsType)){
-					App.toast("1闹腾");
+					//App.toast("1闹腾");
 					Intent i = new Intent(context, BaseGoodsDetailAc.class);
 					i.putExtra("goodsId", course.goodsId);
 					i.putExtra("goodsName", course.goodsName);
 					context.startActivity(i);
 				}else if ("2".equals(course.goodsType)){
-					App.toast("2乐园");
+					//App.toast("2乐园");
 					Intent intent = new Intent(context, BaseGoodsDetailAc.class);
 					intent.putExtra("goodsId", course.goodsId);
 					intent.putExtra("goodsName", course.goodsName);
 					context.startActivity(intent);
 
 				}else if ("3".equals(course.goodsType)){
-					App.toast("3周末");
+					//App.toast("3周末");
 					Intent i = new Intent(context, CourseWebActivity.class);
 					//（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
 					String url = BaseApi.API_HOST+"/tongZiJun/app/specialColumn.html?" +
@@ -226,7 +226,7 @@ public class MyCourseAdapter  extends BaseAd<Course>{
 					i.putExtra(CourseWebActivity.ShareIcon,course.titleMultiUrl);
 					context.startActivity(i);
 				}else if ("4".equals(course.goodsType)){
-					App.toast("4大露营");
+					//App.toast("4大露营");
 					Intent i = new Intent(context, CourseWebActivity.class);
 					//（share  1，分享 0不分享  urlType 0代表APP内打开，1代表分享页 ）
 					String url = BaseApi.API_HOST+"/tongZiJun/app/outdoors_details.html?" +

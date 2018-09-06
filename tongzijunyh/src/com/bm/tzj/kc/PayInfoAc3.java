@@ -109,6 +109,15 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
         super.onStart();
         yue = getNullData(App.getInstance().getUser().accountMoney) == "" ? 0 : Double.parseDouble(App.getInstance().getUser().accountMoney);
         tv_balance.setText("￥" + yue);//余额
+        if (ll_balance!=null)
+        if (yue>shifukuan){
+            //如果余额大于当前课程支付金额 则把余额放第一位
+            LinearLayout parentViwe = (LinearLayout) ll_balance.getParent();
+            parentViwe.removeView(ll_balance);
+            parentViwe.addView(ll_balance,0);
+            switchTvsTo(3);
+            //img_balance.setImageResource(R.drawable.btn_pay_selector);
+        }
     }
 
     /**
@@ -243,6 +252,7 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
 //            yue = getNullData(App.getInstance().getUser().rechargeBalance) =="" ?0:Double.parseDouble(App.getInstance().getUser().rechargeBalance);
 //            tv_balance.setText("余额  ￥"+yue);//余额
 //        }
+
     }
 
 
@@ -250,6 +260,7 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
         for (int i = 0; i < tab_tvs.length; i++) {
             tab_tvs[i].setSelected(pos == i);
         }
+        payType = pos+1;
     }
 
     /**
