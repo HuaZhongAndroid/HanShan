@@ -127,7 +127,7 @@ public class PayInfoAc3 extends BaseActivity implements OnClickListener {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("userid", App.getInstance().getUser().userid);
         map.put("goodsType", orders.goodsType);
-        map.put("goodsPrice", orders.goodsPrice);
+        map.put("goodsPrice", orders.goodsMoney);
         AsyncHttpHelp.httpGet(mContext, BaseApi.API_pickCoupon, map, new ServiceCallback<CommonResult<Youhuiquan>>() {
             @Override
             public void done(int what, CommonResult<Youhuiquan> obj) {

@@ -190,6 +190,7 @@ public class MyCourseListFrameLayout extends FrameLayout implements
 			orderInfo.storeName =  list.get(position).storeName+"";
 			orderInfo.realName = list.get(position).babyName;
 			orderInfo.goodsType = list.get(position).goodsType;
+			orderInfo.goodsId = list.get(position).goodsId;
 			orderInfo.goodsTime = list.get(position).goodsTime;
 			orderInfo.goodsName = list.get(position).goodsName;
 

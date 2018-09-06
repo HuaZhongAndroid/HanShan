@@ -62,7 +62,6 @@ public class SendGrowUpAc extends BaseCaptureActivity implements OnClickListener
 
     private List<GrowUpImg> attachmentlist = new ArrayList<GrowUpImg>(); //之前已经上传的图片
     private LinearLayout ll_send_parent;
-    private OSSCallback ossCallback = null;
 
     private GrowUp data;
     private String pkid = "";
@@ -73,6 +72,7 @@ public class SendGrowUpAc extends BaseCaptureActivity implements OnClickListener
 
     private final int IMG_COUNT_MAX = 9;
 
+    private OSSCallback ossCallback = null;
     //OSS的上传下载
     private OssService ossService;
 
