@@ -159,30 +159,33 @@ public class MyYouhuiquanListFrameLayout extends FrameLayout implements
 		if (type == 1) {// 立即领取
 			lijilingqu(list.get(position));
 		} else if (type == 2) {// 立即使用
-			if("-1".equals(list.get(position).goodsType))
-			{
-				intent = new Intent(context, MainAc.class);
-				intent.putExtra("TabSelection", 0);
-				MyYouhuiquanAc.intance.startActivity(intent);
-			}
-			if("1".equals(list.get(position).goodsType))
-			{
-				intent = new Intent(context, CourseListAc.class);
-				intent.putExtra("title", "城市营地");
-				MyYouhuiquanAc.intance.startActivity(intent);
-			}
-			if("2".equals(list.get(position).goodsType))
-			{
-				intent = new Intent(context, CourseListAc.class);
-				intent.putExtra("title", "周末户外");
-				MyYouhuiquanAc.intance.startActivity(intent);
-			}
-			if("3".equals(list.get(position).goodsType))
-			{
-				intent = new Intent(context, CourseListAc.class);
-				intent.putExtra("title", "暑期大露营");
-				MyYouhuiquanAc.intance.startActivity(intent);
-			}
+			intent = new Intent(context, MainAc.class);
+			intent.putExtra("TabSelection", 0);
+			MyYouhuiquanAc.intance.startActivity(intent);
+//			if("-1".equals(list.get(position).goodsType))
+//			{
+//				intent = new Intent(context, MainAc.class);
+//				intent.putExtra("TabSelection", 0);
+//				MyYouhuiquanAc.intance.startActivity(intent);
+//			}
+//			if("1".equals(list.get(position).goodsType))
+//			{
+//				intent = new Intent(context, CourseListAc.class);
+//				intent.putExtra("title", "城市营地");
+//				MyYouhuiquanAc.intance.startActivity(intent);
+//			}
+//			if("2".equals(list.get(position).goodsType))
+//			{
+//				intent = new Intent(context, CourseListAc.class);
+//				intent.putExtra("title", "周末户外");
+//				MyYouhuiquanAc.intance.startActivity(intent);
+//			}
+//			if("3".equals(list.get(position).goodsType))
+//			{
+//				intent = new Intent(context, CourseListAc.class);
+//				intent.putExtra("title", "暑期大露营");
+//				MyYouhuiquanAc.intance.startActivity(intent);
+//			}
 		}
 	}
 	
