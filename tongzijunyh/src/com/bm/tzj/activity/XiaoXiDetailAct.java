@@ -82,6 +82,8 @@ public class XiaoXiDetailAct extends BaseActivity {
     private void handDataShow(CommonResult<XiaoXiDetail> obj) {
         if (!TextUtils.isEmpty(obj.data.getContent())) {
             detailTv.setText(Html.fromHtml(obj.data.getContent()));
+        }else if (!TextUtils.isEmpty(obj.data.getThinContent())) {
+            detailTv.setText(Html.fromHtml(obj.data.getThinContent()));
         }
     }
 
