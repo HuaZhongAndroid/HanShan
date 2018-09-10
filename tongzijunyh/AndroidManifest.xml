@@ -694,7 +694,8 @@
         <!-- meta-data需要写在application中 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="lY4Qi5oeGu4iOtGFyoXidNqI" />
+            android:value="ARry26ZkajziHAc15w7yGT7wriy7ZjxS"/>
+     <!--   android:value="lY4Qi5oeGu4iOtGFyoXidNqI" />-->
 
 
         <!-- 以下是极光推送 -->

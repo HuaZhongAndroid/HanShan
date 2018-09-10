@@ -43,12 +43,15 @@ import com.bm.base.adapter.ChildAdapter;
 import com.bm.dialog.ThreeButtonDialog;
 import com.bm.dialog.UtilDialog;
 import com.bm.entity.Child;
+import com.bm.entity.Course;
 import com.bm.entity.GrowUp;
 import com.bm.entity.GrowUpImg;
 import com.bm.entity.User;
 import com.bm.tzj.activity.ImageViewActivity;
 import com.bm.tzj.activity.MainAc;
 import com.bm.tzj.mine.AddChildAc;
+import com.bm.tzj.mine.AddCommentAc;
+import com.bm.tzj.mine.MyCourseAc;
 import com.bm.tzj.ts.SendGrowUpAc;
 import com.bm.util.GlideUtils;
 import com.bm.util.Util;
@@ -73,7 +76,7 @@ import com.richer.tzj.R;
 public class GrowUpFragment extends Fragment implements OnClickListener,
         AppBarLayout.OnOffsetChangedListener,
         SwipyRefreshLayout.OnRefreshListener,
-        MainAc.OnTabActivityResultListener{
+        MainAc.OnTabActivityResultListener {
 
     private CollapsingToolbarLayout rl_bg;
     private ImageView img_addchild;
@@ -151,7 +154,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
         img_addchild.setOnClickListener(this);
         img_pubulish = (ImageView) view.findViewById(R.id.img_pubulish);
         img_pubulish.setOnClickListener(this);
-        if (user!=null&&user.coverImg != null && user.coverImg.length() > 0)
+        if (user != null && user.coverImg != null && user.coverImg.length() > 0)
             ImageLoader.getInstance().displayImage(user.coverImg, img_bg, App.getInstance().getBgImage());
 //		rl_bg.setBackground(bd);
         tv_name = (TextView) view.findViewById(R.id.tv_name);
@@ -160,14 +163,14 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                     @Override
                     public void onClick(View arg0) {
                         if (MainAc.intance.isLogin())
-                        ((BaseCaptureFragmentActivity) context).takePhoto();
+                            ((BaseCaptureFragmentActivity) context).takePhoto();
                     }
                 }).setThecondButtonText("从相册选择")
                 .setBtn2Listener(new OnClickListener() {
                     @Override
                     public void onClick(View arg0) {
                         if (MainAc.intance.isLogin())
-                        ((BaseCaptureFragmentActivity) context).pickPhoto();
+                            ((BaseCaptureFragmentActivity) context).pickPhoto();
 
                     }
                 }).autoHide();
@@ -191,7 +194,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
     }
 
     private void reflush() {
-        if (App.getInstance().getUser()==null)return;
+        if (App.getInstance().getUser() == null) return;
         page = 1;
         growUpList.clear();
         mainAdapter.notifyDataSetChanged();
@@ -250,7 +253,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                     @Override
                     public void onClick(View v) {
                         if (MainAc.intance.isLogin())
-                        popMenu(v, data);
+                            popMenu(v, data);
                     }
                 });
                 tv_pingjia_tip.setVisibility(View.INVISIBLE);
@@ -264,6 +267,26 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                 btn_menu.setVisibility(View.GONE);
                 v_jiaolian.setVisibility(View.VISIBLE);
                 tv_pingjia_tip.setVisibility(View.VISIBLE);
+                tv_pingjia_tip.setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(context, AddCommentAc.class);
+                        Course course = new Course();
+                        course.babyId = data.babyId;
+                        course.coachId = data.coachId;
+                        course.babyId = data.babyId;
+                        course.goodsId = data.goodsId;
+                        course.goodsName = data.goodsName;
+
+                        course.coachName = data.coachName;
+                        course.storeName = data.storeName;
+                        course.goodsType = data.goodsType;
+                        course.storeId = data.storeId;
+
+                        intent.putExtra("hotGoods", course);
+                        context.startActivity(intent);
+                    }
+                });
             }
 
             if (position == 0) //第一行处理
@@ -293,7 +316,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                 img_a.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (!MainAc.intance.isLogin())return;
+                        if (!MainAc.intance.isLogin()) return;
                         String[] paths = new String[data.attachmentlist.size()];
                         for (int i = 0; i < data.attachmentlist.size(); i++) {
                             paths[i] = data.attachmentlist.get(i).url;
@@ -338,8 +361,6 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
     }
 
 
-
-
     class ImgAdapter extends BaseAdapter {
         private List<GrowUpImg> list = new ArrayList<GrowUpImg>();
 
@@ -375,7 +396,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
             convertView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (!MainAc.intance.isLogin())return;
+                    if (!MainAc.intance.isLogin()) return;
                     String[] paths = new String[list.size()];
                     for (int i = 0; i < list.size(); i++) {
                         paths[i] = list.get(i).url;
@@ -439,21 +460,21 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.rl_bg:
-                if (!MainAc.intance.isLogin())return;
+                if (!MainAc.intance.isLogin()) return;
                 buttonDialog.show();
                 break;
             case R.id.img_addchild:
-                if (!MainAc.intance.isLogin())return;
+                if (!MainAc.intance.isLogin()) return;
                 if (dataList != null && dataList.size() > 0) {
                     showPopupWindow(img_addchild);
                 } else {
                     //跳转到添加孩子
                     Intent intent = new Intent(context, AddChildAc.class);
-                    getActivity().startActivityFromFragment(GrowUpFragment.this,intent,100);
+                    getActivity().startActivityFromFragment(GrowUpFragment.this, intent, 100);
                 }
                 break;
             case R.id.img_pubulish:
-                if (!MainAc.intance.isLogin())return;
+                if (!MainAc.intance.isLogin()) return;
                 Intent intent = new Intent(context, SendGrowUpAc.class);
                 context.startActivity(intent);
                 break;
@@ -553,11 +574,11 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 popupWindow.dismiss();
-                if (!MainAc.intance.isLogin())return;
+                if (!MainAc.intance.isLogin()) return;
                 if (position == dataList.size() - 1) {
                     //跳转到添加孩子
                     Intent intent = new Intent(context, AddChildAc.class);
-                    getActivity().startActivityFromFragment(GrowUpFragment.this,intent,100);
+                    getActivity().startActivityFromFragment(GrowUpFragment.this, intent, 100);
                 } else {
                     //更换孩子
                     changeChild(position);
@@ -641,7 +662,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
     }
 
 
-    public void  setChildReflush(){
+    public void setChildReflush() {
         HashMap<String, String> map = new HashMap<String, String>();
         if (null == App.getInstance().getUser()) return;
         if (null == App.getInstance().getUser()) {
@@ -657,8 +678,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                 ((BaseFragmentActivity) getActivity()).hideProgressDialog();
                 dataList.clear();
                 dataList.addAll(obj.data);
-                if (dataList.size()>=2)
-                changeChild(dataList.size()-2);
+                if (dataList.size() >= 2)
+                    changeChild(dataList.size() - 2);
             }
 
             @Override
@@ -683,13 +704,13 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
 
     @Override
     public void onTabActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode== Activity.RESULT_OK){
+        if (resultCode == Activity.RESULT_OK) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     setChildReflush();
                 }
-            },1000);
+            }, 1000);
         }
     }
 }

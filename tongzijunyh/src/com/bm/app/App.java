@@ -90,7 +90,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         //腾讯的日志收集器  和SDKInitializer 冲突了 错误 build.gradle 中的 ndk 代码
-        CrashReport.initCrashReport(getApplicationContext(), "bc02630693", true);
+        CrashReport.initCrashReport(getApplicationContext(), "d03e0bc48b", true);
         SDKInitializer.initialize(this);
         instance = this;
         super.onCreate();
