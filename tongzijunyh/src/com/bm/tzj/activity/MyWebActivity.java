@@ -20,13 +20,15 @@ public class MyWebActivity extends BaseActivity {
 
     String url = "";
     String userId = "";
+    String Title ="标题";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         contentView(R.layout.webview_layout);
-        setTitleName("收入明细");
         LinearLayout web_ll = findLinearLayoutById(R.id.web_ll);
         url = getIntent().getStringExtra("Url");
+        Title = getIntent().getStringExtra("Title");
+        setTitleName(Title);
         Log.e("WebView","url = "+url);
         AgentWeb agentWeb =   AgentWeb.with(this)//传入Activity
                 .setAgentWebParent(web_ll, new LinearLayout.LayoutParams(-1, -1))//传入AgentWeb 的父控件 ，如果父控件为 RelativeLayout ， 那么第二参数需要传入 RelativeLayout.LayoutParams

@@ -32,6 +32,7 @@ import com.bm.entity.RechargeConfig;
 import com.bm.entity.WeixinOrder;
 import com.bm.pay.alipay.AlipayUtil;
 import com.bm.pay.weixin.PayActivity;
+import com.bm.tzj.activity.MyWebActivity;
 import com.bm.tzj.city.City;
 import com.bm.util.BDLocationHelper;
 import com.google.gson.Gson;
@@ -138,16 +139,30 @@ public class RechargeAc2 extends BaseActivity {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             // 判断url链接中是否含有某个字段，如果有就执行指定的跳转（不执行跳转url链接），如果没有就加载url链接
             Log.e("Loading",url);
-            Map<String,String> map = getMap(url);
-            if (map!=null){
-                String reConId =  map.get("reConId");
-                String payType =  map.get("payType");
-                userId =  map.get("userId");
-                Log.e("reConId","reConId = "+reConId);
-                Log.e("payType","payType = "+payType);
-                getPayInfo(payType,reConId);
-                return true;
+            if (url.contains("tzj://newWebView?")){
+                Map<String,String> map = getMap(url,"tzj://newWebView?");
+                if (map!=null){
+                    String urls =  map.get("url");
+                    webContent.loadUrl(urls);
+                    Intent intent = new Intent(context, MyWebActivity.class);
+                    intent.putExtra("Title", "充值协议");
+                    intent.putExtra("Url", urls);
+                    context.startActivity(intent);
+                    return true;
+                }
+            }else if (url.contains("tzj://recharge?")){
+                Map<String,String> map = getMap(url,"tzj://recharge?");
+                if (map!=null){
+                    String reConId =  map.get("reConId");
+                    String payType =  map.get("payType");
+                    userId =  map.get("userId");
+                    Log.e("reConId","reConId = "+reConId);
+                    Log.e("payType","payType = "+payType);
+                    getPayInfo(payType,reConId);
+                    return true;
+                }
             }
+
             return false;
         }
 //        @Override
@@ -156,8 +171,8 @@ public class RechargeAc2 extends BaseActivity {
 //            return null;
 //        }
     }
-    private Map<String,String> getMap(String str){
-        if (str.contains("tzj://recharge?")) {
+    private Map<String,String> getMap(String str,String tzj){
+        if (str.contains(tzj)) {
             Map<String, String> map = new HashMap<>();
             str = str.substring(str.indexOf("?")+1, str.length());
             String split[] = str.split("&");

@@ -68,9 +68,9 @@ public class MainAc extends BaseCaptureFragmentActivity implements OnClickListen
 
     static final String TAG = MainAc.class.getSimpleName();
 
-    private CourseFm3 indexFm;
-    private XiaoxiFm messageFm;
-    private MineFm mineFm;
+    private CourseFm3 indexFm;  //发现
+    private XiaoxiFm messageFm; //消息
+    private MineFm mineFm; //我的
     private GrowUpFragment growUpFragment;//成长中心重做
 //	private PullulateFm pullulateFm;
 

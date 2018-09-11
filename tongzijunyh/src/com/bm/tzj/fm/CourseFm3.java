@@ -274,6 +274,7 @@ public class CourseFm3 extends BaseFm implements AppBarLayout.OnOffsetChangedLis
                 if (TextUtils.isEmpty(url)) return;
                 if (url.contains("http://") || url.contains("https://")) {
                     Intent intent = new Intent(getContext(), MyWebActivity.class);
+                    intent.putExtra("Title", "收入明细");
                     intent.putExtra("Url", url);
                 } else if (url.contains("tzj://advert?")) {
                     //跳转门店
