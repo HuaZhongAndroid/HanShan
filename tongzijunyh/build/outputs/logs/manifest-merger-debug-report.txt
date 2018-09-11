@@ -1,0 +1,1128 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:2:1-854:12
+INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:2:1-854:12
+INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:2:1-854:12
+MERGED from [:EaseUIT] /Users/mac/Desktop/WorkSpaces/HanShan/EaseUIT/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/f7c5e27d61fa061e2ab73dd4e2c1bbf4/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:multidex:1.0.2] /Users/mac/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/67a2ef6c573b10cd359a71a668eaea7b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.1.0.aar/9d5b32615f86bdc372b93241981da90b/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:transition:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/transition-25.1.0.aar/cf68a41c946be272d5e794b4c35c530c/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-v4-25.1.0.aar/5513601063d5a8e771cc278697f0b6b3/AndroidManifest.xml:17:1-27:12
+MERGED from [:TZJlib] /Users/mac/Desktop/WorkSpaces/HanShan/TZJlib/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-20:12
+MERGED from [com.android.support:recyclerview-v7:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.1.0.aar/c215fcfff72b143d36f418ec887c4498/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.1.0.aar/d78f1ccee62da47b3d5280df80d517d2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.1.0.aar/20f38c815d6ad450047972a843833dcf/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-fragment:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-fragment-25.1.0.aar/a6cff9d91a19f5bde7bcf2bed3d92b60/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.1.0.aar/944b15004f753c5e88610e28c357399f/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/2149cd8a9aee7bcf037938fb99bbe407/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.1.0.aar/464c9c270c8abba2fb445c959d9e4bdf/AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-compat-25.1.0.aar/6cede9b74624099314aa07127e1f7965/AndroidManifest.xml:17:1-27:12
+INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:2:1-854:12
+INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:2:1-854:12
+	package
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:3:5-29
+	android:versionName
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:5:5-30
+		INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:4:5-30
+		INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml
+supports-screens
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:7:5-12:39
+	android:largeScreens
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:9:9-36
+	android:smallScreens
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:12:9-36
+	android:normalScreens
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:10:9-37
+	android:resizeable
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:11:9-34
+	android:anyDensity
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:8:9-34
+uses-sdk
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:14:5-16:41
+INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:14:5-16:41
+INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:14:5-16:41
+MERGED from [:EaseUIT] /Users/mac/Desktop/WorkSpaces/HanShan/EaseUIT/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:EaseUIT] /Users/mac/Desktop/WorkSpaces/HanShan/EaseUIT/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/f7c5e27d61fa061e2ab73dd4e2c1bbf4/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/f7c5e27d61fa061e2ab73dd4e2c1bbf4/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:multidex:1.0.2] /Users/mac/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/67a2ef6c573b10cd359a71a668eaea7b/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] /Users/mac/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/67a2ef6c573b10cd359a71a668eaea7b/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.1.0.aar/9d5b32615f86bdc372b93241981da90b/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.1.0.aar/9d5b32615f86bdc372b93241981da90b/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:transition:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/transition-25.1.0.aar/cf68a41c946be272d5e794b4c35c530c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/transition-25.1.0.aar/cf68a41c946be272d5e794b4c35c530c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-v4-25.1.0.aar/5513601063d5a8e771cc278697f0b6b3/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-v4-25.1.0.aar/5513601063d5a8e771cc278697f0b6b3/AndroidManifest.xml:21:5-23:54
+MERGED from [:TZJlib] /Users/mac/Desktop/WorkSpaces/HanShan/TZJlib/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:TZJlib] /Users/mac/Desktop/WorkSpaces/HanShan/TZJlib/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.1.0.aar/c215fcfff72b143d36f418ec887c4498/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-25.1.0.aar/c215fcfff72b143d36f418ec887c4498/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.1.0.aar/d78f1ccee62da47b3d5280df80d517d2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.1.0.aar/d78f1ccee62da47b3d5280df80d517d2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.1.0.aar/20f38c815d6ad450047972a843833dcf/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.1.0.aar/20f38c815d6ad450047972a843833dcf/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-fragment:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-fragment-25.1.0.aar/a6cff9d91a19f5bde7bcf2bed3d92b60/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-fragment-25.1.0.aar/a6cff9d91a19f5bde7bcf2bed3d92b60/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.1.0.aar/944b15004f753c5e88610e28c357399f/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.1.0.aar/944b15004f753c5e88610e28c357399f/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/2149cd8a9aee7bcf037938fb99bbe407/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/2149cd8a9aee7bcf037938fb99bbe407/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.1.0.aar/464c9c270c8abba2fb445c959d9e4bdf/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.1.0.aar/464c9c270c8abba2fb445c959d9e4bdf/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-compat-25.1.0.aar/6cede9b74624099314aa07127e1f7965/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-compat-25.1.0.aar/6cede9b74624099314aa07127e1f7965/AndroidManifest.xml:21:5-23:58
+INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:14:5-16:41
+INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:14:5-16:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/f7c5e27d61fa061e2ab73dd4e2c1bbf4/AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:16:9-38
+		INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:15:9-35
+		INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml
+		INJECTED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml
+permission#com.richer.tzj.permission.JPUSH_MESSAGE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:19:5-21:47
+	android:protectionLevel
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:21:9-44
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:20:9-63
+uses-permission#com.richer.tzj.permission.JPUSH_MESSAGE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:23:22-76
+uses-permission#android.permission.RECEIVE_USER_PRESENT
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:24:22-76
+uses-permission#android.permission.INTERNET
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:25:5-67
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:25:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:26:5-68
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:26:22-65
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:27:5-75
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:27:22-72
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:28:5-81
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:28:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:29:5-80
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:29:22-77
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:30:5-73
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:30:22-70
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:31:5-66
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:31:22-63
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:32:5-84
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:32:22-81
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:33:5-79
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:33:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:34:5-76
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:34:22-73
+uses-permission#android.permission.GET_TASKS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:40:5-68
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:40:22-65
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:43:5-72
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:43:22-69
+uses-permission#android.permission.CALL_PHONE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:44:5-69
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:44:22-66
+uses-permission#android.permission.READ_SMS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:45:5-67
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:45:22-64
+uses-permission#android.permission.SEND_SMS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:46:5-67
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:46:22-64
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:48:5-49:23
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:48:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:51:5-52:23
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:51:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:54:5-55:23
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:54:22-73
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:63:5-71
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:63:22-68
+uses-permission#android.permission.CAMERA
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:64:5-65
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:64:22-62
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:66:5-80
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:66:22-77
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:67:5-81
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:67:22-78
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:68:5-71
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:68:22-68
+uses-permission#android.permission.USE_CREDENTIALS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:69:5-74
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:69:22-71
+uses-permission#android.permission.MANAGE_ACCOUNTS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:70:5-74
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:70:22-71
+uses-permission#android.permission.AUTHENTICATE_ACCOUNTS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:71:5-80
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:71:22-77
+uses-permission#com.android.launcher.permission.READ_SETTINGS
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:72:5-85
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:72:22-82
+uses-permission#android.permission.BROADCAST_STICKY
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:73:5-75
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:73:22-72
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:75:5-82
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:75:22-79
+permission#com.richer.tzj.permission.C2D_MESSAGE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:77:5-79:47
+	android:protectionLevel
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:79:9-44
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:78:9-61
+uses-permission#com.richer.tzj.permission.C2D_MESSAGE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:81:5-77
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:81:22-74
+application
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:84:5-852:19
+MERGED from [com.android.support:design:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/f7c5e27d61fa061e2ab73dd4e2c1bbf4/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:design:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/design-25.1.0.aar/f7c5e27d61fa061e2ab73dd4e2c1bbf4/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.1.0.aar/9d5b32615f86bdc372b93241981da90b/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/appcompat-v7-25.1.0.aar/9d5b32615f86bdc372b93241981da90b/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:transition:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/transition-25.1.0.aar/cf68a41c946be272d5e794b4c35c530c/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:transition:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/transition-25.1.0.aar/cf68a41c946be272d5e794b4c35c530c/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-v4-25.1.0.aar/5513601063d5a8e771cc278697f0b6b3/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-v4-25.1.0.aar/5513601063d5a8e771cc278697f0b6b3/AndroidManifest.xml:25:5-20
+MERGED from [:TZJlib] /Users/mac/Desktop/WorkSpaces/HanShan/TZJlib/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-18:19
+MERGED from [:TZJlib] /Users/mac/Desktop/WorkSpaces/HanShan/TZJlib/build/intermediates/manifests/full/debug/AndroidManifest.xml:11:5-18:19
+MERGED from [com.android.support:animated-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.1.0.aar/d78f1ccee62da47b3d5280df80d517d2/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-25.1.0.aar/d78f1ccee62da47b3d5280df80d517d2/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.1.0.aar/20f38c815d6ad450047972a843833dcf/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-25.1.0.aar/20f38c815d6ad450047972a843833dcf/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-fragment:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-fragment-25.1.0.aar/a6cff9d91a19f5bde7bcf2bed3d92b60/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-fragment-25.1.0.aar/a6cff9d91a19f5bde7bcf2bed3d92b60/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.1.0.aar/944b15004f753c5e88610e28c357399f/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-ui-25.1.0.aar/944b15004f753c5e88610e28c357399f/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/2149cd8a9aee7bcf037938fb99bbe407/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-media-compat-25.1.0.aar/2149cd8a9aee7bcf037938fb99bbe407/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.1.0.aar/464c9c270c8abba2fb445c959d9e4bdf/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-core-utils-25.1.0.aar/464c9c270c8abba2fb445c959d9e4bdf/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-compat-25.1.0.aar/6cede9b74624099314aa07127e1f7965/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.1.0] /Users/mac/.gradle/caches/transforms-1/files-1.1/support-compat-25.1.0.aar/6cede9b74624099314aa07127e1f7965/AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:89:9-41
+	android:hardwareAccelerated
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:87:9-43
+	android:icon
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:88:9-46
+	android:allowBackup
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:86:9-35
+	android:theme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:90:9-40
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:85:9-38
+activity#com.bm.tzj.mine.LoginAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:93:9-96:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:95:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:94:13-51
+activity#com.bm.tzj.mine.BindPhone
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:99:9-102:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:101:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:100:13-53
+activity#com.bm.tzj.mine.BindWeichat
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:104:9-107:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:106:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:105:13-55
+activity#com.bm.tzj.activity.LocationMapAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:114:9-117:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:116:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:115:13-61
+activity#com.bm.tzj.mine.PersonalInformation
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:119:9-122:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:121:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:120:13-63
+activity#com.bm.tzj.mine.PwdSetAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:124:9-127:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:126:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:125:13-52
+activity#com.bm.tzj.mine.PwdUpAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:129:9-132:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:131:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:130:13-51
+activity#com.bm.tzj.mine.MyCoursebaoAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:134:9-137:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:136:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:135:13-57
+activity#com.bm.tzj.mine.MyCourseAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:139:9-142:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:141:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:140:13-54
+activity#com.bm.tzj.mine.MyCourseDetailAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:144:9-147:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:146:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:145:13-60
+activity#com.bm.tzj.mine.MyYouhuiquanAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:150:9-153:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:152:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:151:13-58
+activity#com.bm.tzj.activity.AccouterIndexAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:156:9-159:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:158:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:157:13-63
+activity#com.bm.tzj.activity.AccouterListAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:161:9-164:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:163:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:162:13-62
+activity#com.bm.tzj.activity.AdvWebActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:166:9-169:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:168:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:167:13-62
+activity#com.bm.tzj.mine.MyCollectionAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:172:9-175:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:174:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:173:13-58
+activity#com.bm.tzj.mine.MyMedal
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:177:9-180:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:179:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:178:13-51
+activity#com.bm.tzj.caledar.CaledarAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:182:9-185:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:184:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:183:13-56
+activity#com.bm.tzj.mine.MyChildrenAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:188:9-191:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:190:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:189:13-56
+activity#com.bm.tzj.mine.AddChildAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:193:9-196:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:195:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:194:13-54
+activity#com.bm.tzj.mine.EditChildAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:198:9-201:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:200:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:199:13-55
+activity#com.bm.tzj.mine.AccountBalanceAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:204:9-207:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:206:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:205:13-60
+activity#com.bm.tzj.mine.MyMessageAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:210:9-213:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:212:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:211:13-55
+activity#com.bm.tzj.mine.SettingAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:215:9-218:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:217:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:216:13-53
+activity#com.bm.tzj.mine.UpdateVAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:220:9-223:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:222:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:221:13-53
+activity#com.bm.tzj.mine.NoTeacherAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:225:9-228:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:227:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:226:13-55
+activity#com.bm.tzj.mine.MyTeachersAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:230:9-234:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:233:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:232:13-54
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:231:13-56
+activity#com.bm.tzj.mine.DetialMyMessageAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:236:9-239:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:238:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:237:13-61
+activity#com.bm.tzj.mine.MyExploreAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:241:9-244:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:243:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:242:13-55
+activity#com.bm.tzj.ts.ExploreDetailAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:247:9-250:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:249:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:248:13-57
+activity#com.bm.tzj.mine.RechargeAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:253:9-256:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:255:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:254:13-54
+activity#com.bm.tzj.mine.RechargeAc2
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:257:9-260:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:259:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:258:13-55
+activity#com.bm.tzj.mine.RechargeXieyiAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:262:9-265:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:264:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:263:13-59
+activity#com.bm.tzj.activity.AccouterDetailAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:267:9-270:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:269:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:268:13-64
+activity#com.bm.tzj.activity.ImageViewActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:274:9-277:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:276:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:275:13-65
+activity#com.bm.tzj.mine.MyCommentAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:280:9-283:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:282:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:281:13-55
+activity#com.bm.tzj.ts.SendContentAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:286:9-290:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:288:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:289:13-72
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:287:13-55
+activity#com.bm.tzj.ts.SendGrowUpAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:292:9-296:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:294:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:295:13-72
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:293:13-54
+activity#com.bm.im.ac.FriendAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:299:9-302:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:301:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:300:13-49
+activity#com.bm.im.ac.SearchFriendAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:304:9-307:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:306:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:305:13-55
+activity#com.bm.im.ac.AddFriendAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:309:9-312:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:311:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:310:13-52
+activity#com.bm.im.ac.GroupInfoAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:314:9-317:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:316:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:315:13-52
+activity#com.bm.tzj.kc.EvaluateShowAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:324:9-327:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:326:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:325:13-56
+activity#com.bm.tzj.kc.DisclaimerAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:329:9-332:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:331:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:330:13-54
+activity#com.bm.tzj.kc.CourseCompanionAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:334:9-337:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:336:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:335:13-59
+activity#com.bm.tzj.kc.CoachInformationAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:339:9-342:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:341:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:340:13-60
+activity#com.bm.tzj.kc.CommentAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:344:9-347:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:346:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:345:13-51
+activity#com.bm.tzj.kc.PayInfoAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:349:9-352:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:351:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:350:13-51
+activity#com.bm.tzj.kc.PayInfoAc2
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:354:9-357:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:356:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:355:13-52
+activity#com.bm.tzj.kc.CourseListAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:359:9-362:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:361:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:360:13-54
+activity#com.bm.tzj.activity.StartAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:364:9-372:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:366:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:365:13-55
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:367:13-371:29
+action#android.intent.action.MAIN
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:368:17-69
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:368:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:370:17-77
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:370:27-74
+activity#com.bm.tzj.activity.MainAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:375:9-379:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:378:13-49
+	android:launchMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:376:14-45
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:377:13-54
+activity#com.bm.tzj.activity.GuideAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:381:9-384:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:383:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:382:13-55
+activity#com.bm.tzj.mine.RetrievePasswordAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:386:9-389:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:388:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:387:13-62
+activity#com.bm.tzj.mine.CountSafe
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:391:9-394:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:393:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:392:13-53
+activity#com.bm.tzj.mine.ChangePhoneAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:396:9-399:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:398:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:397:13-57
+activity#com.bm.tzj.mine.ForgotpassAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:401:9-404:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:403:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:402:13-56
+activity#com.bm.tzj.mine.RegistreAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:406:9-409:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:408:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:407:13-54
+activity#com.bm.tzj.mine.PerfectInfoAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:411:9-414:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:413:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:412:13-57
+activity#com.bm.tzj.mine.FeedBackAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:416:9-419:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:418:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:417:13-54
+activity#com.bm.tzj.city.Activity01
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:421:9-425:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:424:13-49
+	android:windowSoftInputMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:423:13-52
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:422:13-54
+activity#com.bm.tzj.mine.MyIntegralAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:427:9-430:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:429:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:428:13-56
+activity#com.bm.tzj.mine.UpdatePwdAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:432:9-435:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:434:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:433:13-55
+activity#com.bm.tzj.czzx.MedalDetailAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:437:9-440:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:439:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:438:13-57
+activity#com.bm.tzj.czzx.HonoRollAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:442:9-445:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:444:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:443:13-54
+activity#com.bm.tzj.mine.AddCommentAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:448:9-451:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:450:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:449:13-56
+activity#com.bm.tzj.kc.GrowthCenterAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:453:9-456:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:455:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:454:13-56
+activity#com.bm.tzj.kc.CheckStoreAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:458:9-461:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:460:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:459:13-54
+activity#com.bm.tzj.activity.BaseGoodsDetailAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:464:9-467:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:466:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:465:13-65
+activity#com.bm.tzj.activity.NaotengAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:470:9-473:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:472:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:471:13-57
+activity#com.bm.tzj.activity.CoursebaoAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:475:9-478:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:477:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:476:13-59
+activity#com.bm.tzj.activity.CoursebaoCourseAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:480:9-483:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:482:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:481:13-65
+activity#com.bm.tzj.activity.LeyuanAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:486:9-489:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:488:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:487:13-56
+activity#com.bm.tzj.activity.LeyuanStoreAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:491:9-494:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:493:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:492:13-61
+activity#com.bm.tzj.activity.LuyingAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:497:9-500:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:499:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:498:13-56
+activity#com.bm.tzj.activity.LuyingDetailAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:502:9-505:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:504:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:503:13-62
+activity#com.bm.tzj.activity.ZhoumoAc
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:507:9-510:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:509:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:508:13-56
+activity#com.selectimg.logic.ImgFileListActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:515:9-519:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:518:13-49
+	android:label
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:517:13-45
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:516:13-67
+activity#com.selectimg.logic.ImgsActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:520:9-524:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:523:13-49
+	android:label
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:522:13-45
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:521:13-60
+activity#com.bm.tzj.activity.apshare.WBShareActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:547:11-555:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:550:13-49
+	android:configChanges
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:549:13-63
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:548:13-71
+intent-filter#android.intent.category.DEFAULT+com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:551:13-554:29
+action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:552:17-92
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:552:25-89
+category#android.intent.category.DEFAULT
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:553:17-76
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:553:27-73
+activity#com.sina.weibo.sdk.component.WeiboSdkBrowser
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:556:9-561:20
+	android:windowSoftInputMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:559:13-55
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:560:13-37
+	android:configChanges
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:558:13-63
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:557:13-72
+activity#com.richer.tzj.wxapi.WXEntryActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:564:10-569:76
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:568:14-50
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:567:14-37
+	android:configChanges
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:566:14-75
+	android:theme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:569:14-73
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:565:14-51
+activity#com.tencent.tauth.AuthActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:572:10-584:21
+	android:launchMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:574:14-45
+	android:noHistory
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:575:14-38
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:573:14-59
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:576:14-583:30
+action#android.intent.action.VIEW
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:577:18-70
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:577:26-67
+category#android.intent.category.BROWSABLE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:580:18-79
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:580:28-76
+data
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:582:18-60
+	android:scheme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:582:24-57
+activity#com.tencent.connect.common.AssistActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:585:10-588:76
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:587:14-50
+	android:theme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:588:14-73
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:586:14-70
+uses-library#com.google.android.maps
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:589:10-591:41
+	android:required
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:591:14-38
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:590:14-52
+uses-library#android.test.runner
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:592:10-61
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:592:24-58
+meta-data#UMENG_APPKEY
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:596:10-599:22
+	android:value
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:598:14-54
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:597:14-41
+meta-data#UMENG_CHANNEL
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:600:10-603:22
+	android:value
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:602:14-35
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:601:14-42
+activity#com.alipay.sdk.app.H5PayActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:614:9-620:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:618:13-47
+	android:windowSoftInputMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:619:13-67
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:617:13-37
+	android:configChanges
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:616:13-74
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:615:13-60
+activity#com.bm.pay.weixin.PayActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:633:11-643:20
+	android:label
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:635:13-45
+	android:launchMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:637:13-43
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:636:13-36
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:634:13-57
+intent-filter#android.intent.action.VIEW+android.intent.category.DEFAULT
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:638:13-642:29
+receiver#com.bm.pay.weixin.AppRegister
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:644:9-648:20
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:644:19-63
+intent-filter#com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:645:13-647:29
+action#com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:646:17-100
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:646:25-97
+activity#com.richer.tzj.wxapi.WXPayEntryActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:650:9-653:46
+	android:launchMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:653:13-43
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:652:13-36
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:651:13-53
+activity#com.bm.im.ac.ChatActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:658:9-664:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:661:13-49
+	android:launchMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:660:13-43
+	android:windowSoftInputMode
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:663:13-55
+	android:theme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:662:13-52
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:659:13-53
+activity#com.bm.im.ac.ContextMenuActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:667:9-671:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:669:13-49
+	android:theme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:670:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:668:13-60
+activity#com.easemob.easeui.ui.EaseShowBigImageActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:673:9-677:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:675:13-49
+	android:theme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:676:13-52
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:674:13-74
+activity#com.bm.im.ac.MyEaseShowBigImageActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:679:9-682:20
+	android:screenOrientation
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:681:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:680:13-67
+receiver#com.easemob.chat.StartServiceReceiver
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:693:9-700:20
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:693:19-71
+intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.QUICKBOOT_POWERON+android.intent.category.LAUNCHER
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:694:13-699:29
+	android:priority
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:694:28-51
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:695:17-79
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:695:25-76
+action#android.intent.action.QUICKBOOT_POWERON
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:696:17-82
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:696:25-79
+receiver#com.easemob.chat.EMGCMBroadcastReceiver
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:703:9-712:20
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:705:13-36
+	android:permission
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:706:13-73
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:704:13-67
+intent-filter#com.easemob.chatuidemo+com.google.android.c2dm.intent.RECEIVE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:707:13-711:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:708:17-81
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:708:25-78
+category#com.easemob.chatuidemo
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:710:17-67
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:710:27-64
+service#com.easemob.chat.EMGCMListenerService
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:714:9-717:19
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:716:13-37
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:715:13-65
+meta-data#EASEMOB_APPKEY
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:732:9-734:50
+	android:value
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:734:13-47
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:733:13-42
+service#com.easemob.chat.EMChatService
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:736:9-738:39
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:738:13-36
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:737:13-58
+receiver#com.easemob.chat.EMMonitorReceiver
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:740:9-751:20
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:740:19-68
+intent-filter#android.intent.action.PACKAGE_REMOVED
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:741:13-745:29
+action#android.intent.action.PACKAGE_REMOVED
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:742:17-80
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:742:25-77
+intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.USER_PRESENT
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:747:13-750:29
+action#android.intent.action.USER_PRESENT
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:749:17-77
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:749:25-74
+service#com.baidu.location.f
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:753:9-760:19
+	android:process
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:756:13-38
+	android:enabled
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:755:13-35
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:754:13-48
+intent-filter#com.baidu.location.service_v2.2
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:757:13-759:29
+action#com.baidu.location.service_v2.2
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:758:17-74
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:758:25-71
+meta-data#com.baidu.lbsapi.API_KEY
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:763:9-765:56
+	android:value
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:765:13-53
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:764:13-52
+activity#cn.jpush.android.ui.PopWinActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:770:9-774:20
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:773:13-37
+	android:theme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:772:13-49
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:771:13-62
+activity#cn.jpush.android.ui.PushActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:776:9-786:20
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:780:13-37
+	android:configChanges
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:778:13-63
+	android:theme
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:779:13-60
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:777:13-60
+intent-filter#android.intent.category.DEFAULT+cn.jpush.android.ui.PushActivity+com.richer.tzj
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:781:13-785:29
+action#cn.jpush.android.ui.PushActivity
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:782:17-75
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:782:25-72
+category#com.richer.tzj
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:784:17-59
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:784:27-56
+service#cn.jpush.android.service.DownloadService
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:788:9-792:19
+	android:enabled
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:790:13-35
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:791:13-37
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:789:13-68
+service#cn.jpush.android.service.PushService
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:795:9-804:19
+	android:process
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:797:13-36
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:796:13-64
+intent-filter#cn.jpush.android.intent.PUSH_TIME+cn.jpush.android.intent.PushService+cn.jpush.android.intent.REGISTER+cn.jpush.android.intent.REPORT
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:798:13-803:29
+action#cn.jpush.android.intent.REGISTER
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:799:17-75
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:799:25-72
+action#cn.jpush.android.intent.REPORT
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:800:17-73
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:800:25-70
+action#cn.jpush.android.intent.PushService
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:801:17-78
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:801:25-75
+action#cn.jpush.android.intent.PUSH_TIME
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:802:17-76
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:802:25-73
+receiver#cn.jpush.android.service.PushReceiver
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:816:9-834:20
+	android:enabled
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:818:13-35
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:817:13-65
+intent-filter#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY+com.richer.tzj
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:819:13-822:29
+	android:priority
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:819:28-51
+action#cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:820:17-94
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:820:25-91
+intent-filter#android.intent.action.USER_PRESENT+android.net.conn.CONNECTIVITY_CHANGE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:823:13-826:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:825:17-79
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:825:25-76
+intent-filter#android.intent.action.PACKAGE_ADDED+android.intent.action.PACKAGE_REMOVED
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:828:13-833:29
+action#android.intent.action.PACKAGE_ADDED
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:829:17-78
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:829:25-75
+receiver#cn.jpush.android.service.AlarmReceiver
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:835:9-99
+	android:exported
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:835:73-97
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:835:19-72
+meta-data#JPUSH_CHANNEL
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:850:9-84
+	android:value
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:850:49-82
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:850:20-48
+meta-data#JPUSH_APPKEY
+ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:851:9-91
+	android:value
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:851:48-88
+	android:name
+		ADDED from /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/AndroidManifest.xml:851:20-47
+activity#com.example.tzjlib.MainActivity
+ADDED from [:TZJlib] /Users/mac/Desktop/WorkSpaces/HanShan/TZJlib/build/intermediates/manifests/full/debug/AndroidManifest.xml:14:9-17:20
+	android:label
+		ADDED from [:TZJlib] /Users/mac/Desktop/WorkSpaces/HanShan/TZJlib/build/intermediates/manifests/full/debug/AndroidManifest.xml:16:13-45
+	android:name
+		ADDED from [:TZJlib] /Users/mac/Desktop/WorkSpaces/HanShan/TZJlib/build/intermediates/manifests/full/debug/AndroidManifest.xml:15:13-59

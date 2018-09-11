@@ -1,0 +1,27 @@
+#Internal package file, do not edit.
+#Mon Sep 03 18:41:30 CST 2018
+2.base=/Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/build/intermediates/assets/debug
+5.set=ASSET
+0.path=xieyi.txt
+2.baseType=DIRECTORY
+3.base=/Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/build/intermediates/assets/debug
+2.set=ASSET
+1.path=help.htm
+4.base=/Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/build/intermediates/assets/debug
+count=6
+5.baseType=DIRECTORY
+2.path=province_data.xml
+5.base=/Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/build/intermediates/assets/debug
+4.set=ASSET
+3.path=meituan_cities.db
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=about.htm
+1.baseType=DIRECTORY
+5.path=registers.htm
+0.base=/Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/build/intermediates/assets/debug
+0.baseType=DIRECTORY
+3.set=ASSET
+1.base=/Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/build/intermediates/assets/debug
+4.baseType=DIRECTORY
+0.set=ASSET

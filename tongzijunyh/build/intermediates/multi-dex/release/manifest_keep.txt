@@ -1,0 +1,3 @@
+# Referenced at /Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/build/intermediates/manifests/full/release/AndroidManifest.xml:79
+-keep class com.bm.app.App { <init>(...); }
+

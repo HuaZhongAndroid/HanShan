@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v19/values-v19.xml",
+            "map": [
+                {
+                    "source": "/Users/mac/Desktop/WorkSpaces/HanShan/tongzijunyh/res/values-v19/style.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "116",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "241"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "178"
+                    }
+                }
+            ]
+        }
+    ]
+}
