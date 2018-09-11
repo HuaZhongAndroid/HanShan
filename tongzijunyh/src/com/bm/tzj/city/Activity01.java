@@ -670,7 +670,14 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 					public void onItemClick(AdapterView<?> parent, View view,
 							int position, long id) {
 
-						updateLastCity(city_hot.get(position));
+						Intent intent = new Intent();
+						intent.putExtra("cityName", city_hot.get(position).name);
+						intent.setClass(context, MainAc.class);
+						setResult(5, intent);
+						finish();
+						hideProgressDialog();
+
+						//updateLastCity(city_hot.get(position));
 //						Toast.makeText(getApplicationContext(),
 //								city_hot.get(position).getName(),
 //								Toast.LENGTH_SHORT).show();
