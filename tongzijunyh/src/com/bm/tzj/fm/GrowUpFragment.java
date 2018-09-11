@@ -202,7 +202,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
         loadChildData();
     }
 
-
+   int thisIndex = -1;
     private BaseAdapter mainAdapter = new BaseAdapter() {
         @Override
         public int getCount() {
@@ -220,7 +220,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             if (convertView == null) {
                 convertView = LayoutInflater.from(context).inflate(R.layout.item_growup, parent, false);
             }
@@ -266,10 +266,15 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                 img_tag.setImageResource(R.drawable.koushao);
                 btn_menu.setVisibility(View.GONE);
                 v_jiaolian.setVisibility(View.VISIBLE);
-                tv_pingjia_tip.setVisibility(View.VISIBLE);
+                if ("1".equals(data.isAssess)){
+                    tv_pingjia_tip.setVisibility(View.INVISIBLE);
+                }else {
+                    tv_pingjia_tip.setVisibility(View.VISIBLE);
+                }
                 tv_pingjia_tip.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        thisIndex = position;
                         Intent intent = new Intent(context, AddCommentAc.class);
                         Course course = new Course();
                         course.babyId = data.babyId;
@@ -284,7 +289,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                         course.storeId = data.storeId;
 
                         intent.putExtra("hotGoods", course);
-                        context.startActivity(intent);
+                        MainAc.intance.startActivityFromFragment(GrowUpFragment.this,intent,200);
+                        //context.startActivity(intent);
                     }
                 });
             }
@@ -701,7 +707,6 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
         }
     }
 
-
     @Override
     public void onTabActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
@@ -711,6 +716,9 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                     setChildReflush();
                 }
             }, 1000);
+        }else  if (resultCode == 200) {
+            growUpList.get(thisIndex).isAssess = "1";
+            adapter.notifyDataSetChanged();
         }
     }
 }
