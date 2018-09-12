@@ -55,6 +55,7 @@ import com.bm.tzj.mine.MyCourseAc;
 import com.bm.tzj.ts.SendGrowUpAc;
 import com.bm.util.GlideUtils;
 import com.bm.util.Util;
+import com.bm.view.CircleImageView;
 import com.bumptech.glide.Glide;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
@@ -232,7 +233,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
             TextView tv_mendianName = (TextView) convertView.findViewById(R.id.tv_mendianName);
             ImageView img_tag = (ImageView) convertView.findViewById(R.id.img_tag);
             ImageView img_a = (ImageView) convertView.findViewById(R.id.img_a);
-            ImageView iv_jl_touxiang = (ImageView) convertView.findViewById(R.id.iv_jl_touxiang);
+            CircleImageView iv_jl_touxiang = convertView.findViewById(R.id.iv_jl_touxiang);
             TextView tv_pingjia_tip = (TextView) convertView.findViewById(R.id.tv_pingjia_tip);
             FuGridView fgv_a = (FuGridView) convertView.findViewById(R.id.fgv_a);
             View btn_menu = convertView.findViewById(R.id.btn_menu);
@@ -244,6 +245,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
             tv_day.setText(Util.getStringDate(date, "dd"));
             tv_date.setText(Util.getStringDate(date, "yyyy-MM HH:mm"));
             tv_content.setText(data.content);
+            GlideUtils.loadImg(context, data.coachHead, iv_jl_touxiang, R.drawable.ic_four_p);
+
             if ("1".equals(data.recordFlag)) //家长发布
             {
                 tv_day.setTextColor(0xff333333);

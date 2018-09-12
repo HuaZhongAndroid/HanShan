@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
 
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F4F4F4"
     android:orientation="vertical">
 
@@ -122,11 +123,13 @@
                     android:layout_marginTop="10dp"
                     android:gravity="center_vertical">
 
-                    <ImageView
+
+                    <com.bm.view.CircleImageView
                         android:id="@+id/iv_jl_touxiang"
                         android:layout_width="21dp"
                         android:layout_height="21dp"
-                        android:src="@drawable/shouji_chengzhang" />
+                        app:border_color="@color/golden_1"
+                        app:border_width="1dp" />
 
                     <TextView
                         android:id="@+id/tv_jiaolianName"
