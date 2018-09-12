@@ -245,7 +245,6 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
             tv_day.setText(Util.getStringDate(date, "dd"));
             tv_date.setText(Util.getStringDate(date, "yyyy-MM HH:mm"));
             tv_content.setText(data.content);
-            GlideUtils.loadImg(context, data.coachHead, iv_jl_touxiang, R.drawable.ic_four_p);
 
             if ("1".equals(data.recordFlag)) //家长发布
             {
@@ -271,7 +270,8 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                 btn_menu.setVisibility(View.GONE);
                 v_jiaolian.setVisibility(View.VISIBLE);
                 //iv_jl_touxiang.
-                GlideUtils.loadImg(context, data.coachHead, iv_jl_touxiang, R.drawable.ic_four_p);
+                //GlideUtils.loadImg(context, data.coachHead, iv_jl_touxiang, R.drawable.ic_four_p);
+                GlideUtils.loadImg(context, data.coachHead, iv_jl_touxiang);
 
                 if ("1".equals(data.isAssess)){
                     tv_pingjia_tip.setVisibility(View.INVISIBLE);
