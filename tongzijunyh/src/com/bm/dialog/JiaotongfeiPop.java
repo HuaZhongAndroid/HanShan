@@ -2,6 +2,7 @@ package com.bm.dialog;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,6 +77,7 @@ public class JiaotongfeiPop extends PopupWindow {
                     hangList.add(hang);
                     for(Jiaotongfei data:dataList)
                     {
+                        if (data.price==null)continue;
                         if(!data.price.equals(price))
                         {
                             price = data.price;

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Html;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,18 +14,13 @@ import android.widget.TextView;
 import com.bm.api.BaseApi;
 import com.bm.api.UserManager;
 import com.bm.app.App;
-import com.bm.base.BaseActivity;
-import com.bm.base.BaseAd;
 import com.bm.dialog.UtilDialog;
 import com.bm.entity.Baby;
-import com.bm.entity.Child;
 import com.bm.entity.Course;
-import com.bm.entity.HotGoods;
 import com.bm.entity.Order;
 import com.bm.share.ShareModel;
-import com.bm.tzj.kc.DisclaimerAc;
 import com.bm.tzj.kc.GrowthCenterAc;
-import com.bm.tzj.kc.PayInfoAc2;
+import com.bm.tzj.kc.PayInfoAc3;
 import com.bm.tzj.mine.LoginAc;
 import com.bm.util.Util;
 import com.lib.http.ServiceCallback;
@@ -90,7 +84,14 @@ public class LuyingDetailAc extends AbsCoursePayBaseAc implements View.OnClickLi
 
     @Override
     protected void onCreateOrderSuccess(Order order) {
-        Intent intent = new Intent(context, PayInfoAc2.class);
+        Intent intent = new Intent(context, PayInfoAc3.class);
+
+
+        order.realName  = xz_child.realName;
+        order.goodsType = data.goodsType;
+        order.goodsTime = data.goodsTime;
+        order.goodsName = data.goodsName;
+
         intent.putExtra("course", data);
         intent.putExtra("order",  order);
         intent.putExtra("child",xz_child);
@@ -208,20 +209,20 @@ public class LuyingDetailAc extends AbsCoursePayBaseAc implements View.OnClickLi
         }
     };
 
-    public void isLogin(){
-        UtilDialog.dialogTwoBtnContentTtile(context, "您还未登录，请先登录在操作", "取消","确定","提示",new Handler(){
-            public void handleMessage(android.os.Message msg) {
-                switch(msg.what){
-                    case 1:
-                        finish();
-                        MainAc.intance.finish();
-                        Intent intent = new Intent(context,LoginAc.class);
-                        startActivity(intent);
-                        break;
-                }
-            }
-        },1);
-    }
+//    public void isLogin(){
+//        UtilDialog.dialogTwoBtnContentTtile(context, "您还未登录，请先登录在操作", "取消","确定","提示",new Handler(){
+//            public void handleMessage(android.os.Message msg) {
+//                switch(msg.what){
+//                    case 1:
+//                        finish();
+//                        MainAc.intance.finish();
+//                        Intent intent = new Intent(context,LoginAc.class);
+//                        startActivity(intent);
+//                        break;
+//                }
+//            }
+//        },1);
+//    }
 
     @Override
     public void onClick(View v) {

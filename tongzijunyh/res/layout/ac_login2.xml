@@ -30,8 +30,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:paddingTop="10dp"
+                android:padding="10dp"
                 android:text="随便看看"
+                android:textStyle="bold"
                 android:textColor="@color/fm_mine_nickname"
                 android:textSize="14sp" />
         </RelativeLayout>

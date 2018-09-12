@@ -1,3 +1,4 @@
 include ':tongzijunyh'
 include ':TZJlib'
 include ':EaseUIT'
+include ':oss-android-sdk'

@@ -18,8 +18,9 @@ import com.richer.tzj.R;
 /**
  * 开启消息通知提示框
  */
-public class OpenLocDialog extends Dialog implements View.OnClickListener{
+public class OpenLocDialog extends Dialog implements View.OnClickListener {
     private TextView bt_ok;
+    private View iv_close;
     private Activity context;
 
 
@@ -33,29 +34,34 @@ public class OpenLocDialog extends Dialog implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.dialog_open_loc);
-        bt_ok = (TextView)this.findViewById(R.id.bt_ok);
-
-        this.findViewById(R.id.iv_close).setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                cancel();
-                return false;
-            }
-        });
+        bt_ok = (TextView) this.findViewById(R.id.bt_ok);
+        iv_close =  this.findViewById(R.id.iv_close);
+//
+//        this.findViewById(R.id.iv_close).setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                cancel();
+//                return false;
+//            }
+//        });
 
         bt_ok.setOnClickListener(this);
+        iv_close.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             case R.id.bt_ok:
                 getAppDetailSettingIntent();
                 dismiss();
                 break;
+            case R.id.iv_close:
+                context.finish();
+                dismiss();
+                break;
         }
     }
-
 
     private void getAppDetailSettingIntent() {
         Intent localIntent = new Intent();
@@ -65,7 +71,7 @@ public class OpenLocDialog extends Dialog implements View.OnClickListener{
             localIntent.setData(Uri.fromParts("package", context.getPackageName(), null));
         } else if (Build.VERSION.SDK_INT <= 8) {
             localIntent.setAction(Intent.ACTION_VIEW);
-            localIntent.setClassName("com.android.settings","com.android.settings.InstalledAppDetails");
+            localIntent.setClassName("com.android.settings", "com.android.settings.InstalledAppDetails");
             localIntent.putExtra("com.android.settings.ApplicationPkgName", context.getPackageName());
         }
         context.startActivity(localIntent);

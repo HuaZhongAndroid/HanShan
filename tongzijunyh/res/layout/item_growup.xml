@@ -1,136 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#F4F4F4"
+    android:layout_width="match_parent"
 
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#F4F4F4"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView android:id="@+id/tv_day"
+        android:layout_height="wrap_content"
+        android:gravity="bottom">
+
+        <TextView
+            android:id="@+id/tv_day"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="22"
             android:textColor="#A59945"
-            android:textSize="28sp"
-            android:gravity="center"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content" />
-        <TextView android:id="@+id/tv_date"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="2017.12  09:20"
             android:textColor="#999"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <View
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-        <ImageView android:id="@+id/btn_menu"
-            android:src="@drawable/xiala_chengzhang"
-            android:paddingLeft="20dp"
-            android:paddingTop="15dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-    <RelativeLayout
-        android:paddingRight="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:textSize="14sp" />
 
-        <RelativeLayout android:id="@+id/left"
-            android:layout_alignBottom="@+id/right"
-            android:layout_alignTop="@+id/right"
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/btn_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:paddingTop="15dp"
+            android:src="@drawable/xiala_chengzhang" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp">
+
+        <RelativeLayout
+            android:id="@+id/left"
             android:layout_width="60dp"
-            android:layout_height="match_parent">
-            <View android:id="@+id/v_shuxian"
-                android:background="@drawable/pingpu_xuxian"
-                android:layout_centerHorizontal="true"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/right"
+            android:layout_alignTop="@+id/right">
+
+            <View
+                android:id="@+id/v_shuxian"
                 android:layout_width="0.5dp"
-                android:layout_height="match_parent" />
-            <ImageView android:id="@+id/img_tag"
-                android:src="@drawable/jiaoya"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/pingpu_xuxian" />
+
+            <ImageView
+                android:id="@+id/img_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="25dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:src="@drawable/jiaoya" />
         </RelativeLayout>
-        <LinearLayout android:id="@+id/right"
-            android:layout_toRightOf="@+id/left"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+
         <LinearLayout
-            android:background="#fff"
-            android:padding="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:orientation="vertical"
+            android:id="@+id/right"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <com.lib.widget.RoundImageViewsix android:id="@+id/img_a"
-                android:scaleType="centerCrop"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/left">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp" />
-            <com.lib.widget.FuGridView
-                android:id="@+id/fgv_a"
-                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:cacheColorHint="@color/transparent"
-                android:horizontalSpacing="3dip"
-                android:listSelector="@color/transparent"
-                android:numColumns="3"
-                android:background="@color/white"
-                android:scrollingCache="false"
-                android:verticalSpacing="3dip" />
-            <TextView android:id="@+id/tv_content"
-                android:layout_marginTop="6dp"
-                android:lineSpacingMultiplier="1.2"
-                android:textColor="#333"
-                android:textSize="16sp"
-                android:text="宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <LinearLayout android:id="@+id/v_jiaolian"
-                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <ImageView android:id="@+id/iv_jl_touxiang"
-                    android:src="@drawable/shouji_chengzhang"
-                    android:layout_width="21dp"
-                    android:layout_height="21dp" />
-                <TextView android:id="@+id/tv_jiaolianName"
-                    android:text="dianping"
-                    android:textSize="13sp"
-                    android:textColor="#A59945"
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <TextView android:id="@+id/tv_mendianName"
-                    android:text="nashan"
-                    android:textSize="13sp"
-                    android:textColor="#A59945"
-                    android:gravity="right"
+                android:background="#fff"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <com.lib.widget.RoundImageViewsix
+                    android:id="@+id/img_a"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop" />
+
+                <com.lib.widget.FuGridView
+                    android:id="@+id/fgv_a"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:cacheColorHint="@color/transparent"
+                    android:horizontalSpacing="3dip"
+                    android:listSelector="@color/transparent"
+                    android:numColumns="3"
+                    android:scrollingCache="false"
+                    android:verticalSpacing="3dip" />
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:lineSpacingMultiplier="1.2"
+                    android:text="宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错宝贝很勇敢，不错"
+                    android:textColor="#333"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/v_jiaolian"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical">
+
+
+                    <com.bm.view.CircleImageView
+                        android:id="@+id/iv_jl_touxiang"
+                        android:layout_width="21dp"
+                        android:layout_height="21dp"
+                        app:border_color="@color/golden_1"
+                        app:border_width="1dp" />
+
+                    <TextView
+                        android:id="@+id/tv_jiaolianName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="dianping"
+                        android:textColor="#A59945"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_mendianName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="nashan"
+                        android:textColor="#A59945"
+                        android:textSize="13sp" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-        <TextView android:id="@+id/tv_pingjia_tip"
-            android:background="@drawable/xing4"
-            android:layout_below="@+id/right"
+
+        <TextView
+            android:id="@+id/tv_pingjia_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/right"
-            android:text="点我，对我的服务进行评价"
-            android:textColor="#ffffffff"
-            android:textSize="12sp"
+            android:layout_below="@+id/right"
+            android:layout_marginTop="-25dp"
+            android:background="@drawable/xing4"
+            android:paddingBottom="10dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:paddingBottom="10dp"
             android:paddingTop="15dp"
-            android:layout_marginTop="-25dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="点我，对我的服务进行评价"
+            android:textColor="#ffffffff"
+            android:textSize="12sp" />
     </RelativeLayout>
 </LinearLayout>

@@ -5,20 +5,17 @@
     android:layout_height="match_parent"
     android:background="#8000"
     android:gravity="center"
+    android:paddingTop="30dp"
     android:orientation="vertical" >
 
     <ImageView
         android:id="@+id/img_gg"
         android:scaleType="centerCrop"
-        android:layout_width="260dp"
-        android:layout_height="350dp" >
-
-    </ImageView>
-
-    <View
-        android:layout_width="0.1dp"
-        android:layout_height="60dp"
-        android:background="@drawable/shuxian" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="150dp"
+        android:adjustViewBounds="true"
+        android:layout_margin="35dp"/>
 
     <ImageView
         android:id="@+id/iv_close"

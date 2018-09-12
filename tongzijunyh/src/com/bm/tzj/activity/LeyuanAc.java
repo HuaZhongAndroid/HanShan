@@ -81,7 +81,7 @@ public class LeyuanAc extends BaseActivity implements View.OnClickListener {
         tv_juli.setText("距离"+data.distance);
         tv_address.setText(data.address);
         tv_phone.setText(data.tel);
-        ImageLoader.getInstance().displayImage(data.acrossImage, img_ad, App.getInstance().getListViewDisplayImageOptions());
+        ImageLoader.getInstance().displayImage(data.imgUrl, img_ad, App.getInstance().getListViewDisplayImageOptions());
         custom_ratingbar.setStar(Integer.valueOf(data.rankLogistics==null?"0":data.rankLogistics), true);
         custom_ratingbar.setClickable(false);
 //        tv_mark.setText(data.remark);

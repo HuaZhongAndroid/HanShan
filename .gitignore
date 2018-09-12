@@ -5,7 +5,8 @@
 /.idea/libraries
 .DS_Store
 /build
-/gradle
+./build
+./../build
 /captures
 .externalNativeBuild
 .idea/

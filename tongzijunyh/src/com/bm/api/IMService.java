@@ -41,7 +41,7 @@ public class IMService  extends BaseApi {
 	 * @param callback
 	 */
 	public void getImUserInfoList(Context context,HashMap<String, String> map, final ServiceCallback<CommonListResult<User>> callback){
-		AsyncHttpHelp.httpGet(context, API_GETIMUSERINFOLIST, map, callback);
+		//AsyncHttpHelp.httpGet(context, API_GETIMUSERINFOLIST, map, callback);
 	}
 	
 	/**

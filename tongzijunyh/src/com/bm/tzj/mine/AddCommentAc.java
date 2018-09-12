@@ -192,6 +192,7 @@ public class AddCommentAc extends BaseActivity implements OnClickListener {
 			@Override
 			public void done(int what, StringResult obj) {
 				hideProgressDialog();
+				setResult(200);
 				finish();
 			}
 		});

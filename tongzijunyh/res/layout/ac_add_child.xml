@@ -30,12 +30,6 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent">
 
-                    <ImageView
-                        android:id="@+id/lv_sixview_head"
-                        android:layout_width="fill_parent"
-                        android:layout_height="243dip"
-                        android:scaleType="centerCrop" />
-
                     <ImageButton
                         android:id="@+id/iv_sixview_head"
                         android:layout_width="162dip"
@@ -63,6 +57,12 @@
                         android:paddingRight="15dp"
                         android:paddingTop="10dp"
                         android:src="@drawable/my_bg_camera" />
+
+                    <ImageView
+                        android:id="@+id/lv_sixview_head"
+                        android:layout_width="fill_parent"
+                        android:layout_height="243dip"
+                        android:scaleType="centerCrop" />
                 </FrameLayout>
             </LinearLayout>
 
@@ -96,8 +96,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="孩子的姓名"
+                    android:textStyle="bold"
                     android:textColor="@color/personal_textNameColor"
-                    android:textSize="@dimen/text_font_14" />
+                    android:textSize="@dimen/text_font_15" />
 
                 <EditText
                     android:id="@+id/et_babyName"
@@ -138,8 +139,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="孩子的性别"
+                    android:textStyle="bold"
                     android:textColor="@color/personal_textNameColor"
-                    android:textSize="@dimen/text_font_14" />
+                    android:textSize="@dimen/text_font_15" />
 
                 <RadioGroup
                     android:id="@+id/rg_group"
@@ -154,6 +156,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:text="男孩"
+                        android:drawableLeft="@drawable/radio"
+                        android:drawablePadding="10dp"
+                        android:button="@null"
                         android:textColor="#CACACA"
                         android:textSize="@dimen/text_font_14" />
                     <!--第二个RadioButton -->
@@ -161,8 +166,11 @@
                         android:id="@+id/rb_female"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/radio"
+                        android:button="@null"
                         android:layout_weight="2"
                         android:text="女孩"
+                        android:drawablePadding="10dp"
                         android:textColor="#CACACA"
                         android:textSize="@dimen/text_font_14" />
                 </RadioGroup>
@@ -185,8 +193,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="孩子的生日"
+                    android:textStyle="bold"
                     android:textColor="@color/personal_textNameColor"
-                    android:textSize="14sp" />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/tv_birthday"
@@ -215,11 +224,11 @@
                 android:background="#fff0f0f0" />
         </LinearLayout>
     </ScrollView>
-
+   <!-- android:background="@color/sliding_menu_body_background"-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="61dp"
-        android:background="@color/sliding_menu_body_background"
+
         android:gravity="center"
         android:orientation="vertical">
 

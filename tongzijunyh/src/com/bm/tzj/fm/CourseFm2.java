@@ -1,10 +1,5 @@
 package com.bm.tzj.fm;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -14,19 +9,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -34,20 +26,16 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.PopupWindow;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bm.api.BaseApi;
 import com.bm.api.UserManager;
 import com.bm.app.App;
 import com.bm.base.adapter.CourseGalleryAdapter;
-import com.bm.base.adapter.CourseListAdapter;
 import com.bm.base.adapter.ImagePagerAdapters280;
 import com.bm.dialog.AddBodyDialog;
 import com.bm.entity.Advertisement;
 import com.bm.entity.Adverts;
-import com.bm.entity.Child;
-import com.bm.entity.HotGoods;
 import com.bm.entity.Storelist;
 import com.bm.entity.User;
 import com.bm.tzj.activity.AccouterIndexAc;
@@ -61,25 +49,24 @@ import com.bm.tzj.activity.ZhoumoAc;
 import com.bm.tzj.city.Activity01;
 import com.bm.tzj.city.City;
 import com.bm.tzj.kc.CourseListAc;
-import com.bm.tzj.mine.AddChildAc;
 import com.bm.tzj.mine.MyMessageAc;
-import com.bm.tzj.mine.RechargeAc;
 import com.bm.tzj.mine.RechargeAc2;
 import com.bm.util.BDLocationHelper;
 import com.bm.util.CacheUtil;
-import com.bm.util.Util;
 import com.lib.http.AsyncHttpHelp;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
 import com.lib.http.result.CommonResult;
 import com.lib.tool.Pager;
-import com.lib.tool.SharedPreferencesHelper;
 import com.lib.tool.UITools;
-import com.lib.widget.HorizontalListView;
 import com.lib.widget.RatingBarView;
-import com.lib.widget.refush.NsRefreshLayout;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.richer.tzj.R;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * 课程
@@ -834,7 +821,7 @@ public class CourseFm2 extends Fragment implements OnClickListener,AppBarLayout.
         {
             Log.d("fff","到顶了 "+verticalOffset);
             tv_location.setTextColor(0xff333333);
-            Drawable d = context.getDrawable(R.drawable.xiala_hei);
+            Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_hei);
             d.setBounds(0,0,d.getMinimumWidth(),d.getMinimumHeight());
             tv_location.setCompoundDrawables(null,null,d,null);
             tv_find.setHintTextColor(0xff999999);
@@ -846,7 +833,7 @@ public class CourseFm2 extends Fragment implements OnClickListener,AppBarLayout.
         {
             Log.d("fff","快到顶了 "+verticalOffset);
             tv_location.setTextColor(0xff333333);
-            Drawable d = context.getDrawable(R.drawable.xiala_hei);
+            Drawable d = ContextCompat.getDrawable(context,R.drawable.xiala_hei);
             d.setBounds(0,0,d.getMinimumWidth(),d.getMinimumHeight());
             tv_location.setCompoundDrawables(null,null,d,null);
             tv_find.setHintTextColor(0xff999999);

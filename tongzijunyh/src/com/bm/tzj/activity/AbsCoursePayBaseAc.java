@@ -61,9 +61,11 @@ abstract public class AbsCoursePayBaseAc extends BaseActivity {
      * @param view
      */
     protected void showPopupWindow(View view) {
-        if(childList.size()==0) {
+        if (!isLogin())return;
+        if(childList.size()==1) {
             //跳转到添加孩子
             context.startActivity(new Intent(context, AddChildAc.class));
+            return;
         }
 
         int[] location = new int[2];
@@ -72,7 +74,6 @@ abstract public class AbsCoursePayBaseAc extends BaseActivity {
         int y = location[1];
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
     }
-
     private void loadChildData()
     {
         HashMap<String, String> map = new HashMap<String, String>();
@@ -89,8 +90,7 @@ abstract public class AbsCoursePayBaseAc extends BaseActivity {
                 childList.clear();
                 childList.addAll(obj.data);
 //                changeChild(seletedChildPosition);
-                if(childList.size()>0)
-                    makePopWindow();
+                  makePopWindow();
             }
 
             @Override
@@ -185,8 +185,13 @@ abstract public class AbsCoursePayBaseAc extends BaseActivity {
         popLayout.findViewById(R.id.btn_zhifu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                createOrder();
                 popupWindow.dismiss();
+                if (childList.size()==0){
+                    context.startActivity(new Intent(context, AddChildAc.class));
+                    popupWindow.dismiss();
+                }else {
+                    createOrder();
+                }
             }
         });
     }
@@ -196,6 +201,7 @@ abstract public class AbsCoursePayBaseAc extends BaseActivity {
      * 生成订单
      */
     protected void createOrder(){
+        if (!isLogin())return;
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("goodsId", goodsId);//课程ID
         map.put("storeId", storeId); //门店id

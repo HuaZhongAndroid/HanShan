@@ -141,7 +141,11 @@ public class BDLocationHelper {
 	 * @return
 	 */
 	public static LocationInfo getCacheLocation(){
-		return SharedPreferencesHelper.getJSON("cache_location", LocationInfo.class);
+		LocationInfo info = SharedPreferencesHelper.getJSON("cache_location", LocationInfo.class);
+		if (info==null){
+		return new 	LocationInfo();
+		}
+		return info;
 	}
 
 //	/**

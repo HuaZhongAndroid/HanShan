@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -13,13 +14,18 @@ import android.widget.TextView;
 import com.bm.api.UserManager;
 import com.bm.app.App;
 import com.bm.base.BaseActivity;
+import com.bm.base.adapter.ShuQIAdapter;
+import com.bm.base.adapter.ZhouMoAdapter;
 import com.bm.entity.Course;
+import com.bm.entity.CourseBean;
 import com.bm.entity.Storelist;
+import com.bm.util.CacheUtil;
 import com.lib.http.ServiceCallback;
 import com.lib.http.result.CommonListResult;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.richer.tzj.R;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,110 +33,62 @@ import java.util.List;
 /**
  * 大露营列表页面
  */
-public class LuyingAc extends BaseActivity implements View.OnClickListener {
+public class LuyingAc extends BaseActivity implements View.OnClickListener,AdapterView.OnItemClickListener {
 
-    private Storelist data;
-
-
-    private ListView lv_course;
-
-    private List<Course> courseList;
-
+    private ListView lv_content2;
+    private ShuQIAdapter adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.contentView(R.layout.ac_luying);
-        data = (Storelist) this.getIntent().getSerializableExtra("data");
-
         setTitleName("暑期大露营");
-
-        lv_course = this.findListViewById(R.id.lv_course);
-        courseList = new ArrayList<Course>();
-        lv_course.setAdapter(adapter);
-
-        loadCourseList();
+        adapter2 = new ShuQIAdapter(context);
+        lv_content2 = (ListView) findViewById(R.id.lv_content2);
+        lv_content2.setAdapter(adapter2);
+        lv_content2.setOnItemClickListener(this);
+        loadCourseList(4,"");
     }
+    private void loadCourseList(final int types, final String regionId) {
+        final HashMap<String, String> map = new HashMap<String, String>();
+        map.put("goodsType", types + "");
 
-    private void loadCourseList()
-    {
-        HashMap<String, String> map = new HashMap<String, String>();
-//        map.put("storeId",data.storeId);
-        map.put("goodsType","4");
-        this.showProgressDialog();
-        UserManager.getInstance().get_tzjgoods_goodsListByType(this, map, new ServiceCallback<CommonListResult<Course>>() {
-            @Override
-            public void done(int what, CommonListResult<Course> obj) {
-                hideProgressDialog();
-
-                if(obj.data != null)
-                    courseList = obj.data;
-                adapter.notifyDataSetChanged();
-            }
+        UserManager.getInstance().get_tzjgoods_goodsListByType(context, map, new ServiceCallback<CommonListResult<CourseBean>>() {
+            final String CACHEKEY = "CourseFm_tzjgoods_goodsListByType";
 
             @Override
             public void error(String msg) {
-                hideProgressDialog();
+                //从缓存中读取数据
+                CommonListResult<CourseBean> obj = new CommonListResult<CourseBean>() {
+                };
+                Type type = obj.getClass().getGenericSuperclass();
+                obj = (CommonListResult<CourseBean>) CacheUtil.read(context, CACHEKEY, map, type);
+                if (obj != null) {
+                    doResult(obj);
+                    return;
+                }
+                //没有缓存时执行下面的逻辑
+                MainAc.intance.dialogToast(msg);
+            }
+
+            @Override
+            public void done(int what, CommonListResult<CourseBean> obj) {
+                doResult(obj);
+                //缓存结果
+                CacheUtil.save(context, CACHEKEY, map, obj);
+            }
+            private void doResult(CommonListResult<CourseBean> obj) {
+                if (null != obj.data && obj.data.size() > 0) {
+                    adapter2.clear();
+                    adapter2.addAll(obj.data);
+                    adapter2.notifyDataSetChanged();
+                    findViewById(R.id.defultImg).setVisibility(View.GONE);
+                }else {
+                    findViewById(R.id.defultImg).setVisibility(View.VISIBLE);
+                }
             }
         });
     }
-
-    BaseAdapter adapter = new BaseAdapter() {
-        @Override
-        public int getCount() {
-            return courseList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return courseList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            if(convertView == null)
-            {
-                convertView = LayoutInflater.from(context).inflate(R.layout.item_course, parent, false);
-            }
-
-            final Course data = courseList.get(position);
-
-            TextView tv_name = (TextView)convertView.findViewById(R.id.tv_name);
-            TextView tv_time = (TextView)convertView.findViewById(R.id.tv_time);
-            TextView tv_renshu = (TextView)convertView.findViewById(R.id.tv_renshu);
-            TextView tv_age = (TextView)convertView.findViewById(R.id.tv_age);
-            TextView tv_price = (TextView)convertView.findViewById(R.id.tv_price);
-            ImageView img_a = (ImageView)convertView.findViewById(R.id.img_a);
-
-            tv_name.setText(data.goodsName);
-            tv_time.setText(data.goodsTime);
-            tv_age.setText(data.suitableAge+"岁");
-            tv_price.setText("￥"+data.goodsPrice);
-            int i = data.goodsQuota - data.enrollQuota;
-            if(i == 0)
-                tv_renshu.setText("报名人数已满");
-            else
-                tv_renshu.setText("剩余名额"+i+"人");
-
-            ImageLoader.getInstance().displayImage(data.titleMultiUrl, img_a, App.getInstance().getListViewDisplayImageOptions());
-
-            convertView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(context, LuyingDetailAc.class);
-                    i.putExtra("goodsId",data.goodsId);
-                    startActivity(i);
-                }
-            });
-
-            return convertView;
-        }
-    };
 
     @Override
     public void onClick(View v) {
@@ -138,10 +96,16 @@ public class LuyingAc extends BaseActivity implements View.OnClickListener {
         {
             case R.id.tv_address:
                 Intent intent = new Intent(this,LocationMapAc.class);
-                intent.putExtra("longitude", data.lon);
-                intent.putExtra("latitude", data.lat);
                 startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+         CourseBean  courseBean = (CourseBean) parent.getAdapter().getItem(position);
+        Intent  intent = new Intent(context, LuyingDetailAc.class);
+        intent.putExtra("goodsId", courseBean.goodsId);
+        startActivity(intent);
     }
 }

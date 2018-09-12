@@ -2,13 +2,15 @@ apply plugin: 'com.android.library'
 
 dependencies {
     compile fileTree(include: '*.jar', dir: 'libs')
-    compile 'com.android.support:support-v4:22.2.0'
+    //compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.android.support:appcompat-v7:25.1.0'
     compile project(':TZJlib')
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
 
     sourceSets {
         main {

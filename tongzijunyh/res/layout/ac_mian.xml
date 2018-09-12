@@ -20,136 +20,32 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:id="@+id/tabs_ll"
         android:layout_height="wrap_content"
         android:background="#fcfcfc" >
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+        <com.bm.view.TabMyView
             android:layout_weight="1"
-            android:background="@color/transparent"
-            android:paddingTop="5dip" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:id="@+id/pullulateLayout"
-                android:layout_width="match_parent"
-                android:layout_height="55dip"
-                android:layout_gravity="center" >
-
-                <ImageView
-                    android:id="@+id/iv_e"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:paddingBottom="4dip"
-                    android:src="@drawable/m_1_h" />
-            </RelativeLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+        </com.bm.view.TabMyView>
+        <com.bm.view.TabMyView
             android:layout_weight="1"
-            android:background="@color/transparent" 
-            android:paddingTop="6dip">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:id="@+id/messageLayout"
-                android:layout_width="match_parent"
-                android:layout_height="55dip"
-                android:layout_gravity="center" >
-
-                <ImageView
-                    android:id="@+id/iv_b"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:paddingBottom="4dip"
-                    android:src="@drawable/m_2_h" />
-            </RelativeLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+        </com.bm.view.TabMyView>
+        <com.bm.view.TabMyView
             android:layout_weight="1"
-            android:background="@color/transparent"
-            android:paddingTop="6dip" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-            <RelativeLayout
-                android:id="@+id/indexLayout"
-                android:layout_width="match_parent"
-                android:layout_height="55dip"
-                android:layout_gravity="center" >
-
-                <ImageView
-                    android:id="@+id/iv_a"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:paddingBottom="4dip"
-                    android:src="@drawable/m_3" />
-            </RelativeLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        </com.bm.view.TabMyView>
+        <com.bm.view.TabMyView
             android:layout_weight="1"
-            android:background="@color/transparent"
-            android:paddingTop="4dip" >
-
-            <RelativeLayout
-                android:id="@+id/findLayout"
-                android:layout_width="match_parent"
-                android:layout_height="55dip"
-                android:layout_gravity="center" >
-
-                <ImageView
-                    android:id="@+id/iv_c"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:paddingBottom="4dip"
-                    android:src="@drawable/m_4_h" />
-            </RelativeLayout>
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/transparent"
-            android:paddingTop="5dip" >
-
-            <RelativeLayout
-                android:id="@+id/meLayout"
-                android:layout_width="match_parent"
-                android:layout_height="55dip"
-                android:layout_gravity="center" >
-
-                <ImageView
-                    android:id="@+id/iv_d"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:paddingBottom="4dip"
-                    android:gravity="center_horizontal"
-                    android:src="@drawable/m_5_h" />
-                <ImageView
-		            android:id="@+id/img_read"
-		            android:layout_width="10dip"
-		            android:layout_height="10dip"
-		            android:padding="2dp"
-		            android:visibility="gone"
-		            android:layout_alignTop="@+id/iv_d"
-		            android:layout_toRightOf="@+id/iv_d"
-		            android:src="@drawable/dot_red" />
-            </RelativeLayout>
-            
-            
-        </FrameLayout>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </com.bm.view.TabMyView>
     </LinearLayout>
 
 </LinearLayout>

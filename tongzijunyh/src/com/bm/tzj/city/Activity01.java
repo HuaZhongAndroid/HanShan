@@ -167,7 +167,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 //						.show();
 			}
 		});
-		initOverlay();
+		//initOverlay();
 		cityInit();
 		getHotCityList();
 //		getLastCity();
@@ -670,14 +670,16 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 					public void onItemClick(AdapterView<?> parent, View view,
 							int position, long id) {
 
+						City city = hotList.get(position);
 						Intent intent = new Intent();
-						intent.putExtra("cityName", city_hot.get(position).name);
-						intent.setClass(context, MainAc.class);
+						intent.putExtra("cityName", city.regionName);
+						intent.putExtra("city", city);
+						intent.setClass(Activity01.this, MainAc.class);
 						setResult(5, intent);
 						finish();
 						hideProgressDialog();
 
-						//updateLastCity(city_hot.get(position));
+					//	updateLastCity(city_hot.get(position));
 //						Toast.makeText(getApplicationContext(),
 //								city_hot.get(position).getName(),
 //								Toast.LENGTH_SHORT).show();

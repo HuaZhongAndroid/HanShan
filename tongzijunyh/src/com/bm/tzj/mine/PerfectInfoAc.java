@@ -535,7 +535,7 @@ public class PerfectInfoAc extends BaseActivity implements OnClickListener {
 						MainAc.intance.finish();
 					}
 					Intent intent = new Intent(context, MainAc.class);
-					intent.putExtra("tag", 2);
+					intent.putExtra("tag", 0);
 					startActivity(intent);
 					finish();
 	}

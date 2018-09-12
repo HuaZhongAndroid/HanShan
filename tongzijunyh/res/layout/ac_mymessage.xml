@@ -22,7 +22,7 @@
             android:scrollingCache="false"
             android:visibility="gone" />
     </com.lib.widget.refush.SwipyRefreshLayout>
-    
+
     <ImageView
         android:id="@+id/img_noData"
         style="@style/ww"

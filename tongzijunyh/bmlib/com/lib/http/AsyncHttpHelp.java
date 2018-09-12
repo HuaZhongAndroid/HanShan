@@ -1,22 +1,5 @@
 package com.lib.http;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import android.content.Context;
 import android.text.TextUtils;
 
@@ -34,6 +17,23 @@ import com.loopj.android.http.ResponseHandlerInterface;
 import com.loopj.android.http.TextHttpResponseHandler;
 import com.richer.tzj.R;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
 import cz.msebera.android.httpclient.Header;
 
 public class AsyncHttpHelp {
@@ -47,13 +47,13 @@ public class AsyncHttpHelp {
 	static String userId = "";
 	public static void httpGet(Context context, String url,HashMap<String, String> params,ServiceCallback callback) {
 		url = BaseApi.API_URL_PRE + url;
-		String logStr = new String(url);
 		String urlStr = new String(url);
 		urlStr+="?";
-		logStr+="?";
 		try {
 			if(params != null){
-				if (!params.containsKey("userId")) {
+				if (App.getInstance().getUser()!=null)
+				userId = App.getInstance().getUser().userid;
+				if (!params.containsKey("userId")&&!TextUtils.isEmpty(userId)) {
 					params.put("userId", userId);
 				}
 				
@@ -63,7 +63,6 @@ public class AsyncHttpHelp {
 					Entry<String,String> entry = it.next();
 					if(entry.getValue()!=null){
 					urlStr+=entry.getKey()+"="+URLEncoder.encode(entry.getValue(), "utf-8")+"&";
-					logStr+=entry.getKey()+"="+entry.getValue()+"&";
 					}
 				}
 				params = null;
@@ -71,13 +70,12 @@ public class AsyncHttpHelp {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-		Lg.i("url:", logStr);
 		AsyncHttpClient client = new AsyncHttpClient();
 //		client.setTimeout(1000);
 //		client.setConnectTimeout(1000);
 		client.setMaxRetriesAndTimeout(2, 1000);
 		client.setSSLSocketFactory(getSSL());
-		callback.setUrl(url);
+		callback.setUrl(urlStr);
 		client.get(context, urlStr, null, getReponHandler(callback));
 	}
 
@@ -109,7 +107,6 @@ public class AsyncHttpHelp {
 				}
 				params.put(fileName, filess);
 			} 
-			Lg.i("url:", url);
 //		} catch (UnsupportedEncodingException e) {
 //			e.printStackTrace();
 		} catch (Exception e) {
@@ -117,12 +114,10 @@ public class AsyncHttpHelp {
 		}
 //		client.setTimeout(80*1000);
 //		client.setSSLSocketFactory(getSSL());
-		Lg.i("params",params.toString());
+		callback.url=logStr;
 		client.post(context, url, params, getReponHandler(callback));
 
 	}
-
-	
 	
 	private static ResponseHandlerInterface getReponHandler(final ServiceCallback callback) {
 		final BaseResult r = null;
@@ -134,18 +129,17 @@ public class AsyncHttpHelp {
 			@Override
 			public void onFailure(int arg0, Header[] arg1, String arg2,
 					Throwable arg3) {
-				Lg.i("网络错误:", arg2);
+				Lg.e("网络请求失败:", arg2+" url = "+callback.url);
 				arg3.printStackTrace();
 				callback.error("网络请求失败");
-				App.toast("网络请求失败");
+				//App.toast("网络请求失败");
 			}
 
 			@Override
 			public void onSuccess(int arg0, Header[] arg1, String arg2) {
 //				System.out.println("返回结果:" + arg2);
-				Lg.i(callback.url+"的返回结果:", "blue:"+JsonFormatTool.formatJson(arg2));
+				Lg.e(callback.url+"的返回结果:", "blue:"+JsonFormatTool.formatJson(arg2));
 				BaseResult r = null;
-				
 				try {
 					r = getGson().fromJson(arg2, callback.type);
 				} catch (Exception e) {
@@ -175,9 +169,7 @@ public class AsyncHttpHelp {
 	}
 	public static final String DefaultDateFormat = "yyyy/MM/dd HH:mm:ss";
 	
-	
 
-	
 	/**
 	 * 
 	 * https  支持

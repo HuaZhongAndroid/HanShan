@@ -14,8 +14,10 @@ import com.richer.tzj.R;
  */
 public class ToastDialog extends Dialog{
 	final static String TAG = ToastDialog.class.getSimpleName();
+	Context context ;
 	public ToastDialog(Context context) {
 		super(context, R.style.MyDialog);
+		this.context = context;
 		setCanceledOnTouchOutside(true);
 	}
 
@@ -41,9 +43,11 @@ public class ToastDialog extends Dialog{
 		if(tv != null){
 			tv.setText(msg);
 		}
-		super.show();
-		handler.removeCallbacks(close);
-		handler.postDelayed(close, delayMs);
+		if (!((Activity)context).isFinishing()){
+			super.show();
+			handler.removeCallbacks(close);
+			handler.postDelayed(close, delayMs);
+		}
 		return this;
 	}
 	
@@ -66,14 +70,16 @@ public class ToastDialog extends Dialog{
 		if(tv != null){
 			tv.setText(msg);
 		}
-		super.show();
-		new Handler().postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				dismiss();
-				ac.finish();
-			}
-		}, delayMs);
+		if (!((Activity)context).isFinishing()){
+			super.show();
+			new Handler().postDelayed(new Runnable() {
+				@Override
+				public void run() {
+					dismiss();
+					ac.finish();
+				}
+			}, delayMs);
+		}
 		return this;
 	}
 

@@ -3,11 +3,12 @@ package com.lib.widget;
 import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.ScrollView;
- 
+
 /**
  * 有弹性的ScrollView
  * 实现下拉弹回和上拉弹回
@@ -43,7 +44,9 @@ public class ReboundScrollView extends ScrollView {
      
     //在手指滑动的过程中记录是否移动了布局
     private boolean isMoved = false;
- 
+    //在手指滑动的过程中记录布局移动的距离
+    int deltaY = 0;
+
     public ReboundScrollView(Context context) {
         super(context);
     }
@@ -69,13 +72,13 @@ public class ReboundScrollView extends ScrollView {
         originalRect.set(contentView.getLeft(), contentView.getTop(), contentView
                 .getRight(), contentView.getBottom());
     }
- 
+
     /**
      * 在触摸事件中, 处理上拉和下拉的逻辑
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-         
+
         if (contentView == null) {
             return super.dispatchTouchEvent(ev);
         }
@@ -107,7 +110,10 @@ public class ReboundScrollView extends ScrollView {
             // 设置回到正常的布局位置
             contentView.layout(originalRect.left, originalRect.top, 
                     originalRect.right, originalRect.bottom);
-             
+
+            Log.e("deltaY","deltaY = "+deltaY);
+            loadChangeListener.onLoadChangeListener(deltaY);
+
             //将标志位设回false
             canPullDown = false;
             canPullUp = false;
@@ -127,8 +133,7 @@ public class ReboundScrollView extends ScrollView {
              
             //计算手指移动的距离
             float nowY = ev.getY();
-            int deltaY = (int) (nowY - startY);
-             
+            deltaY = (int) (nowY - startY);
             //是否应该移动布局
             boolean shouldMove = 
                     (canPullDown && deltaY > 0)    //可以下拉， 并且手指向下移动
@@ -153,8 +158,8 @@ public class ReboundScrollView extends ScrollView {
  
         return super.dispatchTouchEvent(ev);
     }
-     
- 
+
+
     /**
      * 判断是否滚动到顶部
      */
@@ -169,6 +174,21 @@ public class ReboundScrollView extends ScrollView {
     private boolean isCanPullUp() {
         return  contentView.getHeight() <= getHeight() + getScrollY();
     }
-     
+
+    public void setLoadChangeListener(LoadChangeListener loadChangeListener) {
+        this.loadChangeListener = loadChangeListener;
+    }
+
+    private   LoadChangeListener loadChangeListener = new LoadChangeListener() {
+        @Override
+        public void onLoadChangeListener(int deltaY) {
+            Log.e("deltaY","deltaY = "+deltaY);
+        }
+    };
+    public  interface  LoadChangeListener{
+
+         void onLoadChangeListener(int deltaY);
+
+    }
 }
 
