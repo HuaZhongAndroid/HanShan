@@ -18,7 +18,7 @@ public class GrowUp implements Serializable {
     public String storeId;
     public String goodsType;
     public String goodsName;
-
+    public String coachHead;
 
     public String pkid;
 
