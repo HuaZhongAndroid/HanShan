@@ -135,7 +135,7 @@ public class LeyuanStoreAc extends AbsCoursePayBaseAc implements View.OnClickLis
                     public void onClick(View v) {
                         xzCourse = data;
                         LeyuanStoreAc.super.goodsId = xzCourse.goodsId;
-                        LeyuanStoreAc.super.storeId = xzCourse.storeId;
+                        LeyuanStoreAc.super.storeId = storelist.storeId;
                         LeyuanStoreAc.super.type = "10";
                         showPopupWindow(v);
                     }

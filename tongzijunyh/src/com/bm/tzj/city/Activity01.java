@@ -169,7 +169,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 		});
 		//initOverlay();
 		cityInit();
-		getHotCityList();
+
 //		getLastCity();
 		
 
@@ -178,6 +178,8 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 		mLocationClient.registerLocationListener(mMyLocationListener);
 		InitLocation();
 		mLocationClient.start();
+		getHotCityList();
+
 	}
 
 	public void InsertCity(String name) {
@@ -229,7 +231,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 		
 //		city_lists = getCityList();
 //		allCity_lists.addAll(city_lists);
-		getAllCityList();
+		//getAllCityList();
 		
 		
 		
@@ -308,42 +310,62 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 	 * 获取热门城市
 	 */
 	public void getHotCityList(){
-		String strJson = SharedPreferencesHelper.getString("hotcitys",null);
-		if(strJson != null)
-		{
-			CommonListResult<City> citys = AsyncHttpHelp.getGson().fromJson(strJson, new ServiceCallback<CommonListResult<City>>(){
-				@Override
-				public void done(int what, CommonListResult<City> obj) {
-				}
-				@Override
-				public void error(String msg) {
-				}}.type);
-			if(citys != null && citys.data.size() > 0)
-			{
-				city_hot = citys.data;
+//		String strJson = SharedPreferencesHelper.getString("hotcitys",null);
+//		if(strJson != null)
+//		{
+//			CommonListResult<City> citys = AsyncHttpHelp.getGson().fromJson(strJson, new ServiceCallback<CommonListResult<City>>(){
+//				@Override
+//				public void done(int what, CommonListResult<City> obj) {
+//				}
+//				@Override
+//				public void error(String msg) {
+//				}}.type);
+//			if(citys != null && citys.data.size() > 0)
+//			{
+//				city_hot = citys.data;
+//			}
+//		}
+//		else
+//		{
+//			showProgressDialog();
+//			HashMap<String, String> map = new HashMap<String, String>();
+//			UserManager.getInstance().getTzjtrendHotregion(Activity01.this, map, new ServiceCallback<CommonListResult<City>>() {
+//
+//				@Override
+//				public void error(String msg) {
+//					dialogToast(msg);
+//					hideProgressDialog();
+//				}
+//
+//				@Override
+//				public void done(int what, CommonListResult<City> obj) {
+//					if(null!=obj.data){
+//						city_hot = obj.data;
+//						hideProgressDialog();
+//					}
+//				}
+//			});
+//		}
+
+		showProgressDialog();
+		HashMap<String, String> map = new HashMap<String, String>();
+		UserManager.getInstance().getTzjtrendHotregion(Activity01.this, map, new ServiceCallback<CommonListResult<City>>() {
+
+			@Override
+			public void error(String msg) {
+				dialogToast(msg);
+				hideProgressDialog();
 			}
-		}
-		else
-		{
-			showProgressDialog();
-			HashMap<String, String> map = new HashMap<String, String>();
-			UserManager.getInstance().getTzjtrendHotregion(Activity01.this, map, new ServiceCallback<CommonListResult<City>>() {
-				
-				@Override
-				public void error(String msg) {
-					dialogToast(msg);
+
+			@Override
+			public void done(int what, CommonListResult<City> obj) {
+				if(null!=obj.data){
+					city_hot = obj.data;
+					setAdapter(allCity_lists, city_hot, city_history);
 					hideProgressDialog();
 				}
-				
-				@Override
-				public void done(int what, CommonListResult<City> obj) {
-					if(null!=obj.data){
-						city_hot = obj.data;
-						hideProgressDialog();
-					}
-				}
-			});
-		}
+			}
+		});
 	}
 	/**
 	 * 获取全部城市
@@ -669,20 +691,7 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 					@Override
 					public void onItemClick(AdapterView<?> parent, View view,
 							int position, long id) {
-
-						City city = hotList.get(position);
-						Intent intent = new Intent();
-						intent.putExtra("cityName", city.regionName);
-						intent.putExtra("city", city);
-						intent.setClass(Activity01.this, MainAc.class);
-						setResult(5, intent);
-						finish();
-						hideProgressDialog();
-
-					//	updateLastCity(city_hot.get(position));
-//						Toast.makeText(getApplicationContext(),
-//								city_hot.get(position).getName(),
-//								Toast.LENGTH_SHORT).show();
+					    updateLastCity(city_hot.get(position));
 
 					}
 				});
@@ -692,33 +701,35 @@ public class Activity01 extends BaseActivity implements OnScrollListener {
 				hotHint.setText("已开通城市");//热门城市
 //				LinearLayout ll_cityContent = (LinearLayout) convertView.findViewById(R.id.ll_cityContent);
 //				ll_cityContent.setVisibility(View.VISIBLE);
-			} else if (viewType == 3) {
-				convertView = inflater.inflate(R.layout.total_item, null);
-			} else {
-				if (convertView == null) {
-					convertView = inflater.inflate(R.layout.list_item, null);
-					holder = new ViewHolder();
-					holder.alpha = (TextView) convertView
-							.findViewById(R.id.alpha);
-					holder.name = (TextView) convertView
-							.findViewById(R.id.name);
-					convertView.setTag(holder);
-				} else {
-					holder = (ViewHolder) convertView.getTag();
-				}
-				if (position >= 1) {
-					holder.name.setText(list.get(position).name);
-					String currentStr = getAlpha(list.get(position).getPinyi());
-					String previewStr = (position - 1) >= 0 ? getAlpha(list
-							.get(position - 1).getPinyi()) : " ";
-					if (!previewStr.equals(currentStr)) {
-						holder.alpha.setVisibility(View.VISIBLE);
-						holder.alpha.setText(currentStr);
-					} else {
-						holder.alpha.setVisibility(View.GONE);
-					}
-				}
 			}
+
+//			else if (viewType == 3) {
+//				convertView = inflater.inflate(R.layout.total_item, null);
+//			} else {
+//				if (convertView == null) {
+//					convertView = inflater.inflate(R.layout.list_item, null);
+//					holder = new ViewHolder();
+//					holder.alpha = (TextView) convertView
+//							.findViewById(R.id.alpha);
+//					holder.name = (TextView) convertView
+//							.findViewById(R.id.name);
+//					convertView.setTag(holder);
+//				} else {
+//					holder = (ViewHolder) convertView.getTag();
+//				}
+//				if (position >= 1) {
+//					holder.name.setText(list.get(position).name);
+//					String currentStr = getAlpha(list.get(position).getPinyi());
+//					String previewStr = (position - 1) >= 0 ? getAlpha(list
+//							.get(position - 1).getPinyi()) : " ";
+//					if (!previewStr.equals(currentStr)) {
+//						holder.alpha.setVisibility(View.VISIBLE);
+//						holder.alpha.setText(currentStr);
+//					} else {
+//						holder.alpha.setVisibility(View.GONE);
+//					}
+//				}
+//			}
 			return convertView;
 		}
 

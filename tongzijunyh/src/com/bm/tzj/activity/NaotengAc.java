@@ -206,7 +206,7 @@ public class NaotengAc extends AbsCoursePayBaseAc implements AppBarLayout.OnOffs
                     public void onClick(View v) {
                         xzCourse = data;
                         NaotengAc.super.goodsId = xzCourse.goodsId;
-                        NaotengAc.super.storeId = xzCourse.storeId;
+                        NaotengAc.super.storeId = storelist.storeId;
                         NaotengAc.super.type = "10";
                         if (!isLogin())return;
                         showPopupWindow(v);
