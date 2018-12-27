@@ -82,7 +82,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="3dip"
             android:numStars="5"
-            android:progress="1"
             android:paddingLeft="8dip"
             android:rating="5"
             android:stepSize="1"></RatingBar>
@@ -124,6 +123,7 @@
         android:gravity="center"
         android:padding="12dip"
         android:text="提交"
+        android:visibility="gone"
         android:textColor="@color/white"
         android:textSize="@dimen/text_font_14" />
 

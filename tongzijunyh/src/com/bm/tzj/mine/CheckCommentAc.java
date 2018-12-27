@@ -36,8 +36,7 @@ import java.util.HashMap;
  *
  * @author wanghy
  */
-public class CheckCommentAc extends BaseActivity implements OnClickListener,
-        OnRatingBarChangeListener {
+public class CheckCommentAc extends BaseActivity implements OnClickListener {
     private Context context;
     private TextView tv_submit;
     private TextView tv_comment;
@@ -59,7 +58,8 @@ public class CheckCommentAc extends BaseActivity implements OnClickListener,
         hotGoods = (Course) getIntent().getSerializableExtra("hotGoods");
         tv_comment = findTextViewById(R.id.tv_comment);
         rb_scoreCoach = findViewById(R.id.rb_scoreCoach);
-        rb_scoreVenue = findViewById(R.id.rb_scoreCoach);
+        rb_scoreVenue = findViewById(R.id.rb_scoreVenue);
+        iv_status = findImageViewById(R.id.iv_status);
         rb_scoreCoach.setEnabled(false);
         rb_scoreVenue.setEnabled(false);
         tv_submit = findTextViewById(R.id.tv_submit);
@@ -78,13 +78,6 @@ public class CheckCommentAc extends BaseActivity implements OnClickListener,
                 break;
         }
     }
-
-    @Override
-    public void onRatingChanged(RatingBar arg0, float arg1, boolean arg2) {
-        String strScoreCoach = rb_scoreCoach.getRating() + "";
-        String strScoreVenue = rb_scoreVenue.getRating() + "";
-    }
-
     /**
      * 获取星级
      */

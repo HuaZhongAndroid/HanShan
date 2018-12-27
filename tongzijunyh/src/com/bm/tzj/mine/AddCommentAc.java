@@ -107,7 +107,14 @@ public class AddCommentAc extends BaseActivity implements OnClickListener {
 	}
 	
 	public void setDate(){
-		tv_name.setText(getNullData(hotGoods.goodsName));
+		if (!TextUtils.isEmpty(hotGoods.goodsName)){
+			tv_name.setText(hotGoods.goodsName);
+			tv_name.setVisibility(View.VISIBLE);
+		}else {
+			tv_name.setVisibility(View.GONE);
+		}
+
+
 //		if(hotGoods.goodsType.equals("1")){
 //			tv_namepj.setText("评价城市营地");
 //			if(!TextUtils.isEmpty(hotGoods.goodsCategory)){
@@ -180,15 +187,14 @@ public class AddCommentAc extends BaseActivity implements OnClickListener {
 		if(hotGoods.goodsType.equals("1")){//门店
 			map.put("storeId", hotGoods.storeId+"");//门店ID
 		}	
-		
 		UserManager.getInstance().getGoodsAddComment(context, map, new ServiceCallback<StringResult>() {
-			
+
 			@Override
 			public void error(String msg) {
 				dialogToast(msg);
 				hideProgressDialog();
 			}
-			
+
 			@Override
 			public void done(int what, StringResult obj) {
 				hideProgressDialog();

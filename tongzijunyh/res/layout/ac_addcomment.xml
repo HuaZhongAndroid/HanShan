@@ -22,6 +22,7 @@
                     style="@style/ww"
                     android:layout_marginBottom="20dip"
                     android:layout_marginLeft="13dip"
+                    android:visibility="visible"
                     android:text="【体验课程】滚筒+鸟巢+西藏之桥"
                     android:textColor="@color/txt_teacher_name"
                     android:textSize="@dimen/text_font_18" />
