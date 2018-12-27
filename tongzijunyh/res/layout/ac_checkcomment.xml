@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sliding_menu_body_background"
+    android:orientation="vertical"
+    android:padding="10dip">
+    <TextView
+        android:id="@+id/tv_titleName"
+        style="@style/fw"
+        android:paddingBottom="10dip"
+        android:paddingLeft="5dip"
+        android:paddingTop="5dip"
+        android:text="教练点评"
+        android:textColor="@color/personal_textNameColor"
+        android:textSize="@dimen/text_font_15" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dip"
+        android:background="@drawable/shurukuang1"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                style="@style/ff"
+                android:gravity="top|left"
+                android:maxLength="50"
+                android:padding="10dp"
+                android:text="考核结果"
+                android:textColor="@color/txt_title_detail"
+                android:textColorHint="#cbcaca"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/text_font_14" />
+            <TextView
+                android:id="@+id/tv_comment"
+                style="@style/ff"
+                android:gravity="top|left"
+                android:padding="10dp"
+                android:text=""
+                android:textColor="@color/txt_title_detail"
+                android:textColorHint="#cbcaca"
+                android:textSize="@dimen/text_font_14" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="-10dp"
+            android:src="@drawable/tongguo"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="我的评价"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/personal_textNameColor"
+        android:textSize="@dimen/text_font_14" />
+    <LinearLayout style="@style/fwh"
+        android:background="@color/white"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="教练评价"
+            android:gravity="center_vertical"
+            android:textColor="@color/personal_textNameColor"
+            android:textSize="@dimen/text_font_14" />
+
+        <RatingBar
+            android:id="@+id/rb_scoreCoach"
+            style="@style/myCommentRatingBar"
+            android:layout_width="115dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="3dip"
+            android:numStars="5"
+            android:progress="1"
+            android:paddingLeft="8dip"
+            android:rating="5"
+            android:stepSize="1"></RatingBar>
+    </LinearLayout>
+    <LinearLayout
+        style="@style/fwh"
+        android:background="@color/white"
+        android:layout_marginTop="1dp"
+        android:padding="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="门店评价"
+            android:textColor="@color/personal_textNameColor"
+            android:textSize="@dimen/text_font_14" />
+
+        <RatingBar
+            android:id="@+id/rb_scoreVenue"
+            style="@style/myCommentRatingBar"
+            android:layout_width="115dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:numStars="5"
+            android:paddingLeft="8dip"
+            android:rating="5"
+            android:stepSize="1"></RatingBar>
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tv_submit"
+        style="@style/fw"
+        android:layout_marginTop="30dip"
+        android:background="@color/app_dominantHue"
+        android:gravity="center"
+        android:padding="12dip"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_font_14" />
+
+</LinearLayout>

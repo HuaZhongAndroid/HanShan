@@ -21,6 +21,7 @@ public class GrowUp implements Serializable {
     public String coachHead;
 
     public String pkid;
+    public String evaluateuserid;
 
     public String ctime;
     public String recordFlag;

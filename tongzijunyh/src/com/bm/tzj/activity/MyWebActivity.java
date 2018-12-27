@@ -3,6 +3,8 @@ package com.bm.tzj.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 
 import com.bm.api.BaseApi;
@@ -33,6 +35,7 @@ public class MyWebActivity extends BaseActivity {
         AgentWeb agentWeb =   AgentWeb.with(this)//传入Activity
                 .setAgentWebParent(web_ll, new LinearLayout.LayoutParams(-1, -1))//传入AgentWeb 的父控件 ，如果父控件为 RelativeLayout ， 那么第二参数需要传入 RelativeLayout.LayoutParams
                 .useDefaultIndicator()// 使用默认进度条
+                .setWebChromeClient(mWebChromeClient)
                 .createAgentWeb()//
                 .ready()
                 .go(url);
@@ -43,4 +46,21 @@ public class MyWebActivity extends BaseActivity {
 //        agentWeb.getJsInterfaceHolder().addJavaObject("android",new AndroidInterface(agentWeb,this));
 //        window.android.callAndroid();
     }
+
+    private WebChromeClient mWebChromeClient = new WebChromeClient() {
+        @Override
+        public void onProgressChanged(WebView view, int newProgress) {
+            Log.e("MyWebActivity", "onProgressChanged: " );
+            //do you work
+        }
+
+        @Override
+        public void onReceivedTitle(WebView view, String title) {
+            super.onReceivedTitle(view, title);
+           if (Title==null){
+               Title= title;
+               setTitleName(title);
+           }
+        }
+    };
 }

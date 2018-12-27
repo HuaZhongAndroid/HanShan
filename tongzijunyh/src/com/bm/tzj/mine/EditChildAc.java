@@ -98,7 +98,8 @@ public class EditChildAc extends BaseCaptureActivity implements OnClickListener 
 		findViewById(R.id.iv_sixview_head).setVisibility(View.GONE);
 		iv_sixview_head = (ImageView) findViewById(R.id.lv_sixview_head);
 		findViewById(R.id.ib_sixview_head).setOnClickListener(this);
-		iv_sixview_head.setImageResource(R.drawable.moren_head);
+		findViewById(R.id.lv_sixview_head).setOnClickListener(this);
+		//iv_sixview_head.setImageResource(R.drawable.moren_head);
 		et_babyName.setText(child.realName);
 		babySex = ("1".equals(child.gender) ? "男" : "女");
 		rb_male.setChecked("1".equals(child.gender));
@@ -274,6 +275,9 @@ public class EditChildAc extends BaseCaptureActivity implements OnClickListener 
 				submitInfo();
 				break;
 			case R.id.ib_sixview_head:
+				buttonDialog.show();
+				break;
+			case R.id.lv_sixview_head:
 				buttonDialog.show();
 				break;
 			default:

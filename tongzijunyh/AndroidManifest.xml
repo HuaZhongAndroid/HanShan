@@ -166,18 +166,18 @@
         <!-- 我的孩子 -->
         <activity
             android:name="com.bm.tzj.mine.MyChildrenAc"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
         <!-- 添加孩子 -->
         <activity
             android:name="com.bm.tzj.mine.AddChildAc"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
         <!-- 编辑孩子 -->
         <activity
             android:name="com.bm.tzj.mine.EditChildAc"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
 
         <!-- 账单明细 -->
         <activity
@@ -248,6 +248,10 @@
         <!-- 发布评价 -->
         <activity
             android:name="com.bm.tzj.mine.MyCommentAc"
+            android:screenOrientation="portrait"></activity>
+        <!-- 查看评价 -->
+        <activity
+            android:name="com.bm.tzj.mine.CheckCommentAc"
             android:screenOrientation="portrait"></activity>
 
         <!-- 发帖 -->
@@ -694,8 +698,8 @@
         <!-- meta-data需要写在application中 -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="ARry26ZkajziHAc15w7yGT7wriy7ZjxS"/>
-     <!--   android:value="lY4Qi5oeGu4iOtGFyoXidNqI" />-->
+            android:value="ARry26ZkajziHAc15w7yGT7wriy7ZjxS" />
+        <!--   android:value="lY4Qi5oeGu4iOtGFyoXidNqI" />-->
 
 
         <!-- 以下是极光推送 -->

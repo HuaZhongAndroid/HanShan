@@ -51,6 +51,8 @@ import com.bm.tzj.activity.ImageViewActivity;
 import com.bm.tzj.activity.MainAc;
 import com.bm.tzj.mine.AddChildAc;
 import com.bm.tzj.mine.AddCommentAc;
+import com.bm.tzj.mine.CheckCommentAc;
+import com.bm.tzj.mine.MyCommentAc;
 import com.bm.tzj.mine.MyCourseAc;
 import com.bm.tzj.ts.SendGrowUpAc;
 import com.bm.util.GlideUtils;
@@ -203,7 +205,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
         loadChildData();
     }
 
-   int thisIndex = -1;
+    int thisIndex = -1;
     private BaseAdapter mainAdapter = new BaseAdapter() {
         @Override
         public int getCount() {
@@ -249,7 +251,6 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
             if ("1".equals(data.recordFlag)) //家长发布
             {
                 tv_day.setTextColor(0xff333333);
-                convertView.findViewById(R.id.v_jiaolian).setVisibility(View.GONE);
                 img_tag.setImageResource(R.drawable.jiaoya);
                 btn_menu.setVisibility(View.VISIBLE);
                 btn_menu.setOnClickListener(new OnClickListener() {
@@ -273,33 +274,49 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                 //GlideUtils.loadImg(context, data.coachHead, iv_jl_touxiang, R.drawable.ic_four_p);
                 GlideUtils.loadImg(context, data.coachHead, iv_jl_touxiang);
 
-                if ("1".equals(data.isAssess)){
+                if ("1".equals(data.isAssess)) {
                     tv_pingjia_tip.setVisibility(View.INVISIBLE);
-                }else {
+                    v_jiaolian.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            thisIndex = position;
+                            Intent intent = new Intent(context, CheckCommentAc.class);
+                            Course course = new Course();
+                            course.babyId = data.babyId;
+                            course.coachId = data.coachId;
+                            course.babyId = data.babyId;
+                            course.evaluateuserid = data.evaluateuserid;
+                            course.goodsId = data.goodsId;
+                            intent.putExtra("hotGoods", course);
+                            MainAc.intance.startActivityFromFragment(GrowUpFragment.this, intent, 200);
+                        }
+                    });
+                } else {
                     tv_pingjia_tip.setVisibility(View.VISIBLE);
+                    v_jiaolian.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            thisIndex = position;
+                            Intent intent = new Intent(context, AddCommentAc.class);
+                            Course course = new Course();
+                            course.babyId = data.babyId;
+                            course.coachId = data.coachId;
+                            course.babyId = data.babyId;
+                            course.goodsId = data.goodsId;
+                            course.goodsName = data.goodsName;
+
+                            course.coachName = data.coachName;
+                            course.storeName = data.storeName;
+                            course.goodsType = data.goodsType;
+                            course.storeId = data.storeId;
+
+                            intent.putExtra("hotGoods", course);
+                            MainAc.intance.startActivityFromFragment(GrowUpFragment.this, intent, 200);
+                            //context.startActivity(intent);
+                        }
+                    });
                 }
-                tv_pingjia_tip.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        thisIndex = position;
-                        Intent intent = new Intent(context, AddCommentAc.class);
-                        Course course = new Course();
-                        course.babyId = data.babyId;
-                        course.coachId = data.coachId;
-                        course.babyId = data.babyId;
-                        course.goodsId = data.goodsId;
-                        course.goodsName = data.goodsName;
 
-                        course.coachName = data.coachName;
-                        course.storeName = data.storeName;
-                        course.goodsType = data.goodsType;
-                        course.storeId = data.storeId;
-
-                        intent.putExtra("hotGoods", course);
-                        MainAc.intance.startActivityFromFragment(GrowUpFragment.this,intent,200);
-                        //context.startActivity(intent);
-                    }
-                });
             }
 
             if (position == 0) //第一行处理
@@ -723,7 +740,7 @@ public class GrowUpFragment extends Fragment implements OnClickListener,
                     setChildReflush();
                 }
             }, 1000);
-        }else  if (resultCode == 200) {
+        } else if (resultCode == 200) {
             growUpList.get(thisIndex).isAssess = "1";
             adapter.notifyDataSetChanged();
         }

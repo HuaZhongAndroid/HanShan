@@ -36,7 +36,8 @@
                         android:layout_height="198dip"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="25dip"
-                        android:background="@null" />
+                        android:background="@drawable/moren_head"
+                         />
 
                     <View
                         android:layout_width="fill_parent"

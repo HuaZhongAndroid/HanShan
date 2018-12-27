@@ -11,6 +11,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -301,12 +302,11 @@ public class StartAc extends Activity {
                         @Override
                         public void onClick(View v) {
                             goMain();
-
-                            Intent intent = new Intent(StartAc.this, AdvWebActivity.class);
-//					        Uri content_url = Uri.parse(fad.linkUrl);
-                            intent.putExtra(GlobalPrams.WebUrl, fad.linkUrl);
-                            startActivity(intent);
-
+                            if (!TextUtils.isEmpty(fad.linkUrl)){
+                                Intent intent = new Intent(StartAc.this, AdvWebActivity.class);
+                                intent.putExtra(GlobalPrams.WebUrl, fad.linkUrl);
+                                startActivity(intent);
+                            }
 //					        popupWindow.setVisibility(View.GONE);
 
                         }

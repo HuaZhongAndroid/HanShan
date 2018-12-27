@@ -71,6 +71,7 @@ public class CourseWebActivity extends AbsCoursePayBaseAc implements OnClickList
         order.goodsType = goodsType;
         order.goodsTime = goodsTime;
         order.goodsName = goodsName;
+
         intent.putExtra("order", order);
         startActivity(intent);
         finish();

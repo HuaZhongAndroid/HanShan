@@ -12,7 +12,7 @@ public class BaseApi {
     //	public static final String API_HOST = "http://v250.tzj.softlst.com:8888";//正式服务器
    // public static final String API_HOST = "http://59.110.62.10:8888";//测试服务器
     public static final String API_HOST = "http://www.softlst.com:8888";//测试服务器
-//	public static final String API_HOST = "http://192.168.0.105:8888";//文强服务器
+    //	public static final String API_HOST = "http://192.168.1.109:8888";//文强服务器
 //	public static final String API_HOST = "http://192.168.0.107:8888";//阳阳
 
     //	public static final String API_URL_PRE = API_HOST + "/tongzijun/api/";
@@ -477,6 +477,17 @@ public class BaseApi {
      * 添加课程评论
      */
     public static final String API_TZJGOODS_ADDCOMMENT = "tzjgoods/addComment";
+
+    /**
+     * 查看课程评论 星级
+     */
+    public static final String API_TZJGOODS_CHECK_COMMENT_RATIN = "tzjcomment/findContent.do";
+
+    /**
+     * 获取评价内容以及是否通过
+     */
+    public static final String API_TZJGOODS_CHECK_COMMENT_STATUS = "tzjcoach/coachCommentByBaby";
+
     /**
      * 举报
      */

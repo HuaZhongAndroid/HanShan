@@ -59,7 +59,7 @@ public class MyYouhuiquanAdapter  extends BaseAd<Youhuiquan>{
 		}
 		
 		final Youhuiquan entity= mList.get(position);
-		itemView.tv_name.setText(aMap.get(entity.goodsType));//优惠券使用分类
+		itemView.tv_name.setText(entity.goodsType+"");//优惠券使用分类
 		itemView.tv_money.setText("￥"+entity.money);//金额
 		itemView.tv_youxiaoqi.setText("有效期  "+entity.beginDate + "-" + entity.endDate);
 		

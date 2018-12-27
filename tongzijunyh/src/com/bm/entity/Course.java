@@ -99,6 +99,7 @@ public class Course implements Serializable{
     */
    public String isNeedTrafficFee;
    public String isTraffic;
+   public String evaluateuserid;
 
     /**
      * 订单id

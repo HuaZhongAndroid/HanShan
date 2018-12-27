@@ -13,7 +13,7 @@ import com.bm.base.BaseActivity;
 import com.richer.tzj.R;
 
 /**
- * 发布评价
+ * 发布的评价
  * 
  * @author wanghy
  * 
