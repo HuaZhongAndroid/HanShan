@@ -184,9 +184,13 @@ public class AddCommentAc extends BaseActivity implements OnClickListener {
 		map.put("coachId", hotGoods.coachId);
 		map.put("goodsType", hotGoods.goodsType);//课程类型
 		map.put("babyId", hotGoods.babyId);
-		if(hotGoods.goodsType.equals("1")){//门店
-			map.put("storeId", hotGoods.storeId+"");//门店ID
-		}	
+		map.put("storeId", hotGoods.storeId+"");//门店ID
+//		if(hotGoods.goodsType.equals("1")){//门店
+//			map.put("storeId", hotGoods.storeId+"");//门店ID
+//		}	else {
+//			map.put("storeId", hotGoods.storeId+"");//门店ID
+//		}
+
 		UserManager.getInstance().getGoodsAddComment(context, map, new ServiceCallback<StringResult>() {
 
 			@Override
